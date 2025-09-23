@@ -5,7 +5,7 @@ export const handleCardSelect = (
   cardOrder,
   setCardOrder
 ) => {
-  if (selectedCards.length < 3) {
+  if (selectedCards.length < 5) {
     setSelectedCards([...selectedCards, cardId]);
     setCardOrder(cardOrder.filter((id) => id !== cardId));
   }
