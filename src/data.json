@@ -707,7 +707,7 @@
       "arcana": "mineur",
       "number": "Reine",
       "suit": "coupes",
-      "description": "Compassion, intuition, sagesse émotionnelle",
+      "description": "Compassion, intuition, sagesse émotionnelle.",
       "keywords": ["compassion", "intuition", "sagesse", "soin"],
       "reversed": "Dépendance émotionnelle, instabilité, victimisation"
     },
@@ -717,7 +717,7 @@
       "arcana": "mineur",
       "number": "Roi",
       "suit": "coupes",
-      "description": "Maîtrise émotionnelle, équilibre, leadership compatissant",
+      "description": "Maîtrise émotionnelle, équilibre, leadership compatissant.",
       "keywords": ["maîtrise", "équilibre", "leadership", "diplomatie"],
       "reversed": "Manipulation, contrôle émotionnel, instabilité"
     },
@@ -728,7 +728,7 @@
       "arcana": "mineur",
       "number": "Valet",
       "suit": "épées",
-      "description": "Curiosité intellectuelle, esprit vif, communication",
+      "description": "Curiosité intellectuelle, esprit vif, communication.",
       "keywords": ["curiosité", "communication", "analyse", "vigilance"],
       "reversed": "Cybernisme, méchanceté, indiscrétion"
     },
@@ -738,7 +738,7 @@
       "arcana": "mineur",
       "number": "Cavalier",
       "suit": "épées",
-      "description": "Action rapide, détermination, franchise",
+      "description": "Action rapide, détermination, franchise.",
       "keywords": ["action", "détermination", "franchise", "ambition"],
       "reversed": "Impulsivité, agressivité, imprudence"
     },
@@ -748,7 +748,7 @@
       "arcana": "mineur",
       "number": "Reine",
       "suit": "épées",
-      "description": "Clarté mentale, indépendance, vérité",
+      "description": "Clarté mentale, indépendance, vérité.",
       "keywords": ["clarté", "indépendance", "vérité", "objectivité"],
       "reversed": "Critique excessive, amertume, isolement"
     },
@@ -758,7 +758,7 @@
       "arcana": "mineur",
       "number": "Roi",
       "suit": "épées",
-      "description": "Autorité intellectuelle, justice, prise de décision",
+      "description": "Autorité intellectuelle, justice, prise de décision.",
       "keywords": ["autorité", "justice", "décision", "intellect"],
       "reversed": "Tyrannie, manipulation, abus de pouvoir"
     },
@@ -769,7 +769,7 @@
       "arcana": "mineur",
       "number": "Valet",
       "suit": "bâtons",
-      "description": "Enthousiasme, aventure, nouvelles excitantes",
+      "description": "Enthousiasme, aventure, nouvelles excitantes.",
       "keywords": ["enthousiasme", "aventure", "nouvelles", "énergie"],
       "reversed": "Impatience, arrogance, mauvaises nouvelles"
     },
@@ -779,7 +779,7 @@
       "arcana": "mineur",
       "number": "Cavalier",
       "suit": "bâtons",
-      "description": "Action, aventure, départ en voyage",
+      "description": "Action, aventure, départ en voyage.",
       "keywords": ["action", "aventure", "voyage", "passion"],
       "reversed": "Impulsivité, retard, frustration"
     },
@@ -789,7 +789,7 @@
       "arcana": "mineur",
       "number": "Reine",
       "suit": "bâtons",
-      "description": "Confiance, passion, leadership inspirant",
+      "description": "Confiance, passion, leadership inspirant.",
       "keywords": ["confiance", "passion", "leadership", "courage"],
       "reversed": "Jalousie, insécurité, manipulation"
     },
@@ -799,7 +799,7 @@
       "arcana": "mineur",
       "number": "Roi",
       "suit": "bâtons",
-      "description": "Vision entrepreneuriale, leadership, ambition",
+      "description": "Vision entrepreneuriale, leadership, ambition.",
       "keywords": ["vision", "leadership", "ambition", "créativité"],
       "reversed": "Autoritarisme, impatience, mauvaise gestion"
     },
@@ -810,7 +810,7 @@
       "arcana": "mineur",
       "number": "Valet",
       "suit": "deniers",
-      "description": "Apprentissage, étude, nouvelles opportunités matérielles",
+      "description": "Apprentissage, étude, nouvelles opportunités matérielles.",
       "keywords": ["apprentissage", "étude", "opportunité", "prudence"],
       "reversed": "Paresse, procrastination, opportunité manquée"
     },
@@ -820,7 +820,7 @@
       "arcana": "mineur",
       "number": "Cavalier",
       "suit": "deniers",
-      "description": "Méthode, travail acharné, progrès stable",
+      "description": "Méthode, travail acharné, progrès stable.",
       "keywords": ["méthode", "travail", "progrès", "fiabilité"],
       "reversed": "Stagnation, ennui, routine excessive"
     },
@@ -830,7 +830,7 @@
       "arcana": "mineur",
       "number": "Reine",
       "suit": "deniers",
-      "description": "Abondance, générosité, connexion à la nature",
+      "description": "Abondance, générosité, connexion à la nature.",
       "keywords": ["abondance", "générosité", "nature", "nurturing"],
       "reversed": "Matérialisme, possessivité, négligence"
     },
@@ -840,7 +840,7 @@
       "arcana": "mineur",
       "number": "Roi",
       "suit": "deniers",
-      "description": "Prospérité, réussite matérielle, sécurité",
+      "description": "Prospérité, réussite matérielle, sécurité.",
       "keywords": ["prospérité", "réussite", "sécurité", "affaires"],
       "reversed": "Avarice, conservatisme excessif, peur du risque"
     }
