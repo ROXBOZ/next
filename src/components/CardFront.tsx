@@ -1,7 +1,8 @@
 interface Data {
   id: number;
   name: string;
-  keywords?: string[];
+  keywords: string[];
+  description: string;
 }
 function CardFront({
   data,
@@ -20,16 +21,11 @@ function CardFront({
         zIndex: position || data.id,
         transform: `rotate(${rotation}deg)`,
       }}
-      className={`aspect-[2/3] w-[160px] rounded-lg bg-red-200 flex gap-4 flex-col p-2 justify-center shadow transition-all duration-300 cursor-pointer`}
+      className={`aspect-[2/3] w-[200px] rounded-lg bg-white flex gap-4 flex-col px-4 pb-3 pt-2 justify-between shadow transition-all duration-300 cursor-pointer`}
       onClick={onClick}
     >
-      {data.name}
-      <div className="flex flex-col text-xs">
-        {data.keywords &&
-          data.keywords.map((k, index) => {
-            return <span key={index}>{k}</span>;
-          })}
-      </div>
+      <div className="text-center">{data.name}</div>
+      <div className="text-xs text-balance">{data.description}</div>
     </div>
   );
 }

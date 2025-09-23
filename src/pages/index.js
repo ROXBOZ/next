@@ -35,7 +35,7 @@ export default function Home() {
   }, [selectedCards, cardOrder]);
 
   return (
-    <div className="p-12 flex flex-col items-center gap-12">
+    <div className="p-12  flex-col items-center gap-12 h-screen bg-stone-200 hidden 2xl:flex">
       <div className="flex">
         {cardOrder.map((cardId, index) => {
           const cardData = cards.find((card) => card.id === cardId);
