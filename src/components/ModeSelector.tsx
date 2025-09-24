@@ -138,7 +138,7 @@ function ModeSelector({
     <div className="w-full pt-4 h-[160px] xl:h-[100px]">
       <div className="flex flex-col gap-2 h-full w-screen xl:w-1/2 mx-auto items-center">
         <div className="flex flex-col xl:flex-row w-full px-4 justify-center items-baseline gap-2 opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards]">
-          <span className="text-violet-200  font-medium">
+          <span className="text-violet-200 whitespace-nowrap font-medium">
             Demandez à l’oracle
           </span>
           <input
@@ -155,7 +155,7 @@ function ModeSelector({
         <div className="flex flex-col xl:flex-row items-center gap-2 h-[32px]">
           {isQuestionValid && (
             <>
-              <span className="text-violet-200  font-medium opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.4s_forwards]">
+              <span className="text-violet-200 whitespace-nowrap  font-medium opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.4s_forwards]">
                 Choisissez entre un tirage
               </span>
               <div className="flex gap-2 opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.6s_forwards]">
