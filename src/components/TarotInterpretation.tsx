@@ -171,7 +171,7 @@ function TarotInterpretation({
   const formatInterpretationText = (text: string): string => {
     return text.replace(
       /\*\*(.*?)\*\*/g,
-      "<span class='font-semibold text-amber-300'>$1</span>"
+      "<span class='font-semibold text-violet-200'>$1</span>"
     );
   };
 
@@ -190,7 +190,7 @@ function TarotInterpretation({
           <div className="p-4 relative">
             <button
               onClick={declineInterpretation}
-              className="absolute top-0 right-0 aspect-square text-violet-300 hover:text-violet-50 transition-colors leading-none text-lg"
+              className="absolute top-0 right-0 aspect-square text-violet-200 hover:text-violet-50 transition-colors leading-none text-lg"
               aria-label="Fermer"
             >
               ×
@@ -234,7 +234,7 @@ function TarotInterpretation({
 
           {/* Error */}
           {error && (
-            <div className="mx-8 mb-4 bg-red-50 border border-red-200 rounded-lg p-4">
+            <div className="mx-4 mb-4 bg-red-50 border border-red-200 rounded-lg p-4">
               <p className="text-red-700">{error}</p>
               <div className="flex gap-3 mt-3">
                 <button
@@ -259,7 +259,7 @@ function TarotInterpretation({
 
           {/* Interpretation Result */}
           {interpretation && (
-            <div className="mx-8 mb-4">
+            <div className="mx-4 mb-4">
               <div className="max-w-none border-0">
                 <div
                   className="leading-relaxed whitespace-pre-line text-violet-100 border-0"

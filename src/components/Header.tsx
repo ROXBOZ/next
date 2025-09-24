@@ -4,7 +4,7 @@ interface HeaderProps {
 
 export default function Header({ onReset }: HeaderProps) {
   return (
-    <header>
+    <header className="mb-12 xl:mb-0 p-2">
       <button
         className="uppercase font-semibold text-orange-50"
         onClick={onReset}

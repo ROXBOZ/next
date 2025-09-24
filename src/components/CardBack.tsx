@@ -29,7 +29,7 @@ function CardBack({
         aspect-[2/3] w-[190px] border border-orange-950 bg-[#15102d]
         object-contain rounded-xl overflow-hidden flex items-center
         hover:translate-y-[-30px] hover:rotate-${isReversed ? "180" : "0"}
-        transition-all duration-300 cursor-pointer
+        transition-all duration-300 cursor-pointer flex-shrink-0
         ${position && position > 1 ? "-ml-[172px]" : ""}
       `}
       onClick={onClick}

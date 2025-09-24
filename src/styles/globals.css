@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 button {
-  @apply cursor-pointer px-4 py-1 flex items-center hover:delay-50 hover:duration-50 hover:ring-2 ring-inset justify-center h-fit transition-colors rounded-full;
+  @apply whitespace-nowrap cursor-pointer px-4 py-1 flex items-center hover:delay-50 hover:duration-50 hover:ring-2 ring-inset justify-center h-fit transition-colors rounded-full;
 }
 
 button.light {

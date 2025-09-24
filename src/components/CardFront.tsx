@@ -35,7 +35,7 @@ function CardFront({
       }}
       className={`
         aspect-[2/3] w-[190px] rounded-xl
-        ${isCardMajor ? "bg-stone-400" : "bg-zinc-400"}
+        ${isCardMajor ? "bg-gray-400" : "bg-gray-300"}
         flex gap-4 flex-col overflow-hidden justify-between
         transition-all duration-300 cursor-pointer
       `}
@@ -48,6 +48,9 @@ function CardFront({
         <div className="text-center w-full py-1 font-medium uppercase text-sm">
           {data.name}
         </div>
+      </div>
+      <div className="w-full h-full flex items-center justify-center text-gray-500">
+        illustration
       </div>
     </div>
   );
