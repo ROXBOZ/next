@@ -1,3 +1,4 @@
+import { ReadingMode } from "@/types/tarot";
 import { showWarningToast } from "@/utils/toast";
 
 interface GameControlsProps {
@@ -5,6 +6,7 @@ interface GameControlsProps {
   onShuffle: () => boolean;
   showInterpretationButton?: boolean;
   onOpenInterpretation?: () => void;
+  readingMode?: ReadingMode | null;
 }
 
 function GameControls({
@@ -12,6 +14,7 @@ function GameControls({
   onShuffle,
   showInterpretationButton = false,
   onOpenInterpretation,
+  readingMode,
 }: GameControlsProps) {
   const handleShuffleClick = () => {
     const success = onShuffle();
@@ -20,20 +23,30 @@ function GameControls({
     }
   };
 
+  const getCardsText = () => {
+    if (readingMode === "3-cards") return "choisissez 3 cartes";
+    if (readingMode === "5-cards") return "choisissez 5 cartes";
+    return "et choisissez vos cartes";
+  };
+
   return (
-    <div className="flex gap-4 items-baseline">
-      <button
-        onClick={handleShuffleClick}
-        className={`light ${canShuffle ? "" : "hidden!"}`}
-      >
-        Mélanger
-      </button>
-      {!showInterpretationButton && canShuffle && (
-        <div className="text-violet-50">et choisir ses cartes</div>
+    <div className="flex gap-4 items-center min-h-[40px] justify-center mb-4">
+      {readingMode && (
+        <>
+          <button
+            onClick={handleShuffleClick}
+            className={`light ${canShuffle ? "" : "hidden!"}`}
+          >
+            Mélangez
+          </button>
+          {!showInterpretationButton && canShuffle && (
+            <div className="text-violet-50">{getCardsText()}</div>
+          )}
+        </>
       )}
       {showInterpretationButton && onOpenInterpretation && (
         <button onClick={onOpenInterpretation} className="light">
-          Interpréter
+          Interprétez
         </button>
       )}
     </div>

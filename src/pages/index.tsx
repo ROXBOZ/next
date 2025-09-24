@@ -38,46 +38,31 @@ export default function Home() {
         <div className="h-full xl:h-screen overflow-y-auto xl:overflow-hidden xl:p-4">
           <Header onReset={resetGame} />
           <div className="flex-col items-center flex pb-4">
-            {/* Mode Selection */}
+            {/* Mode Selection with integrated GameControls */}
             <ModeSelector
               readingMode={readingMode}
               setReadingMode={startReading}
               selectedCards={selectedCards}
               question={question}
               setQuestion={setQuestion}
+              canShuffle={canShuffle}
+              onShuffle={shuffleDeck}
+              showInterpretationButton={showInterpretationButton}
+              onOpenInterpretation={openInterpretation}
             />
 
-            {/* Card Deck - Only show when game has started */}
-            {isGameStarted && (
-              <div className="flex flex-col items-center w-full">
-                {/* Question display above deck */}
-                {question && (
-                  <div className="text-center text-violet-100 max-w-2xl">
-                    Question : {question}
-                  </div>
-                )}
-
-                <CardDeck
-                  cardOrder={cardOrder}
-                  onCardClick={selectCard}
-                  cardReversals={cardReversals}
-                  cards={cards as TarotCard[]}
-                />
-              </div>
-            )}
-
-            {/* Game Controls - Only show when game has started */}
-            {isGameStarted && (
-              <GameControls
-                canShuffle={canShuffle}
-                onShuffle={shuffleDeck}
-                showInterpretationButton={showInterpretationButton}
-                onOpenInterpretation={openInterpretation}
+            {/* Card Deck - Always visible */}
+            <div className="flex flex-col items-center w-full">
+              <CardDeck
+                cardOrder={cardOrder}
+                onCardClick={selectCard}
+                cardReversals={cardReversals}
+                cards={cards as TarotCard[]}
               />
-            )}
+            </div>
 
             {/* Selected Cards Display */}
-            {isGameStarted && readingMode && (
+            {readingMode && (
               <SelectedCardsDisplay
                 selectedCards={selectedCards}
                 readingMode={readingMode}

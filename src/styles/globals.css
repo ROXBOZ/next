@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 button {
   @apply whitespace-nowrap cursor-pointer px-4 py-1 flex items-center hover:delay-50 hover:duration-50 hover:ring-2 ring-inset justify-center h-fit transition-colors rounded-full;
 }
