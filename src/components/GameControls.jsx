@@ -1,6 +1,6 @@
 import { showToast } from "@/utils/select";
 
-function GameControls({ canShuffle, onShuffle, onReset }) {
+function GameControls({ canShuffle, onShuffle }) {
   const handleShuffleClick = () => {
     const success = onShuffle();
     if (!success) {
@@ -15,9 +15,6 @@ function GameControls({ canShuffle, onShuffle, onReset }) {
         className={`light ${canShuffle ? "" : "disabled"}`}
       >
         Mélanger
-      </button>
-      <button className="light" onClick={onReset}>
-        Recommencer
       </button>
     </div>
   );

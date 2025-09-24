@@ -22,8 +22,8 @@ export default function Home() {
   } = useTarotGame();
 
   return (
-    <div className="pattern w-screen h-screen p-12 ">
-      <div className="flex-col items-center gap-12 h-screen hidden 2xl:flex">
+    <div className="pattern w-screen h-screen p-8 overflow-hidden">
+      <div className="flex-col items-center gap-8 h-screen hidden 2xl:flex">
         {/* Mode Selection */}
         <ModeSelector
           readingMode={readingMode}
@@ -53,11 +53,7 @@ export default function Home() {
 
         {/* Game Controls - Only show when game has started */}
         {isGameStarted && (
-          <GameControls
-            canShuffle={canShuffle}
-            onShuffle={shuffleDeck}
-            onReset={resetGame}
-          />
+          <GameControls canShuffle={canShuffle} onShuffle={shuffleDeck} />
         )}
 
         {/* Selected Cards Display */}
@@ -66,6 +62,13 @@ export default function Home() {
           readingMode={readingMode}
           cardReversals={cardReversals}
         />
+
+        {/* Recommencer button under selected cards */}
+        {isGameStarted && (
+          <button className="light absolute bottom-8" onClick={resetGame}>
+            Recommencer
+          </button>
+        )}
 
         {/* Tarot Interpretation */}
         <TarotInterpretation
