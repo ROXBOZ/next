@@ -23,7 +23,7 @@ function CardBack({
         zIndex: position || data.id,
         transform: `rotate(${rotation}deg)`,
       }}
-      className={`h-[310px] bg-[#15102d] object-contain w-[200px] rounded-xl overflow-hidden flex items-center hover:translate-y-[-20px] hover:rotate-0 transition-all duration-300 cursor-pointer ${
+      className={`h-[310px] bg-[#15102d] object-contain w-[200px] rounded-xl overflow-hidden flex items-center hover:translate-y-[-30px] hover:rotate-0 transition-all duration-300 cursor-pointer ${
         position && position > 1 && "-ml-[182px]"
       }`}
       onClick={onClick}
