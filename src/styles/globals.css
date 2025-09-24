@@ -5,15 +5,15 @@ button {
 }
 
 button.light {
-  @apply bg-orange-200  hover:ring-orange-300 active:bg-orange-300 text-orange-950;
+  @apply bg-orange-300  hover:ring-orange-400 active:bg-orange-400 text-orange-950;
 }
 
 button.dark {
-  @apply bg-violet-700  hover:ring-violet-800 active:bg-violet-800 text-violet-50;
+  @apply bg-orange-950  hover:ring-orange-900 active:bg-orange-900 text-orange-50;
 }
 
 button.light.disabled {
-  @apply cursor-not-allowed ring-0 bg-orange-700/50 text-orange-950/50;
+  @apply cursor-not-allowed ring-0 bg-orange-200/50 text-orange-950/50;
 }
 
 .pattern {

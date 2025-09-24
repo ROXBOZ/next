@@ -33,10 +33,10 @@ function CardBack({
         zIndex: position || data.id,
         transform: `rotate(${finalRotation}deg)`,
       }}
-      className={`h-[310px] border border-orange-950 bg-[#15102d] object-contain w-[200px] rounded-xl overflow-hidden flex items-center hover:translate-y-[-30px] hover:rotate-${
+      className={`aspect-[2/3] w-[190px] border border-orange-950 bg-[#15102d] object-contain rounded-xl overflow-hidden flex items-center hover:translate-y-[-30px] hover:rotate-${
         isReversed ? "180" : "0"
       } transition-all duration-300 cursor-pointer ${
-        position && position > 1 && "-ml-[182px]"
+        position && position > 1 && "-ml-[172px]"
       }`}
       onClick={onClick}
     >

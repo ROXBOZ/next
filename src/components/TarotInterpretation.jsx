@@ -12,6 +12,7 @@ function TarotInterpretation({
   cardReversals,
   readingMode,
   isComplete,
+  forceOpen,
 }) {
   const [interpretation, setInterpretation] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -26,11 +27,20 @@ function TarotInterpretation({
     if (isComplete && question && selectedCards.length > 0) {
       const timer = setTimeout(() => {
         setShowModal(true);
-      }, 4000); // 2 second delay
+      }, 3000);
 
       return () => clearTimeout(timer);
     }
   }, [isComplete, question, selectedCards.length]);
+
+  // Handle force open from external button
+  useEffect(() => {
+    if (forceOpen && isComplete && question && selectedCards.length > 0) {
+      setShowModal(true);
+      setShowChoice(true);
+      setUserDeclined(false);
+    }
+  }, [forceOpen, isComplete, question, selectedCards.length]);
 
   // Reset all states when game is reset (isComplete becomes false)
   useEffect(() => {
@@ -232,10 +242,7 @@ function TarotInterpretation({
                 >
                   Réessayer
                 </button>
-                <button
-                  onClick={resetChoice}
-                  className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 transition-colors"
-                >
+                <button onClick={resetChoice} className="light">
                   Retour au choix
                 </button>
               </div>
@@ -256,7 +263,7 @@ function TarotInterpretation({
                   }}
                 />
 
-                <button onClick={resetChoice} className="dark mx-8 mb-8">
+                <button onClick={resetChoice} className="light mx-8 mb-8">
                   Retour au choix
                 </button>
               </div>

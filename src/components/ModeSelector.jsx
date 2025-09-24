@@ -16,7 +16,7 @@ function ModeSelector({
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           placeholder="Quelle est votre question ?"
-          className=" p-4 w-1/2 border bg-orange-200 rounded-lg text-orange-950 placeholder-orange-950/50 resize-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+          className=" p-4 w-1/2 border bg-orange-300 rounded-lg text-orange-950 placeholder-orange-950/50 resize-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
           rows={3}
         />
       </div>

@@ -1,6 +1,11 @@
 import { showToast } from "@/utils/select";
 
-function GameControls({ canShuffle, onShuffle }) {
+function GameControls({
+  canShuffle,
+  onShuffle,
+  onOpenInterpretation,
+  showInterpretationButton,
+}) {
   const handleShuffleClick = () => {
     const success = onShuffle();
     if (!success) {
@@ -16,6 +21,11 @@ function GameControls({ canShuffle, onShuffle }) {
       >
         Mélanger
       </button>
+      {showInterpretationButton && (
+        <button onClick={onOpenInterpretation} className="light">
+          Interpréter
+        </button>
+      )}
     </div>
   );
 }
