@@ -34,7 +34,7 @@ function CardFront({
           : "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
       }}
       className={`aspect-[2/3] w-[200px] rounded-lg ${
-        isMajor ? "bg-amber-200" : "bg-amber-100"
+        isMajor ? "bg-amber-500" : "bg-orange-500"
       } flex gap-4 flex-col px-4 pb-3 pt-2 justify-between transition-all duration-300 cursor-pointer`}
       onClick={onClick}
     >
@@ -55,7 +55,11 @@ function CardFront({
         </div>
       </div>
 
-      <div className={`text-xs text-balance ${isReversed ? "rotate-180" : ""}`}>
+      <div
+        className={`text-xs text-balance  w-full ${
+          isReversed ? "rotate-180" : ""
+        }`}
+      >
         {displayDescription}
       </div>
     </div>

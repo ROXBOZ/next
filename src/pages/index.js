@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="p-12 flex-col items-center gap-12 h-screen bg-stone-200 hidden 2xl:flex">
+      <div className="p-12 flex-col items-center gap-12 bg-orange-800 h-screen hidden 2xl:flex">
         {/* Mode Selection */}
         <ModeSelector
           readingMode={readingMode}

@@ -52,7 +52,9 @@ function SelectedCardsDisplay({ selectedCards, readingMode, cardReversals }) {
 
         return (
           <div key={index} className="flex flex-col items-center gap-2">
-            <p className={hasCard ? "" : "opacity-50"}>{title}</p>
+            <p className={hasCard ? "text-orange-50" : "text-orange-50/50"}>
+              {title}
+            </p>
             {hasCard && (
               <CardFront
                 data={cardData}
