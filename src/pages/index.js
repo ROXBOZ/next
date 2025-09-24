@@ -2,6 +2,7 @@ import CardDeck from "@/components/CardDeck";
 import GameControls from "@/components/GameControls";
 import ModeSelector from "@/components/ModeSelector";
 import SelectedCardsDisplay from "@/components/SelectedCardsDisplay";
+import TarotInterpretation from "@/components/TarotInterpretation";
 import { useTarotGame } from "@/hooks/useTarotGame";
 
 export default function Home() {
@@ -12,6 +13,8 @@ export default function Home() {
     cardReversals,
     isGameStarted,
     canShuffle,
+    question,
+    setQuestion,
     selectCard,
     shuffleDeck,
     resetGame,
@@ -19,13 +22,15 @@ export default function Home() {
   } = useTarotGame();
 
   return (
-    <div>
-      <div className="p-12 flex-col items-center gap-12 bg-orange-800 h-screen hidden 2xl:flex">
+    <div className="pattern w-screen h-screen p-12 ">
+      <div className="flex-col items-center gap-12 h-screen hidden 2xl:flex">
         {/* Mode Selection */}
         <ModeSelector
           readingMode={readingMode}
           setReadingMode={startReading}
           selectedCards={selectedCards}
+          question={question}
+          setQuestion={setQuestion}
         />
 
         {/* Card Deck - Only show when game has started */}
@@ -51,6 +56,17 @@ export default function Home() {
           selectedCards={selectedCards}
           readingMode={readingMode}
           cardReversals={cardReversals}
+        />
+
+        {/* Tarot Interpretation */}
+        <TarotInterpretation
+          question={question}
+          selectedCards={selectedCards}
+          cardReversals={cardReversals}
+          readingMode={readingMode}
+          isComplete={
+            selectedCards.length === (readingMode === "3-card" ? 3 : 5)
+          }
         />
       </div>
     </div>

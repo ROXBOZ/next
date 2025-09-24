@@ -9,6 +9,7 @@ export function useTarotGame() {
   const [selectedCards, setSelectedCards] = useState([]);
   const [readingMode, setReadingMode] = useState(null); // null, "3-cards", "5-cards"
   const [cardReversals, setCardReversals] = useState({}); // Track which cards are reversed
+  const [question, setQuestion] = useState(""); // User's question for AI interpretation
 
   // Initialize reversals on first load
   useState(() => {
@@ -50,6 +51,7 @@ export function useTarotGame() {
       (newOrder, setOrder) => shuffleCards(newOrder, setOrder, setCardReversals)
     );
     setReadingMode(null);
+    setQuestion("");
   }, [selectedCards, cardOrder]);
 
   const startReading = useCallback((mode) => {
@@ -62,6 +64,7 @@ export function useTarotGame() {
     selectedCards,
     readingMode,
     cardReversals,
+    question,
 
     // Computed values
     isGameStarted: readingMode !== null,
@@ -73,5 +76,6 @@ export function useTarotGame() {
     shuffleDeck,
     resetGame,
     startReading,
+    setQuestion,
   };
 }
