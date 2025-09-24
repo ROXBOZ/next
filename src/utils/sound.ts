@@ -28,3 +28,10 @@ export const playCardSelectionSound = (): void => {
 export const playShuffleSound = (): void => {
   playSound("/shuffle-sound.mp3", 0.4);
 };
+
+/**
+ * Play the typing sound
+ */
+export const playTypingSound = (): void => {
+  playSound("/typing-sound.mp3", 0.2);
+};

@@ -21,6 +21,7 @@ function CardFront({
       style={{
         zIndex: position || data.id,
         transform: `rotate(${finalRotation}deg)`,
+        boxShadow: "0 4px 6px rgba(0, 0, 0, 5)",
       }}
       className={`
         aspect-[2/3] w-[190px] rounded-xl bg-orange-900

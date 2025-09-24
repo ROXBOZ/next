@@ -1,5 +1,6 @@
 import { ChangeEvent } from "react";
 import { ReadingMode } from "@/types/tarot";
+import { playTypingSound } from "@/utils/sound";
 
 interface ModeSelectorProps {
   readingMode: ReadingMode | null;
@@ -25,6 +26,7 @@ function ModeSelector({
 }: ModeSelectorProps) {
   const handleQuestionChange = (e: ChangeEvent<HTMLInputElement>) => {
     setQuestion(e.target.value);
+    playTypingSound();
   };
 
   const isQuestionValid = question.trim().length > 0;
@@ -45,13 +47,12 @@ function ModeSelector({
 
   if (readingMode) {
     return (
-      <div className="w-full flex flex-col items-center pt-4 ">
+      <div className="w-full flex flex-col items-center pt-4 h-[100px] ">
         <div className=" flex flex-col items-center gap-3 w-1/2 p-2">
           <p className="text-violet-100  opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards]">
             <span className="italic">{question}</span>
           </p>
 
-          {/* Mélangez button under the question in green div */}
           <div className="flex gap-2 items-center -ml-4! opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.4s_forwards]">
             {canShuffle && (
               <button onClick={handleShuffleClick} className="light">
@@ -72,11 +73,9 @@ function ModeSelector({
     );
   }
 
-  // Step 1 & 2: Question input and conditional mode selection
   return (
-    <div className="w-full pt-4">
+    <div className="w-full pt-4 h-[100px]">
       <div className="flex flex-col gap-2 h-full w-1/2 mx-auto items-center">
-        {/* Step 1: Always show question input */}
         <div className="flex items-center gap-2 opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards]">
           <span className="text-violet-200  font-medium">
             Demandez à l’oracle
@@ -90,7 +89,6 @@ function ModeSelector({
           />
         </div>
 
-        {/* Step 2: Show mode selection only when user starts typing */}
         <div className="flex items-center gap-2 h-[32px]">
           {isQuestionValid && (
             <>
