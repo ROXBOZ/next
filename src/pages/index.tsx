@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="pattern w-screen h-screen fixed inset-0 xl:relative ">
+      <div className="pattern pb-12 w-screen h-screen fixed inset-0 xl:relative ">
         <div className="h-full xl:h-screen overflow-y-auto xl:overflow-hidden xl:p-4">
           <Header onReset={resetGame} />
           <div className="flex-col items-center flex pb-4">

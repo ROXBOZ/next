@@ -70,13 +70,13 @@ function ModeSelector({
 
   if (readingMode) {
     return (
-      <div className="w-full flex flex-col items-center pt-4 h-[100px] ">
+      <div className="w-full flex flex-col items-center pt-4 h-[200px] xl:h-[100px] ">
         <div className=" flex flex-col items-center gap-3 w-1/2 p-2">
           <p className="text-violet-100  opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards]">
             <span className="italic">{question}</span>
           </p>
 
-          <div className="flex gap-2 items-center -ml-4! opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.4s_forwards]">
+          <div className="flex flex-col xl:flex-row gap-2 items-center -ml-4! opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.4s_forwards]">
             {canShuffle && (
               <button onClick={handleShuffleClick} className="light">
                 Mélangez
@@ -97,9 +97,9 @@ function ModeSelector({
   }
 
   return (
-    <div className="w-full pt-4 h-[100px]">
-      <div className="flex flex-col gap-2 h-full w-1/2 mx-auto items-center">
-        <div className="flex items-center gap-2 opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards]">
+    <div className="w-full pt-4 h-[200px] xl:h-[100px]">
+      <div className="flex flex-col gap-2 h-full w-full xl:w-1/2 mx-auto items-center">
+        <div className="flex flex-col xl:flex-row w-full px-4 items-center gap-2 opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards]">
           <span className="text-violet-200  font-medium">
             Demandez à l’oracle
           </span>
@@ -109,28 +109,29 @@ function ModeSelector({
             value={question}
             onChange={handleQuestionChange}
             placeholder="Quelle est votre question ?"
-            className="px-3 min-w-96 py-2 bg-[#0d001a] border border-violet-500/20 rounded text-violet-100 placeholder-violet-500/40 focus:border-violet-400/50 focus:outline-none text-sm"
+            className="px-3 w-full xl:w-96 py-2 bg-[#0d001a] border border-violet-500/20 rounded text-violet-100 placeholder-violet-500/40 focus:border-violet-400/50 focus:outline-none text-sm"
           />
         </div>
 
-        <div className="flex items-center gap-2 h-[32px]">
+        <div className="flex flex-col xl:flex-row items-center gap-2 h-[32px]">
           {isQuestionValid && (
             <>
               <span className="text-violet-200  font-medium opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.4s_forwards]">
-                Choisissez entre
+                Choisissez entre un tirage
               </span>
               <div className="flex gap-2 opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.6s_forwards]">
                 <button
                   className="light text-sm px-3 py-1"
                   onClick={handle3CardsClick}
                 >
-                  3 Cartes
-                </button>
+                  simple
+                </button>{" "}
+                <span className="text-violet-200">ou</span>{" "}
                 <button
                   className="light text-sm px-3 py-1"
                   onClick={handle5CardsClick}
                 >
-                  5 Cartes
+                  détaillé
                 </button>
               </div>
             </>
