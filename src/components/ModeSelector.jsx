@@ -29,12 +29,14 @@ function ModeSelector({
       </h3>
       <div className="flex gap-4 justify-center">
         <button
+          className="light"
           onClick={() => setReadingMode("3-cards")}
           disabled={!question.trim()}
         >
           3 Cartes
         </button>
         <button
+          className="light"
           onClick={() => setReadingMode("5-cards")}
           disabled={!question.trim()}
         >

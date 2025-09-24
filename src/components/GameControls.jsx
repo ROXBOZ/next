@@ -12,11 +12,13 @@ function GameControls({ canShuffle, onShuffle, onReset }) {
     <div className="flex gap-4">
       <button
         onClick={handleShuffleClick}
-        className={canShuffle ? "" : "disabled"}
+        className={`light ${canShuffle ? "" : "disabled"}`}
       >
         Mélanger
       </button>
-      <button onClick={onReset}>Recommencer</button>
+      <button className="light" onClick={onReset}>
+        Recommencer
+      </button>
     </div>
   );
 }

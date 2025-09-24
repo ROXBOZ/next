@@ -1,10 +1,18 @@
 @import "tailwindcss";
 
 button {
-  @apply cursor-pointer px-3 py-1 bg-orange-200 flex items-center hover:delay-50 hover:duration-50 hover:ring-2 ring-inset justify-center h-fit hover:ring-orange-300 active:bg-orange-300 text-orange-950 transition-colors rounded;
+  @apply cursor-pointer px-3 py-1 flex items-center hover:delay-50 hover:duration-50 hover:ring-2 ring-inset justify-center h-fit transition-colors rounded;
 }
 
-button.disabled {
+button.light {
+  @apply bg-orange-200  hover:ring-orange-300 active:bg-orange-300 text-orange-950;
+}
+
+button.dark {
+  @apply bg-violet-700  hover:ring-violet-800 active:bg-violet-800 text-violet-50;
+}
+
+button.light.disabled {
   @apply cursor-not-allowed ring-0 bg-orange-700/50 text-orange-950/50;
 }
 

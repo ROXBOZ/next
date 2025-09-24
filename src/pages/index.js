@@ -35,11 +35,20 @@ export default function Home() {
 
         {/* Card Deck - Only show when game has started */}
         {isGameStarted && (
-          <CardDeck
-            cardOrder={cardOrder}
-            onCardClick={selectCard}
-            cardReversals={cardReversals}
-          />
+          <div className="flex flex-col items-center gap-6">
+            {/* Question display above deck */}
+            {question && (
+              <div className="text-center text-xl text-violet-50">
+                {question}
+              </div>
+            )}
+
+            <CardDeck
+              cardOrder={cardOrder}
+              onCardClick={selectCard}
+              cardReversals={cardReversals}
+            />
+          </div>
         )}
 
         {/* Game Controls - Only show when game has started */}

@@ -160,3 +160,8 @@ async function callOpenAI(systemPrompt, userPrompt) {
 
   return data.interpretation;
 }
+
+// Export position meanings for card explanations
+export function getPositionMeanings(readingMode) {
+  return POSITION_MEANINGS[readingMode] || [];
+}
