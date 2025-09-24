@@ -25,8 +25,8 @@ function SelectedCardsDisplay({
   const maxCards = readingConfig.length;
 
   return (
-    <div className="w-full flex justify-center max-w-full">
-      <div className="flex px-4 gap-4 overflow-x-auto justify-center min-w-0 pb-4 scrollbar-thin scrollbar-thumb-orange-200/20 scrollbar-track-transparent">
+    <div className="w-full flex justify-center max-w-full bg-green-500">
+      <div className="flex px-80 gap-4 overflow-x-auto justify-center pb-4 scrollbar-thin scrollbar-thumb-orange-200/20 scrollbar-track-transparent">
         {Array.from({ length: maxCards }).map((_, index) => {
           const cardId = selectedCards[index];
           const position = readingConfig[index];
@@ -41,7 +41,7 @@ function SelectedCardsDisplay({
             return (
               <div
                 key={`filled-${index}`}
-                className="flex flex-col items-center gap-2 flex-shrink-0"
+                className="flex flex-col items-center gap-2 flex-shrink-0 "
               >
                 <div className="text-sm text-orange-200 font-medium">
                   {position?.title || `Position ${index + 1}`}

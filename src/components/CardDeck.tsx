@@ -64,9 +64,9 @@ function CardDeck({
     <div className="w-full relative">
       {/* Mobile scroll indicator */}
       {showScrollIndicator && (
-        <div className="md:hidden absolute top-2 left-4 z-50 text-sm flex items-center gap-2 text-violet-100">
+        <div className="md:hidden absolute top-2 left-4 z-50 text-sm flex items-center gap-2 text-violet-300">
           <span>←</span>
-          <span>Faites glisser</span>
+          <span>Scrollez</span>
         </div>
       )}
 

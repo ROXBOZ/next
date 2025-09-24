@@ -6,12 +6,15 @@ import {
   SelectedCardsDisplay,
   TarotInterpretation,
 } from "@/components";
+import { useEffect, useRef } from "react";
 
 import { TarotCard } from "@/types/tarot";
 import { tarot_cards as cards } from "@/data.json";
 import { useTarotGame } from "@/hooks/useTarotGame";
 
 export default function Home() {
+  const modeSelectorRef = useRef<HTMLDivElement>(null);
+
   const {
     cardOrder,
     selectedCards,
@@ -32,6 +35,20 @@ export default function Home() {
     onModalClose,
   } = useTarotGame(cards as TarotCard[]);
 
+  // Scroll to mode selector (with Mélanger button) on mobile when reading mode is selected
+  useEffect(() => {
+    if (readingMode && modeSelectorRef.current) {
+      const isMobile = window.innerWidth < 768;
+
+      if (isMobile) {
+        modeSelectorRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+  }, [readingMode]);
+
   return (
     <div>
       <div className="pattern w-screen xl:h-screen fixed inset-0 xl:relative ">
@@ -39,8 +56,9 @@ export default function Home() {
           <Header onReset={resetGame} />
           <div className="flex-col items-center flex pb-4">
             {/* Mode Selection with integrated GameControls */}
-            <ModeSelector
-              readingMode={readingMode}
+            <div ref={modeSelectorRef}>
+              <ModeSelector
+                readingMode={readingMode}
               setReadingMode={startReading}
               selectedCards={selectedCards}
               question={question}
@@ -50,7 +68,8 @@ export default function Home() {
               showInterpretationButton={showInterpretationButton}
               onOpenInterpretation={openInterpretation}
               onReset={resetGame}
-            />
+              />
+            </div>
 
             {/* Card Deck - Always visible */}
             <div className="flex flex-col items-center w-full">

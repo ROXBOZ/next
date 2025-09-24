@@ -36,8 +36,8 @@ export const showToast = (config: ToastConfig | string): void => {
 
   const baseClasses = [
     "fixed",
-    "top-5",
-    "right-5",
+    "top-2",
+    "right-2",
     "text-sm",
     "xl:text-base",
     "px-3",
