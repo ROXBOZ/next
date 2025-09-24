@@ -1,7 +1,21 @@
-import CardBack from "./CardBack";
-import { tarot_cards as cards } from "../data.json";
+import { CardReversals, TarotCard } from "@/types/tarot";
 
-function CardDeck({ cardOrder, onCardClick, cardReversals }) {
+import CardBack from "./CardBack";
+import { findCardById } from "@/utils/cardHelpers";
+
+interface CardDeckProps {
+  cardOrder: number[];
+  onCardClick: (cardId: number) => void;
+  cardReversals: CardReversals;
+  cards: TarotCard[];
+}
+
+function CardDeck({
+  cardOrder,
+  onCardClick,
+  cardReversals,
+  cards,
+}: CardDeckProps) {
   if (!cardOrder || cardOrder.length === 0) {
     return null;
   }
@@ -9,9 +23,12 @@ function CardDeck({ cardOrder, onCardClick, cardReversals }) {
   return (
     <div className="flex z-40">
       {cardOrder.map((cardId, index) => {
-        const cardData = cards.find((card) => card.id === cardId);
+        const cardData = findCardById(cards, cardId);
+        if (!cardData) return null;
+
         const isLastCard = index === cardOrder.length - 1;
         const isReversed = cardReversals[cardId] || false;
+
         return (
           <CardBack
             key={cardId}

@@ -1,27 +1,30 @@
-import { handleCardSelect, resetSelection } from "@/utils/select";
+import {
+  generateCardReversals,
+  initializeCardOrder,
+  shuffleCards,
+} from "@/utils/shuffle";
+import {
+  handleCardSelect,
+  isReadingComplete,
+  resetSelection,
+} from "@/utils/cardSelection";
 import { useCallback, useState } from "react";
 
 import { tarot_cards as cards } from "../data.json";
-import { shuffleCards } from "@/utils/suffle";
 
 export function useTarotGame() {
-  const [cardOrder, setCardOrder] = useState(cards.map((card) => card.id));
+  const [cardOrder, setCardOrder] = useState(() => initializeCardOrder(cards));
   const [selectedCards, setSelectedCards] = useState([]);
   const [readingMode, setReadingMode] = useState(null); // null, "3-cards", "5-cards"
-  const [cardReversals, setCardReversals] = useState({}); // Track which cards are reversed
+  const [cardReversals, setCardReversals] = useState(() =>
+    generateCardReversals(cards.map((card) => card.id))
+  );
   const [question, setQuestion] = useState(""); // User's question for AI interpretation
-
-  // Initialize reversals on first load
-  useState(() => {
-    const initialReversals = {};
-    cards.forEach((card) => {
-      initialReversals[card.id] = Math.random() < 0.5;
-    });
-    setCardReversals(initialReversals);
-  });
 
   const selectCard = useCallback(
     (cardId) => {
+      if (!readingMode) return;
+
       handleCardSelect(
         cardId,
         selectedCards,
@@ -70,6 +73,9 @@ export function useTarotGame() {
     isGameStarted: readingMode !== null,
     hasSelectedCards: selectedCards.length > 0,
     canShuffle: selectedCards.length === 0,
+    isComplete: readingMode
+      ? isReadingComplete(selectedCards, readingMode)
+      : false,
 
     // Actions
     selectCard,

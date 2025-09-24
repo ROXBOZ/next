@@ -5,25 +5,25 @@
       "name": "Le Mat",
       "arcana": "majeur",
       "number": "0",
-      "description": "Innocence, nouveau départ, spontanéité et libre arbitre.",
+      "description": "L'ultime début, ivre de possibilités pures. C'est l'énergie qui te pousse à tout quitter pour un WG à Neukölln avec des inconnus, persuadé que cette fois-ci, ce sera différent. Le Mat, c'est la folle douce qui danse au bord de l'abîme, son sac à dos rempli de naïveté et d'une foi absolue en son propre cul. Elle représente l'acte de se jeter dans le vide, sachant pertinemment que le filet de sécurité est une invention des lâches. Un pied de nez au bon sens et à la retraite par capitalisation.",
       "keywords": ["innocence", "voyage", "risque", "liberté", "spontanéité"],
-      "reversed": "Imprudence, naïveté, mauvais choix"
+      "reversed": "Se perdre dans les couloirs du Berghain à l'ouverture. Confondre liberté et incapacité à s'engager."
     },
     {
       "id": 1,
-      "name": "Le Bateleur",
+      "name": "La Bateleuse",
       "arcana": "majeur",
       "number": "I",
-      "description": "Volonté, pouvoir de manifestation et création de sa réalité.",
+      "description": "L'artiste du système D. Elle ne manifeste pas sa réalité avec des cristaux, mais avec du tape gaffer et une obstination de merde. Sur sa table : un laptop sur lequel elle pirate des logiciels, les cendres de ses dernières relations, et la volonté pure de créer quelque chose qui lui survivra. C'est la capacité à bâtir son propre monde à partir de rien, ou de ce qui a été jeté. Elle rappelle que le vrai pouvoir magique, c'est de se démerder.",
       "keywords": ["volonté", "création", "habileté", "concentration", "début"],
-      "reversed": "Manipulation, tromperie, manque de volonté"
+      "reversed": "Acheter du matos de créatif sur Amazon pour une idée qui ne verra jamais le jour. Parler de son projet pendant des heures à Späti sans jamais ouvrir un fichier."
     },
     {
       "id": 2,
       "name": "La Papesse",
       "arcana": "majeur",
       "number": "II",
-      "description": "Intuition, mystères et connaissance intérieure. Gardienne des secrets.",
+      "description": "Gardienne des mystères qui ne s'expliquent pas, mais se ressentent dans la moelle. Elle, elle sait. Elle sait que ton nouveau crush est un poète raté qui vit chez sa mère. Son intuition est une fréquence basse, un savoir viscéral qui murmure à travers le bruit blanc de la ville. Elle incarne la sagesse qui vient non pas des livres, mais d'avoir trop vu, trop vécu. C'est la patience froide de celle qui connaît le prix de la révélation et n'a plus rien à prouver.",
       "keywords": [
         "intuition",
         "mystère",
@@ -31,14 +31,14 @@
         "subconscient",
         "patience"
       ],
-      "reversed": "Secrets cachés, confusion, manque d'intuition"
+      "reversed": "Faire confiance à un profil Instagram trop curateur. Ignorer les frissons dans sa nuque lors d'un rencard parce qu'il a un bon discours de gauche."
     },
     {
       "id": 3,
       "name": "L'Impératrice",
       "arcana": "majeur",
       "number": "III",
-      "description": "Fertilité, abondance, créativité et nature maternelle.",
+      "description": "Déesse de la fertilité qui n'a besoin d'aucune permission pour créer. Son royaume est un jardin sauvage où poussent des idées, des enfants et des révolutions. Elle représente l'abondance radicale : celle qui vient du corps, de la terre, de la communauté, pas du capital. C'est la certitude que ta valeur n'est pas dans ta productivité, mais dans ton simple être. Une riposte vivante et sensuelle à l'austérité.",
       "keywords": [
         "fertilité",
         "abondance",
@@ -46,23 +46,23 @@
         "nature",
         "maternité"
       ],
-      "reversed": "Dépendance, stagnation, blocage créatif"
+      "reversed": "Se perdre dans le rôle de 'maman thérapeute' pour toustes. Confondre self-care et consommation compulsive."
     },
     {
       "id": 4,
       "name": "L'Empereur",
       "arcana": "majeur",
       "number": "IV",
-      "description": "Autorité, structure, pouvoir et stabilité. Père protecteur.",
+      "description": "Le patriarche sur son trône de certitudes branlantes. Il croit contrôler le monde avec ses règles et ses structures, mais ne maîtrise même pas ses propres démons. Cette carte est un rappel : toute autorité qui doit s'imposer est déjà illégitime. Questionne les systèmes, surtout ceux que tu as internalisés. La vraie puissance n'a pas besoin de trône.",
       "keywords": ["autorité", "structure", "pouvoir", "stabilité", "ordre"],
-      "reversed": "Tyrannie, rigidité, abus de pouvoir"
+      "reversed": "Devenir le tyran de sa propre colocation. Micromanager son collectif artistique jusqu'à l'implosion."
     },
     {
       "id": 5,
       "name": "Le Pape",
       "arcana": "majeur",
       "number": "V",
-      "description": "Tradition, spiritualité organisée et recherche de sens.",
+      "description": "Grand prêtre de la tradition et du 'on a toujours fait comme ça'. Il offre des certitudes bien emballées et une communauté prête à l'emploi. Mais méfie-toi des chemins trop tracés : la spiritualité authentique ne porte pas d'uniforme institutionnel. Parfois, la plus grande révélation consiste à brûler les dogmes pour se chauffer à la flamme.",
       "keywords": [
         "tradition",
         "spiritualité",
@@ -70,23 +70,23 @@
         "enseignement",
         "conformité"
       ],
-      "reversed": "Dogmatisme, rigidité, rébellion"
+      "reversed": "Rejoindre une secte wellness. Croire que ton thérapeute a toutes les réponses."
     },
     {
       "id": 6,
-      "name": "L'Amoureux",
+      "name": "Les Amoureux·ses",
       "arcana": "majeur",
       "number": "VI",
-      "description": "Choix, relations et harmonie entre opposés.",
+      "description": "Ce n'est pas une carte de romance, mais de choix cornélien sous le regard d'un ange queer. Qui choisis-tu d'aimer, et à quel prix ? Mais la question la plus radicale est : te choisis-tu toi-même avant de choisir un·e autre ? L'harmonie véritable commence par l'intégrité, pas par le compromis. C'est le contrat que tu passes avec ton propre cœur.",
       "keywords": ["choix", "amour", "harmonie", "relations", "dualité"],
-      "reversed": "Conflit, mauvais choix, déséquilibre"
+      "reversed": "Se mettre en couple pour éviter d'être seul·e avec ses problèmes. Faire un coming out polyamoureux par SMS."
     },
     {
       "id": 7,
       "name": "Le Chariot",
       "arcana": "majeur",
       "number": "VII",
-      "description": "Volonté triomphante, contrôle et direction de sa vie.",
+      "description": "Conductrice qui maîtrise l'art de tenir ensemble des énergies opposées. Ses rênes relient l'ombre et la lumière, le féminin et le masculin, la rage et la douceur. Elle avance sans demander la route, créant son propre chemin à travers le chaos. Le contrôle n'est pas domination, c'est la direction ferme que tu donnes à ta vie quand tout tire dans tous les sens.",
       "keywords": [
         "volonté",
         "contrôle",
@@ -94,23 +94,23 @@
         "direction",
         "détermination"
       ],
-      "reversed": "Manque de contrôle, opposition, échec"
+      "reversed": "Essayer de tout contrôler et finir en burn-out. Acheter un vélo cargo pour impressionner la bourgeoisie bobo."
     },
     {
       "id": 8,
       "name": "La Justice",
       "arcana": "majeur",
       "number": "VIII",
-      "description": "Équilibre, justice et conséquences des actions.",
+      "description": "Magistrate implacable qui pèse les actions avec équité, pas avec la loi patriarcale. Sa balance est sensible aux privilèges et aux oppressions. La vraie justice est intersectionnelle et souvent inconfortable. Cette carte demande : assumes-tu les conséquences de tes actes, y compris ceux commis par ignorance ? La responsabilité est le prix de la liberté.",
       "keywords": ["justice", "équilibre", "vérité", "conséquences", "karma"],
-      "reversed": "Injustice, déséquilibre, partialité"
+      "reversed": "Faire call-out sur Twitter pour un like. Attendre que le système judiciaire punisse les oppresseurs."
     },
     {
       "id": 9,
       "name": "L'Hermite",
       "arcana": "majeur",
       "number": "IX",
-      "description": "Sagesse intérieure, introspection et recherche de vérité.",
+      "description": "Vieille sage qui sait que les réponses ne sont pas dans le scroll infini, mais dans le silence que tu crains. Sa lanterne n'éclaire que le chemin intérieur, celui qui mène à la vérité que tu portes déjà. Dans une économie de l'attention, la solitude volontaire est un acte de résistance. Parfois, il faut s'éloigner du bruit du monde pour entendre sa propre musique.",
       "keywords": [
         "sagesse",
         "introspection",
@@ -118,32 +118,32 @@
         "guidance",
         "prudence"
       ],
-      "reversed": "Solitude excessive, isolement, confusion"
+      "reversed": "S'isoler par peur d'être vu·e. Confondre développement personnel et dérive sectaire."
     },
     {
       "id": 10,
       "name": "La Roue de Fortune",
       "arcana": "majeur",
       "number": "X",
-      "description": "Cycles de la vie, destin et changements inévitables.",
+      "description": "La grande roue cosmique qui se contrefiche de tes plans sur cinq ans. Elle tourne pour toutes, reines et punks à chiens. Accepter les cycles, c'est comprendre que parfois tu es au sommet, parfois dans la merde, et que les deux sont temporaires. La seule constante est le changement. Apprends à danser avec le chaos au lieu de lui résister.",
       "keywords": ["destin", "cycles", "changement", "opportunité", "chance"],
-      "reversed": "Mauvais sort, résistance au changement, instabilité"
+      "reversed": "Blâmer l'univers pour une série de mauvais choix. Attendre que la roue tourne sans rien faire."
     },
     {
       "id": 11,
       "name": "La Force",
       "arcana": "majeur",
       "number": "XI",
-      "description": "Courage, force intérieure et maîtrise des instincts.",
+      "description": "Dompteuse qui maîtrise la bête non par la violence, mais par une compassion féroce. Sa force est douce, son courage tranquille. Elle représente la puissance de la vulnérabilité assumée, de l'intelligence émotionnelle face aux instincts primaires. La vraie force, c'est d'apprivoiser ses démons sans les nier, pour qu'ils deviennent des alliés.",
       "keywords": ["courage", "force", "maîtrise", "patience", "compréhension"],
-      "reversed": "Faiblesse, peur, manque de contrôle"
+      "reversed": "Étouffer sa colère jusqu'à l'explosion. Confondre gentillesse avec de la faiblesse."
     },
     {
       "id": 12,
-      "name": "Le Pendu",
+      "name": "La Pendue",
       "arcana": "majeur",
       "number": "XII",
-      "description": "Lâcher-prise, sacrifice et nouvelle perspective.",
+      "description": "Rebelle suspendue qui a choisi de lâcher prise. Son sacrifice n'est pas un martyre, mais un acte de transformation radical. En acceptant de se mettre à l'envers, elle voit le monde sous un angle nouveau. Parfois, résister empêche l'évolution. La sagesse vient quand on accepte de ne pas contrôler, quand on fait le deuil de ce qui aurait dû être.",
       "keywords": [
         "sacrifice",
         "perspective",
@@ -151,14 +151,14 @@
         "attente",
         "renaissance"
       ],
-      "reversed": "Stagnation, résistance, martyre"
+      "reversed": "Rester dans une situation toxique par peur du vide. Se victimiser au lieu d'agir."
     },
     {
       "id": 13,
       "name": "L'Arcane sans nom",
       "arcana": "majeur",
       "number": "XIII",
-      "description": "Transformation, fin d'un cycle et renouveau.",
+      "description": "La grande faucheuse qui nettoie le terrain pour que le nouveau puisse pousser. Elle ne tue pas, elle transforme. La fin est toujours un commencement déguisé. Lâche ce qui doit mourir : les relations toxiques, les identités dépassées, les illusions comfortables. Fais de la place à ta renaissance, même si elle fait peur. Rien ne se crée sans que quelque chose ne soit détruit.",
       "keywords": [
         "transformation",
         "fin",
@@ -166,14 +166,14 @@
         "changement",
         "transition"
       ],
-      "reversed": "Résistance au changement, stagnation, peur"
+      "reversed": "S'accrocher à un emploi, une relation ou une identité qui t'étouffe. Refuser de voir que c'est déjà fini."
     },
     {
       "id": 14,
       "name": "Tempérance",
       "arcana": "majeur",
       "number": "XIV",
-      "description": "Équilibre, modération et harmonie des opposés.",
+      "description": "L'alchimiste qui mélange les contraires sans les annuler. Elle trouve l'équilibre dans le mouvement, pas dans la rigidité. Féminin et masculin, ombre et lumière, rage et compassion : elle danse avec les paradoxes. La modération est radicale dans un monde d'excès. C'est l'art de trouver la juste mesure entre prendre soin des autres et prendre soin de soi.",
       "keywords": [
         "équilibre",
         "modération",
@@ -181,14 +181,14 @@
         "patience",
         "guérison"
       ],
-      "reversed": "Excès, déséquilibre, impatience"
+      "reversed": "Passer de la diète stricte à la crise de boulimie. Brûler son compte militant pour partir en retraite silencieuse."
     },
     {
       "id": 15,
       "name": "Le Diable",
       "arcana": "majeur",
       "number": "XV",
-      "description": "Attachements, limitations et ombre intérieure.",
+      "description": "Maîtresse des chaînes que nous choisissons. Attachements, addictions, patterns toxiques : elle montre nos prisons dorées avec un sourire cynique. Mais souviens-toi : les chaînes ont un cadenas, et la clé est dans ta poche. Cette carte ne parle pas de mal, mais de l'ombre que tu refuses de voir en toi. L'intégration de ton côté obscur est la seule vraie libération.",
       "keywords": [
         "attachement",
         "limitation",
@@ -196,14 +196,14 @@
         "obsession",
         "ombre"
       ],
-      "reversed": "Libération, prise de conscience, détachement"
+      "reversed": "Croire que acheter éthique va sauver le monde. Se libérer d'une addiction pour en prendre une autre."
     },
     {
       "id": 16,
       "name": "La Maison Dieu",
       "arcana": "majeur",
       "number": "XVI",
-      "description": "Révélation brutale, destruction nécessaire et éclairs de vérité.",
+      "description": "L'éclair de vérité qui fait s'effondrer les structures pourries. La tour patriarcale, les certitudes trop comfortables, les illusions qui te maintenaient en sécurité. Brutal mais nécessaire. Parfois, il faut tout casser pour reconstruire juste. Ne pleure pas les décombres, célèbre la liberté retrouvée. La vérité peut être douloureuse, mais le mensonge est mortifère.",
       "keywords": [
         "choc",
         "révélation",
@@ -211,23 +211,23 @@
         "changement brutal",
         "vérité"
       ],
-      "reversed": "Éviter le changement, peur, résistance"
+      "reversed": "Ignorer les signes avant-coureurs d'une crise. Se reconstruire trop vite sur les mêmes fondations pourries."
     },
     {
       "id": 17,
       "name": "L'Étoile",
       "arcana": "majeur",
       "number": "XVII",
-      "description": "Espoir, inspiration et connexion avec l'univers.",
+      "description": "Après l'effondrement, la reconstruction. Nue et vulnérable, elle puise l'espoir directement dans le cosmos. Son eau régénère la terre brûlée. C'est la petite flamme qui persiste quand plus rien ne va. Connecte-toi à ta vérité la plus essentielle, sans armure ni masque. L'univers ne te doit rien, mais il t'offre des signes si tu sais les voir.",
       "keywords": ["espoir", "inspiration", "guérison", "sérénité", "guidance"],
-      "reversed": "Désespoir, manque de foi, pessimisme"
+      "reversed": "Attendre un messie ou une solution magique. Perdre foi en tout à la première déception."
     },
     {
       "id": 18,
       "name": "La Lune",
       "arcana": "majeur",
       "number": "XVIII",
-      "description": "Inconscient, illusions et monde des rêves.",
+      "description": "Guide des royaumes obscurs où les certitudes se dissolvent. Son chemin traverse les illusions, les peurs ancestrales et les mensonges que tu te racontes. Fais confiance à ton intuition plutôt qu'à ta raison cartésienne. La folie n'est parfois que la sagesse qui refuse de se conformer. Plonge dans tes eaux troubles : c'est là que naît la créativité véritable.",
       "keywords": [
         "illusion",
         "inconscient",
@@ -235,23 +235,23 @@
         "confusion",
         "intuition"
       ],
-      "reversed": "Confusion, tromperie, peurs irrationnelles"
+      "reversed": "Se perdre dans des théories complotistes. Prendre ses angoisses pour des prémonitions."
     },
     {
       "id": 19,
       "name": "Le Soleil",
       "arcana": "majeur",
       "number": "XIX",
-      "description": "Joie, réussite et accomplissement personnel.",
+      "description": "L'enfant intérieur qui danse enfin libéré, sous la lumière crue de la vérité. Pas d'ombre, pas de cachotteries, plus rien à prouver. Joie pure, réussite authentique, accomplissement personnel. Cette carte rappelle que ton essence fondamentale est lumière. N'aie pas peur de briller - ton éclat n'ôte rien aux autres. C'est la victoire simple d'être pleinement soi.",
       "keywords": ["joie", "réussite", "accomplissement", "vérité", "bonheur"],
-      "reversed": "Temporaire succès, arrogance, excès de confiance"
+      "reversed": "Faire semblant d'aller bien sur les réseaux. Un succès qui cache un vide intérieur."
     },
     {
       "id": 20,
       "name": "Le Jugement",
       "arcana": "majeur",
       "number": "XX",
-      "description": "Renaissance, éveil et appel à une nouvelle vie.",
+      "description": "L'appel à l'éveil qui sonne comme une libération. Réveille-toi de ton sommeil dogmatique ! C'est l'heure de répondre à l'appel de ton âme, même si ta famille te rejette ou si tu dois tout recommencer. Renaissance authentique, pas redemption patriarcale. Ta vérité vaut plus que toutes les approbations réunies. C'est le moment de renaître à qui tu es vraiment.",
       "keywords": [
         "renaissance",
         "éveil",
@@ -259,14 +259,14 @@
         "transformation",
         "absolution"
       ],
-      "reversed": "Doute, peur du changement, stagnation"
+      "reversed": "Ignorer l'appel intérieur par peur du changement. Se reinventer superficiellement sans faire le travail profond."
     },
     {
       "id": 21,
       "name": "Le Monde",
       "arcana": "majeur",
       "number": "XXI",
-      "description": "Accomplissement, achèvement et unité avec l'univers.",
+      "description": "La danseuse dans son cercle de complétude. Elle a tout intégré : l'ombre, la lumière, les échecs, les victoires. C'est l'accomplissement du cycle, la synthèse de tout le voyage. Plus de séparation entre toi et l'univers. Tu es chez toi partout et nulle part. C'est la réalisation que le chemin était la destination, et que tu portais en toi tout ce dont tu avais besoin.",
       "keywords": [
         "accomplissement",
         "achèvement",
@@ -274,575 +274,7 @@
         "succès",
         "voyage"
       ],
-      "reversed": "Inachèvement, stagnation, peur de réussir"
-    },
-
-    {
-      "id": 22,
-      "name": "As de Coupes",
-      "arcana": "mineur",
-      "number": "As",
-      "suit": "coupes",
-      "description": "Nouvel amour, opportunité émotionnelle, ouverture du cœur.",
-      "keywords": ["amour", "émotions", "nouveau départ", "compassion"],
-      "reversed": "Tristesse, opportunité manquée, fermeture émotionnelle"
-    },
-    {
-      "id": 23,
-      "name": "Deux de Coupes",
-      "arcana": "mineur",
-      "number": "II",
-      "suit": "coupes",
-      "description": "Union, partenariat, connexion émotionnelle harmonieuse.",
-      "keywords": ["union", "partenariat", "harmonie", "connexion"],
-      "reversed": "Désunion, conflit, déséquilibre relationnel"
-    },
-    {
-      "id": 24,
-      "name": "Trois de Coupes",
-      "arcana": "mineur",
-      "number": "III",
-      "suit": "coupes",
-      "description": "Célébration, amitié, joie partagée et communauté.",
-      "keywords": ["célébration", "amitié", "joie", "communauté"],
-      "reversed": "Conflit social, solitude, excès"
-    },
-    {
-      "id": 25,
-      "name": "Quatre de Coupes",
-      "arcana": "mineur",
-      "number": "IV",
-      "suit": "coupes",
-      "description": "Méditation, introspection, évaluation des émotions.",
-      "keywords": ["méditation", "introspection", "apathie", "contemplation"],
-      "reversed": "Nouvelle perspective, acceptation, engagement"
-    },
-    {
-      "id": 26,
-      "name": "Cinq de Coupes",
-      "arcana": "mineur",
-      "number": "V",
-      "suit": "coupes",
-      "description": "Perte, regret, deuil mais avec espoir restant.",
-      "keywords": ["perte", "regret", "deuil", "tristesse"],
-      "reversed": "Acceptation, pardon, mouvement vers l'avant"
-    },
-    {
-      "id": 27,
-      "name": "Six de Coupes",
-      "arcana": "mineur",
-      "number": "VI",
-      "suit": "coupes",
-      "description": "Nostalgie, innocence, souvenirs d'enfance.",
-      "keywords": ["nostalgie", "innocence", "souvenirs", "enfance"],
-      "reversed": "Vivre dans le passé, difficulté à avancer"
-    },
-    {
-      "id": 28,
-      "name": "Sept de Coupes",
-      "arcana": "mineur",
-      "number": "VII",
-      "suit": "coupes",
-      "description": "Choix, illusions, options multiples et confusion.",
-      "keywords": ["choix", "illusions", "options", "rêves"],
-      "reversed": "Clarté, décision, action concrète"
-    },
-    {
-      "id": 29,
-      "name": "Huit de Coupes",
-      "arcana": "mineur",
-      "number": "VIII",
-      "suit": "coupes",
-      "description": "Abandon, recherche de sens plus profond.",
-      "keywords": ["abandon", "recherche", "départ", "évolution"],
-      "reversed": "Peur du changement, stagnation, insatisfaction"
-    },
-    {
-      "id": 30,
-      "name": "Neuf de Coupes",
-      "arcana": "mineur",
-      "number": "IX",
-      "suit": "coupes",
-      "description": "Satisfaction, contentement, vœu exaucé.",
-      "keywords": ["satisfaction", "contentement", "réussite", "abondance"],
-      "reversed": "Complaisance, matérialisme, insatisfaction"
-    },
-    {
-      "id": 31,
-      "name": "Dix de Coupes",
-      "arcana": "mineur",
-      "number": "X",
-      "suit": "coupes",
-      "description": "Bonheur familial, harmonie, accomplissement émotionnel.",
-      "keywords": ["bonheur", "famille", "harmonie", "accomplissement"],
-      "reversed": "Conflit familial, désunion, instabilité"
-    },
-
-    {
-      "id": 32,
-      "name": "As d'Épées",
-      "arcana": "mineur",
-      "number": "As",
-      "suit": "épées",
-      "description": "Clarté mentale, percée intellectuelle, vérité.",
-      "keywords": ["clarté", "vérité", "percée", "intellect"],
-      "reversed": "Confusion, mauvaise décision, vérité cachée"
-    },
-    {
-      "id": 33,
-      "name": "Deux d'Épées",
-      "arcana": "mineur",
-      "number": "II",
-      "suit": "épées",
-      "description": "Impasse, décision difficile, besoin de faire un choix.",
-      "keywords": ["impasse", "décision", "blocage", "équilibre"],
-      "reversed": "Indécision, vérité révélée, mouvement"
-    },
-    {
-      "id": 34,
-      "name": "Trois d'Épées",
-      "arcana": "mineur",
-      "number": "III",
-      "suit": "épées",
-      "description": "Chagrin, cœur brisé, douleur émotionnelle.",
-      "keywords": ["chagrin", "douleur", "séparation", "tristesse"],
-      "reversed": "Guérison, réconciliation, libération"
-    },
-    {
-      "id": 35,
-      "name": "Quatre d'Épées",
-      "arcana": "mineur",
-      "number": "IV",
-      "suit": "épées",
-      "description": "Repos, retraite, guérison et contemplation.",
-      "keywords": ["repos", "retraite", "guérison", "méditation"],
-      "reversed": "Épuisement, burn-out, reprise d'activité"
-    },
-    {
-      "id": 36,
-      "name": "Cinq d'Épées",
-      "arcana": "mineur",
-      "number": "V",
-      "suit": "épées",
-      "description": "Conflit, humiliation, victoire à un coût.",
-      "keywords": ["conflit", "victoire", "défaite", "tension"],
-      "reversed": "Réconciliation, pardon, résolution"
-    },
-    {
-      "id": 37,
-      "name": "Six d'Épées",
-      "arcana": "mineur",
-      "number": "VI",
-      "suit": "épées",
-      "description": "Transition, mouvement vers de meilleures conditions.",
-      "keywords": ["transition", "mouvement", "voyage", "guérison"],
-      "reversed": "Résistance au changement, stagnation"
-    },
-    {
-      "id": 38,
-      "name": "Sept d'Épées",
-      "arcana": "mineur",
-      "number": "VII",
-      "suit": "épées",
-      "description": "Ruse, stratégie, planification secrète.",
-      "keywords": ["ruse", "stratégie", "secret", "évasion"],
-      "reversed": "Découverte, conseil honnête, transparence"
-    },
-    {
-      "id": 39,
-      "name": "Huit d'Épées",
-      "arcana": "mineur",
-      "number": "VIII",
-      "suit": "épées",
-      "description": "Restriction, sentiment d'être piégé, limitations.",
-      "keywords": ["restriction", "piège", "limitations", "victime"],
-      "reversed": "Libération, nouvelle perspective, liberté"
-    },
-    {
-      "id": 40,
-      "name": "Neuf d'Épées",
-      "arcana": "mineur",
-      "number": "IX",
-      "suit": "épées",
-      "description": "Anxiété, cauchemar, peurs intérieures.",
-      "keywords": ["anxiété", "peur", "cauchemar", "inquiétude"],
-      "reversed": "Espoir, libération des peurs, soutien"
-    },
-    {
-      "id": 41,
-      "name": "Dix d'Épées",
-      "arcana": "mineur",
-      "number": "X",
-      "suit": "épées",
-      "description": "Fin douloureuse, trahison, conclusion inévitable.",
-      "keywords": ["fin", "trahison", "défaite", "cicatrisation"],
-      "reversed": "Renaissance, nouveau départ, guérison"
-    },
-
-    {
-      "id": 42,
-      "name": "As de Bâtons",
-      "arcana": "mineur",
-      "number": "As",
-      "suit": "bâtons",
-      "description": "Inspiration, nouvelle entreprise, énergie créative.",
-      "keywords": ["inspiration", "énergie", "nouveau départ", "créativité"],
-      "reversed": "Délais, manque d'énergie, opportunité manquée"
-    },
-    {
-      "id": 43,
-      "name": "Deux de Bâtons",
-      "arcana": "mineur",
-      "number": "II",
-      "suit": "bâtons",
-      "description": "Planification, vision future, prise de décision.",
-      "keywords": ["planification", "vision", "décision", "potentiel"],
-      "reversed": "Mauvaise planification, peur du risque, indécision"
-    },
-    {
-      "id": 44,
-      "name": "Trois de Bâtons",
-      "arcana": "mineur",
-      "number": "III",
-      "suit": "bâtons",
-      "description": "Expansion, vision à long terme, collaboration.",
-      "keywords": ["expansion", "vision", "collaboration", "progrès"],
-      "reversed": "Retards, frustration, manque de vision"
-    },
-    {
-      "id": 45,
-      "name": "Quatre de Bâtons",
-      "arcana": "mineur",
-      "number": "IV",
-      "suit": "bâtons",
-      "description": "Célébration, harmonie, fondations solides.",
-      "keywords": ["célébration", "harmonie", "fondation", "communauté"],
-      "reversed": "Instabilité, manque de soutien, célébration retardée"
-    },
-    {
-      "id": 46,
-      "name": "Cinq de Bâtons",
-      "arcana": "mineur",
-      "number": "V",
-      "suit": "bâtons",
-      "description": "Conflit, compétition, désaccord.",
-      "keywords": ["conflit", "compétition", "désaccord", "défi"],
-      "reversed": "Résolution, coopération, trêve"
-    },
-    {
-      "id": 47,
-      "name": "Six de Bâtons",
-      "arcana": "mineur",
-      "number": "VI",
-      "suit": "bâtons",
-      "description": "Victoire, reconnaissance, succès public.",
-      "keywords": ["victoire", "reconnaissance", "succès", "leadership"],
-      "reversed": "Échec, manque de reconnaissance, arrogance"
-    },
-    {
-      "id": 48,
-      "name": "Sept de Bâtons",
-      "arcana": "mineur",
-      "number": "VII",
-      "suit": "bâtons",
-      "description": "Défense, persévérance, position défensive.",
-      "keywords": ["défense", "persévérance", "courage", "défi"],
-      "reversed": "Surmenage, abandon, doute"
-    },
-    {
-      "id": 49,
-      "name": "Huit de Bâtons",
-      "arcana": "mineur",
-      "number": "VIII",
-      "suit": "bâtons",
-      "description": "Mouvement rapide, progrès, nouvelles rapides.",
-      "keywords": ["mouvement", "progrès", "rapidité", "communication"],
-      "reversed": "Retards, frustration, mauvaise communication"
-    },
-    {
-      "id": 50,
-      "name": "Neuf de Bâtons",
-      "arcana": "mineur",
-      "number": "IX",
-      "suit": "bâtons",
-      "description": "Résilience, persévérance, dernière ligne droite.",
-      "keywords": ["résilience", "persévérance", "défense", "force"],
-      "reversed": "Épuisement, défensive, paranoïa"
-    },
-    {
-      "id": 51,
-      "name": "Dix de Bâtons",
-      "arcana": "mineur",
-      "number": "X",
-      "suit": "bâtons",
-      "description": "Charge lourde, responsabilités, fardeau.",
-      "keywords": ["charge", "responsabilité", "fardeau", "effort"],
-      "reversed": "Délégation, libération, allègement"
-    },
-
-    {
-      "id": 52,
-      "name": "As de Deniers",
-      "arcana": "mineur",
-      "number": "As",
-      "suit": "deniers",
-      "description": "Nouveau départ matériel, opportunité financière, abondance.",
-      "keywords": ["opportunité", "abondance", "prospérité", "nouveau départ"],
-      "reversed": "Opportunité manquée, instabilité financière"
-    },
-    {
-      "id": 53,
-      "name": "Deux de Deniers",
-      "arcana": "mineur",
-      "number": "II",
-      "suit": "deniers",
-      "description": "Équilibre des finances, adaptation, jonglage avec les ressources.",
-      "keywords": ["équilibre", "adaptation", "flexibilité", "changement"],
-      "reversed": "Déséquilibre, surcharge, mauvaise gestion"
-    },
-    {
-      "id": 54,
-      "name": "Trois de Deniers",
-      "arcana": "mineur",
-      "number": "III",
-      "suit": "deniers",
-      "description": "Collaboration, travail d'équipe, compétence.",
-      "keywords": ["collaboration", "travail", "compétence", "maîtrise"],
-      "reversed": "Manque de coopération, médiocrité, conflit au travail"
-    },
-    {
-      "id": 55,
-      "name": "Quatre de Deniers",
-      "arcana": "mineur",
-      "number": "IV",
-      "suit": "deniers",
-      "description": "Conservation, sécurité, possessivité.",
-      "keywords": ["conservation", "sécurité", "possessivité", "contrôle"],
-      "reversed": "Générosité, ouverture, insécurité financière"
-    },
-    {
-      "id": 56,
-      "name": "Cinq de Deniers",
-      "arcana": "mineur",
-      "number": "V",
-      "suit": "deniers",
-      "description": "Peur de manquer, isolement matériel, difficultés.",
-      "keywords": ["pauvreté", "isolement", "difficultés", "anxiété"],
-      "reversed": "Rétablissement, espoir, nouvelle perspective"
-    },
-    {
-      "id": 57,
-      "name": "Six de Deniers",
-      "arcana": "mineur",
-      "number": "VI",
-      "suit": "deniers",
-      "description": "Générosité, partage, équité.",
-      "keywords": ["générosité", "partage", "équité", "charité"],
-      "reversed": "Dette, cupidité, déséquilibre de pouvoir"
-    },
-    {
-      "id": 58,
-      "name": "Sept de Deniers",
-      "arcana": "mineur",
-      "number": "VII",
-      "suit": "deniers",
-      "description": "Patience, investissement à long terme, croissance.",
-      "keywords": ["patience", "investissement", "croissance", "évaluation"],
-      "reversed": "Manque de résultats, impatience, mauvais investissement"
-    },
-    {
-      "id": 59,
-      "name": "Huit de Deniers",
-      "arcana": "mineur",
-      "number": "VIII",
-      "suit": "deniers",
-      "description": "Artisanat, dévouement, compétence développée.",
-      "keywords": ["artisanat", "dévouement", "compétence", "maîtrise"],
-      "reversed": "Médiocrité, manque d'ambition, travail sans passion"
-    },
-    {
-      "id": 60,
-      "name": "Neuf de Deniers",
-      "arcana": "mineur",
-      "number": "IX",
-      "suit": "deniers",
-      "description": "Indépendance financière, luxe, autosuffisance.",
-      "keywords": ["indépendance", "luxe", "réussite", "abondance"],
-      "reversed": "Dépendance, superficialité, gaspillage"
-    },
-    {
-      "id": 61,
-      "name": "Dix de Deniers",
-      "arcana": "mineur",
-      "number": "X",
-      "suit": "deniers",
-      "description": "Héritage, richesse familiale, sécurité à long terme.",
-      "keywords": ["héritage", "richesse", "famille", "tradition"],
-      "reversed": "Conflit familial, instabilité financière, perte"
-    },
-
-    {
-      "id": 62,
-      "name": "Valet de Coupes",
-      "arcana": "mineur",
-      "number": "Valet",
-      "suit": "coupes",
-      "description": "Message émotionnel, créativité, sensibilité.",
-      "keywords": ["sensibilité", "créativité", "message", "rêveur"],
-      "reversed": "Immaturité émotionnelle, déception, fuite de la réalité"
-    },
-    {
-      "id": 63,
-      "name": "Cavalier de Coupes",
-      "arcana": "mineur",
-      "number": "Cavalier",
-      "suit": "coupes",
-      "description": "Romance, charme, invitation amoureuse.",
-      "keywords": ["romance", "charme", "invitation", "idéalisme"],
-      "reversed": "Déception, immaturité, manipulation émotionnelle"
-    },
-    {
-      "id": 64,
-      "name": "Reine de Coupes",
-      "arcana": "mineur",
-      "number": "Reine",
-      "suit": "coupes",
-      "description": "Compassion, intuition, sagesse émotionnelle.",
-      "keywords": ["compassion", "intuition", "sagesse", "soin"],
-      "reversed": "Dépendance émotionnelle, instabilité, victimisation"
-    },
-    {
-      "id": 65,
-      "name": "Roi de Coupes",
-      "arcana": "mineur",
-      "number": "Roi",
-      "suit": "coupes",
-      "description": "Maîtrise émotionnelle, équilibre, leadership compatissant.",
-      "keywords": ["maîtrise", "équilibre", "leadership", "diplomatie"],
-      "reversed": "Manipulation, contrôle émotionnel, instabilité"
-    },
-
-    {
-      "id": 66,
-      "name": "Valet d'Épées",
-      "arcana": "mineur",
-      "number": "Valet",
-      "suit": "épées",
-      "description": "Curiosité intellectuelle, esprit vif, communication.",
-      "keywords": ["curiosité", "communication", "analyse", "vigilance"],
-      "reversed": "Cybernisme, méchanceté, indiscrétion"
-    },
-    {
-      "id": 67,
-      "name": "Cavalier d'Épées",
-      "arcana": "mineur",
-      "number": "Cavalier",
-      "suit": "épées",
-      "description": "Action rapide, détermination, franchise.",
-      "keywords": ["action", "détermination", "franchise", "ambition"],
-      "reversed": "Impulsivité, agressivité, imprudence"
-    },
-    {
-      "id": 68,
-      "name": "Reine d'Épées",
-      "arcana": "mineur",
-      "number": "Reine",
-      "suit": "épées",
-      "description": "Clarté mentale, indépendance, vérité.",
-      "keywords": ["clarté", "indépendance", "vérité", "objectivité"],
-      "reversed": "Critique excessive, amertume, isolement"
-    },
-    {
-      "id": 69,
-      "name": "Roi d'Épées",
-      "arcana": "mineur",
-      "number": "Roi",
-      "suit": "épées",
-      "description": "Autorité intellectuelle, justice, prise de décision.",
-      "keywords": ["autorité", "justice", "décision", "intellect"],
-      "reversed": "Tyrannie, manipulation, abus de pouvoir"
-    },
-
-    {
-      "id": 70,
-      "name": "Valet de Bâtons",
-      "arcana": "mineur",
-      "number": "Valet",
-      "suit": "bâtons",
-      "description": "Enthousiasme, aventure, nouvelles excitantes.",
-      "keywords": ["enthousiasme", "aventure", "nouvelles", "énergie"],
-      "reversed": "Impatience, arrogance, mauvaises nouvelles"
-    },
-    {
-      "id": 71,
-      "name": "Cavalier de Bâtons",
-      "arcana": "mineur",
-      "number": "Cavalier",
-      "suit": "bâtons",
-      "description": "Action, aventure, départ en voyage.",
-      "keywords": ["action", "aventure", "voyage", "passion"],
-      "reversed": "Impulsivité, retard, frustration"
-    },
-    {
-      "id": 72,
-      "name": "Reine de Bâtons",
-      "arcana": "mineur",
-      "number": "Reine",
-      "suit": "bâtons",
-      "description": "Confiance, passion, leadership inspirant.",
-      "keywords": ["confiance", "passion", "leadership", "courage"],
-      "reversed": "Jalousie, insécurité, manipulation"
-    },
-    {
-      "id": 73,
-      "name": "Roi de Bâtons",
-      "arcana": "mineur",
-      "number": "Roi",
-      "suit": "bâtons",
-      "description": "Vision entrepreneuriale, leadership, ambition.",
-      "keywords": ["vision", "leadership", "ambition", "créativité"],
-      "reversed": "Autoritarisme, impatience, mauvaise gestion"
-    },
-
-    {
-      "id": 74,
-      "name": "Valet de Deniers",
-      "arcana": "mineur",
-      "number": "Valet",
-      "suit": "deniers",
-      "description": "Apprentissage, étude, nouvelles opportunités matérielles",
-      "keywords": ["apprentissage", "étude", "opportunité", "prudence"],
-      "reversed": "Paresse, procrastination, opportunité manquée"
-    },
-    {
-      "id": 75,
-      "name": "Cavalier de Deniers",
-      "arcana": "mineur",
-      "number": "Cavalier",
-      "suit": "deniers",
-      "description": "Méthode, travail acharné, progrès stable",
-      "keywords": ["méthode", "travail", "progrès", "fiabilité"],
-      "reversed": "Stagnation, ennui, routine excessive"
-    },
-    {
-      "id": 76,
-      "name": "Reine de Deniers",
-      "arcana": "mineur",
-      "number": "Reine",
-      "suit": "deniers",
-      "description": "Abondance, générosité, connexion à la nature",
-      "keywords": ["abondance", "générosité", "nature", "nurturing"],
-      "reversed": "Matérialisme, possessivité, négligence"
-    },
-    {
-      "id": 77,
-      "name": "Roi de Deniers",
-      "arcana": "mineur",
-      "number": "Roi",
-      "suit": "deniers",
-      "description": "Prospérité, réussite matérielle, sécurité",
-      "keywords": ["prospérité", "réussite", "sécurité", "affaires"],
-      "reversed": "Avarice, conservatisme excessif, peur du risque"
+      "reversed": "Avoir tout mais se sentir vide. Refuser de terminer un cycle par peur du vide."
     }
   ]
 }

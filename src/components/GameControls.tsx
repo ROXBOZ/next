@@ -1,15 +1,22 @@
-import { showToast } from "@/utils/select";
+import { showWarningToast } from "@/utils/toast";
+
+interface GameControlsProps {
+  canShuffle: boolean;
+  onShuffle: () => boolean;
+  showInterpretationButton?: boolean;
+  onOpenInterpretation?: () => void;
+}
 
 function GameControls({
   canShuffle,
   onShuffle,
+  showInterpretationButton = false,
   onOpenInterpretation,
-  showInterpretationButton,
-}) {
+}: GameControlsProps) {
   const handleShuffleClick = () => {
     const success = onShuffle();
     if (!success) {
-      showToast("Impossible de mélanger pendant le tirage!");
+      showWarningToast("Impossible de mélanger pendant le tirage!");
     }
   };
 
@@ -18,10 +25,12 @@ function GameControls({
       <button
         onClick={handleShuffleClick}
         className={`light ${canShuffle ? "" : "disabled"}`}
+        disabled={!canShuffle}
       >
         Mélanger
       </button>
-      {showInterpretationButton && (
+
+      {showInterpretationButton && onOpenInterpretation && (
         <button onClick={onOpenInterpretation} className="light">
           Interpréter
         </button>
