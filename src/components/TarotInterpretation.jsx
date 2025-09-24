@@ -26,7 +26,7 @@ function TarotInterpretation({
     if (isComplete && question && selectedCards.length > 0) {
       const timer = setTimeout(() => {
         setShowModal(true);
-      }, 2000); // 2 second delay
+      }, 4000); // 2 second delay
 
       return () => clearTimeout(timer);
     }
@@ -174,7 +174,7 @@ function TarotInterpretation({
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/90">
-      <div className="bg-violet-950 relative text-violet-50 pb-2 rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto  shadow-2xl">
+      <div className="bg-orange-950 relative text-violet-50 pb-2 rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto  shadow-2xl">
         <div className="max-w-[65ch] mx-auto">
           <div className=" px-8 py-4 relative">
             <h3 className="font-semibold border-b border-violet-500 pb-2 pt-6">
@@ -194,13 +194,13 @@ function TarotInterpretation({
             <div className="text-center px-8 pb-4">
               <div className="flex flex-col gap-2 items-center">
                 <button
-                  className="dark w-full"
+                  className="light w-full"
                   onClick={generateAIInterpretation}
                 >
                   🤖 Interprétation IA
                 </button>
                 <button
-                  className="dark w-full"
+                  className="light w-full"
                   onClick={generateInterpretation}
                 >
                   ✨ Guide pratique

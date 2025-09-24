@@ -18,8 +18,13 @@ function CardFront({
   onClick?: () => void;
   isReversed?: boolean;
 }) {
-  const rotations = [-4, 0, 4];
-  const baseRotation = rotations[data.id % 3];
+  const getRandomRotation = (id: number) => {
+    const seed = id * 9301 + 49297;
+    const randomValue = (seed % 233280) / 233280;
+    return Math.floor((randomValue - 0.5) * 12);
+  };
+
+  const baseRotation = getRandomRotation(data.id);
   const finalRotation = isReversed ? baseRotation + 180 : baseRotation;
   const isMajor = data.arcana === "majeur" ? true : false;
   const displayDescription = isReversed ? data.reversed : data.description;
