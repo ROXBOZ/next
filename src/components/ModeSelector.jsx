@@ -9,10 +9,7 @@ function ModeSelector({
 
   return (
     <div className="mb-8 text-center w-2/3 mx-auto">
-      <h2 className="font-medium mb-4 text-orange-50">
-        Posez votre question au tarot
-      </h2>
-
+      <h2 className="font-medium mb-4 text-orange-50">Posez votre question</h2>
       {/* Question Input */}
       <div className="mb-6 w-full">
         <textarea
@@ -23,10 +20,9 @@ function ModeSelector({
           rows={3}
         />
       </div>
-
-      <h3 className="font-medium mb-4 text-orange-50">
+      <h2 className="font-medium mb-4 text-orange-50">
         Choisissez votre tirage
-      </h3>
+      </h2>
       <div className="flex gap-4 justify-center">
         <button
           className="light"

@@ -131,19 +131,19 @@ function TarotInterpretation({
 
       //   explanation += `**${position.title} (${position.meaning}):**\n`;
       explanation += `🔮 **${position.title} - ${card.name}**\n`;
+      explanation += `${card.description}\n`;
       explanation += `**${arcanaType} (${card.number}) :** ${arcanaExplanation}\n`;
       explanation += `${
         isReversed
           ? `**Position inversée :** ${
               positionExplanation.charAt(0).toLowerCase() +
               positionExplanation.slice(1)
-            }\n`
+            }\n\n`
           : `**Position droite :** ${
               positionExplanation.charAt(0).toLowerCase() +
               positionExplanation.slice(1)
-            }\n`
+            }\n\n`
       }`;
-      explanation += `**Description :** ${card.description}\n\n`;
     });
 
     // explanation += `**À vous d'interpréter :**\n`;
@@ -185,9 +185,9 @@ function TarotInterpretation({
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80">
       <div className="bg-violet-950 text-violet-50 rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto p-8 shadow-2xl">
         <div className="max-w-[65ch] mx-auto">
-          <div className="border-b pb-4 mb-6">
+          {/* <div className="border-b pb-4 mb-6">
             <h3 className="font-semibold mb-2">Votre tirage est complet</h3>
-          </div>
+          </div> */}
 
           {/* Choice Interface */}
           {showChoice && (
