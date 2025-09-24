@@ -63,3 +63,10 @@ export const playClickSound = (): void => {
 export const playDenySound = (): void => {
   playSound("/deny-sound.mp3", 0.4);
 };
+
+/**
+ * Play the huh sound
+ */
+export const playHuhSound = (): void => {
+  playSound("/huh-sound.mp3", 0.4);
+};

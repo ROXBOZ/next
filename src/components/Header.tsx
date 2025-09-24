@@ -20,9 +20,9 @@ export default function Header({ onReset }: HeaderProps) {
           Velma <span className="text-sm">✦</span> Tarot
         </span> */}
         <div className="flex gap-1 items-center">
-          <span className="rfc-font">L</span>
-          <span className="text-xs">✦</span>
-          <span className="rfc-font">oraclette</span>
+          {/* <span className="rfc-font">L</span>
+          <span className="text-xs">✦</span> */}
+          <span className="rfc-font">Loraclette</span>
         </div>
       </button>
     </header>

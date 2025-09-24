@@ -146,7 +146,7 @@ function ModeSelector({
             value={question}
             onChange={handleQuestionChange}
             placeholder="Quelle est votre question ?"
-            className="px-3 w-full xl:w-96 py-2 bg-[#0d001a] border border-violet-500/20 rounded text-violet-100 placeholder-violet-500/40 focus:border-violet-400/50 focus:outline-none text-sm"
+            className="px-3 w-full xl:w-96 py-2 bg-[#0d001a] border border-violet-500/20 rounded-full text-violet-100 placeholder-violet-500/40 focus:border-violet-400/50 focus:outline-none text-sm"
           />
         </div>
 
