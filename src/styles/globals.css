@@ -3,3 +3,7 @@
 button {
   @apply cursor-pointer px-3 py-1 bg-stone-300 flex items-center justify-center h-fit hover:bg-stone-400 transition-colors rounded;
 }
+
+button.disabled {
+  @apply cursor-not-allowed bg-stone-200 text-stone-400;
+}

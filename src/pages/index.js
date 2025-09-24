@@ -69,7 +69,12 @@ export default function Home() {
 
         {readingMode && (
           <div className="flex gap-4">
-            <button onClick={handleShuffle}>Mélanger</button>
+            <button
+              onClick={handleShuffle}
+              className={selectedCards.length > 0 ? "disabled" : ""}
+            >
+              Mélanger
+            </button>
             <button onClick={handleReset}>Recommencer</button>
           </div>
         )}

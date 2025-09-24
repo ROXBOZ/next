@@ -8,12 +8,17 @@ export const handleCardSelect = (
 ) => {
   const maxCards = readingMode === "3-cards" ? 3 : 5;
 
-  if (selectedCards.length < maxCards) {
-    setSelectedCards([...selectedCards, cardId]);
-    setCardOrder(cardOrder.filter((id) => id !== cardId));
-  } else {
-    showToast(`Max. ${maxCards} cartes!`);
-  }
+  setSelectedCards((currentSelected) => {
+    if (currentSelected.length < maxCards) {
+      setCardOrder((currentOrder) =>
+        currentOrder.filter((id) => id !== cardId)
+      );
+      return [...currentSelected, cardId];
+    } else {
+      showToast(`Max. ${maxCards} cartes!`);
+      return currentSelected;
+    }
+  });
 };
 
 const showToast = (message) => {
