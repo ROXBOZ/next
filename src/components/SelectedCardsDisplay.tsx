@@ -25,7 +25,7 @@ function SelectedCardsDisplay({
   const maxCards = readingConfig.length;
 
   return (
-    <div className="flex gap-4 flex-wrap pb-12 justify-center">
+    <div className="flex gap-4 flex-wrap py-12 justify-center">
       {/* Show ALL positions with titles, some empty if not selected yet */}
       {Array.from({ length: maxCards }).map((_, index) => {
         const cardId = selectedCards[index];

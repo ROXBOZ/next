@@ -37,7 +37,7 @@ export default function Home() {
       <div className="pattern w-screen h-screen fixed inset-0 xl:relative">
         <div className="h-full overflow-y-auto xl:p-4">
           <Header onReset={resetGame} />
-          <div className="flex-col items-center gap-4 flex pb-4">
+          <div className="flex-col items-center flex pb-4">
             {/* Mode Selection */}
             <ModeSelector
               readingMode={readingMode}

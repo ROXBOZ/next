@@ -13,7 +13,7 @@ button.dark {
 }
 
 button.light.disabled {
-  @apply cursor-not-allowed ring-0 bg-violet-900/50 text-violet-700/50;
+  @apply cursor-not-allowed ring-0 bg-violet-950/50 text-violet-700/50;
 }
 
 .pattern {
