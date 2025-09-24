@@ -49,6 +49,7 @@ export default function Home() {
               onShuffle={shuffleDeck}
               showInterpretationButton={showInterpretationButton}
               onOpenInterpretation={openInterpretation}
+              onReset={resetGame}
             />
 
             {/* Card Deck - Always visible */}

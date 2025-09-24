@@ -1,6 +1,7 @@
 import { ChangeEvent, useEffect, useRef } from "react";
 import { ReadingMode } from "@/types/tarot";
 import { playTypingSound, playClickSound } from "@/utils/sound";
+import { validateQuestion } from "@/utils/questionValidation";
 
 interface ModeSelectorProps {
   readingMode: ReadingMode | null;
@@ -12,6 +13,7 @@ interface ModeSelectorProps {
   onShuffle?: () => boolean;
   showInterpretationButton?: boolean;
   onOpenInterpretation?: () => void;
+  onReset?: () => void;
 }
 
 function ModeSelector({
@@ -23,8 +25,10 @@ function ModeSelector({
   onShuffle,
   showInterpretationButton,
   onOpenInterpretation,
+  onReset,
 }: ModeSelectorProps) {
   const inputRef = useRef<HTMLInputElement>(null);
+  const validationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Focus the input after the animation delay when not in reading mode
   useEffect(() => {
@@ -37,9 +41,31 @@ function ModeSelector({
     }
   }, [readingMode]);
 
+  // Cleanup validation timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (validationTimeoutRef.current) {
+        clearTimeout(validationTimeoutRef.current);
+      }
+    };
+  }, []);
+
   const handleQuestionChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setQuestion(e.target.value);
+    const newValue = e.target.value;
+    setQuestion(newValue);
     playTypingSound();
+
+    // Clear previous validation timeout
+    if (validationTimeoutRef.current) {
+      clearTimeout(validationTimeoutRef.current);
+    }
+
+    // Validate the question after a short delay to avoid spam
+    if (newValue.trim().length > 5) {
+      validationTimeoutRef.current = setTimeout(() => {
+        validateQuestion(newValue);
+      }, 1500); // Wait 1.5 seconds after typing stops
+    }
   };
 
   const isQuestionValid = question.trim().length > 0;
@@ -72,9 +98,20 @@ function ModeSelector({
     return (
       <div className="w-full flex flex-col items-center pt-4 h-fit xl:h-[100px] ">
         <div className=" flex flex-col items-center gap-3 w-1/2 p-2">
-          <p className="text-violet-100  opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards]">
-            <span className="italic">{question}</span>
-          </p>
+          <div className="text-violet-100  opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards]">
+            <div className=" px-12 py-2 -mt-4 bg-indigo-950 -rotate-2 rounded-full font-semibold relative group">
+              <span className="italic">{question}</span>
+              {onReset && (
+                <button
+                  onClick={onReset}
+                  className="absolute -top-2 px-2! py-0! pt-0! font-normal text-xl -right-2 bg-orange-800 hover:bg-orange-900 text-white rounded-full flex items-center! justify-center! transition-colors opacity-0 group-hover:opacity-100"
+                  title="Recommencer"
+                >
+                  <span className="-mt-1"> ×</span>{" "}
+                </button>
+              )}
+            </div>
+          </div>
 
           <div className="flex flex-col xl:flex-row gap-2 items-center -ml-4! opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.4s_forwards]">
             {canShuffle && (
@@ -99,7 +136,7 @@ function ModeSelector({
   return (
     <div className="w-full pt-4 h-[160px] xl:h-[100px]">
       <div className="flex flex-col gap-2 h-full w-full xl:w-1/2 mx-auto items-center">
-        <div className="flex flex-col xl:flex-row w-full px-4 items-center gap-2 opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards]">
+        <div className="flex flex-col xl:flex-row w-full px-4 justify-center items-baseline gap-2 opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards]">
           <span className="text-violet-200  font-medium">
             Demandez à l’oracle
           </span>

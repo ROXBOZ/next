@@ -16,12 +16,17 @@ function CardFront({
 }: CardFrontProps) {
   const finalRotation = calculateCardRotation(data.id, isReversed);
 
+  // Calculate shadow offset that counteracts the card rotation
+  const shadowAngle = -finalRotation * (Math.PI / 180); // Convert to radians and negate
+  const shadowX = Math.sin(shadowAngle) * 4;
+  const shadowY = Math.cos(shadowAngle) * 4;
+
   return (
     <div
       style={{
         zIndex: position || data.id,
         transform: `rotate(${finalRotation}deg)`,
-        boxShadow: "0 4px 6px rgba(0, 0, 0, 5)",
+        boxShadow: `${shadowX}px ${shadowY}px 6px rgba(0, 0, 0, 0.5)`,
       }}
       className={`
         aspect-[2/3] w-[190px] rounded-xl bg-orange-900

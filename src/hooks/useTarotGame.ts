@@ -9,6 +9,8 @@ import {
   isReadingComplete,
   resetSelection,
 } from "@/utils/cardSelection";
+import { playDenySound } from "@/utils/sound";
+import { showWarningToast } from "@/utils/toast";
 import { useCallback, useEffect, useState } from "react";
 
 export function useTarotGame(cards: TarotCard[]) {
@@ -44,7 +46,11 @@ export function useTarotGame(cards: TarotCard[]) {
 
   const selectCard = useCallback(
     (cardId: number) => {
-      if (!readingMode) return;
+      if (!readingMode) {
+        playDenySound();
+        showWarningToast("Demandez à l’oracle et choisissez un tirage");
+        return;
+      }
 
       handleCardSelect(
         cardId,

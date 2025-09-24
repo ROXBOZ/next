@@ -25,15 +25,13 @@ function SelectedCardsDisplay({
   const maxCards = readingConfig.length;
 
   return (
-    <div className="w-full max-w-full">
+    <div className="w-full flex justify-center max-w-full">
       <div className="flex px-4 gap-4 overflow-x-auto justify-start min-w-0 pb-4 scrollbar-thin scrollbar-thumb-orange-200/20 scrollbar-track-transparent">
-        {/* Show ALL positions with titles, some empty if not selected yet */}
         {Array.from({ length: maxCards }).map((_, index) => {
           const cardId = selectedCards[index];
           const position = readingConfig[index];
           const isPositionFilled = cardId !== undefined;
 
-          // If position is filled, show the card
           if (isPositionFilled) {
             const cardData = findCardById(cards, cardId);
             if (!cardData) return null;

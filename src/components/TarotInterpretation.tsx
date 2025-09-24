@@ -205,7 +205,7 @@ function TarotInterpretation({
 
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center p-4 bg-black/95`}
+      className={`fixed inset-0 flex items-center justify-center p-4 bg-black/80`}
       style={{ zIndex: Z_INDEX.MODAL }}
     >
       <div className="bg-orange-950 relative text-violet-50 pb-4 rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl">

@@ -13,10 +13,17 @@ export default function Header({ onReset }: HeaderProps) {
   return (
     <header className="py-2 xl:p-0 flex justify-center">
       <button
-        className="uppercase font-semibold text-orange-50"
+        className="text-4xl tracking-wider text-white hover:ring-0!"
         onClick={handleReset}
       >
-        L&apos;oraclette
+        {/* <span className="rfc-font flex gap-1 items-center">
+          Velma <span className="text-sm">✦</span> Tarot
+        </span> */}
+        <div className="flex gap-1 items-center">
+          <span className="rfc-font">L</span>
+          <span className="text-xs">✦</span>
+          <span className="rfc-font">oraclette</span>
+        </div>
       </button>
     </header>
   );

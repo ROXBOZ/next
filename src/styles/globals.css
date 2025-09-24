@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "RFC Tarot";
+  src: url("/RFCTarot-regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.rfc-font {
+  font-family: "RFC Tarot", serif;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
