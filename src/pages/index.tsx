@@ -52,8 +52,8 @@ export default function Home() {
               <div className="flex flex-col items-center w-full">
                 {/* Question display above deck */}
                 {question && (
-                  <div className="text-center text-xl text-violet-50 max-w-2xl">
-                    {question}
+                  <div className="text-center text-violet-100 max-w-2xl">
+                    Question : {question}
                   </div>
                 )}
 
