@@ -58,7 +58,6 @@ export async function generateTarotInterpretation({
   try {
     const positions = POSITION_MEANINGS[readingMode];
 
-    // Build the reading context
     const cardInterpretations = positions.map(({ index, title, meaning }) => {
       const cardId = selectedCards[index];
       const card = cards.find((c) => c.id === cardId);
@@ -77,7 +76,6 @@ export async function generateTarotInterpretation({
       };
     });
 
-    // Create the prompt for AI interpretation
     const systemPrompt = `You are an expert tarot reader with deep knowledge of card meanings, symbolism, and interpretation.
 
 Your task is to provide a meaningful, insightful, and personalized tarot reading based on:
@@ -115,76 +113,50 @@ ${cardInterpretations
 
 Veuillez fournir une interprétation complète et personnalisée de ce tirage en français.`;
 
-    // For demo purposes, I'll use a mock response
-    // In production, you'd integrate with OpenAI, Claude, or another AI service
-    const interpretation = await mockAIInterpretation(
-      question,
-      cardInterpretations
-    );
+    // Call the real AI API - with proper error handling
+    console.log("🤖 Attempting OpenAI API call...");
+    try {
+      const interpretation = await callOpenAI(systemPrompt, userPrompt);
+      console.log("✅ OpenAI API success!");
 
-    return {
-      success: true,
-      interpretation,
-      cardInterpretations,
-    };
+      return {
+        success: true,
+        interpretation,
+        cardInterpretations,
+      };
+    } catch (apiError) {
+      console.error("❌ OpenAI API error:", apiError.message);
+
+      // Return the actual error message from the API
+      return {
+        success: false,
+        error:
+          apiError.message ||
+          "Impossible de générer l'interprétation pour le moment.",
+      };
+    }
   } catch (error) {
     console.error("Error generating tarot interpretation:", error);
     return {
       success: false,
-      error: "Impossible de générer l'interprétation pour le moment.",
+      error: "Erreur inattendue lors de la génération de l'interprétation.",
     };
   }
 }
 
-// Mock AI function - replace with actual AI service
-async function mockAIInterpretation(question, cardInterpretations) {
-  // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-
-  return `
-**Interprétation de votre tirage**
-
-Votre question "${question}" révèle une situation complexe que les cartes éclairent avec sagesse.
-
-${cardInterpretations
-  .map(
-    (interp, i) =>
-      `**${interp.position}** - ${interp.card.name}${
-        interp.card.isReversed ? " (Inversée)" : ""
-      }
-
-  Dans le contexte de ${interp.positionMeaning.toLowerCase()}, cette carte suggère ${interp.card.description.toLowerCase()} Cette énergie ${
-        interp.card.isReversed
-          ? "inversée indique des blocages ou des leçons à apprendre"
-          : "positive vous encourage à avancer"
-      }.\n`
-  )
-  .join("\n")}
-
-**Synthèse et conseils:**
-
-Les cartes vous invitent à considérer l'ensemble de votre situation. ${
-    cardInterpretations[0]?.card.name
-  } vous rappelle l'importance de ${
-    cardInterpretations[0]?.card.keywords[0]
-  }, tandis que ${cardInterpretations[1]?.card.name} vous guide vers ${
-    cardInterpretations[1]?.card.keywords[0]
-  }.
-
-La voie forward semble claire : embrassez les leçons du passé tout en restant ouvert aux opportunités futures.
-  `.trim();
-}
-
-// Integration with actual AI services would look like this:
-/*
+// Real AI integration with OpenAI
 async function callOpenAI(systemPrompt, userPrompt) {
-  const response = await fetch('/api/ai-interpretation', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ systemPrompt, userPrompt })
+  const response = await fetch("/api/ai-interpretation", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ systemPrompt, userPrompt }),
   });
 
   const data = await response.json();
+
+  if (!data.success) {
+    throw new Error(data.error || "Failed to get AI interpretation");
+  }
+
   return data.interpretation;
 }
-*/

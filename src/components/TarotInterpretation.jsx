@@ -48,59 +48,58 @@ function TarotInterpretation({
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg">
-      <div className="border-b pb-4 mb-6">
-        <h3 className="text-xl font-semibold text-gray-800 mb-2">
-          Interprétation de votre tirage
-        </h3>
-        <p className="text-gray-600 italic">"{question}"</p>
-      </div>
+    <div className="absolute h-screen overflow-scroll top-0 left-0 right-0 z-50 p-12 bg-violet-950 text-violet-50">
+      <div className="max-w-[65ch] mx-auto">
+        <div className="border-b pb-4 mb-6">
+          <h3 className="text-xl font-semibold mb-2">
+            Interprétation de votre tirage
+          </h3>
+          <p className=" italic">"{question}"</p>
+        </div>
 
-      {loading && (
-        <div className="flex items-center justify-center py-12">
-          <div className="flex flex-col items-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600"></div>
-            <p className="mt-4 text-gray-600">
-              L'IA analyse vos cartes et génère votre interprétation...
-            </p>
+        {loading && (
+          <div className="flex items-center justify-center py-12">
+            <div className="flex flex-col items-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600"></div>
+              <p className="mt-4 ">
+                L'IA analyse vos cartes et génère votre interprétation...
+              </p>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {error && (
-        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-          <p className="text-red-700">{error}</p>
-          <button
-            onClick={generateInterpretation}
-            className="mt-3 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors"
-          >
-            Réessayer
-          </button>
-        </div>
-      )}
-
-      {interpretation && (
-        <div className="prose max-w-none">
-          <div
-            className="text-gray-700 leading-relaxed whitespace-pre-line"
-            dangerouslySetInnerHTML={{
-              __html: interpretation.replace(
-                /\*\*(.*?)\*\*/g,
-                "<strong>$1</strong>"
-              ),
-            }}
-          />
-
-          <div className="mt-6 pt-4 border-t border-gray-200">
+        {error && (
+          <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p className="text-red-700">{error}</p>
             <button
               onClick={generateInterpretation}
-              className="px-4 py-2 bg-amber-600 text-white rounded hover:bg-amber-700 transition-colors"
+              className="mt-3 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors"
             >
-              Nouvelle interprétation
+              Réessayer
             </button>
           </div>
-        </div>
-      )}
+        )}
+
+        {interpretation && (
+          <div className="prose max-w-none">
+            <div
+              className="leading-relaxed whitespace-pre-line"
+              dangerouslySetInnerHTML={{
+                __html: interpretation.replace(
+                  /\*\*(.*?)\*\*/g,
+                  "<strong>$1</strong>"
+                ),
+              }}
+            />
+
+            <div className="mt-6 pt-4 border-t border-gray-200">
+              <button onClick={generateInterpretation}>
+                Nouvelle interprétation
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

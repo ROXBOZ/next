@@ -7,7 +7,7 @@ function CardDeck({ cardOrder, onCardClick, cardReversals }) {
   }
 
   return (
-    <div className="flex">
+    <div className="flex z-40">
       {cardOrder.map((cardId, index) => {
         const cardData = cards.find((card) => card.id === cardId);
         const isLastCard = index === cardOrder.length - 1;

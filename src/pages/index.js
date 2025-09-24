@@ -65,7 +65,7 @@ export default function Home() {
           cardReversals={cardReversals}
           readingMode={readingMode}
           isComplete={
-            selectedCards.length === (readingMode === "3-card" ? 3 : 5)
+            selectedCards.length === (readingMode === "3-cards" ? 3 : 5)
           }
         />
       </div>
