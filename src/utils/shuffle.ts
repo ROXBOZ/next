@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 import { TarotCard } from "@/types/tarot";
+import { playShuffleSound } from "@/utils/sound";
 
 /**
  * Fisher-Yates shuffle algorithm implementation
@@ -38,12 +39,20 @@ export const generateCardReversals = (
  * @param cardOrder - Current card order
  * @param setCardOrder - Setter for card order
  * @param setCardReversals - Optional setter for card reversals
+ * @param withSound - Whether to play shuffle sound (default true)
  */
 export const shuffleCards = (
   cardOrder: number[],
   setCardOrder: Dispatch<SetStateAction<number[]>>,
-  setCardReversals?: Dispatch<SetStateAction<Record<number, boolean>>>
+  setCardReversals?: Dispatch<SetStateAction<Record<number, boolean>>>,
+  withSound: boolean = true
 ): void => {
+  if (withSound) {
+    // Play shuffle sound immediately
+    playShuffleSound();
+  }
+
+  // Shuffle immediately so animation happens right away
   const shuffledOrder = shuffleArray(cardOrder);
   const reversals = generateCardReversals(shuffledOrder);
 

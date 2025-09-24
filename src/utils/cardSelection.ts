@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 
 import { MAX_CARDS } from "@/constants/tarot";
 import { ReadingMode } from "@/types/tarot";
+import { playCardSelectionSound } from "@/utils/sound";
 import { showToast } from "@/utils/toast";
 
 /**
@@ -59,6 +60,9 @@ export const handleCardSelect = (
         newSelected: [...newSelected],
         positionIndex: newSelected.length - 1,
       });
+
+      // Play card selection sound
+      playCardSelectionSound();
 
       return newSelected;
     } else {

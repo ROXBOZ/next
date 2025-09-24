@@ -4,6 +4,7 @@ export * from "./cardSelection";
 export * from "./cardHelpers";
 export * from "./readingHelpers";
 export * from "./toast";
+export * from "./sound";
 
 // AI interpretation is kept as named export due to being JS
 export {

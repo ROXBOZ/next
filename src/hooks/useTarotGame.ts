@@ -62,6 +62,7 @@ export function useTarotGame(cards: TarotCard[]) {
     if (selectedCards.length > 0) {
       return false; // Indicates shuffle was blocked
     }
+    
     shuffleCards(cardOrder, setCardOrder, setCardReversals);
     return true; // Indicates shuffle was successful
   }, [cardOrder, selectedCards]);
@@ -72,7 +73,7 @@ export function useTarotGame(cards: TarotCard[]) {
       setSelectedCards,
       cardOrder,
       setCardOrder,
-      (newOrder, setOrder) => shuffleCards(newOrder, setOrder, setCardReversals)
+      (newOrder, setOrder) => shuffleCards(newOrder, setOrder, setCardReversals, false) // No sound for reset
     );
     setReadingMode(null);
     setQuestion("");
