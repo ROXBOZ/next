@@ -55,13 +55,18 @@ export default function Home() {
           <button onClick={handleReset}>Reset Selection</button>
         </div>
         <div className="flex gap-8">
-          {selectedCards.map((cardId, index) => {
-            const cardData = cards.find((card) => card.id === cardId);
-            const titles = ["Passé", "Présent", "Futur", "Défi", "Guidance"];
+          {[0, 1, 2, 3, 4].map((index) => {
+            const cardId = selectedCards[index];
+            const cardData = cardId
+              ? cards.find((card) => card.id === cardId)
+              : null;
+            const titles = ["Présent", "Défi", "Passé", "Avenir", "Aide"];
+            const hasCard = cardData !== null;
+
             return (
-              <div key={cardId} className="flex flex-col items-center gap-2">
-                <p>{titles[index]}</p>
-                <CardFront data={cardData} position={index + 1} />
+              <div key={index} className="flex flex-col items-center gap-2">
+                <p className={hasCard ? "" : "opacity-50"}>{titles[index]}</p>
+                {hasCard && <CardFront data={cardData} position={index + 1} />}
               </div>
             );
           })}
