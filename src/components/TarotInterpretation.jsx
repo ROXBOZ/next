@@ -173,11 +173,11 @@ function TarotInterpretation({
   }
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/90">
       <div className="bg-violet-950 relative text-violet-50 pb-2 rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto  shadow-2xl">
         <div className="max-w-[65ch] mx-auto">
           <div className=" px-8 py-4 relative">
-            <h3 className="font-semibold border-b border-violet-500 py-2">
+            <h3 className="font-semibold border-b border-violet-500 pb-2 pt-6">
               Votre tirage est complet
             </h3>
             <button

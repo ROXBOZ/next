@@ -55,13 +55,13 @@ function CardFront({
         </div>
       </div>
 
-      <div
+      {/* <div
         className={`text-xs text-balance  w-full ${
           isReversed ? "rotate-180" : ""
         }`}
       >
         {displayDescription}
-      </div>
+      </div> */}
     </div>
   );
 }
