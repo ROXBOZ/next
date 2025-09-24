@@ -8,13 +8,50 @@ export const handleCardSelect = (
 ) => {
   const maxCards = readingMode === "3-cards" ? 3 : 5;
 
+  console.log("🎯 CARD SELECTION ATTEMPT:", {
+    cardId,
+    currentSelectedLength: selectedCards.length,
+    selectedCards: [...selectedCards],
+    maxCards,
+    readingMode,
+    timestamp: new Date().toISOString(),
+  });
+
   setSelectedCards((currentSelected) => {
+    console.log("🔄 INSIDE setSelectedCards:", {
+      cardId,
+      currentSelectedLength: currentSelected.length,
+      currentSelected: [...currentSelected],
+      maxCards,
+      canSelect: currentSelected.length < maxCards,
+    });
+
     if (currentSelected.length < maxCards) {
-      setCardOrder((currentOrder) =>
-        currentOrder.filter((id) => id !== cardId)
-      );
-      return [...currentSelected, cardId];
+      setCardOrder((currentOrder) => {
+        console.log("🗂️ REMOVING from deck:", {
+          cardId,
+          deckSizeBefore: currentOrder.length,
+          deckSizeAfter: currentOrder.filter((id) => id !== cardId).length,
+        });
+        return currentOrder.filter((id) => id !== cardId);
+      });
+
+      const newSelected = [...currentSelected, cardId];
+      console.log("✅ CARD SELECTED:", {
+        cardId,
+        newSelectedLength: newSelected.length,
+        newSelected: [...newSelected],
+        positionIndex: newSelected.length - 1,
+      });
+
+      return newSelected;
     } else {
+      console.log("❌ SELECTION BLOCKED:", {
+        cardId,
+        currentSelectedLength: currentSelected.length,
+        maxCards,
+        reason: "Max cards reached",
+      });
       showToast(`Max. ${maxCards} cartes!`);
       return currentSelected;
     }
