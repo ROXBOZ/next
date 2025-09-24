@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, useEffect, useRef } from "react";
 import { ReadingMode } from "@/types/tarot";
 import { playTypingSound, playClickSound } from "@/utils/sound";
 
@@ -24,6 +24,19 @@ function ModeSelector({
   showInterpretationButton,
   onOpenInterpretation,
 }: ModeSelectorProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // Focus the input after the animation delay when not in reading mode
+  useEffect(() => {
+    if (!readingMode && inputRef.current) {
+      const timer = setTimeout(() => {
+        inputRef.current?.focus();
+      }, 300); // Slightly after the animation starts (0.2s + buffer)
+
+      return () => clearTimeout(timer);
+    }
+  }, [readingMode]);
+
   const handleQuestionChange = (e: ChangeEvent<HTMLInputElement>) => {
     setQuestion(e.target.value);
     playTypingSound();
@@ -91,6 +104,7 @@ function ModeSelector({
             Demandez à l’oracle
           </span>
           <input
+            ref={inputRef}
             type="text"
             value={question}
             onChange={handleQuestionChange}
