@@ -43,15 +43,15 @@ function TarotInterpretation({
   useEffect(() => {
     if (showModal) {
       // Block scroll
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
       // Restore scroll
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
 
     // Cleanup: restore scroll when component unmounts
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [showModal]);
 
@@ -84,10 +84,8 @@ function TarotInterpretation({
   const declineInterpretation = () => {
     setUserDeclined(true);
     setShowChoice(false);
-    // Close modal after a brief moment to show the message
-    setTimeout(() => {
-      setShowModal(false);
-    }, 2000);
+    // Close modal immediately
+    setShowModal(false);
   };
 
   const resetChoice = () => {
@@ -133,26 +131,6 @@ function TarotInterpretation({
                   Non, je préfère interpréter moi-même
                 </button>
               </div>
-            </div>
-          )}
-
-          {/* User Declined */}
-          {userDeclined && (
-            <div className="text-center py-8">
-              <h4 className="text-lg mb-4">
-                🔮 Parfait ! Prenez le temps d'observer vos cartes et de
-                ressentir leur message.
-              </h4>
-              <p className="mb-6 opacity-80">
-                Votre intuition et votre connexion personnelle avec les cartes
-                sont tout aussi précieuses qu'une interprétation IA.
-              </p>
-              <button
-                onClick={resetChoice}
-                className="px-4 py-2 bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition-colors"
-              >
-                Changer d'avis
-              </button>
             </div>
           )}
 
