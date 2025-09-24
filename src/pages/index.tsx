@@ -34,8 +34,8 @@ export default function Home() {
 
   return (
     <div>
-      <div className="pattern pb-12 w-screen h-screen fixed inset-0 xl:relative ">
-        <div className="h-full xl:h-screen overflow-y-auto xl:overflow-hidden xl:p-4">
+      <div className="pattern w-screen xl:h-screen fixed inset-0 xl:relative ">
+        <div className="h-full pb-12 xl:h-screen overflow-y-auto xl:overflow-hidden xl:p-4">
           <Header onReset={resetGame} />
           <div className="flex-col items-center flex pb-4">
             {/* Mode Selection with integrated GameControls */}
