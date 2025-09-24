@@ -59,15 +59,15 @@ export default function Home() {
             <div ref={modeSelectorRef}>
               <ModeSelector
                 readingMode={readingMode}
-              setReadingMode={startReading}
-              selectedCards={selectedCards}
-              question={question}
-              setQuestion={setQuestion}
-              canShuffle={canShuffle}
-              onShuffle={shuffleDeck}
-              showInterpretationButton={showInterpretationButton}
-              onOpenInterpretation={openInterpretation}
-              onReset={resetGame}
+                setReadingMode={startReading}
+                selectedCards={selectedCards}
+                question={question}
+                setQuestion={setQuestion}
+                canShuffle={canShuffle}
+                onShuffle={shuffleDeck}
+                showInterpretationButton={showInterpretationButton}
+                onOpenInterpretation={openInterpretation}
+                onReset={resetGame}
               />
             </div>
 
