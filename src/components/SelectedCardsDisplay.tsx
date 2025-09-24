@@ -1,4 +1,5 @@
 import { CardReversals, ReadingMode, TarotCard } from "@/types/tarot";
+import { useEffect, useRef } from "react";
 
 import CardFront from "./CardFront";
 import { READING_CONFIGS } from "@/constants/tarot";
