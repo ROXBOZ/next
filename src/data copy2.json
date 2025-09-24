@@ -1,0 +1,680 @@
+{
+  "tarot_cards": [
+    {
+      "id": 0,
+      "name": "Le Mat",
+      "arcana": "majeur",
+      "number": "0",
+      "description": "L'ultime début, ivre de possibilités pures. C'est l'énergie qui te pousse à tout quitter pour un WG à Neukölln avec des inconnus, persuadé que cette fois-ci, ce sera différent. Le Mat, c'est la folle douce qui danse au bord de l'abîme, son sac à dos rempli de naïveté et d'une foi absolue en son propre cul. Elle représente l'acte de se jeter dans le vide, sachant pertinemment que le filet de sécurité est une invention des lâches. Un pied de nez au bon sens et à la retraite par capitalisation.",
+      "keywords": ["innocence", "voyage", "risque", "liberté", "spontanéité"],
+      "reversed": "Se perdre dans les couloirs du Berghain à l'ouverture. Confondre liberté et incapacité à s'engager."
+    },
+    {
+      "id": 1,
+      "name": "La Bateleuse",
+      "arcana": "majeur",
+      "number": "I",
+      "description": "L'artiste du système D. Elle ne manifeste pas sa réalité avec des cristaux, mais avec du tape gaffer et une obstination de merde. Sur sa table : un laptop sur lequel elle pirate des logiciels, les cendres de ses dernières relations, et la volonté pure de créer quelque chose qui lui survivra. C'est la capacité à bâtir son propre monde à partir de rien, ou de ce qui a été jeté. Elle rappelle que le vrai pouvoir magique, c'est de se démerder.",
+      "keywords": ["volonté", "création", "habileté", "concentration", "début"],
+      "reversed": "Acheter du matos de créatif sur Amazon pour une idée qui ne verra jamais le jour. Parler de son projet pendant des heures à Späti sans jamais ouvrir un fichier."
+    },
+    {
+      "id": 2,
+      "name": "La Papesse",
+      "arcana": "majeur",
+      "number": "II",
+      "description": "Gardienne des mystères qui ne s'expliquent pas, mais se ressentent dans la moelle. Elle, elle sait. Elle sait que ton nouveau crush est un poète raté qui vit chez sa mère. Son intuition est une fréquence basse, un savoir viscéral qui murmure à travers le bruit blanc de la ville. Elle incarne la sagesse qui vient non pas des livres, mais d'avoir trop vu, trop vécu. C'est la patience froide de celle qui connaît le prix de la révélation et n'a plus rien à prouver.",
+      "keywords": [
+        "intuition",
+        "mystère",
+        "sagesse",
+        "subconscient",
+        "patience"
+      ],
+      "reversed": "Faire confiance à un profil Instagram trop curateur. Ignorer les frissons dans sa nuque lors d'un rencard parce qu'il a un bon discours de gauche."
+    },
+    {
+      "id": 3,
+      "name": "L'Impératrice",
+      "arcana": "majeur",
+      "number": "III",
+      "description": "Déesse de la fertilité qui n'a besoin d'aucune permission pour créer. Son royaume est un jardin sauvage où poussent des idées, des enfants et des révolutions. Elle représente l'abondance radicale : celle qui vient du corps, de la terre, de la communauté, pas du capital. C'est la certitude que ta valeur n'est pas dans ta productivité, mais dans ton simple être. Une riposte vivante et sensuelle à l'austérité.",
+      "keywords": [
+        "fertilité",
+        "abondance",
+        "créativité",
+        "nature",
+        "maternité"
+      ],
+      "reversed": "Se perdre dans le rôle de 'maman thérapeute' pour toustes. Confondre self-care et consommation compulsive."
+    },
+    {
+      "id": 4,
+      "name": "L'Empereur",
+      "arcana": "majeur",
+      "number": "IV",
+      "description": "Le patriarche sur son trône de certitudes branlantes. Il croit contrôler le monde avec ses règles et ses structures, mais ne maîtrise même pas ses propres démons. Cette carte est un rappel : toute autorité qui doit s'imposer est déjà illégitime. Questionne les systèmes, surtout ceux que tu as internalisés. La vraie puissance n'a pas besoin de trône.",
+      "keywords": ["autorité", "structure", "pouvoir", "stabilité", "ordre"],
+      "reversed": "Devenir le tyran de sa propre colocation. Micromanager son collectif artistique jusqu'à l'implosion."
+    },
+    {
+      "id": 5,
+      "name": "Le Pape",
+      "arcana": "majeur",
+      "number": "V",
+      "description": "Grand prêtre de la tradition et du 'on a toujours fait comme ça'. Il offre des certitudes bien emballées et une communauté prête à l'emploi. Mais méfie-toi des chemins trop tracés : la spiritualité authentique ne porte pas d'uniforme institutionnel. Parfois, la plus grande révélation consiste à brûler les dogmes pour se chauffer à la flamme.",
+      "keywords": [
+        "tradition",
+        "spiritualité",
+        "croyances",
+        "enseignement",
+        "conformité"
+      ],
+      "reversed": "Rejoindre une secte wellness. Croire que ton thérapeute a toutes les réponses."
+    },
+    {
+      "id": 6,
+      "name": "Les Amoureux·ses",
+      "arcana": "majeur",
+      "number": "VI",
+      "description": "Ce n'est pas une carte de romance, mais de choix cornélien sous le regard d'un ange queer. Qui choisis-tu d'aimer, et à quel prix ? Mais la question la plus radicale est : te choisis-tu toi-même avant de choisir un·e autre ? L'harmonie véritable commence par l'intégrité, pas par le compromis. C'est le contrat que tu passes avec ton propre cœur.",
+      "keywords": ["choix", "amour", "harmonie", "relations", "dualité"],
+      "reversed": "Se mettre en couple pour éviter d'être seul·e avec ses problèmes. Faire un coming out polyamoureux par SMS."
+    },
+    {
+      "id": 7,
+      "name": "Le Chariot",
+      "arcana": "majeur",
+      "number": "VII",
+      "description": "Conductrice qui maîtrise l'art de tenir ensemble des énergies opposées. Ses rênes relient l'ombre et la lumière, le féminin et le masculin, la rage et la douceur. Elle avance sans demander la route, créant son propre chemin à travers le chaos. Le contrôle n'est pas domination, c'est la direction ferme que tu donnes à ta vie quand tout tire dans tous les sens.",
+      "keywords": [
+        "volonté",
+        "contrôle",
+        "victoire",
+        "direction",
+        "détermination"
+      ],
+      "reversed": "Essayer de tout contrôler et finir en burn-out. Acheter un vélo cargo pour impressionner la bourgeoisie bobo."
+    },
+    {
+      "id": 8,
+      "name": "La Justice",
+      "arcana": "majeur",
+      "number": "VIII",
+      "description": "Magistrate implacable qui pèse les actions avec équité, pas avec la loi patriarcale. Sa balance est sensible aux privilèges et aux oppressions. La vraie justice est intersectionnelle et souvent inconfortable. Cette carte demande : assumes-tu les conséquences de tes actes, y compris ceux commis par ignorance ? La responsabilité est le prix de la liberté.",
+      "keywords": ["justice", "équilibre", "vérité", "conséquences", "karma"],
+      "reversed": "Faire call-out sur Twitter pour un like. Attendre que le système judiciaire punisse les oppresseurs."
+    },
+    {
+      "id": 9,
+      "name": "L'Hermite",
+      "arcana": "majeur",
+      "number": "IX",
+      "description": "Vieille sage qui sait que les réponses ne sont pas dans le scroll infini, mais dans le silence que tu crains. Sa lanterne n'éclaire que le chemin intérieur, celui qui mène à la vérité que tu portes déjà. Dans une économie de l'attention, la solitude volontaire est un acte de résistance. Parfois, il faut s'éloigner du bruit du monde pour entendre sa propre musique.",
+      "keywords": [
+        "sagesse",
+        "introspection",
+        "solitude",
+        "guidance",
+        "prudence"
+      ],
+      "reversed": "S'isoler par peur d'être vu·e. Confondre développement personnel et dérive sectaire."
+    },
+    {
+      "id": 10,
+      "name": "La Roue de Fortune",
+      "arcana": "majeur",
+      "number": "X",
+      "description": "La grande roue cosmique qui se contrefiche de tes plans sur cinq ans. Elle tourne pour toutes, reines et punks à chiens. Accepter les cycles, c'est comprendre que parfois tu es au sommet, parfois dans la merde, et que les deux sont temporaires. La seule constante est le changement. Apprends à danser avec le chaos au lieu de lui résister.",
+      "keywords": ["destin", "cycles", "changement", "opportunité", "chance"],
+      "reversed": "Blâmer l'univers pour une série de mauvais choix. Attendre que la roue tourne sans rien faire."
+    },
+    {
+      "id": 11,
+      "name": "La Force",
+      "arcana": "majeur",
+      "number": "XI",
+      "description": "Dompteuse qui maîtrise la bête non par la violence, mais par une compassion féroce. Sa force est douce, son courage tranquille. Elle représente la puissance de la vulnérabilité assumée, de l'intelligence émotionnelle face aux instincts primaires. La vraie force, c'est d'apprivoiser ses démons sans les nier, pour qu'ils deviennent des alliés.",
+      "keywords": ["courage", "force", "maîtrise", "patience", "compréhension"],
+      "reversed": "Étouffer sa colère jusqu'à l'explosion. Confondre gentillesse avec de la faiblesse."
+    },
+    {
+      "id": 12,
+      "name": "La Pendue",
+      "arcana": "majeur",
+      "number": "XII",
+      "description": "Rebelle suspendue qui a choisi de lâcher prise. Son sacrifice n'est pas un martyre, mais un acte de transformation radical. En acceptant de se mettre à l'envers, elle voit le monde sous un angle nouveau. Parfois, résister empêche l'évolution. La sagesse vient quand on accepte de ne pas contrôler, quand on fait le deuil de ce qui aurait dû être.",
+      "keywords": [
+        "sacrifice",
+        "perspective",
+        "lâcher-prise",
+        "attente",
+        "renaissance"
+      ],
+      "reversed": "Rester dans une situation toxique par peur du vide. Se victimiser au lieu d'agir."
+    },
+    {
+      "id": 13,
+      "name": "L'Arcane sans nom",
+      "arcana": "majeur",
+      "number": "XIII",
+      "description": "La grande faucheuse qui nettoie le terrain pour que le nouveau puisse pousser. Elle ne tue pas, elle transforme. La fin est toujours un commencement déguisé. Lâche ce qui doit mourir : les relations toxiques, les identités dépassées, les illusions comfortables. Fais de la place à ta renaissance, même si elle fait peur. Rien ne se crée sans que quelque chose ne soit détruit.",
+      "keywords": [
+        "transformation",
+        "fin",
+        "renouveau",
+        "changement",
+        "transition"
+      ],
+      "reversed": "S'accrocher à un emploi, une relation ou une identité qui t'étouffe. Refuser de voir que c'est déjà fini."
+    },
+    {
+      "id": 14,
+      "name": "Tempérance",
+      "arcana": "majeur",
+      "number": "XIV",
+      "description": "L'alchimiste qui mélange les contraires sans les annuler. Elle trouve l'équilibre dans le mouvement, pas dans la rigidité. Féminin et masculin, ombre et lumière, rage et compassion : elle danse avec les paradoxes. La modération est radicale dans un monde d'excès. C'est l'art de trouver la juste mesure entre prendre soin des autres et prendre soin de soi.",
+      "keywords": [
+        "équilibre",
+        "modération",
+        "harmonie",
+        "patience",
+        "guérison"
+      ],
+      "reversed": "Passer de la diète stricte à la crise de boulimie. Brûler son compte militant pour partir en retraite silencieuse."
+    },
+    {
+      "id": 15,
+      "name": "Le Diable",
+      "arcana": "majeur",
+      "number": "XV",
+      "description": "Maîtresse des chaînes que nous choisissons. Attachements, addictions, patterns toxiques : elle montre nos prisons dorées avec un sourire cynique. Mais souviens-toi : les chaînes ont un cadenas, et la clé est dans ta poche. Cette carte ne parle pas de mal, mais de l'ombre que tu refuses de voir en toi. L'intégration de ton côté obscur est la seule vraie libération.",
+      "keywords": [
+        "attachement",
+        "limitation",
+        "matérialisme",
+        "obsession",
+        "ombre"
+      ],
+      "reversed": "Croire que acheter éthique va sauver le monde. Se libérer d'une addiction pour en prendre une autre."
+    },
+    {
+      "id": 16,
+      "name": "La Maison Dieu",
+      "arcana": "majeur",
+      "number": "XVI",
+      "description": "L'éclair de vérité qui fait s'effondrer les structures pourries. La tour patriarcale, les certitudes trop comfortables, les illusions qui te maintenaient en sécurité. Brutal mais nécessaire. Parfois, il faut tout casser pour reconstruire juste. Ne pleure pas les décombres, célèbre la liberté retrouvée. La vérité peut être douloureuse, mais le mensonge est mortifère.",
+      "keywords": [
+        "choc",
+        "révélation",
+        "destruction",
+        "changement brutal",
+        "vérité"
+      ],
+      "reversed": "Ignorer les signes avant-coureurs d'une crise. Se reconstruire trop vite sur les mêmes fondations pourries."
+    },
+    {
+      "id": 17,
+      "name": "L'Étoile",
+      "arcana": "majeur",
+      "number": "XVII",
+      "description": "Après l'effondrement, la reconstruction. Nue et vulnérable, elle puise l'espoir directement dans le cosmos. Son eau régénère la terre brûlée. C'est la petite flamme qui persiste quand plus rien ne va. Connecte-toi à ta vérité la plus essentielle, sans armure ni masque. L'univers ne te doit rien, mais il t'offre des signes si tu sais les voir.",
+      "keywords": ["espoir", "inspiration", "guérison", "sérénité", "guidance"],
+      "reversed": "Attendre un messie ou une solution magique. Perdre foi en tout à la première déception."
+    },
+    {
+      "id": 18,
+      "name": "La Lune",
+      "arcana": "majeur",
+      "number": "XVIII",
+      "description": "Guide des royaumes obscurs où les certitudes se dissolvent. Son chemin traverse les illusions, les peurs ancestrales et les mensonges que tu te racontes. Fais confiance à ton intuition plutôt qu'à ta raison cartésienne. La folie n'est parfois que la sagesse qui refuse de se conformer. Plonge dans tes eaux troubles : c'est là que naît la créativité véritable.",
+      "keywords": [
+        "illusion",
+        "inconscient",
+        "rêves",
+        "confusion",
+        "intuition"
+      ],
+      "reversed": "Se perdre dans des théories complotistes. Prendre ses angoisses pour des prémonitions."
+    },
+    {
+      "id": 19,
+      "name": "Le Soleil",
+      "arcana": "majeur",
+      "number": "XIX",
+      "description": "L'enfant intérieur qui danse enfin libéré, sous la lumière crue de la vérité. Pas d'ombre, pas de cachotteries, plus rien à prouver. Joie pure, réussite authentique, accomplissement personnel. Cette carte rappelle que ton essence fondamentale est lumière. N'aie pas peur de briller - ton éclat n'ôte rien aux autres. C'est la victoire simple d'être pleinement soi.",
+      "keywords": ["joie", "réussite", "accomplissement", "vérité", "bonheur"],
+      "reversed": "Faire semblant d'aller bien sur les réseaux. Un succès qui cache un vide intérieur."
+    },
+    {
+      "id": 20,
+      "name": "Le Jugement",
+      "arcana": "majeur",
+      "number": "XX",
+      "description": "L'appel à l'éveil qui sonne comme une libération. Réveille-toi de ton sommeil dogmatique ! C'est l'heure de répondre à l'appel de ton âme, même si ta famille te rejette ou si tu dois tout recommencer. Renaissance authentique, pas redemption patriarcale. Ta vérité vaut plus que toutes les approbations réunies. C'est le moment de renaître à qui tu es vraiment.",
+      "keywords": [
+        "renaissance",
+        "éveil",
+        "appel",
+        "transformation",
+        "absolution"
+      ],
+      "reversed": "Ignorer l'appel intérieur par peur du changement. Se reinventer superficiellement sans faire le travail profond."
+    },
+    {
+      "id": 21,
+      "name": "Le Monde",
+      "arcana": "majeur",
+      "number": "XXI",
+      "description": "La danseuse dans son cercle de complétude. Elle a tout intégré : l'ombre, la lumière, les échecs, les victoires. C'est l'accomplissement du cycle, la synthèse de tout le voyage. Plus de séparation entre toi et l'univers. Tu es chez toi partout et nulle part. C'est la réalisation que le chemin était la destination, et que tu portais en toi tout ce dont tu avais besoin.",
+      "keywords": [
+        "accomplissement",
+        "achèvement",
+        "unité",
+        "succès",
+        "voyage"
+      ],
+      "reversed": "Avoir tout mais se sentir vide. Refuser de terminer un cycle par peur du vide."
+    },
+    {
+      "id": 22,
+      "name": "As de Coupes",
+      "arcana": "mineur",
+      "number": "As",
+      "suit": "coupes",
+      "description": "Une coupe déborde, mais c'est toi qui décides quoi y mettre : de l'amour, de la créativité, ou juste du vin cheap. C'est l'invitation à ouvrir ton cœur là où tu l'avais cadenassé. Une opportunité émotionnelle se présente, souvent sous les traits d'un·e inconnu·e au sourire un peu trop facile. À toi de voir si tu veux y boire ou juste y tremper les lèvres.",
+      "keywords": ["amour", "émotions", "nouveau départ", "compassion"],
+      "reversed": "Renverser la coupe par peur de se salir. Attendre l'amour parfait comme on attend le bus."
+    },
+    {
+      "id": 23,
+      "name": "Deux de Coupes",
+      "arcana": "mineur",
+      "number": "II",
+      "suit": "coupes",
+      "description": "Le rencard qui se passe étonnamment bien. Une connexion immédiate, comme si vous aviez conspiré dans une vie antérieure. C'est l'alchimie rare où deux solitudes se rencontrent sans se marcher dessus. Un partenariat basé sur l'équilibre, pas sur la fusion. Profites-en, ça arrive aussi souvent qu'une éclipse.",
+      "keywords": ["union", "partenariat", "harmonie", "connexion"],
+      "reversed": "Confondre alchimie et trauma bonding. Un match Tinder qui ghoste après trois messages."
+    },
+    {
+      "id": 24,
+      "name": "Trois de Coupes",
+      "arcana": "mineur",
+      "number": "III",
+      "suit": "coupes",
+      "description": "La joie simple de trinquer avec tes amis après une semaine de merde. Célébrer les petites victoires : un loyer payé, une rupture survécue, un projet abouti. Cette carte, c'est la communauté qui te rappelle que tu n'es pas seul·e dans cette galère. Le vrai luxe, c'est d'avoir des gens avec qui partager le dernier carré de chocolat.",
+      "keywords": ["célébration", "amitié", "joie", "communauté"],
+      "reversed": "Boire seul·e devant Netflix. Un dîner où tout le monde scroll sur son téléphone."
+    },
+    {
+      "id": 25,
+      "name": "Quatre de Coupes",
+      "arcana": "mineur",
+      "number": "IV",
+      "suit": "coupes",
+      "description": "Quand on te propose une coupe et que tu réponds 'bof'. L'apathie émotionnelle, le sentiment que tout est un peu fade. Peut-être que tu es blasé·e, peut-être que tu as vraiment besoin de faire une pause. Dans tous les cas, c'est le moment de méditer sur ce que tu veux vraiment, au lieu d'accepter ce qu'on te donne.",
+      "keywords": ["méditation", "introspection", "apathie", "contemplation"],
+      "reversed": "Accepter n'importe quelle attention par peur du vide. Se plaindre tout en refusant les solutions."
+    },
+    {
+      "id": 26,
+      "name": "Cinq de Coupes",
+      "arcana": "mineur",
+      "number": "V",
+      "suit": "coupes",
+      "description": "Trois coupes sont renversées, deux sont encore debout. Classic. Tu pleures ce qui est perdu en oubliant ce qui reste. Une rupture, un projet avorté, une amitié trahie. Le deuil est nécessaire, mais n'oublie pas de compter tes survivances. La vie continue, même si c'est une consolation de merde sur le moment.",
+      "keywords": ["perte", "regret", "deuil", "tristesse"],
+      "reversed": "S'accrocher à la douleur comme preuve d'amour. Faire une dépression pour une personne qui t'a oublié·e en deux semaines."
+    },
+    {
+      "id": 27,
+      "name": "Six de Coupes",
+      "arcana": "mineur",
+      "number": "VI",
+      "suit": "coupes",
+      "description": "La madeleine de Proust version queer : une chanson, une odeur, un lieu qui te ramène vingt ans en arrière. La nostalgie n'est pas un crime, tant que tu n'essaies pas d'y habiter. Cette carte parle aussi des cadeaux du passé : les patterns, les blessures, les forces que tu as héritées. À toi de décider quoi en faire.",
+      "keywords": ["nostalgie", "innocence", "souvenirs", "enfance"],
+      "reversed": "Appeler son ex après trois verres. Idealiser le passé au point de pourrir le présent."
+    },
+    {
+      "id": 28,
+      "name": "Sept de Coupes",
+      "arcana": "mineur",
+      "number": "VII",
+      "suit": "coupes",
+      "description": "Trop de choix tue le choix. Sept coupes, sept possibilités alléchantes, sept façons de se planter. C'est le menu du restaurant de la vie : si long que tu finis par commander ce que tu connais déjà. Les illusions sont séduisantes, mais toutes ne mènent nulle part. Le défi est de distinguer le rêve réalisable du fantasme toxique.",
+      "keywords": ["choix", "illusions", "options", "rêves"],
+      "reversed": "Paralysie décisionnelle devant le rayon yaourts. Choisir la pire option par peur de manquer les autres."
+    },
+    {
+      "id": 29,
+      "name": "Huit de Coupes",
+      "arcana": "mineur",
+      "number": "VIII",
+      "suit": "coupes",
+      "description": "Quitter une situation qui ne te nourrit plus, même si c'est confortable. Laisser derrière toi les coupes vides pour chercher quelque chose de plus profond. C'est courageux, et terrifiant. Parfois, le plus grand acte d'amour est de tourner le dos à ce qui t'empêche de grandir. Même si ça veut dire marcher seul·e dans le noir un moment.",
+      "keywords": ["abandon", "recherche", "départ", "évolution"],
+      "reversed": "Rester par lâcheté ou habitude. Fuir au premier signe de difficulté au lieu de travailler les problèmes."
+    },
+    {
+      "id": 30,
+      "name": "Neuf de Coupes",
+      "arcana": "mineur",
+      "number": "IX",
+      "suit": "coupes",
+      "description": "Contentement profond, pas juste un like sur Instagram. C'est la satisfaction d'avoir ce dont tu as besoin, et de savoir l'apprécier. Un vœu exaucé, souvent plus modeste que ce que tu imaginais. Cette carte dit : tu as le droit d'être heureux·se, même si tout n'est pas parfait. Savoure sans culpabiliser.",
+      "keywords": ["satisfaction", "contentement", "réussite", "abondance"],
+      "reversed": "Afficher une vie parfaite pour cacher un vide. La satisfaction égoïste qui ignore la misère alentour."
+    },
+    {
+      "id": 31,
+      "name": "Dix de Coupes",
+      "arcana": "mineur",
+      "number": "X",
+      "suit": "coupes",
+      "description": "Bonheur familial, version 2.0 : la famille que tu t'es choisie. L'harmonie qui vient non pas de la perfection, mais de l'acceptation des imperfections. C'est le sentiment d'appartenir, d'être vu·e et aimé·e pour qui tu es. Un accomplissement émotionnel rare et précieux. Ça vaut tous les succès matériels du monde.",
+      "keywords": ["bonheur", "famille", "harmonie", "accomplissement"],
+      "reversed": "Un dîner de famille où tout le monde sourit jaune. Confondre apparence d'harmonie et bonheur réel."
+    },
+    {
+      "id": 32,
+      "name": "As d'Épées",
+      "arcana": "mineur",
+      "number": "As",
+      "suit": "épées",
+      "description": "L'illumination qui te frappe sous la douche. Une vérité si claire et évidente qu'elle coupe à travers le brouillard mental. C'est une percée intellectuelle, un 'eurêka!' qui change la donne. Mais attention : une épée peut trancher les mensonges, mais aussi blesser. À toi de choisir comment utiliser cette clarté.",
+      "keywords": ["clarté", "vérité", "percée", "intellect"],
+      "reversed": "Une 'révélation' qui n'en est pas une. Utiliser la vérité comme une arme pour blesser."
+    },
+    {
+      "id": 33,
+      "name": "Deux d'Épées",
+      "arcana": "mineur",
+      "number": "II",
+      "suit": "épées",
+      "description": "La paralysie de celle qui refuse de voir pour ne pas avoir à choisir. Un dilemme cornélien : rester ou partir, dire ou se taire. Tu fais l'autruche en espérant que le problème se règlera tout seul. Spoiler : non. Parfois, ne pas choisir est déjà un choix - généralement le pire.",
+      "keywords": ["impasse", "décision", "blocage", "équilibre"],
+      "reversed": "Prendre une décision dans la panique. Enfin voir la vérité en face, même si elle fait mal."
+    },
+    {
+      "id": 34,
+      "name": "Trois d'Épées",
+      "arcana": "mineur",
+      "number": "III",
+      "suit": "épées",
+      "description": "Le cœur percé de trois lames : trahison, déception, douleur. Ça fait mal, c'est normal. Cette carte valide ta souffrance au lieu de te dire 'positive !'. Le chagrin est nécessaire. Pleure, rage, puis quand tu seras prêt·e, retire les épées une par une. La guérison commence par l'acceptation de la blessure.",
+      "keywords": ["chagrin", "douleur", "séparation", "tristesse"],
+      "reversed": "Refouler la douleur jusqu'à ce qu'elle ressort en ulcère. Commencer à pardonner, non pour l'autre, mais pour toi."
+    },
+    {
+      "id": 35,
+      "name": "Quatre d'Épées",
+      "arcana": "mineur",
+      "number": "IV",
+      "suit": "épées",
+      "description": "Le repos forcé de celle qui a trop donné. Épuisement mental, burn-out, saturation. Cette carte dit : arrête. Vraiment. Déconnecte, médite, dors. Le monde peut attendre. La retraite n'est pas un échec, c'est une stratégie de survie. Tu ne peps pas combattre avec une épée émoussée.",
+      "keywords": ["repos", "retraite", "guérison", "méditation"],
+      "reversed": "S'effondrer par épuisement. Un repos qui devient de l'évitement."
+    },
+    {
+      "id": 36,
+      "name": "Cinq d'Épées",
+      "arcana": "mineur",
+      "number": "V",
+      "suit": "épées",
+      "description": "La victoire à prix cassé. Tu as gagné la bataille, mais perdu le respect des autres, ou le tien. C'est écraser un débat sur les pronouns, humilier un collègue en réunion. Une victoire creuse qui laisse un goût de cendres. Parfois, il vaut mieux perdre avec grâce que gagner comme un·e connard·e.",
+      "keywords": ["conflit", "victoire", "défaite", "tension"],
+      "reversed": "Reconnaître que la victoire n'en valait pas la peine. Chercher la réconciliation après avoir brûlé les ponts."
+    },
+    {
+      "id": 37,
+      "name": "Six d'Épées",
+      "arcana": "mineur",
+      "number": "VI",
+      "suit": "épées",
+      "description": "La traversée vers des eaux plus calmes. Quitter un lieu, une situation, un état d'esprit toxique. Ce n'est pas encore le bonheur, mais c'est mieux qu'avant. Une transition nécessaire, souvent mélancolique. On emporte ce qui peut servir, on laisse le reste. Parfois, la meilleure solution est de prendre ses cliques et ses claques.",
+      "keywords": ["transition", "mouvement", "voyage", "guérison"],
+      "reversed": "Rester dans une situation nocive par peur du changement. Une fuite en avant qui ressemble à une solution."
+    },
+    {
+      "id": 38,
+      "name": "Sept d'Épées",
+      "arcana": "mineur",
+      "number": "VII",
+      "suit": "épées",
+      "description": "L'art de la ruse et de l'esquive. Prendre ce dont tu as besoin sans demander la permission. Parfois nécessaire pour survivre dans un système oppressif. Mais attention : la frontière entre stratégie et tromperie est mince. Jusqu'où es-tu prêt·e à aller pour gagner ? Et à quel coût pour ton intégrité ?",
+      "keywords": ["ruse", "stratégie", "secret", "évasion"],
+      "reversed": "Se faire prendre la main dans le sac. Une ruse qui se retourne contre toi."
+    },
+    {
+      "id": 39,
+      "name": "Huit d'Épées",
+      "arcana": "mineur",
+      "number": "VIII",
+      "suit": "épées",
+      "description": "La prison mentale dont tu détiens la clé. Sentiment d'être piégé·e par tes propres limitations, tes peurs, tes croyances. Les épées sont réelles, mais les liens sont imaginaires. Cette carte te rappelle que tu as le pouvoir de te libérer. Le premier pas est de réaliser que tu n'es pas aussi impuissant·e que tu le crois.",
+      "keywords": ["restriction", "piège", "limitations", "victime"],
+      "reversed": "Commencer à voir les issues. Realiser que tu t'es toi-même attaché·e les mains."
+    },
+    {
+      "id": 40,
+      "name": "Neuf d'Épées",
+      "arcana": "mineur",
+      "number": "IX",
+      "suit": "épées",
+      "description": "L'anxiété qui te réveille à 3h du matin. Le cauchemar éveillé où tu repasses toutes tes erreurs. Les peurs irrationnelles qui deviennent monstrueusement concrètes dans le silence de la nuit. Cette carte valide ton angoisse, mais te rappelle aussi : ce n'est pas la réalité, c'est ton mental qui fait des siennes.",
+      "keywords": ["anxiété", "peur", "cauchemar", "inquiétude"],
+      "reversed": "Arrêter de s'écouter penser. Demander de l'aide au lieu de tout garder en dedans."
+    },
+    {
+      "id": 41,
+      "name": "Dix d'Épées",
+      "arcana": "mineur",
+      "number": "X",
+      "suit": "épées",
+      "description": "La fin douloureuse, définitive. Un coup de grâce qui met fin aux souffrances. C'est rock bottom : plus bas, tu ne peux pas tomber. La bonne nouvelle ? Maintenant, la seule direction est vers le haut. Parfois, il faut que quelque chose meure complètement pour que du nouveau puisse naître.",
+      "keywords": ["fin", "trahison", "défaite", "cicatrisation"],
+      "reversed": "S'accrocher à un cadavre. Commencer la lente reconstruction après la chute."
+    },
+    {
+      "id": 42,
+      "name": "As de Bâtons",
+      "arcana": "mineur",
+      "number": "As",
+      "suit": "bâtons",
+      "description": "L'étincelle. L'idée qui te tombe dessus dans le métro. L'énergie pure d'un nouveau départ. C'est le feu créatif qui demande à être nourri, mais attention : toutes les étincelles ne deviennent pas des incendies. À toi de décider si tu veux en faire un feu de camp ou un brasier.",
+      "keywords": ["inspiration", "énergie", "nouveau départ", "créativité"],
+      "reversed": "Avoir des idées géniales qu'on ne réalise jamais. Un départ raté à cause d'un manque de carburant."
+    },
+    {
+      "id": 43,
+      "name": "Deux de Bâtons",
+      "arcana": "mineur",
+      "number": "II",
+      "suit": "bâtons",
+      "description": "Contempler l'horizon en se demandant quoi faire de sa vie. Tenir le monde dans ses mains, mais hésiter à faire le premier pas. La planification est nécessaire, mais elle peut devenir une forme de procrastination. À un moment, il faut lâcher le globe et avancer, même sans certitude.",
+      "keywords": ["planification", "vision", "décision", "potentiel"],
+      "reversed": "Paralysie par analyse. Avoir des plans grandioses mais pas de stratégie concrète."
+    },
+    {
+      "id": 44,
+      "name": "Trois de Bâtons",
+      "arcana": "mineur",
+      "number": "III",
+      "suit": "bâtons",
+      "description": "Voir les premiers résultats de son travail au loin. Les collaborations commencent à porter leurs fruits. C'est le moment de regarder vers l'avenir avec un optimisme prudent. Le voyage est loin d'être fini, mais tu es sur la bonne voie. Continue.",
+      "keywords": ["expansion", "vision", "collaboration", "progrès"],
+      "reversed": "Des projets qui stagnent malgré les efforts. Des collaborations qui tournent au vinaigre."
+    },
+    {
+      "id": 45,
+      "name": "Quatre de Bâtons",
+      "arcana": "mineur",
+      "number": "IV",
+      "suit": "bâtons",
+      "description": "La célébration des petites victoires. Une pause bien méritée après un effort. L'harmonie temporaire dans la communauté. C'est le jardin que tu as cultivé et où tu peux enfin t'asseoir. Profite de ce moment de grâce - le prochain défi arrivera assez vite.",
+      "keywords": ["célébration", "harmonie", "fondation", "communauté"],
+      "reversed": "Une fête forcée qui cache des tensions. Refuser de célébrer ses propres succès."
+    },
+    {
+      "id": 46,
+      "name": "Cinq de Bâtons",
+      "arcana": "mineur",
+      "number": "V",
+      "suit": "bâtons",
+      "description": "Le combat pour le plaisir de combattre. Des désaccords qui dégénèrent en conflits inutiles. Chacun·e tire dans son coin sans savoir pourquoi. Une énergie compétitive malsaine. Parfois, il faut se demander : est-ce que je veux avoir raison, ou est-ce que je veux être heureux·se ?",
+      "keywords": ["conflit", "compétition", "désaccord", "défi"],
+      "reversed": "Apprendre à lâcher prise. Trouver un terrain d'entente au lieu d'insister pour gagner."
+    },
+    {
+      "id": 47,
+      "name": "Six de Bâtons",
+      "arcana": "mineur",
+      "number": "VI",
+      "suit": "bâtons",
+      "description": "La victoire modeste mais significative. La reconnaissance pour un travail bien fait. Un succès qui en annonce d'autres. C'est le moment de savourer les lauriers, sans tomber dans l'arrogance. Tu as gagné cette bataille, mais la guerre continue.",
+      "keywords": ["victoire", "reconnaissance", "succès", "leadership"],
+      "reversed": "Un échec cuisant. La victoire qui monte à la tête."
+    },
+    {
+      "id": 48,
+      "name": "Sept de Bâtons",
+      "arcana": "mineur",
+      "number": "VII",
+      "suit": "bâtons",
+      "description": "Défendre sa position contre vents et marées. La persévérance nécessaire quand tout le monde doute de toi. Tenir bon malgré les critiques et les obstacles. C'est épuisant, mais parfois, il n'y a pas d'autre choix que de se battre pour ce en quoi on croit.",
+      "keywords": ["défense", "persévérance", "courage", "défi"],
+      "reversed": "Abandonner juste avant la victoire. Se battre pour une cause perdue d'avance."
+    },
+    {
+      "id": 49,
+      "name": "Huit de Bâtons",
+      "arcana": "mineur",
+      "number": "VIII",
+      "suit": "bâtons",
+      "description": "Tout arrive en même temps. Une période de mouvement rapide, de progrès soudains. Les nouvelles voyagent vite, les opportunités se présentent. Accroche-toi et profite de l'élan. C'est le moment d'avancer, pas de réfléchir.",
+      "keywords": ["mouvement", "progrès", "rapidité", "communication"],
+      "reversed": "Des retards frustrants. Une communication qui tombe à l'eau."
+    },
+    {
+      "id": 50,
+      "name": "Neuf de Bâtons",
+      "arcana": "mineur",
+      "number": "IX",
+      "suit": "bâtons",
+      "description": "La résilience de celle qui a déjà surmonté tant d'obstacles. Tu es blessé·e, mais toujours debout. La dernière ligne droite demande toute ton énergie. Fais confiance à ton expérience : tu as les ressources pour terminer ce que tu as commencé.",
+      "keywords": ["résilience", "persévérance", "défense", "force"],
+      "reversed": "L'épuisement après un long combat. Devenir paranoïaque à force de se battre."
+    },
+    {
+      "id": 51,
+      "name": "Dix de Bâtons",
+      "arcana": "mineur",
+      "number": "X",
+      "suit": "bâtons",
+      "description": "Le poids des responsabilités qui t'écrase. Tu portes trop, peut-être par choix, peut-être par obligation. Le fardeau devient insoutenable. Cette carte crie : arrête ! Délègue, lâche prise, demande de l'aide. Tu n'es pas une bête de somme.",
+      "keywords": ["charge", "responsabilité", "fardeau", "effort"],
+      "reversed": "Apprendre à déléguer. Se libérer des obligations qui ne te appartiennent pas."
+    },
+    {
+      "id": 52,
+      "name": "As de Deniers",
+      "arcana": "mineur",
+      "number": "As",
+      "suit": "deniers",
+      "description": "Une opportunité matérielle se présente. Un nouveau job, un investissement, une idée qui pourrait rapporter. L'abondance est à portée de main, mais demande à être cultivée. À toi de décider si tu veux en faire quelque chose de durable ou de le dépenser en frivolités.",
+      "keywords": ["opportunité", "abondance", "prospérité", "nouveau départ"],
+      "reversed": "Laisser passer une chance par peur de prendre des risques. Une opportunité qui cache un piège."
+    },
+    {
+      "id": 53,
+      "name": "Deux de Deniers",
+      "arcana": "mineur",
+      "number": "II",
+      "suit": "deniers",
+      "description": "Jongler avec les ressources comme un·e équilibriste. Faire tenir un budget serré, gérer plusieurs projets en même temps. La flexibilité est ta meilleure alliée. Dans l'instabilité, trouve ton rythme. L'équilibre n'est pas statique, c'est un mouvement perpétuel.",
+      "keywords": ["équilibre", "adaptation", "flexibilité", "changement"],
+      "reversed": "Tout faire tomber en essayant de tout garder sous contrôle. La surcharge qui mène à l'implosion."
+    },
+    {
+      "id": 54,
+      "name": "Trois de Deniers",
+      "arcana": "mineur",
+      "number": "III",
+      "suit": "deniers",
+      "description": "Le travail d'équipe qui produit quelque chose de tangible. Chacun·e apporte ses compétences, et le résultat est plus que la somme des parties. La collaboration concrète, pas juste des discours. C'est en œuvrant ensemble qu'on construit du solide.",
+      "keywords": ["collaboration", "travail", "compétence", "maîtrise"],
+      "reversed": "Les conflits qui sabotent le projet. Le travail bâclé par manque de coordination."
+    },
+    {
+      "id": 55,
+      "name": "Quatre de Deniers",
+      "arcana": "mineur",
+      "number": "IV",
+      "suit": "deniers",
+      "description": "La sécurité à tout prix. S'accrocher à ce qu'on a par peur de manquer. La possessivité qui étouffe. Cette carte questionne : est-ce que tu sécurises ta vie, ou est-ce que tu la momifies ? Parfois, il faut lâcher un peu de contrôle pour laisser entrer le nouveau.",
+      "keywords": ["conservation", "sécurité", "possessivité", "contrôle"],
+      "reversed": "Apprendre à donner et à recevoir. La générosité qui apporte plus de richesse que l'avarice."
+    },
+    {
+      "id": 56,
+      "name": "Cinq de Deniers",
+      "arcana": "mineur",
+      "number": "V",
+      "suit": "deniers",
+      "description": "La peur du manque qui devient réalité. Difficultés financières, isolement matériel, sentiment d'exclusion. C'est dur, mais temporaire. Cette carte rappelle : même dans la précarité, tu n'es pas seul·e. Cherche les solidarités, les ressources cachées. La lumière au bout de l'église est peut-être une soupe populaire.",
+      "keywords": ["pauvreté", "isolement", "difficultés", "anxiété"],
+      "reversed": "Trouver des solutions inattendues. Commencer à se relever avec l'aide des autres."
+    },
+    {
+      "id": 57,
+      "name": "Six de Deniers",
+      "arcana": "mineur",
+      "number": "VI",
+      "suit": "deniers",
+      "description": "Le partage équitable des ressources. Donner quand on a, recevoir quand on besoin. La générosité qui crée de la communauté plutôt que de la dépendance. Cette carte parle de justice économique à échelle humaine. Le vrai pouvoir, c'est de redistribuer.",
+      "keywords": ["générosité", "partage", "équité", "charité"],
+      "reversed": "La charité paternaliste qui humilie. Profiter du système sans rien rendre."
+    },
+    {
+      "id": 58,
+      "name": "Sept de Deniers",
+      "arcana": "mineur",
+      "number": "VII",
+      "suit": "deniers",
+      "description": "Le travail patient qui ne donne pas de résultats immédiats. Investir dans quelque chose qui mettra du temps à porter ses fruits. Évaluer ses progrès, ajuster sa stratégie. La croissance lente mais solide. Dans un monde du tout-tout-de-suite, c'est un acte radical.",
+      "keywords": ["patience", "investissement", "croissance", "évaluation"],
+      "reversed": "Attendre des résultats sans faire le travail. Un investissement qui ne rapporte rien."
+    },
+    {
+      "id": 59,
+      "name": "Huit de Deniers",
+      "arcana": "mineur",
+      "number": "VIII",
+      "suit": "deniers",
+      "description": "L'artisan·e qui perfectionne son craft. Le dévouement à maîtriser une compétence, pas pour la gloire, mais pour l'amour du travail bien fait. La satisfaction de progresser, même modestement. Dans une économie de la surface, c'est un acte de résistance que de faire les choses proprement.",
+      "keywords": ["artisanat", "dévouement", "compétence", "maîtrise"],
+      "reversed": "Le travail bâclé, sans passion. La médiocrité qui se content du minimum."
+    },
+    {
+      "id": 60,
+      "name": "Neuf de Deniers",
+      "arcana": "mineur",
+      "number": "IX",
+      "suit": "deniers",
+      "description": "L'indépendance matérielle conquise de haute lutte. Le luxe modeste de ne dépendre de personne pour subvenir à ses besoins. La satisfaction d'avoir construit sa sécurité à force de travail. Ce n'est pas le faste, c'est l'autonomie. Le vrai luxe, c'est de pouvoir dire non.",
+      "keywords": ["indépendance", "luxe", "réussite", "abondance"],
+      "reversed": "La réussite matérielle qui cache une pauvreté affective. Devenir dépendant·e de son propre confort."
+    },
+    {
+      "id": 61,
+      "name": "Dix de Deniers",
+      "arcana": "mineur",
+      "number": "X",
+      "suit": "deniers",
+      "description": "La sécurité à long terme, souvent héritée. La richesse familiale, les traditions, la stabilité intergénérationnelle. Mais cette carte questionne : qu'est-ce qu'on transmet vraiment ? De l'argent, mais aussi des traumas, des attentes, des conditionnements. L'héritage est à la fois un privilège et un fardeau.",
+      "keywords": ["héritage", "richesse", "famille", "tradition"],
+      "reversed": "Les conflits d'héritage qui déchirent les familles. Rejeter son héritage ou s'y soumettre complètement."
+    }
+  ]
+}

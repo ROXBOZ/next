@@ -27,7 +27,7 @@ function ModeSelector({
 
   return (
     <div className="mb-8 text-center w-2/3 mx-auto">
-      <h2 className="font-medium mb-4 text-orange-50">Posez votre question</h2>
+      <h2 className="font-medium mb-4 text-violet-50">Posez votre question</h2>
 
       {/* Question Input */}
       <div className="mb-6 w-full">
@@ -36,9 +36,8 @@ function ModeSelector({
           onChange={handleQuestionChange}
           placeholder="Quelle est votre question ?"
           className="
-            p-4 w-1/2 border bg-orange-300 rounded-lg text-orange-950
-            placeholder-orange-950/50 resize-none focus:ring-2 focus:ring-amber-500
-            focus:border-transparent transition-all duration-200
+            p-4 w-1/2 bg-[#0d001a] rounded-lg text-violet-50
+            placeholder-violet-500/30 resize-none transition-all duration-200
           "
           rows={3}
         />
@@ -50,18 +49,14 @@ function ModeSelector({
 
       <div className="flex gap-4 justify-center">
         <button
-          className={`light ${
-            !isQuestionValid ? "opacity-50 cursor-not-allowed" : ""
-          }`}
+          className={`light ${!isQuestionValid ? "disabled" : ""}`}
           onClick={() => setReadingMode("3-cards")}
           disabled={!isQuestionValid}
         >
           3 Cartes
         </button>
         <button
-          className={`light ${
-            !isQuestionValid ? "opacity-50 cursor-not-allowed" : ""
-          }`}
+          className={`light ${!isQuestionValid ? "disabled" : ""}`}
           onClick={() => setReadingMode("5-cards")}
           disabled={!isQuestionValid}
         >

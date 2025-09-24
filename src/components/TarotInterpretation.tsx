@@ -181,28 +181,28 @@ function TarotInterpretation({
 
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center p-4 bg-black/90`}
+      className={`fixed inset-0 flex items-center justify-center p-4 bg-black/95`}
       style={{ zIndex: Z_INDEX.MODAL }}
     >
-      <div className="bg-orange-950 relative text-violet-50 pb-2 rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl">
+      <div className="bg-orange-950 relative text-violet-50 pb-4 rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl">
         <div className="max-w-[65ch] mx-auto">
           {/* Header */}
-          <div className="px-8 py-4 relative">
-            <h3 className="font-semibold border-b border-violet-500 pb-2 pt-6">
-              Votre tirage est complet
-            </h3>
+          <div className="p-4 relative">
             <button
               onClick={declineInterpretation}
-              className="absolute top-2 right-2 text-violet-300 hover:text-white transition-colors leading-none text-lg"
+              className="absolute top-0 right-0 aspect-square text-violet-300 hover:text-violet-50 transition-colors leading-none text-lg"
               aria-label="Fermer"
             >
               ×
-            </button>
+            </button>{" "}
+            <h3 className="font-semibold border-b border-violet-500 pb-2 pt-8">
+              Votre tirage est complet
+            </h3>
           </div>
 
           {/* Choice Interface */}
           {showChoice && (
-            <div className="text-center px-8 pb-4">
+            <div className="text-center p-4">
               <div className="flex flex-col gap-2 items-center">
                 <button
                   className="light w-full"
@@ -243,13 +243,13 @@ function TarotInterpretation({
                       ? generateAIInterpretation
                       : generateManualInterpretation
                   }
-                  className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors"
+                  className="px-4 py-2 bg-red-600 text-violet-50 rounded hover:bg-red-700 transition-colors"
                 >
                   Réessayer
                 </button>
                 <button
                   onClick={resetChoice}
-                  className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 transition-colors"
+                  className="px-4 py-2 bg-gray-600 text-violet-50 rounded hover:bg-gray-700 transition-colors"
                 >
                   Retour au choix
                 </button>
@@ -260,9 +260,10 @@ function TarotInterpretation({
           {/* Interpretation Result */}
           {interpretation && (
             <div className="mx-8 mb-4">
-              <div className="prose max-w-none">
+              <div className="max-w-none border-0">
                 <div
-                  className="leading-relaxed whitespace-pre-line text-violet-100"
+                  className="leading-relaxed whitespace-pre-line text-violet-100 border-0"
+                  style={{ border: "none", outline: "none" }}
                   dangerouslySetInnerHTML={{
                     __html: formatInterpretationText(interpretation),
                   }}

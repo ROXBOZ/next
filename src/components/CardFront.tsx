@@ -34,18 +34,18 @@ function CardFront({
           : "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
       }}
       className={`
-        aspect-[2/3] w-[190px] rounded-lg
-        ${isCardMajor ? "bg-amber-500" : "bg-orange-500"}
-        flex gap-4 flex-col px-4 pb-3 pt-2 justify-between
+        aspect-[2/3] w-[190px] rounded-xl
+        ${isCardMajor ? "bg-stone-400" : "bg-zinc-400"}
+        flex gap-4 flex-col overflow-hidden justify-between
         transition-all duration-300 cursor-pointer
       `}
       onClick={onClick}
     >
-      <div className="text-center flex flex-col w-full items-center">
+      <div className="text-center flex flex-col w-full items-center pt-1 pb-8 bg-gradient-to-b from-violet-50 to-transparent via-white">
         <span className="aspect-square size-6 flex items-center justify-center text-xs font-semibold">
           {data.number}
         </span>
-        <div className="text-center w-full py-1 bg-white font-medium uppercase text-sm">
+        <div className="text-center w-full py-1 font-medium uppercase text-sm">
           {data.name}
         </div>
       </div>
