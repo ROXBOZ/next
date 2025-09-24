@@ -62,7 +62,6 @@ function TarotInterpretation({
       setShowModal(true);
       setShowChoice(false);
       setUserDeclined(false);
-      // Automatically generate the guide interpretation
       generateManualInterpretation();
     }
   }, [forceOpen, isComplete, question, selectedCards.length]);
@@ -226,7 +225,7 @@ function TarotInterpretation({
               <div className="flex flex-col items-center">
                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600"></div>
                 <p className="mt-4 text-violet-200">
-                  Génération de l'explication de vos cartes...
+                  Génération de l’explication de vos cartes...
                 </p>
               </div>
             </div>

@@ -21,15 +21,16 @@ function GameControls({
   };
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 items-baseline">
       <button
         onClick={handleShuffleClick}
-        className={`light ${canShuffle ? "" : "disabled"}`}
-        disabled={!canShuffle}
+        className={`light ${canShuffle ? "" : "hidden!"}`}
       >
         Mélanger
       </button>
-
+      {!showInterpretationButton && canShuffle && (
+        <div className="text-violet-50">et choisir ses cartes</div>
+      )}
       {showInterpretationButton && onOpenInterpretation && (
         <button onClick={onOpenInterpretation} className="light">
           Interpréter

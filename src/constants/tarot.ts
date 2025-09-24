@@ -1,4 +1,4 @@
-import { ReadingMode, ReadingPosition } from '@/types/tarot';
+import { ReadingMode, ReadingPosition } from "@/types/tarot";
 
 // Reading position configurations with meanings
 export const READING_CONFIGS: Record<ReadingMode, ReadingPosition[]> = {
@@ -6,7 +6,8 @@ export const READING_CONFIGS: Record<ReadingMode, ReadingPosition[]> = {
     {
       index: 0,
       title: "Passé",
-      meaning: "past influences and experiences that led to the current situation",
+      meaning:
+        "past influences and experiences that led to the current situation",
     },
     {
       index: 1,
@@ -42,7 +43,7 @@ export const READING_CONFIGS: Record<ReadingMode, ReadingPosition[]> = {
     },
     {
       index: 4,
-      title: "Aide",
+      title: "Conseil",
       meaning: "guidance, advice, and resources available to help",
     },
   ],
@@ -65,18 +66,22 @@ export const MAJOR_ARCANA_THRESHOLD = 21;
 
 // Tarot explanations
 export const ARCANA_EXPLANATIONS = {
-  MAJEUR: "Les Arcanes Majeurs représentent les grandes leçons de vie, les archétypes universels et les événements spirituellement significatifs.",
-  MINEUR: "Les Arcanes Mineurs traitent des aspects quotidiens de la vie, des situations pratiques et des émotions courantes.",
+  MAJEUR:
+    "Les Arcanes Majeurs représentent les grandes leçons de vie, les archétypes universels et les événements spirituellement significatifs.",
+  MINEUR:
+    "Les Arcanes Mineurs traitent des aspects quotidiens de la vie, des situations pratiques et des émotions courantes.",
 };
 
 export const POSITION_EXPLANATIONS = {
-  UPRIGHT: "Une carte à l'endroit indique des énergies qui s'expriment pleinement et positivement dans votre situation.",
-  REVERSED: "Une carte inversée suggère des énergies bloquées, des leçons intérieures à apprendre, ou une approche différente nécessaire.",
+  UPRIGHT:
+    "Une carte à l'endroit indique des énergies qui s'expriment pleinement et positivement dans votre situation.",
+  REVERSED:
+    "Une carte inversée suggère des énergies bloquées, des leçons intérieures à apprendre, ou une approche différente nécessaire.",
 };
 
 // Animation and styling constants
 export const ANIMATION_DELAYS = {
-  MODAL_SHOW: 4000,
+  MODAL_SHOW: 2000,
   TOAST_SHOW: 10,
   TOAST_HIDE: 3000,
   TOAST_REMOVE: 300,
