@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 
 import { MAX_CARDS } from "@/constants/tarot";
 import { ReadingMode } from "@/types/tarot";
-import { playCardSelectionSound } from "@/utils/sound";
+import { playCardSelectionSound, playDenySound } from "@/utils/sound";
 import { showToast } from "@/utils/toast";
 
 /**
@@ -72,6 +72,9 @@ export const handleCardSelect = (
         maxCards,
         reason: "Max cards reached",
       });
+
+      // Play deny sound and show warning
+      playDenySound();
       showToast({
         message: `Maximum ${maxCards} cartes!`,
         type: "warning",
