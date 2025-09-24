@@ -15,7 +15,7 @@ function CardFront({
   position?: number;
   onClick?: () => void;
 }) {
-  const rotations = [-2, 3, 6];
+  const rotations = [-4, 0, 4];
   const rotation = rotations[data.id % 3];
   const isMajor = data.arcana === "majeur" ? true : false;
 

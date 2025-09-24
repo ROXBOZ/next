@@ -3,13 +3,16 @@ export const handleCardSelect = (
   selectedCards,
   setSelectedCards,
   cardOrder,
-  setCardOrder
+  setCardOrder,
+  readingMode
 ) => {
-  if (selectedCards.length < 5) {
+  const maxCards = readingMode === "3-cards" ? 3 : 5;
+
+  if (selectedCards.length < maxCards) {
     setSelectedCards([...selectedCards, cardId]);
     setCardOrder(cardOrder.filter((id) => id !== cardId));
   } else {
-    showToast("Max. 5 cartes!");
+    showToast(`Max. ${maxCards} cartes!`);
   }
 };
 
@@ -57,6 +60,8 @@ const showToast = (message) => {
     }, 300);
   }, 3000);
 };
+
+export { showToast };
 
 export const resetSelection = (
   selectedCards,
