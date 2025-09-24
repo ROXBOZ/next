@@ -284,10 +284,7 @@ function TarotInterpretation({
                       ✨ Guide pratique
                     </button>
                   )}
-                  <button
-                    onClick={resetChoice}
-                    className="dark"
-                  >
+                  <button onClick={resetChoice} className="dark">
                     Retour au choix
                   </button>
                 </div>
