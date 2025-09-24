@@ -100,7 +100,7 @@ function ModeSelector({
       <div className="w-full flex flex-col items-center pt-4 h-fit xl:h-[100px] ">
         <div className=" flex flex-col items-center gap-3 w-1/2 p-2">
           <div className="text-violet-100  opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards]">
-            <div className=" px-12 py-2 -mt-4 bg-indigo-950 -rotate-2 rounded-full font-semibold relative group">
+            <div className=" px-12 py-2  -mt-4 bg-indigo-950 -rotate-2 rounded-full font-semibold relative group">
               <span className="italic">{question}</span>
               {onReset && (
                 <button
@@ -114,7 +114,7 @@ function ModeSelector({
             </div>
           </div>
 
-          <div className="flex flex-col xl:flex-row gap-2 items-center -ml-4! opacity-0 w-screen animate-[fadeIn_0.2s_ease-in-out_0.4s_forwards]">
+          <div className="flex flex-col xl:flex-row gap-2 items-center justify-center -ml-4! opacity-0 w-screen animate-[fadeIn_0.2s_ease-in-out_0.4s_forwards]">
             {canShuffle && (
               <button onClick={handleShuffleClick} className="light">
                 Mélangez
@@ -136,7 +136,7 @@ function ModeSelector({
 
   return (
     <div className="w-full pt-4 h-[160px] xl:h-[100px]">
-      <div className="flex flex-col gap-2 h-full w-screen xl:w-1/2 mx-auto items-center">
+      <div className="flex flex-col gap-2 h-full w-screen mx-auto items-center">
         <div className="flex flex-col xl:flex-row w-full px-4 justify-center items-baseline gap-2 opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards]">
           <span className="text-violet-200 whitespace-nowrap font-medium">
             Demandez à l’oracle
@@ -147,7 +147,7 @@ function ModeSelector({
             value={question}
             onChange={handleQuestionChange}
             placeholder="Quelle est votre question ?"
-            className="px-3 w-full xl:w-96 py-2 bg-[#0d001a] border border-violet-500/20 rounded-full text-violet-100 placeholder-violet-500/40 focus:border-violet-400/50 focus:outline-none text-sm touch-manipulation"
+            className="px-3 w-full xl:w-72 py-2 bg-[#0d001a] border border-violet-500/20 rounded-full text-violet-100 placeholder-violet-500/40 focus:border-violet-400/50 focus:outline-none text-sm touch-manipulation"
             style={{ fontSize: "16px" }}
           />
         </div>
