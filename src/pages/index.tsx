@@ -59,6 +59,7 @@ export default function Home() {
                 onCardClick={selectCard}
                 cardReversals={cardReversals}
                 cards={cards as TarotCard[]}
+                readingMode={readingMode}
               />
             </div>
 
