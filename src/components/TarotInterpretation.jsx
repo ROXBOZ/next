@@ -127,7 +127,7 @@ function TarotInterpretation({
 
       const positionExplanation = isReversed
         ? "Une carte inversée suggère des énergies bloquées, des leçons intérieures à apprendre, ou une approche différente nécessaire."
-        : "Une carte droite indique des énergies qui s'expriment pleinement et positivement dans votre situation.";
+        : "Une carte à l’endroit indique des énergies qui s'expriment pleinement et positivement dans votre situation.";
 
       //   explanation += `**${position.title} (${position.meaning}):**\n`;
       explanation += `🔮 **${position.title} - ${card.name}**\n`;
@@ -168,30 +168,30 @@ function TarotInterpretation({
     setShowModal(true); // Reopen modal
   };
 
-  // Function to regenerate based on current interpretation type
-  const regenerateInterpretation = () => {
-    if (interpretationType === "ai") {
-      generateAIInterpretation();
-    } else if (interpretationType === "explanation") {
-      generateInterpretation();
-    }
-  };
-
   if (!isComplete || !showModal) {
     return null;
   }
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80">
-      <div className="bg-violet-950 text-violet-50 rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto p-8 shadow-2xl">
+      <div className="bg-violet-950 relative text-violet-50 pb-2 rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto  shadow-2xl">
         <div className="max-w-[65ch] mx-auto">
-          {/* <div className="border-b pb-4 mb-6">
-            <h3 className="font-semibold mb-2">Votre tirage est complet</h3>
-          </div> */}
+          <div className=" px-8 py-4 relative">
+            <h3 className="font-semibold border-b border-violet-500 py-2">
+              Votre tirage est complet
+            </h3>
+            <button
+              onClick={declineInterpretation}
+              className="absolute top-2 right-2 text-violet-300 hover:text-white transition-colors leading-none text-lg"
+              aria-label="Fermer"
+            >
+              ×
+            </button>
+          </div>
 
           {/* Choice Interface */}
           {showChoice && (
-            <div className="text-center">
+            <div className="text-center px-8 pb-4">
               <div className="flex flex-col gap-2 items-center">
                 <button
                   className="dark w-full"
@@ -204,9 +204,6 @@ function TarotInterpretation({
                   onClick={generateInterpretation}
                 >
                   ✨ Guide pratique
-                </button>
-                <button className="dark w-full" onClick={declineInterpretation}>
-                  🔮 Libre
                 </button>
               </div>
             </div>
@@ -250,7 +247,7 @@ function TarotInterpretation({
             <div>
               <div className="prose max-w-none">
                 <div
-                  className="leading-relaxed whitespace-pre-line"
+                  className="leading-relaxed whitespace-pre-line px-8"
                   dangerouslySetInnerHTML={{
                     __html: interpretation.replace(
                       /\*\*(.*?)\*\*/g,
@@ -259,16 +256,9 @@ function TarotInterpretation({
                   }}
                 />
 
-                <div className="mt-6 pt-4 border-t border-gray-200 flex gap-3">
-                  <button onClick={regenerateInterpretation} className="dark">
-                    {interpretationType === "ai"
-                      ? "Nouvelle interprétation IA"
-                      : "Regénérer l'explication"}
-                  </button>
-                  <button onClick={resetChoice} className="dark">
-                    Retour au choix
-                  </button>
-                </div>
+                <button onClick={resetChoice} className="dark mx-8 mb-8">
+                  Retour au choix
+                </button>
               </div>
             </div>
           )}
