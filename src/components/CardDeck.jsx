@@ -1,7 +1,7 @@
 import CardBack from "./CardBack";
 import { tarot_cards as cards } from "../data.json";
 
-function CardDeck({ cardOrder, onCardClick }) {
+function CardDeck({ cardOrder, onCardClick, cardReversals }) {
   if (!cardOrder || cardOrder.length === 0) {
     return null;
   }
@@ -11,6 +11,7 @@ function CardDeck({ cardOrder, onCardClick }) {
       {cardOrder.map((cardId, index) => {
         const cardData = cards.find((card) => card.id === cardId);
         const isLastCard = index === cardOrder.length - 1;
+        const isReversed = cardReversals[cardId] || false;
         return (
           <CardBack
             key={cardId}
@@ -18,6 +19,7 @@ function CardDeck({ cardOrder, onCardClick }) {
             position={index + 1}
             onClick={() => onCardClick(cardId)}
             isLast={isLastCard}
+            isReversed={isReversed}
           />
         );
       })}

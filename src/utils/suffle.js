@@ -6,7 +6,18 @@ export const shuffleArray = (array) => {
   }
   return newArray;
 };
-export const shuffleCards = (cardOrder, setCardOrder) => {
+
+export const shuffleCards = (cardOrder, setCardOrder, setCardReversals) => {
   const shuffledOrder = shuffleArray(cardOrder);
+
+  // Generate random reversals for each card (50% chance)
+  const reversals = {};
+  shuffledOrder.forEach((cardId) => {
+    reversals[cardId] = Math.random() < 0.5;
+  });
+
   setCardOrder(shuffledOrder);
+  if (setCardReversals) {
+    setCardReversals(reversals);
+  }
 };

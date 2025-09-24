@@ -17,7 +17,7 @@ const READING_CONFIGS = {
   ],
 };
 
-function SelectedCardsDisplay({ selectedCards, readingMode }) {
+function SelectedCardsDisplay({ selectedCards, readingMode, cardReversals }) {
   if (!readingMode || !(readingMode in READING_CONFIGS)) {
     return null;
   }
@@ -35,6 +35,7 @@ function SelectedCardsDisplay({ selectedCards, readingMode }) {
       index,
       cardId: selectedCards[index],
       hasCard: !!selectedCards[index],
+      isReversed: cardReversals[selectedCards[index]],
     })),
   });
 
@@ -42,15 +43,23 @@ function SelectedCardsDisplay({ selectedCards, readingMode }) {
     <div className="flex gap-8">
       {positions.map(({ index, title }) => {
         const cardId = selectedCards[index];
-        const cardData = cardId
-          ? cards.find((card) => card.id === cardId)
-          : null;
+        const cardData =
+          cardId !== undefined
+            ? cards.find((card) => card.id === cardId)
+            : null;
         const hasCard = cardData !== null;
+        const isReversed = cardReversals[cardId] || false;
 
         return (
           <div key={index} className="flex flex-col items-center gap-2">
             <p className={hasCard ? "" : "opacity-50"}>{title}</p>
-            {hasCard && <CardFront data={cardData} position={index + 1} />}
+            {hasCard && (
+              <CardFront
+                data={cardData}
+                position={index + 1}
+                isReversed={isReversed}
+              />
+            )}
           </div>
         );
       })}

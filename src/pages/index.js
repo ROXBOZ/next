@@ -9,6 +9,7 @@ export default function Home() {
     cardOrder,
     selectedCards,
     readingMode,
+    cardReversals,
     isGameStarted,
     canShuffle,
     selectCard,
@@ -29,7 +30,11 @@ export default function Home() {
 
         {/* Card Deck - Only show when game has started */}
         {isGameStarted && (
-          <CardDeck cardOrder={cardOrder} onCardClick={selectCard} />
+          <CardDeck
+            cardOrder={cardOrder}
+            onCardClick={selectCard}
+            cardReversals={cardReversals}
+          />
         )}
 
         {/* Game Controls - Only show when game has started */}
@@ -45,6 +50,7 @@ export default function Home() {
         <SelectedCardsDisplay
           selectedCards={selectedCards}
           readingMode={readingMode}
+          cardReversals={cardReversals}
         />
       </div>
     </div>

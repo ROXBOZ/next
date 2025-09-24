@@ -8,6 +8,16 @@ export function useTarotGame() {
   const [cardOrder, setCardOrder] = useState(cards.map((card) => card.id));
   const [selectedCards, setSelectedCards] = useState([]);
   const [readingMode, setReadingMode] = useState(null); // null, "3-cards", "5-cards"
+  const [cardReversals, setCardReversals] = useState({}); // Track which cards are reversed
+
+  // Initialize reversals on first load
+  useState(() => {
+    const initialReversals = {};
+    cards.forEach((card) => {
+      initialReversals[card.id] = Math.random() < 0.5;
+    });
+    setCardReversals(initialReversals);
+  });
 
   const selectCard = useCallback(
     (cardId) => {
@@ -27,7 +37,7 @@ export function useTarotGame() {
     if (selectedCards.length > 0) {
       return false; // Indicates shuffle was blocked
     }
-    shuffleCards(cardOrder, setCardOrder);
+    shuffleCards(cardOrder, setCardOrder, setCardReversals);
     return true; // Indicates shuffle was successful
   }, [cardOrder, selectedCards]);
 
@@ -37,7 +47,7 @@ export function useTarotGame() {
       setSelectedCards,
       cardOrder,
       setCardOrder,
-      shuffleCards
+      (newOrder, setOrder) => shuffleCards(newOrder, setOrder, setCardReversals)
     );
     setReadingMode(null);
   }, [selectedCards, cardOrder]);
@@ -51,6 +61,7 @@ export function useTarotGame() {
     cardOrder,
     selectedCards,
     readingMode,
+    cardReversals,
 
     // Computed values
     isGameStarted: readingMode !== null,
