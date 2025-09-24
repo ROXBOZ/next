@@ -35,3 +35,24 @@ export const playShuffleSound = (): void => {
 export const playTypingSound = (): void => {
   playSound("/typing-sound.mp3", 0.2);
 };
+
+/**
+ * Play the magic sound
+ */
+export const playMagicSound = (): void => {
+  playSound("/magic-sound.mp3", 0.4);
+};
+
+/**
+ * Play the witch sound
+ */
+export const playWitchSound = (): void => {
+  playSound("/witch-sound.mp3", 0.4);
+};
+
+/**
+ * Play the click sound
+ */
+export const playClickSound = (): void => {
+  playSound("/click-sound.mp3", 0.3);
+};

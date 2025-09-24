@@ -10,6 +10,7 @@ import {
   isValidReading,
 } from "@/utils/readingHelpers";
 import { useEffect, useState } from "react";
+import { playMagicSound, playClickSound } from "@/utils/sound";
 
 import { generateTarotInterpretation } from "@/utils/aiInterpretation";
 
@@ -50,6 +51,7 @@ function TarotInterpretation({
     if (isComplete && question && selectedCards.length > 0) {
       const timer = setTimeout(() => {
         setShowModal(true);
+        playMagicSound(); // Play magic sound when modal opens
       }, ANIMATION_DELAYS.MODAL_SHOW);
 
       return () => clearTimeout(timer);
@@ -62,8 +64,10 @@ function TarotInterpretation({
       setShowModal(true);
       setShowChoice(false);
       setUserDeclined(false);
+      playMagicSound(); // Play magic sound when modal force opens
       generateManualInterpretation();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [forceOpen, isComplete, question, selectedCards.length]);
 
   // Reset all states when game is reset (isComplete becomes false)
@@ -167,6 +171,27 @@ function TarotInterpretation({
     setShowModal(true);
   };
 
+  // Wrapper functions that include click sound
+  const handleDeclineInterpretation = () => {
+    playClickSound();
+    declineInterpretation();
+  };
+
+  const handleGenerateAIInterpretation = () => {
+    playClickSound();
+    generateAIInterpretation();
+  };
+
+  const handleGenerateManualInterpretation = () => {
+    playClickSound();
+    generateManualInterpretation();
+  };
+
+  const handleResetChoice = () => {
+    playClickSound();
+    resetChoice();
+  };
+
   const formatInterpretationText = (text: string): string => {
     return text.replace(
       /\*\*(.*?)\*\*/g,
@@ -188,7 +213,7 @@ function TarotInterpretation({
           {/* Header */}
           <div className="p-4 relative">
             <button
-              onClick={declineInterpretation}
+              onClick={handleDeclineInterpretation}
               className="absolute top-0 right-0 aspect-square text-violet-200 hover:text-violet-50 transition-colors leading-none text-lg"
               aria-label="Fermer"
             >
@@ -205,13 +230,13 @@ function TarotInterpretation({
               <div className="flex flex-col gap-2 items-center">
                 <button
                   className="light w-full"
-                  onClick={generateAIInterpretation}
+                  onClick={handleGenerateAIInterpretation}
                 >
                   🤖 Interprétation IA
                 </button>
                 <button
                   className="light w-full"
-                  onClick={generateManualInterpretation}
+                  onClick={handleGenerateManualInterpretation}
                 >
                   ✨ Guide pratique
                 </button>
@@ -239,15 +264,15 @@ function TarotInterpretation({
                 <button
                   onClick={
                     interpretationType === "ai"
-                      ? generateAIInterpretation
-                      : generateManualInterpretation
+                      ? handleGenerateAIInterpretation
+                      : handleGenerateManualInterpretation
                   }
                   className="px-4 py-2 bg-red-600 text-violet-50 rounded hover:bg-red-700 transition-colors"
                 >
                   Réessayer
                 </button>
                 <button
-                  onClick={resetChoice}
+                  onClick={handleResetChoice}
                   className="px-4 py-2 bg-gray-600 text-violet-50 rounded hover:bg-gray-700 transition-colors"
                 >
                   Retour au choix
@@ -271,20 +296,20 @@ function TarotInterpretation({
                 <div className="flex gap-3 justify-center mt-6">
                   {interpretationType === "explanation" ? (
                     <button
-                      onClick={generateAIInterpretation}
+                      onClick={handleGenerateAIInterpretation}
                       className="light"
                     >
                       🤖 Interprétation IA
                     </button>
                   ) : (
                     <button
-                      onClick={generateManualInterpretation}
+                      onClick={handleGenerateManualInterpretation}
                       className="light"
                     >
                       ✨ Guide pratique
                     </button>
                   )}
-                  <button onClick={resetChoice} className="dark">
+                  <button onClick={handleResetChoice} className="dark">
                     Retour au choix
                   </button>
                 </div>

@@ -1,6 +1,6 @@
 import { ChangeEvent } from "react";
 import { ReadingMode } from "@/types/tarot";
-import { playTypingSound } from "@/utils/sound";
+import { playTypingSound, playClickSound } from "@/utils/sound";
 
 interface ModeSelectorProps {
   readingMode: ReadingMode | null;
@@ -43,6 +43,16 @@ function ModeSelector({
       if (!success) {
       }
     }
+  };
+
+  const handle3CardsClick = () => {
+    playClickSound();
+    setReadingMode("3-cards");
+  };
+
+  const handle5CardsClick = () => {
+    playClickSound();
+    setReadingMode("5-cards");
   };
 
   if (readingMode) {
@@ -98,13 +108,13 @@ function ModeSelector({
               <div className="flex gap-2 opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.6s_forwards]">
                 <button
                   className="light text-sm px-3 py-1"
-                  onClick={() => setReadingMode("3-cards")}
+                  onClick={handle3CardsClick}
                 >
                   3 Cartes
                 </button>
                 <button
                   className="light text-sm px-3 py-1"
-                  onClick={() => setReadingMode("5-cards")}
+                  onClick={handle5CardsClick}
                 >
                   5 Cartes
                 </button>
