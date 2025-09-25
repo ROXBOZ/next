@@ -31,7 +31,14 @@ function MobileSelectionModal({
     >
       <div className="animate-in zoom-in-95 relative mx-4 w-full max-w-sm duration-300">
         <div
-          className={`card-classes flex w-full scale-110 transform flex-col justify-between gap-4 overflow-hidden bg-orange-900 shadow-2xl`}
+          style={{
+            transform: `rotate(${isReversed ? 180 : 0}deg) scale(1.1)`,
+          }}
+          className={`card-classes flex w-full flex-col justify-between gap-4 overflow-hidden bg-orange-900 transition-all duration-300 ${
+            isReversed
+              ? "shadow-[-4px_-4px_6px_rgba(0,0,0,0.5)]"
+              : "shadow-[4px_4px_6px_rgba(0,0,0,0.5)]"
+          } shadow-2xl`}
         >
           <div className="flex w-full flex-col items-center bg-indigo-950 bg-gradient-to-b pt-4 pb-6 text-center text-orange-400">
             {card.number}
@@ -43,10 +50,6 @@ function MobileSelectionModal({
           <div className="flex h-full w-full items-center justify-center text-lg text-orange-500">
             illustration
           </div>
-        </div>
-
-        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 transform text-center text-white/80">
-          <div className="text-sm font-medium">Carte sélectionnée!</div>
         </div>
       </div>
     </div>

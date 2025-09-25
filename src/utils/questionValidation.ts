@@ -1,5 +1,5 @@
 import { playHuhSound } from "./sound";
-import { showWarningToast } from "./toast";
+import { showToast } from "./toast";
 
 /**
  * Validates if a text looks like a real question or gibberish
@@ -87,5 +87,7 @@ const showGibberishToast = () => {
 
   const randomMessage =
     funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
-  showWarningToast(randomMessage);
+
+  // Show toast with shorter duration for gibberish warnings (1.5 seconds instead of 3)
+  showToast({ message: randomMessage, type: "warning", duration: 1500 });
 };
