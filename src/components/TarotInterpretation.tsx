@@ -324,7 +324,7 @@ function TarotInterpretation({
     >
       <div
         ref={modalScrollRef}
-        className="relative max-h-[80vh] w-full overflow-y-scroll rounded-lg bg-orange-950 pb-12 text-violet-50 shadow-2xl xl:w-2/4"
+        className="relative max-h-[80vh] w-full overflow-y-scroll rounded-lg bg-orange-950 pb-12 text-violet-50 shadow-2xl xl:w-fit"
       >
         <div className="mx-auto max-w-[65ch]">
           {/* Header */}
