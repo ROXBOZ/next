@@ -1,5 +1,6 @@
 import { TarotCard } from "@/types/tarot";
-import { useEffect } from "react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 interface CardModalProps {
   isOpen: boolean;
@@ -9,6 +10,13 @@ interface CardModalProps {
 }
 
 function CardModal({ isOpen, onClose, card, isReversed }: CardModalProps) {
+  const [imageError, setImageError] = useState(false);
+
+  useEffect(() => {
+    // Reset image error state when card changes
+    setImageError(false);
+  }, [card.id]);
+
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -49,18 +57,29 @@ function CardModal({ isOpen, onClose, card, isReversed }: CardModalProps) {
         </button>
 
         <div
-          className={`card-classes flex w-full transform flex-col justify-between gap-4 overflow-hidden bg-orange-900 shadow-2xl transition-transform duration-300`}
+          className={`card-classes relative flex w-full transform flex-col justify-between gap-4 overflow-hidden bg-orange-900 shadow-2xl transition-transform duration-300`}
         >
-          <div className="flex w-full flex-col items-center bg-indigo-950 bg-gradient-to-b pt-4 pb-6 text-center text-orange-400">
+          <div className="z-50 flex w-full flex-col items-center bg-indigo-950 bg-gradient-to-b pt-4 pb-6 text-center text-orange-400">
             {card.number}
 
             <div className="w-full px-4 text-center text-lg font-medium uppercase">
               {card.name}
             </div>
           </div>
-          <div className="flex h-full w-full items-center justify-center text-lg text-orange-500">
-            illustration
-          </div>
+          {imageError ? (
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-sm text-orange-300/60">
+              <div className="font-mono text-lg">{card.id}.jpg</div>
+            </div>
+          ) : (
+            <Image
+              src={`/frontIllustration/${card.id}.jpg`}
+              alt={card.name}
+              width={300}
+              height={500}
+              className="absolute inset-0 h-full w-full object-cover"
+              onError={() => setImageError(true)}
+            />
+          )}
         </div>
       </div>
     </div>

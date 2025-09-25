@@ -74,7 +74,7 @@ function CardDeck({
         }}
       >
         <div
-          className="z-40 flex justify-start px-8 md:justify-center md:px-12"
+          className="z-40 flex justify-center px-8 md:justify-center md:px-12"
           style={{ minWidth: "fit-content" }}
         >
           {cardOrder.map((cardId, index) => {

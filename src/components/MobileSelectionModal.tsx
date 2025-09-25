@@ -1,5 +1,6 @@
 import { TarotCard } from "@/types/tarot";
-import { useEffect } from "react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 interface MobileSelectionModalProps {
   isOpen: boolean;
@@ -12,6 +13,13 @@ function MobileSelectionModal({
   card,
   isReversed,
 }: MobileSelectionModalProps) {
+  const [imageError, setImageError] = useState(false);
+
+  useEffect(() => {
+    // Reset image error state when card changes
+    setImageError(false);
+  }, [card.id]);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -34,7 +42,7 @@ function MobileSelectionModal({
           style={{
             transform: `rotate(${isReversed ? 180 : 0}deg) scale(1.1)`,
           }}
-          className={`card-classes flex w-full flex-col justify-between gap-4 overflow-hidden bg-orange-900 transition-all duration-300 ${
+          className={`card-classes relative flex w-full flex-col justify-between gap-4 overflow-hidden bg-orange-900 transition-all duration-300 ${
             isReversed
               ? "shadow-[-4px_-4px_6px_rgba(0,0,0,0.5)]"
               : "shadow-[4px_4px_6px_rgba(0,0,0,0.5)]"
@@ -47,9 +55,20 @@ function MobileSelectionModal({
               {card.name}
             </div>
           </div>
-          <div className="flex h-full w-full items-center justify-center text-lg text-orange-500">
-            illustration
-          </div>
+          {imageError ? (
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-sm text-orange-300/60">
+              <div className="font-mono text-lg">{card.id}.jpg</div>
+            </div>
+          ) : (
+            <Image
+              src={`/frontIllustration/${card.id}.jpg`}
+              alt={card.name}
+              width={300}
+              height={500}
+              className="absolute inset-0 -z-30 h-full w-full object-cover"
+              onError={() => setImageError(true)}
+            />
+          )}
         </div>
       </div>
     </div>
