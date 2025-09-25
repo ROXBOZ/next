@@ -22,6 +22,12 @@ function CardDeck({
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
 
+  // Track when readingMode changes from null to a value (user enters game)
+  const prevReadingModeRef = useRef<ReadingMode | null | undefined>(undefined);
+  useEffect(() => {
+    prevReadingModeRef.current = readingMode;
+  }, [readingMode]);
+
   useEffect(() => {
     if (!cardOrder || cardOrder.length === 0) return;
 
@@ -30,23 +36,47 @@ function CardDeck({
 
     const isMobile = window.innerWidth < 768;
 
-    if (isMobile) {
+    const scrollToRight = () => {
+      if (!container) return;
       const maxScrollLeft = container.scrollWidth - container.clientWidth;
       container.scrollLeft = maxScrollLeft;
-
       setShowScrollIndicator(maxScrollLeft > 0 && readingMode !== null);
+    };
+
+    // Fire scroll when readingMode just became set (user entered game)
+    const readingModeJustSet =
+      prevReadingModeRef.current == null && readingMode != null;
+
+    if (isMobile && (readingModeJustSet || cardOrder.length > 0)) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(scrollToRight);
+      });
+
+      window.addEventListener("resize", scrollToRight);
+
+      let resizeObserver;
+      if (window.ResizeObserver) {
+        resizeObserver = new ResizeObserver(() => {
+          scrollToRight();
+        });
+        resizeObserver.observe(container);
+      }
+
+      const handleScroll = () => {
+        if (container.scrollLeft === 0) {
+          setShowScrollIndicator(false);
+        }
+      };
+      container.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("resize", scrollToRight);
+        if (resizeObserver) resizeObserver.disconnect();
+        container.removeEventListener("scroll", handleScroll);
+      };
     } else {
       setShowScrollIndicator(false);
     }
-
-    const handleScroll = () => {
-      if (container.scrollLeft === 0) {
-        setShowScrollIndicator(false);
-      }
-    };
-
-    container.addEventListener("scroll", handleScroll);
-    return () => container.removeEventListener("scroll", handleScroll);
   }, [cardOrder, readingMode]);
 
   if (!cardOrder || cardOrder.length === 0) {
@@ -57,16 +87,14 @@ function CardDeck({
     <div className="relative w-full -rotate-2">
       <div
         ref={scrollContainerRef}
+        key={readingMode || "no-mode"}
         className="w-full overflow-x-auto overflow-y-visible py-6"
         style={{
           touchAction: "pan-x",
           WebkitOverflowScrolling: "touch",
         }}
       >
-        <div
-          className="z-40 flex justify-center px-8 md:justify-center md:px-12"
-          style={{ minWidth: "fit-content" }}
-        >
+        <div className="z-40 flex min-w-fit justify-center px-8 md:justify-center md:px-12">
           {cardOrder.map((cardId, index) => {
             const cardData = findCardById(cards, cardId);
             if (!cardData) return null;

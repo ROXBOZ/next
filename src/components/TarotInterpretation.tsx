@@ -312,7 +312,7 @@ function TarotInterpretation({
       className={`fixed inset-0 flex items-center justify-center bg-black/80 px-4 py-12`}
       style={{ zIndex: Z_INDEX.MODAL }}
     >
-      <div className="relative max-h-[80ch] max-w-4xl overflow-y-scroll rounded-lg bg-orange-950 pb-12 text-violet-50 shadow-2xl">
+      <div className="relative max-h-[80vh] w-full overflow-y-scroll rounded-lg bg-orange-950 pb-12 text-violet-50 shadow-2xl xl:w-2/4">
         <div className="mx-auto max-w-[65ch]">
           {/* Header */}
           <div className="relative p-4">
