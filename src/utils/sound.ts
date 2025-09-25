@@ -77,3 +77,10 @@ export const playHuhSound = (): void => {
 export const playFlipSound = (): void => {
   playSound("/flipcard-sound.mp3", 0.3);
 };
+
+/**
+ * Play the spread sound (when cards spread apart)
+ */
+export const playSpreadSound = (): void => {
+  playSound("/spread-sound.mp3", 0.4);
+};

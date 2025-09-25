@@ -74,7 +74,7 @@ function CardDeck({
         }}
       >
         <div
-          className="z-40 mx-auto flex px-4"
+          className="z-40 mx-auto flex justify-center px-4"
           style={{ width: `${totalWidth + 32}px` }}
         >
           {cardOrder.map((cardId, index) => {
@@ -92,6 +92,7 @@ function CardDeck({
                 onClick={() => onCardClick(cardId)}
                 isLast={isLastCard}
                 isReversed={isReversed}
+                readingMode={readingMode}
               />
             );
           })}

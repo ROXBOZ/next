@@ -11,7 +11,7 @@ import {
 } from "@/utils/cardSelection";
 import { useCallback, useEffect, useState } from "react";
 
-import { playDenySound } from "@/utils/sound";
+import { playDenySound, playSpreadSound } from "@/utils/sound";
 import { showWarningToast } from "@/utils/toast";
 
 export function useTarotGame(cards: TarotCard[]) {
@@ -99,6 +99,7 @@ export function useTarotGame(cards: TarotCard[]) {
 
   const startReading = useCallback((mode: ReadingMode) => {
     setReadingMode(mode);
+    playSpreadSound();
   }, []);
 
   const openInterpretation = useCallback(() => {

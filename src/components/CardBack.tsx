@@ -1,7 +1,7 @@
+import { ReadingMode, TarotCard } from "@/types/tarot";
 import { useEffect, useState } from "react";
 
 import Image from "next/image";
-import { TarotCard } from "@/types/tarot";
 import { calculateCardRotation } from "@/utils/cardHelpers";
 
 interface CardBackProps {
@@ -10,6 +10,7 @@ interface CardBackProps {
   onClick?: () => void;
   isLast?: boolean;
   isReversed?: boolean;
+  readingMode?: ReadingMode | null;
 }
 
 function CardBack({
@@ -18,6 +19,7 @@ function CardBack({
   onClick,
   isLast = false,
   isReversed = false,
+  readingMode = null,
 }: CardBackProps) {
   const finalRotation = calculateCardRotation(data.id, isReversed);
   const [isTouched, setIsTouched] = useState(false);
@@ -57,7 +59,7 @@ function CardBack({
         }`,
         touchAction: "manipulation",
       }}
-      className={`card-classes flex w-[180px] flex-shrink-0 cursor-pointer items-center overflow-hidden border bg-[#15102d] object-contain transition-all duration-200 ${position && position > 1 ? "-ml-[162px]" : ""} ${
+      className={`card-classes flex w-[180px] flex-shrink-0 cursor-pointer items-center overflow-hidden border bg-[#15102d] object-contain transition-all duration-200 ${position && position > 1 ? (readingMode ? "-ml-[162px]" : "-ml-[180px]") : ""} ${
         isTouched && isMobile
           ? "animate-pulse border-violet-400 shadow-lg shadow-violet-400/30"
           : "border-orange-950"

@@ -94,10 +94,14 @@ const showGibberishToast = () => {
   playHuhSound();
 
   const funnyMessages = [
-    "L’oracle comprend que pouik",
+    "L’oracle comprend que pouic de pouic",
     "L’oracle comprend que dalle",
-    "Tu tapes avec tes pieds?",
-    "Les esprits ont quitté le chat. Réessaie.",
+    "L’oracle comprend walou",
+    "L'oracle catch pas",
+    "T’écris avec tes pieds?",
+    "L'oracle pige sweet fuck all",
+    "Les esprits ont quitté le chat?",
+    "Non mais what?",
   ];
 
   const randomMessage =
