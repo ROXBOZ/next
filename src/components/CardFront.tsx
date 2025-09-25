@@ -16,21 +16,21 @@ function CardFront({
 }: CardFrontProps) {
   const finalRotation = calculateCardRotation(data.id, isReversed);
 
-  // Hard-coded shadow directions based on card orientation
-  const shadowX = isReversed ? -4 : 4; // Reversed cards: shadow to the left, normal: shadow to the right
-  const shadowY = isReversed ? -4 : 4; // Reversed cards: shadow up, normal: shadow down
-
   return (
     <div
       style={{
         zIndex: position || data.id,
         transform: `rotate(${finalRotation}deg)`,
-        boxShadow: `${shadowX}px ${shadowY}px 6px rgba(0, 0, 0, 0.5)`,
       }}
       className={`
-        aspect-[2/3] w-[190px] rounded-xl bg-orange-900
+        aspect-[2/3] w-[190px] rounded-xl border border-orange-900 bg-orange-900
         flex gap-4 flex-col overflow-hidden justify-between
         transition-all duration-300 cursor-pointer
+        ${
+          isReversed
+            ? "shadow-[-4px_-4px_6px_rgba(0,0,0,0.5)]"
+            : "shadow-[4px_4px_6px_rgba(0,0,0,0.5)]"
+        }
       `}
       onClick={onClick}
     >

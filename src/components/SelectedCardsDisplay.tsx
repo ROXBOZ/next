@@ -110,9 +110,9 @@ function SelectedCardsDisplay({
                 </div>
                 <div className="relative group">
                   {/* Visual indicator for clickable card - only on mobile */}
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-orange-400/80 rounded-full flex items-center justify-center text-[10px] text-white font-bold opacity-60 group-hover:opacity-100 transition-opacity z-10 md:hidden">
+                  {/* <div className="absolute -top-1 -right-1 w-4 h-4 bg-orange-400/80 rounded-full flex items-center justify-center text-[10px] text-white font-bold opacity-60 group-hover:opacity-100 transition-opacity z-10 md:hidden">
                     👁
-                  </div>
+                  </div> */}
                   <div
                     onClick={() => handleCardClick(cardId)}
                     className="cursor-pointer hover:scale-105 transition-transform"
