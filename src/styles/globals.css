@@ -1,15 +1,35 @@
 @import "tailwindcss";
 
-/* Mobile viewport height fix */
+/* Mobile viewport height and safe area fix */
 html,
 body {
   height: 100%;
   height: 100dvh; /* Dynamic viewport height for mobile */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 #__next {
   height: 100%;
   height: 100dvh;
+  /* Safe area insets for mobile devices */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Mobile-safe container */
+.mobile-safe-container {
+  min-height: 100dvh;
+  min-height: calc(
+    100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom)
+  );
+  padding-top: max(1rem, env(safe-area-inset-top));
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  padding-left: max(0.5rem, env(safe-area-inset-left));
+  padding-right: max(0.5rem, env(safe-area-inset-right));
 }
 
 @font-face {

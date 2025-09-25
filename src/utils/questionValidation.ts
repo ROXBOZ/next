@@ -1,5 +1,5 @@
-import { showWarningToast } from "./toast";
 import { playHuhSound } from "./sound";
+import { showWarningToast } from "./toast";
 
 /**
  * Validates if a text looks like a real question or gibberish
@@ -277,11 +277,10 @@ const showGibberishToast = () => {
   playHuhSound();
 
   const funnyMessages = [
-    "Plaît-il? L'oracle comprend que pouik",
-    "Veuillez répéter la question, l'oracle a des acouphènes",
-    "Whaaaat? L'oracle comprend que dalle",
-    "Tu tapes sur ton clavier avec tes pieds ou quoi?",
-    "Les esprits ont quitté le chat... ils comprennent pas non plus",
+    "L’oracle comprend que pouik",
+    "L’oracle comprend que dalle",
+    "Tu tapes avec tes pieds ou quoi?",
+    "Les esprits ont quitté le chat. Réessaie.",
   ];
 
   const randomMessage =

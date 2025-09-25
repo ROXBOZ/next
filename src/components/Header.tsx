@@ -22,7 +22,7 @@ export default function Header({ onReset }: HeaderProps) {
         <div className="flex gap-1 items-center">
           {/* <span className="rfc-font">L</span>
           <span className="text-xs">✦</span> */}
-          <span className="rfc-font">L’o-raclette</span>
+          <span className="rfc-font">lo·raclette</span>
         </div>
       </button>
     </header>
