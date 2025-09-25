@@ -37,7 +37,7 @@ export default async function handler(req, res) {
         },
       ],
       max_tokens: 1500,
-      temperature: 0.8,
+      temperature: 0.3,
     });
 
     const interpretation = completion.choices[0].message.content;

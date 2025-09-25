@@ -6,15 +6,15 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  @apply bg-orange-900;
+  @apply bg-black;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  @apply bg-violet-400;
+  @apply bg-orange-800/50;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-violet-700;
+  @apply bg-orange-900/50;
 }

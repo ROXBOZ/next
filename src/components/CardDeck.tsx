@@ -53,18 +53,8 @@ function CardDeck({
     return null;
   }
 
-  // const totalWidth =
-  //   cardOrder.length > 0 ? 190 + (cardOrder.length - 1) * 18 : 190;
-
   return (
     <div className="relative w-full -rotate-2">
-      {showScrollIndicator && (
-        <div className="absolute top-2 left-4 z-50 flex items-center gap-2 text-sm text-violet-300 md:hidden">
-          <span>←</span>
-          <span>Scrollez</span>
-        </div>
-      )}
-
       <div
         ref={scrollContainerRef}
         className="w-full overflow-x-auto overflow-y-visible py-6"

@@ -9,7 +9,25 @@ import {
   generateCardInterpretations,
   isValidReading,
 } from "@/utils/readingHelpers";
-import { playClickSound, playMagicSound } from "@/utils/sound";
+import { playClickSound, playMagicSound, playSound } from "@/utils/sound";
+// Gestion du son whisper
+let whisperAudio: HTMLAudioElement | null = null;
+
+function startWhisperSound() {
+  if (whisperAudio) return;
+  whisperAudio = new Audio("/archives/whisper-sound.mp3");
+  whisperAudio.loop = true;
+  whisperAudio.volume = 0.25;
+  whisperAudio.play().catch(() => {});
+}
+
+function stopWhisperSound() {
+  if (whisperAudio) {
+    whisperAudio.pause();
+    whisperAudio.currentTime = 0;
+    whisperAudio = null;
+  }
+}
 import { useEffect, useState } from "react";
 
 import { generateTarotInterpretation } from "@/utils/aiInterpretation";
@@ -62,22 +80,46 @@ function TarotInterpretation({
   const [interpretationType, setInterpretationType] =
     useState<InterpretationType>(null);
 
+  // Lance/arrête le son whisper quand l'interprétation IA est visible
+  useEffect(() => {
+    if (showModal && interpretationType === "ai") {
+      startWhisperSound();
+    } else {
+      stopWhisperSound();
+    }
+    return () => {
+      stopWhisperSound();
+    };
+  }, [showModal, interpretationType]);
+
+  // Réinitialise l'état à chaque ouverture du modal (tirage complet ou forceOpen)
   useEffect(() => {
     if (isComplete && question && selectedCards.length > 0) {
+      setShowChoice(true);
+      setInterpretationType(null);
+      setInterpretation(null);
+      setManualInterpretation(null);
+      setError(null);
+      setLoading(false);
+      setUserDeclined(false);
       const timer = setTimeout(() => {
         setShowModal(true);
         playMagicSound();
       }, ANIMATION_DELAYS.MODAL_SHOW);
-
       return () => clearTimeout(timer);
     }
   }, [isComplete, question, selectedCards.length]);
 
   useEffect(() => {
     if (forceOpen && isComplete && question && selectedCards.length > 0) {
-      setShowModal(true);
       setShowChoice(false);
+      setInterpretationType("explanation");
+      setInterpretation(null);
+      setManualInterpretation(null);
+      setError(null);
+      setLoading(false);
       setUserDeclined(false);
+      setShowModal(true);
       playMagicSound();
       generateManualInterpretation();
     }
@@ -249,10 +291,16 @@ function TarotInterpretation({
   };
 
   const formatInterpretationText = (text: string): string => {
-    return text.replace(
+    let formatted = text.replace(
+      /^### (.*)$/gm,
+      "<span class='font-semibold text-violet-200 block mt-4 mb-2'>$1</span>",
+    );
+
+    formatted = formatted.replace(
       /\*\*(.*?)\*\*/g,
       "<span class='font-semibold text-violet-200'>$1</span>",
     );
+    return formatted;
   };
 
   if (!isComplete || !showModal) {
@@ -337,7 +385,7 @@ function TarotInterpretation({
             </div>
           )}
 
-          {(interpretation || manualInterpretation) && (
+          {!showChoice && (interpretation || manualInterpretation) && (
             <div className="mx-4 mb-4">
               <div className="max-w-none border-0">
                 {manualInterpretation ? (
