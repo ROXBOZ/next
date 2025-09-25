@@ -56,7 +56,7 @@ function CardFront({
             alt={data.name}
             width={300}
             height={500}
-            className="absolute inset-0 -z-30 h-full w-full object-cover"
+            className="absolute inset-0 -z-30 h-full w-full"
             onError={() => setImageError(true)}
           />
         )}

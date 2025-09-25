@@ -15,13 +15,39 @@ import { playDenySound } from "@/utils/sound";
 import { showWarningToast } from "@/utils/toast";
 
 export function useTarotGame(cards: TarotCard[]) {
-  const [cardOrder, setCardOrder] = useState(() => initializeCardOrder(cards));
-  const [selectedCards, setSelectedCards] = useState<number[]>([]);
-  const [readingMode, setReadingMode] = useState<ReadingMode | null>(null);
-  const [cardReversals, setCardReversals] = useState<CardReversals>(() =>
-    generateCardReversals(cards.map((card) => card.id)),
+  // LocalStorage key
+  const STORAGE_KEY = "tarot-game-state-v1";
+  // Load initial state from localStorage if available
+  const loadState = () => {
+    if (typeof window === "undefined") return null;
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return null;
+      return JSON.parse(raw);
+    } catch {
+      return null;
+    }
+  };
+  const initial = loadState();
+  const [hasHydrated, setHasHydrated] = useState(false);
+  const [cardOrder, setCardOrder] = useState<number[]>(
+    initial?.cardOrder || initializeCardOrder(cards),
   );
-  const [question, setQuestion] = useState<string>("");
+  const [selectedCards, setSelectedCards] = useState<number[]>(
+    initial?.selectedCards || [],
+  );
+  const [readingMode, setReadingMode] = useState<ReadingMode | null>(
+    initial?.readingMode ?? null,
+  );
+  const [cardReversals, setCardReversals] = useState<CardReversals>(
+    initial?.cardReversals ||
+      generateCardReversals(cards.map((card) => card.id)),
+  );
+  const [question, setQuestion] = useState<string>(initial?.question || "");
+  // Set hasHydrated to true after first client render
+  useEffect(() => {
+    setHasHydrated(true);
+  }, []);
   const [showInterpretationButton, setShowInterpretationButton] =
     useState(false);
   const [forceOpenModal, setForceOpenModal] = useState(false);
@@ -44,6 +70,21 @@ export function useTarotGame(cards: TarotCard[]) {
       setShowInterpretationButton(false);
     }
   }, [isComplete, question, selectedCards.length, modalHasBeenClosed]);
+
+  // Persist state to localStorage on change
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const state = {
+      cardOrder,
+      selectedCards,
+      readingMode,
+      cardReversals,
+      question,
+    };
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch {}
+  }, [cardOrder, selectedCards, readingMode, cardReversals, question]);
 
   const selectCard = useCallback(
     (cardId: number) => {
@@ -86,6 +127,7 @@ export function useTarotGame(cards: TarotCard[]) {
     return true;
   }, [cardOrder, selectedCards]);
 
+  // Only call this for a true reset (logo click)
   const resetGame = useCallback(() => {
     resetSelection(
       selectedCards,
@@ -101,6 +143,12 @@ export function useTarotGame(cards: TarotCard[]) {
     setForceOpenModal(false);
     setModalHasBeenClosed(false);
     setIsShuffling(false);
+    // Remove from localStorage
+    if (typeof window !== "undefined") {
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch {}
+    }
   }, [selectedCards, cardOrder]);
 
   const startReading = useCallback((mode: ReadingMode) => {
@@ -116,6 +164,7 @@ export function useTarotGame(cards: TarotCard[]) {
   }, []);
 
   return {
+    hasHydrated,
     cardOrder,
     selectedCards,
     readingMode,

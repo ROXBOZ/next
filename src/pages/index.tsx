@@ -39,6 +39,7 @@ export default function Home() {
     startReading,
     openInterpretation,
     onModalClose,
+    hasHydrated,
   } = useTarotGame(cards as TarotCard[]);
 
   const handleReset = () => {
@@ -72,6 +73,8 @@ export default function Home() {
 
     originalSelectCard(cardId);
   };
+
+  if (!hasHydrated) return null;
 
   return (
     <div className="pattern mobile-safe-container overflow-hidden xl:max-h-screen">
