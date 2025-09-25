@@ -49,7 +49,7 @@ export function useTarotGame(cards: TarotCard[]) {
     (cardId: number) => {
       if (!readingMode) {
         playDenySound();
-        showWarningToast("Demandez à l’oracle et choisissez un tirage");
+        showWarningToast("Posez votre question et choisissez un tirage");
         return;
       }
 

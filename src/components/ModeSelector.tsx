@@ -138,7 +138,7 @@ function ModeSelector({
     <div className="h-[160px] w-full pt-4 xl:h-[100px]">
       <div className="mx-auto flex h-full w-screen flex-col items-center gap-2">
         <div className="flex w-full animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards] flex-col items-baseline justify-center gap-2 px-4 opacity-0 xl:flex-row">
-          <span className="font-medium whitespace-nowrap text-violet-200">
+          <span className="sr-only font-medium whitespace-nowrap text-violet-200">
             Demandez à l’oracle
           </span>
           <input
@@ -147,8 +147,7 @@ function ModeSelector({
             value={question}
             onChange={handleQuestionChange}
             placeholder="Quelle est votre question ?"
-            className="w-full touch-manipulation rounded-full border border-violet-500/20 bg-[#0d001a] px-3 py-2 text-sm text-violet-100 placeholder-violet-500/40 focus:border-violet-400/50 focus:outline-none xl:w-72"
-            style={{ fontSize: "16px" }}
+            className="w-full touch-manipulation rounded-full border border-violet-500/20 bg-[#0d001a] px-3 py-2 text-sm text-violet-100 placeholder-violet-500/40 focus:border-violet-400/50 focus:outline-none xl:w-80"
           />
         </div>
 
