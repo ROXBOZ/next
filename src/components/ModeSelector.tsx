@@ -1,5 +1,5 @@
 import { ChangeEvent, useEffect, useRef } from "react";
-import { playClickSound, playTypingSound } from "@/utils/sound";
+import { playClickSound, playTypingSound, playDenySound } from "@/utils/sound";
 
 import { ReadingMode } from "@/types/tarot";
 import { validateQuestion } from "@/utils/questionValidation";
@@ -86,11 +86,23 @@ function ModeSelector({
   };
 
   const handle3CardsClick = () => {
+    if (!validateQuestion(question)) {
+      playDenySound();
+      // Show the same funny toast (it will be random/alternating)
+      validateQuestion(question);
+      return;
+    }
     playClickSound();
     setReadingMode("3-cards");
   };
 
   const handle5CardsClick = () => {
+    if (!validateQuestion(question)) {
+      playDenySound();
+      // Show the same funny toast (it will be random/alternating)
+      validateQuestion(question);
+      return;
+    }
     playClickSound();
     setReadingMode("5-cards");
   };
@@ -147,7 +159,7 @@ function ModeSelector({
             value={question}
             onChange={handleQuestionChange}
             placeholder="Quelle est votre question ?"
-            className="w-full touch-manipulation rounded-full border border-violet-500/20 bg-[#0d001a] px-3 py-2 text-sm text-violet-100 placeholder-violet-500/40 focus:border-violet-400/50 focus:outline-none xl:w-80"
+            className="w-full touch-manipulation rounded-full border border-violet-500/20 bg-[#0d001a] px-3 py-2 text-lg text-violet-100 placeholder-violet-500/40 focus:border-violet-400/50 focus:outline-none xl:w-80"
           />
         </div>
 

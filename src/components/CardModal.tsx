@@ -1,5 +1,4 @@
 import { TarotCard } from "@/types/tarot";
-import { playFlipSound } from "@/utils/sound";
 import { useEffect } from "react";
 
 interface CardModalProps {
@@ -18,8 +17,6 @@ function CardModal({ isOpen, onClose, card, isReversed }: CardModalProps) {
     };
 
     if (isOpen) {
-      playFlipSound();
-
       document.addEventListener("keydown", handleEscape);
       document.body.style.overflow = "hidden";
     }

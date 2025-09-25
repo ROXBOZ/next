@@ -12,6 +12,11 @@ export const validateQuestion = (text: string): boolean => {
     return true;
   }
 
+  // If it has spaces, it's likely a real sentence
+  if (trimmedText.includes(" ")) {
+    return true;
+  }
+
   // Remove spaces and special characters for pattern checking
   const cleanText = trimmedText.replace(
     /[^a-zàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ]/g,
@@ -23,7 +28,7 @@ export const validateQuestion = (text: string): boolean => {
     // Same character repeated 4+ times
     /(.)\1{3,}/,
     // Obvious keyboard mashing (consecutive keys)
-    /qwer|asdf|zxcv|poiu|lkjh|mnb/,
+    /qwerty|asdfgh|zxcvbn/,
     /[qwertyuiop]{4,}|[asdfghjkl]{4,}|[zxcvbnm]{4,}/,
   ];
 
@@ -41,44 +46,13 @@ export const validateQuestion = (text: string): boolean => {
   const totalLetters = cleanText.length;
 
   // If text is long enough and has virtually no vowels, it's likely gibberish
-  if (totalLetters > 6 && vowels.length === 0) {
+  if (totalLetters > 8 && vowels.length === 0) {
     showGibberishToast();
     return false;
   }
 
-  // If vowel ratio is extremely low (less than 5%), likely gibberish
-  if (totalLetters > 8 && vowels.length / totalLetters < 0.05) {
-    showGibberishToast();
-    return false;
-  }
-
-  // Check for at least one recognizable word pattern
-  const words = trimmedText.split(/\s+/);
-  let hasRecognizableWord = false;
-
-  for (const word of words) {
-    const cleanWord = word.replace(/[^a-zàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ]/g, "");
-
-    // Skip very short words
-    if (cleanWord.length < 2) continue;
-
-    // Check if word has a reasonable vowel pattern
-    const wordVowels =
-      cleanWord.match(/[aeiouàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ]/g) || [];
-
-    // A word with vowels or common French/English patterns is likely real
-    if (
-      wordVowels.length > 0 ||
-      /^(qu|ch|th|sh|ph|gh|ck|ng|tion|sion)/.test(cleanWord) ||
-      /ing|tion|sion|ment|ance|ence$/.test(cleanWord)
-    ) {
-      hasRecognizableWord = true;
-      break;
-    }
-  }
-
-  // If no recognizable words and text is long enough, it's likely gibberish
-  if (!hasRecognizableWord && cleanText.length > 8) {
+  // If vowel ratio is extremely low (less than 3%), likely gibberish
+  if (totalLetters > 10 && vowels.length / totalLetters < 0.03) {
     showGibberishToast();
     return false;
   }
@@ -94,10 +68,10 @@ const showGibberishToast = () => {
   playHuhSound();
 
   const funnyMessages = [
-    "L’oracle comprend que pouic de pouic",
-    "L’oracle comprend que dalle",
-    "L’oracle comprend walou",
-    "L'oracle catch pas",
+    "Je comprends que pouic",
+    "Je comprends que dalle",
+    "Je comprends walou",
+    "Je comprends pas",
     "T’écris avec tes pieds?",
     "L'oracle pige sweet fuck all",
     "Les esprits ont quitté le chat?",
