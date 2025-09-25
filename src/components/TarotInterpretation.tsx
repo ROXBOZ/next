@@ -46,38 +46,33 @@ function TarotInterpretation({
   const [interpretationType, setInterpretationType] =
     useState<InterpretationType>(null);
 
-  // Show modal with delay when reading is complete
   useEffect(() => {
     if (isComplete && question && selectedCards.length > 0) {
       const timer = setTimeout(() => {
         setShowModal(true);
-        playMagicSound(); // Play magic sound when modal opens
+        playMagicSound();
       }, ANIMATION_DELAYS.MODAL_SHOW);
 
       return () => clearTimeout(timer);
     }
   }, [isComplete, question, selectedCards.length]);
 
-  // Handle force open from external button - automatically show guide
   useEffect(() => {
     if (forceOpen && isComplete && question && selectedCards.length > 0) {
       setShowModal(true);
       setShowChoice(false);
       setUserDeclined(false);
-      playMagicSound(); // Play magic sound when modal force opens
+      playMagicSound();
       generateManualInterpretation();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [forceOpen, isComplete, question, selectedCards.length]);
 
-  // Reset all states when game is reset (isComplete becomes false)
   useEffect(() => {
     if (!isComplete) {
       resetInterpretationState();
     }
   }, [isComplete]);
 
-  // Block/unblock body scroll when modal is open
   useEffect(() => {
     document.body.style.overflow = showModal ? "hidden" : "unset";
 
@@ -120,7 +115,7 @@ function TarotInterpretation({
       setInterpretation(explanation);
     } catch (err) {
       setError(
-        "Une erreur est survenue lors de la génération des explications."
+        "Une erreur est survenue lors de la génération des explications.",
       );
     } finally {
       setLoading(false);
@@ -158,7 +153,6 @@ function TarotInterpretation({
     setUserDeclined(true);
     setShowChoice(false);
     setShowModal(false);
-    // Notify parent that modal has been closed
     onModalClose?.();
   };
 
@@ -171,7 +165,6 @@ function TarotInterpretation({
     setShowModal(true);
   };
 
-  // Wrapper functions that include click sound
   const handleDeclineInterpretation = () => {
     playClickSound();
     declineInterpretation();
@@ -195,7 +188,7 @@ function TarotInterpretation({
   const formatInterpretationText = (text: string): string => {
     return text.replace(
       /\*\*(.*?)\*\*/g,
-      "<span class='font-semibold text-violet-200'>$1</span>"
+      "<span class='font-semibold text-violet-200'>$1</span>",
     );
   };
 
@@ -205,29 +198,28 @@ function TarotInterpretation({
 
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center px-4 py-12 bg-black/80`}
+      className={`fixed inset-0 flex items-center justify-center bg-black/80 px-4 py-12`}
       style={{ zIndex: Z_INDEX.MODAL }}
     >
-      <div className="bg-orange-950 relative text-violet-50 pb-4 rounded-lg max-w-4xl max-h-[80vh] overflow-y-auto shadow-2xl">
-        <div className="max-w-[65ch] mx-auto">
+      <div className="relative max-h-[80vh] max-w-4xl overflow-y-auto rounded-lg bg-orange-950 pb-4 text-violet-50 shadow-2xl">
+        <div className="mx-auto max-w-[65ch]">
           {/* Header */}
-          <div className="p-4 relative">
+          <div className="relative p-4">
             <button
               onClick={handleDeclineInterpretation}
-              className="absolute top-0 right-0 aspect-square text-violet-200 hover:text-violet-50 transition-colors leading-none text-lg"
+              className="absolute top-0 right-0 aspect-square text-lg leading-none text-violet-200 transition-colors hover:text-violet-50"
               aria-label="Fermer"
             >
               ×
             </button>{" "}
-            <h3 className="font-semibold border-b border-violet-500 pb-2 pt-8">
+            <h3 className="border-b border-violet-500 pt-8 pb-2 font-semibold">
               Votre tirage est complet
             </h3>
           </div>
 
-          {/* Choice Interface */}
           {showChoice && (
-            <div className="text-center px-4 pb-4">
-              <div className="flex flex-col gap-2 items-center">
+            <div className="px-4 pb-4 text-center">
+              <div className="flex flex-col items-center gap-2">
                 <button
                   className="light w-full"
                   onClick={handleGenerateAIInterpretation}
@@ -244,36 +236,34 @@ function TarotInterpretation({
             </div>
           )}
 
-          {/* Loading */}
           {loading && (
             <div className="flex items-center justify-center py-12">
               <div className="flex flex-col items-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600"></div>
-                <p className="mt-4 text-violet-200 px-4">
+                <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-amber-600"></div>
+                <p className="mt-4 px-4 text-violet-200">
                   Génération de l’explication de vos cartes...
                 </p>
               </div>
             </div>
           )}
 
-          {/* Error */}
           {error && (
-            <div className="mx-4 mb-4 bg-red-50 border border-red-200 rounded-lg p-4">
+            <div className="mx-4 mb-4 rounded-lg border border-red-200 bg-red-50 p-4">
               <p className="text-red-700">{error}</p>
-              <div className="flex gap-3 mt-3">
+              <div className="mt-3 flex gap-3">
                 <button
                   onClick={
                     interpretationType === "ai"
                       ? handleGenerateAIInterpretation
                       : handleGenerateManualInterpretation
                   }
-                  className="px-4 py-2 bg-red-600 text-violet-50 rounded hover:bg-red-700 transition-colors"
+                  className="rounded bg-red-600 px-4 py-2 text-violet-50 transition-colors hover:bg-red-700"
                 >
                   Réessayer
                 </button>
                 <button
                   onClick={handleResetChoice}
-                  className="px-4 py-2 bg-gray-600 text-violet-50 rounded hover:bg-gray-700 transition-colors"
+                  className="rounded bg-gray-600 px-4 py-2 text-violet-50 transition-colors hover:bg-gray-700"
                 >
                   Retour au choix
                 </button>
@@ -281,19 +271,18 @@ function TarotInterpretation({
             </div>
           )}
 
-          {/* Interpretation Result */}
           {interpretation && (
             <div className="mx-4 mb-4">
               <div className="max-w-none border-0">
                 <div
-                  className="leading-relaxed whitespace-pre-line text-violet-100 border-0"
+                  className="border-0 leading-relaxed whitespace-pre-line text-violet-100"
                   style={{ border: "none", outline: "none" }}
                   dangerouslySetInnerHTML={{
                     __html: formatInterpretationText(interpretation),
                   }}
                 />
 
-                <div className="flex gap-3 justify-center mt-6">
+                <div className="mt-6 flex justify-center gap-3">
                   {interpretationType === "explanation" ? (
                     <button
                       onClick={handleGenerateAIInterpretation}

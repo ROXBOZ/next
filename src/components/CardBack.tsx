@@ -23,7 +23,6 @@ function CardBack({
   const [isTouched, setIsTouched] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detect if device supports touch
   useEffect(() => {
     setIsMobile("ontouchstart" in window || navigator.maxTouchPoints > 0);
   }, []);
@@ -31,16 +30,14 @@ function CardBack({
   const handleTouchStart = () => {
     if (isMobile) {
       setIsTouched(true);
-      // Add haptic feedback if supported (iOS Safari and some Android browsers)
       if ("vibrate" in navigator) {
-        navigator.vibrate(10); // Very short vibration for feedback
+        navigator.vibrate(10);
       }
     }
   };
 
   const handleTouchEnd = () => {
     if (isMobile) {
-      // Small delay to allow user to see the visual feedback before reverting
       setTimeout(() => setIsTouched(false), 150);
     }
   };
@@ -60,28 +57,18 @@ function CardBack({
         }`,
         touchAction: "manipulation",
       }}
-      className={`
-        aspect-[2/3] w-[190px] border bg-[#15102d]
-        object-contain rounded-xl overflow-hidden flex items-center
-        cursor-pointer flex-shrink-0 transition-all duration-200
-        ${position && position > 1 ? "-ml-[172px]" : ""}
-        ${
-          isTouched && isMobile
-            ? "border-violet-400 shadow-lg shadow-violet-400/30 animate-pulse"
-            : "border-orange-950"
-        }
-
-        /* Desktop hover effects */
-        md:hover:translate-y-[-30px] md:hover:rotate-${isReversed ? "180" : "0"}
-        md:transition-all md:duration-300
-      `}
+      className={`card-classes flex w-[180px] flex-shrink-0 cursor-pointer items-center overflow-hidden border bg-[#15102d] object-contain transition-all duration-200 ${position && position > 1 ? "-ml-[162px]" : ""} ${
+        isTouched && isMobile
+          ? "animate-pulse border-violet-400 shadow-lg shadow-violet-400/30"
+          : "border-orange-950"
+      } md:hover:translate-y-[-30px] md:hover:rotate-${isReversed ? "180" : "0"} md:transition-all md:duration-300`}
       onClick={handleClick}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
       {!isLast && (
         <div
-          className="bg-gradient-to-r from-black/40 to-transparent w-full h-full absolute top-0 left-0"
+          className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-black/40 to-transparent"
           style={{
             transform: isReversed ? "rotate(180deg)" : "none",
           }}

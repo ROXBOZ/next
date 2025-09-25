@@ -25,7 +25,6 @@ function SelectedCardsDisplay({
     isReversed: boolean;
   } | null>(null);
 
-  // Handle click on a card (single tap/click for mobile compatibility)
   const handleCardClick = (cardId: number) => {
     const cardData = findCardById(cards, cardId);
     if (cardData) {
@@ -40,7 +39,6 @@ function SelectedCardsDisplay({
     setModalCard(null);
   };
 
-  // Center the active placeholder on mobile
   useEffect(() => {
     if (!readingMode) return;
 
@@ -56,11 +54,11 @@ function SelectedCardsDisplay({
 
     if (isMobile) {
       setTimeout(() => {
-        const cardWidth = 190 + 16; // card width + gap
+        const cardWidth = 190 + 16;
         const containerWidth = container.clientWidth;
         const targetScrollLeft = Math.max(
           0,
-          activeIndex * cardWidth - containerWidth / 2 + cardWidth / 2
+          activeIndex * cardWidth - containerWidth / 2 + cardWidth / 2,
         );
 
         container.scrollTo({
@@ -78,19 +76,14 @@ function SelectedCardsDisplay({
   const readingConfig = READING_CONFIGS[readingMode];
   const maxCards = readingConfig.length;
 
-  // Find the next empty position (the active placeholder)
-  // selectedCards is an array of card IDs, so the next position is at selectedCards.length
-  const activeIndex =
-    selectedCards.length < maxCards ? selectedCards.length : -1;
-
   return (
     <div className="w-full max-w-full">
       <div
         ref={scrollContainerRef}
-        className="flex px-12 gap-4 overflow-x-auto justify-start md:justify-center min-w-0 pb-4 scrollbar-thin scrollbar-thumb-orange-200/20 scrollbar-track-transparent"
+        className="scrollbar-thin scrollbar-thumb-orange-200/20 scrollbar-track-transparent flex min-w-0 justify-start gap-4 overflow-x-auto px-12 pb-4 md:justify-center"
       >
         {Array.from({ length: maxCards }).map((_, index) => {
-          const cardId = selectedCards[index]; // This will be undefined if we don't have enough cards yet
+          const cardId = selectedCards[index];
           const position = readingConfig[index];
           const isPositionFilled = index < selectedCards.length;
 
@@ -103,19 +96,15 @@ function SelectedCardsDisplay({
             return (
               <div
                 key={`filled-${index}`}
-                className="flex flex-col items-center gap-2 flex-shrink-0"
+                className="flex flex-shrink-0 flex-col items-center gap-2"
               >
-                <div className="text-sm text-orange-200 font-medium">
+                <div className="text-sm font-medium text-orange-200">
                   {position?.title || `Position ${index + 1}`}
                 </div>
-                <div className="relative group">
-                  {/* Visual indicator for clickable card - only on mobile */}
-                  {/* <div className="absolute -top-1 -right-1 w-4 h-4 bg-orange-400/80 rounded-full flex items-center justify-center text-[10px] text-white font-bold opacity-60 group-hover:opacity-100 transition-opacity z-10 md:hidden">
-                    👁
-                  </div> */}
+                <div className="group relative">
                   <div
                     onClick={() => handleCardClick(cardId)}
-                    className="cursor-pointer hover:scale-105 transition-transform"
+                    className="cursor-pointer transition-transform hover:scale-105"
                   >
                     <CardFront
                       data={cardData}
@@ -131,13 +120,13 @@ function SelectedCardsDisplay({
           return (
             <div
               key={`empty-${index}`}
-              className="flex flex-col items-center gap-2 flex-shrink-0"
+              className="flex flex-shrink-0 flex-col items-center gap-2"
             >
-              <div className="text-sm text-orange-200/40 font-medium">
+              <div className="text-sm font-medium text-orange-200/40">
                 {position?.title || `Position ${index + 1}`}
               </div>
-              <div className="w-[190px] h-[285px] border-2 border-dashed border-orange-200/20 rounded-lg flex items-center justify-center">
-                <span className="text-orange-200/30 text-sm">
+              <div className="flex h-[285px] w-[190px] items-center justify-center rounded-lg border-2 border-dashed border-orange-200/20">
+                <span className="text-sm text-orange-200/30">
                   {position?.title || `Position ${index + 1}`}
                 </span>
               </div>
@@ -146,7 +135,6 @@ function SelectedCardsDisplay({
         })}
       </div>
 
-      {/* Card Modal */}
       {modalCard && (
         <CardModal
           isOpen={!!modalCard}

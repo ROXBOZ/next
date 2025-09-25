@@ -25,7 +25,7 @@ export default async function handler(req, res) {
     }
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini", // Cost-effective model, you can change to gpt-4 for better quality
+      model: "gpt-4o-mini",
       messages: [
         {
           role: "system",
@@ -37,7 +37,7 @@ export default async function handler(req, res) {
         },
       ],
       max_tokens: 1500,
-      temperature: 0.8, // Slightly creative but not too random
+      temperature: 0.8,
     });
 
     const interpretation = completion.choices[0].message.content;
@@ -54,7 +54,6 @@ export default async function handler(req, res) {
     console.error("Error type:", error.type);
     console.error("Error status:", error.status);
 
-    // Handle different types of errors
     if (error.code === "insufficient_quota") {
       return res.status(402).json({
         success: false,
@@ -69,7 +68,6 @@ export default async function handler(req, res) {
       });
     }
 
-    // Return the actual error message for debugging
     return res.status(500).json({
       success: false,
       error: `OpenAI Error: ${error.message} (Code: ${

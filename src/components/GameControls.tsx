@@ -30,7 +30,7 @@ function GameControls({
   };
 
   return (
-    <div className="flex gap-4 items-center min-h-[40px] justify-center mb-4">
+    <div className="mb-4 flex min-h-[40px] items-center justify-center gap-4">
       {readingMode && (
         <>
           <button

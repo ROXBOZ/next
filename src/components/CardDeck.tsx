@@ -22,27 +22,23 @@ function CardDeck({
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
 
-  // Scroll to right side on mobile and check if scroll indicator is needed
   useEffect(() => {
     if (!cardOrder || cardOrder.length === 0) return;
 
     const container = scrollContainerRef.current;
     if (!container) return;
 
-    const isMobile = window.innerWidth < 768; // md breakpoint
+    const isMobile = window.innerWidth < 768;
 
     if (isMobile) {
-      // Scroll to the right side to show last cards
       const maxScrollLeft = container.scrollWidth - container.clientWidth;
       container.scrollLeft = maxScrollLeft;
 
-      // Show scroll indicator if content is scrollable AND reading mode is selected
       setShowScrollIndicator(maxScrollLeft > 0 && readingMode !== null);
     } else {
       setShowScrollIndicator(false);
     }
 
-    // Handle scroll to hide indicator when user scrolls
     const handleScroll = () => {
       if (container.scrollLeft === 0) {
         setShowScrollIndicator(false);
@@ -57,16 +53,13 @@ function CardDeck({
     return null;
   }
 
-  // Calculate the actual width needed for all cards
-  // First card: 190px, each additional card: 18px (190 - 172 overlap)
   const totalWidth =
     cardOrder.length > 0 ? 190 + (cardOrder.length - 1) * 18 : 190;
 
   return (
-    <div className="w-full relative">
-      {/* Mobile scroll indicator */}
+    <div className="relative w-full -rotate-2">
       {showScrollIndicator && (
-        <div className="md:hidden absolute top-2 left-4 z-50 text-sm flex items-center gap-2 text-violet-300">
+        <div className="absolute top-2 left-4 z-50 flex items-center gap-2 text-sm text-violet-300 md:hidden">
           <span>←</span>
           <span>Scrollez</span>
         </div>
@@ -74,15 +67,15 @@ function CardDeck({
 
       <div
         ref={scrollContainerRef}
-        className="w-full overflow-x-auto overflow-y-visible py-10"
+        className="w-full overflow-x-auto overflow-y-visible py-8"
         style={{
           touchAction: "pan-x",
           WebkitOverflowScrolling: "touch",
         }}
       >
         <div
-          className="flex z-40 px-4 mx-auto"
-          style={{ width: `${totalWidth + 32}px` }} // +32 for px-4 padding
+          className="z-40 mx-auto flex px-4"
+          style={{ width: `${totalWidth + 32}px` }}
         >
           {cardOrder.map((cardId, index) => {
             const cardData = findCardById(cards, cardId);

@@ -11,17 +11,12 @@ export default function Header({ onReset }: HeaderProps) {
   };
 
   return (
-    <header className="py-2 xl:p-0 flex justify-center">
+    <header className="flex justify-center py-2 xl:p-0">
       <button
         className="text-4xl tracking-wider text-white hover:ring-0!"
         onClick={handleReset}
       >
-        {/* <span className="rfc-font flex gap-1 items-center">
-          Velma <span className="text-sm">✦</span> Tarot
-        </span> */}
-        <div className="flex gap-1 items-center">
-          {/* <span className="rfc-font">L</span>
-          <span className="text-xs">✦</span> */}
+        <div className="flex items-center gap-1">
           <span className="rfc-font">l·oraclette</span>
         </div>
       </button>

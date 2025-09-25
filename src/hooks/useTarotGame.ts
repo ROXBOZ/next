@@ -9,28 +9,29 @@ import {
   isReadingComplete,
   resetSelection,
 } from "@/utils/cardSelection";
+import { useCallback, useEffect, useState } from "react";
+
 import { playDenySound } from "@/utils/sound";
 import { showWarningToast } from "@/utils/toast";
-import { useCallback, useEffect, useState } from "react";
 
 export function useTarotGame(cards: TarotCard[]) {
   const [cardOrder, setCardOrder] = useState(() => initializeCardOrder(cards));
   const [selectedCards, setSelectedCards] = useState<number[]>([]);
   const [readingMode, setReadingMode] = useState<ReadingMode | null>(null);
   const [cardReversals, setCardReversals] = useState<CardReversals>(() =>
-    generateCardReversals(cards.map((card) => card.id))
+    generateCardReversals(cards.map((card) => card.id)),
   );
   const [question, setQuestion] = useState<string>("");
   const [showInterpretationButton, setShowInterpretationButton] =
     useState(false);
   const [forceOpenModal, setForceOpenModal] = useState(false);
   const [modalHasBeenClosed, setModalHasBeenClosed] = useState(false);
+  const [isShuffling, setIsShuffling] = useState(false);
 
   const isComplete = readingMode
     ? isReadingComplete(selectedCards, readingMode)
     : false;
 
-  // Show interpretation button only AFTER modal has been closed at least once
   useEffect(() => {
     if (
       isComplete &&
@@ -58,19 +59,25 @@ export function useTarotGame(cards: TarotCard[]) {
         setSelectedCards,
         cardOrder,
         setCardOrder,
-        readingMode
+        readingMode,
       );
     },
-    [selectedCards, cardOrder, readingMode]
+    [selectedCards, cardOrder, readingMode],
   );
 
   const shuffleDeck = useCallback(() => {
     if (selectedCards.length > 0) {
-      return false; // Indicates shuffle was blocked
+      return false;
     }
 
+    setIsShuffling(true);
     shuffleCards(cardOrder, setCardOrder, setCardReversals);
-    return true; // Indicates shuffle was successful
+
+    setTimeout(() => {
+      setIsShuffling(false);
+    }, 1800);
+
+    return true;
   }, [cardOrder, selectedCards]);
 
   const resetGame = useCallback(() => {
@@ -80,13 +87,14 @@ export function useTarotGame(cards: TarotCard[]) {
       cardOrder,
       setCardOrder,
       (newOrder, setOrder) =>
-        shuffleCards(newOrder, setOrder, setCardReversals, false) // No sound for reset
+        shuffleCards(newOrder, setOrder, setCardReversals, false),
     );
     setReadingMode(null);
     setQuestion("");
     setShowInterpretationButton(false);
     setForceOpenModal(false);
     setModalHasBeenClosed(false);
+    setIsShuffling(false);
   }, [selectedCards, cardOrder]);
 
   const startReading = useCallback((mode: ReadingMode) => {
@@ -94,7 +102,7 @@ export function useTarotGame(cards: TarotCard[]) {
   }, []);
 
   const openInterpretation = useCallback(() => {
-    setForceOpenModal((prev) => !prev); // Toggle to trigger useEffect
+    setForceOpenModal((prev) => !prev);
   }, []);
 
   const onModalClose = useCallback(() => {
@@ -102,22 +110,20 @@ export function useTarotGame(cards: TarotCard[]) {
   }, []);
 
   return {
-    // State
     cardOrder,
     selectedCards,
     readingMode,
     cardReversals,
     question,
     forceOpenModal,
+    isShuffling,
 
-    // Computed values
     isGameStarted: readingMode !== null,
     hasSelectedCards: selectedCards.length > 0,
     canShuffle: selectedCards.length === 0,
     isComplete,
     showInterpretationButton,
 
-    // Actions
     selectCard,
     shuffleDeck,
     resetGame,

@@ -9,7 +9,7 @@ export default function Document() {
           content="width=device-width, initial-scale=1.0, viewport-fit=cover"
         />
       </Head>
-      <body className="antialiased bg-black">
+      <body className="bg-black antialiased">
         <Main />
         <NextScript />
       </body>

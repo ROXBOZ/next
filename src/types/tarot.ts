@@ -1,5 +1,3 @@
-// Core types for the tarot application
-
 export interface TarotCard {
   id: number;
   number: number | string;
@@ -47,7 +45,6 @@ export interface AIInterpretationResult {
   error?: string;
 }
 
-// Toast notification types
 export type ToastType = "success" | "error" | "warning" | "info";
 
 export interface ToastConfig {
@@ -56,7 +53,6 @@ export interface ToastConfig {
   duration?: number;
 }
 
-// Game state types
 export interface GameState {
   cardOrder: number[];
   selectedCards: number[];

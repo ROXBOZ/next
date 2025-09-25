@@ -1,6 +1,5 @@
 import { ReadingMode, ReadingPosition } from "@/types/tarot";
 
-// Reading position configurations with meanings
 export const READING_CONFIGS: Record<ReadingMode, ReadingPosition[]> = {
   "3-cards": [
     {
@@ -49,22 +48,18 @@ export const READING_CONFIGS: Record<ReadingMode, ReadingPosition[]> = {
   ],
 };
 
-// Maximum cards for each reading type
 export const MAX_CARDS: Record<ReadingMode, number> = {
   "3-cards": 3,
   "5-cards": 5,
 };
 
-// Card type constants
 export const ARCANA_TYPES = {
   MAJEUR: "majeur" as const,
   MINEUR: "mineur" as const,
 };
 
-// Major Arcana threshold
 export const MAJOR_ARCANA_THRESHOLD = 21;
 
-// Tarot explanations
 export const ARCANA_EXPLANATIONS = {
   MAJEUR:
     "Les Arcanes Majeurs représentent les grandes leçons de vie, les archétypes universels et les événements spirituellement significatifs.",
@@ -79,7 +74,6 @@ export const POSITION_EXPLANATIONS = {
     "Une carte inversée suggère des énergies bloquées, des leçons intérieures à apprendre, ou une approche différente nécessaire.",
 };
 
-// Animation and styling constants
 export const ANIMATION_DELAYS = {
   MODAL_SHOW: 2000,
   TOAST_SHOW: 10,
@@ -93,7 +87,6 @@ export const Z_INDEX = {
   CARDS: 40,
 };
 
-// Card rotation limits
 export const CARD_ROTATION = {
   MAX_DEGREES: 12,
   SEED_MULTIPLIER: 9301,

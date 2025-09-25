@@ -16,11 +16,11 @@ import { tarot_cards as cards } from "../data.json";
 export function useTarotGame() {
   const [cardOrder, setCardOrder] = useState(() => initializeCardOrder(cards));
   const [selectedCards, setSelectedCards] = useState([]);
-  const [readingMode, setReadingMode] = useState(null); // null, "3-cards", "5-cards"
+  const [readingMode, setReadingMode] = useState(null);
   const [cardReversals, setCardReversals] = useState(() =>
-    generateCardReversals(cards.map((card) => card.id))
+    generateCardReversals(cards.map((card) => card.id)),
   );
-  const [question, setQuestion] = useState(""); // User's question for AI interpretation
+  const [question, setQuestion] = useState("");
 
   const selectCard = useCallback(
     (cardId) => {
@@ -32,18 +32,18 @@ export function useTarotGame() {
         setSelectedCards,
         cardOrder,
         setCardOrder,
-        readingMode
+        readingMode,
       );
     },
-    [selectedCards, cardOrder, readingMode]
+    [selectedCards, cardOrder, readingMode],
   );
 
   const shuffleDeck = useCallback(() => {
     if (selectedCards.length > 0) {
-      return false; // Indicates shuffle was blocked
+      return false;
     }
     shuffleCards(cardOrder, setCardOrder, setCardReversals);
-    return true; // Indicates shuffle was successful
+    return true;
   }, [cardOrder, selectedCards]);
 
   const resetGame = useCallback(() => {
@@ -52,7 +52,8 @@ export function useTarotGame() {
       setSelectedCards,
       cardOrder,
       setCardOrder,
-      (newOrder, setOrder) => shuffleCards(newOrder, setOrder, setCardReversals)
+      (newOrder, setOrder) =>
+        shuffleCards(newOrder, setOrder, setCardReversals),
     );
     setReadingMode(null);
     setQuestion("");
@@ -63,14 +64,12 @@ export function useTarotGame() {
   }, []);
 
   return {
-    // State
     cardOrder,
     selectedCards,
     readingMode,
     cardReversals,
     question,
 
-    // Computed values
     isGameStarted: readingMode !== null,
     hasSelectedCards: selectedCards.length > 0,
     canShuffle: selectedCards.length === 0,
@@ -78,7 +77,6 @@ export function useTarotGame() {
       ? isReadingComplete(selectedCards, readingMode)
       : false,
 
-    // Actions
     selectCard,
     shuffleDeck,
     resetGame,

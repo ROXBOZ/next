@@ -12,7 +12,6 @@ function MobileSelectionModal({
   card,
   isReversed,
 }: MobileSelectionModalProps) {
-  // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -27,32 +26,26 @@ function MobileSelectionModal({
 
   return (
     <div
-      className="fixed inset-0 p-4 flex items-center justify-center bg-black/90 backdrop-blur-sm animate-in fade-in duration-200"
+      className="animate-in fade-in fixed inset-0 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm duration-200"
       style={{ zIndex: 9999 }}
     >
-      <div className="relative max-w-sm w-full mx-4 animate-in zoom-in-95 duration-300">
-        {/* Card in correct orientation */}
+      <div className="animate-in zoom-in-95 relative mx-4 w-full max-w-sm duration-300">
         <div
-          className={`
-            aspect-[2/3] w-full rounded-2xl bg-orange-900
-            flex gap-4 flex-col overflow-hidden justify-between
-            shadow-2xl transform scale-110
-          `}
+          className={`card-classes flex w-full scale-110 transform flex-col justify-between gap-4 overflow-hidden bg-orange-900 shadow-2xl`}
         >
-          <div className="text-center flex flex-col w-full items-center pt-4 pb-6 bg-gradient-to-b bg-indigo-950 text-orange-400">
+          <div className="flex w-full flex-col items-center bg-indigo-950 bg-gradient-to-b pt-4 pb-6 text-center text-orange-400">
             {card.number}
 
-            <div className="text-center w-full font-medium uppercase text-lg px-4">
+            <div className="w-full px-4 text-center text-lg font-medium uppercase">
               {card.name}
             </div>
           </div>
-          <div className="w-full h-full flex items-center justify-center text-orange-500 text-lg">
+          <div className="flex h-full w-full items-center justify-center text-lg text-orange-500">
             illustration
           </div>
         </div>
 
-        {/* Selection indicator */}
-        <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 text-white/80 text-center">
+        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 transform text-center text-white/80">
           <div className="text-sm font-medium">Carte sélectionnée!</div>
         </div>
       </div>
