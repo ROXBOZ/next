@@ -52,7 +52,7 @@ export default function Home() {
   */
 
   return (
-    <div className="pattern min-h-screen">
+    <div className="pattern min-h-screen" style={{ minHeight: "100dvh" }}>
       <div className="pb-12">
         <Header onReset={resetGame} />
         <div className="flex-col items-center flex pb-4">

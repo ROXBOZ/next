@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+/* Mobile viewport height fix */
+html,
+body {
+  height: 100%;
+  height: 100dvh; /* Dynamic viewport height for mobile */
+}
+
+#__next {
+  height: 100%;
+  height: 100dvh;
+}
+
 @font-face {
   font-family: "RFC Tarot";
   src: url("/RFCTarot-regular.otf") format("opentype");
