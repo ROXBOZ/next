@@ -100,7 +100,7 @@ function ModeSelector({
       <div className="flex h-fit w-full flex-col items-center pt-4 xl:h-[100px]">
         <div className="flex w-1/2 flex-col items-center gap-3 p-2">
           <div className="animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards] text-violet-100 opacity-0">
-            <div className="group relative -mt-4 -rotate-2 rounded-full bg-indigo-950 px-12 py-1 font-semibold whitespace-nowrap">
+            <div className="group relative -mt-4 -rotate-2 rounded-full bg-[#0d001a] px-12 py-1 font-semibold whitespace-nowrap">
               <span className="italic">{question}</span>
             </div>
           </div>
