@@ -105,7 +105,7 @@ function ModeSelector({
               {onReset && (
                 <button
                   onClick={onReset}
-                  className="absolute -top-2 px-2! py-0! pt-0! font-normal text-xl -right-2 bg-orange-800 hover:bg-orange-900 text-white rounded-full flex items-center! justify-center! transition-colors opacity-0 group-hover:opacity-100"
+                  className="absolute -top-4 -right-4 w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white/70 hover:text-white transition-all"
                   title="Recommencer"
                 >
                   <span className="-mt-1"> ×</span>{" "}

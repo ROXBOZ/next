@@ -52,7 +52,7 @@ export default function Home() {
   */
 
   return (
-    <div className="pattern mobile-safe-container">
+    <div className="pattern mobile-safe-container xl:max-h-screen xl:overflow-hidden">
       <div className="pb-4">
         <Header onReset={resetGame} />
         <div className="flex-col items-center flex pb-4">

@@ -2,6 +2,7 @@
 export { default as CardBack } from "./CardBack";
 export { default as CardFront } from "./CardFront";
 export { default as CardDeck } from "./CardDeck";
+export { default as CardModal } from "./CardModal";
 export { default as GameControls } from "./GameControls";
 export { default as Header } from "./Header";
 export { default as ModeSelector } from "./ModeSelector";

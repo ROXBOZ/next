@@ -1,7 +1,8 @@
 import { CardReversals, ReadingMode, TarotCard } from "@/types/tarot";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import CardFront from "./CardFront";
+import CardModal from "./CardModal";
 import { READING_CONFIGS } from "@/constants/tarot";
 import { findCardById } from "@/utils/cardHelpers";
 
@@ -19,6 +20,25 @@ function SelectedCardsDisplay({
   cards,
 }: SelectedCardsDisplayProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [modalCard, setModalCard] = useState<{
+    card: TarotCard;
+    isReversed: boolean;
+  } | null>(null);
+
+  // Handle click on a card (single tap/click for mobile compatibility)
+  const handleCardClick = (cardId: number) => {
+    const cardData = findCardById(cards, cardId);
+    if (cardData) {
+      setModalCard({
+        card: cardData,
+        isReversed: cardReversals[cardId] || false,
+      });
+    }
+  };
+
+  const closeModal = () => {
+    setModalCard(null);
+  };
 
   // Center the active placeholder on mobile
   useEffect(() => {
@@ -88,11 +108,22 @@ function SelectedCardsDisplay({
                 <div className="text-sm text-orange-200 font-medium">
                   {position?.title || `Position ${index + 1}`}
                 </div>
-                <CardFront
-                  data={cardData}
-                  position={index + 1}
-                  isReversed={isReversed}
-                />
+                <div className="relative group">
+                  {/* Visual indicator for clickable card - only on mobile */}
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-orange-400/80 rounded-full flex items-center justify-center text-[10px] text-white font-bold opacity-60 group-hover:opacity-100 transition-opacity z-10 md:hidden">
+                    👁
+                  </div>
+                  <div
+                    onClick={() => handleCardClick(cardId)}
+                    className="cursor-pointer hover:scale-105 transition-transform"
+                  >
+                    <CardFront
+                      data={cardData}
+                      position={index + 1}
+                      isReversed={isReversed}
+                    />
+                  </div>
+                </div>
               </div>
             );
           }
@@ -114,6 +145,16 @@ function SelectedCardsDisplay({
           );
         })}
       </div>
+
+      {/* Card Modal */}
+      {modalCard && (
+        <CardModal
+          isOpen={!!modalCard}
+          onClose={closeModal}
+          card={modalCard.card}
+          isReversed={modalCard.isReversed}
+        />
+      )}
     </div>
   );
 }
