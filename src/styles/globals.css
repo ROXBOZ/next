@@ -40,3 +40,7 @@ body {
 .card-classes {
   @apply aspect-[9/14] rounded-xl;
 }
+
+.ai-interpretation span {
+  @apply pt-4 pb-1;
+}

@@ -41,6 +41,19 @@ function TarotInterpretation({
   const [manualInterpretation, setManualInterpretation] = useState<
     any[] | null
   >(null);
+  // Store last game state to avoid unnecessary regeneration
+  const [lastGameState, setLastGameState] = useState<{
+    question: string;
+    selectedCards: number[];
+    cardReversals: CardReversals;
+    readingMode: ReadingMode;
+  } | null>(null);
+  const [lastAIInterpretation, setLastAIInterpretation] = useState<
+    string | null
+  >(null);
+  const [lastManualInterpretation, setLastManualInterpretation] = useState<
+    any[] | null
+  >(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showChoice, setShowChoice] = useState(true);
@@ -107,12 +120,27 @@ function TarotInterpretation({
     setShowChoice(false);
     setInterpretationType("explanation");
 
+    const reading = createReading();
+    // Check if manual interpretation is already cached for this game state
+    if (
+      lastGameState &&
+      lastManualInterpretation &&
+      lastGameState.question === reading.question &&
+      JSON.stringify(lastGameState.selectedCards) ===
+        JSON.stringify(reading.selectedCards) &&
+      JSON.stringify(lastGameState.cardReversals) ===
+        JSON.stringify(reading.cardReversals) &&
+      lastGameState.readingMode === reading.readingMode
+    ) {
+      setManualInterpretation(lastManualInterpretation);
+      setInterpretation(null);
+      setLoading(false);
+      return;
+    }
     try {
-      const reading = createReading();
       if (!isValidReading(reading)) {
         throw new Error("Données de lecture invalides");
       }
-      // Use structured data for JSX rendering
       const interpretations = generateCardInterpretations(
         reading.selectedCards,
         cards,
@@ -120,6 +148,13 @@ function TarotInterpretation({
         reading.readingMode,
       );
       setManualInterpretation(interpretations);
+      setLastManualInterpretation(interpretations);
+      setLastGameState({
+        question: reading.question,
+        selectedCards: [...reading.selectedCards],
+        cardReversals: { ...reading.cardReversals },
+        readingMode: reading.readingMode,
+      });
       setInterpretation(null);
     } catch (err) {
       setError(
@@ -135,18 +170,38 @@ function TarotInterpretation({
     setError(null);
     setShowChoice(false);
     setInterpretationType("ai");
+    setManualInterpretation(null); // Clear manual guide when switching to AI
 
+    const reading = createReading();
+    // Check if AI interpretation is already cached for this game state
+    if (
+      lastGameState &&
+      lastAIInterpretation &&
+      lastGameState.question === reading.question &&
+      JSON.stringify(lastGameState.selectedCards) ===
+        JSON.stringify(reading.selectedCards) &&
+      JSON.stringify(lastGameState.cardReversals) ===
+        JSON.stringify(reading.cardReversals) &&
+      lastGameState.readingMode === reading.readingMode
+    ) {
+      setInterpretation(lastAIInterpretation);
+      setLoading(false);
+      return;
+    }
     try {
-      const reading = createReading();
-
       if (!isValidReading(reading)) {
         throw new Error("Données de lecture invalides");
       }
-
       const result = await generateTarotInterpretation(reading);
-
       if (result.success) {
         setInterpretation(result.interpretation || "");
+        setLastAIInterpretation(result.interpretation || "");
+        setLastGameState({
+          question: reading.question,
+          selectedCards: [...reading.selectedCards],
+          cardReversals: { ...reading.cardReversals },
+          readingMode: reading.readingMode,
+        });
       } else {
         setError(result.error || "Erreur inconnue");
       }
@@ -257,7 +312,10 @@ function TarotInterpretation({
 
           {error && (
             <div className="mx-4 mb-4 rounded-lg border border-red-200 bg-red-50 p-4">
-              <p className="text-red-700">{error}</p>
+              <p className="mb-2 bg-red-200 font-semibold text-red-700">
+                Une erreur est survenue. Fais un screenshot et envoie moi-ça par
+                Whatsapp merciii!
+              </p>
               <div className="mt-3 flex gap-3">
                 <button
                   onClick={
@@ -309,7 +367,7 @@ function TarotInterpretation({
                   </div>
                 ) : (
                   <div
-                    className="flex flex-col gap-3 text-violet-100"
+                    className="ai-interpretation flex flex-col text-violet-100"
                     dangerouslySetInnerHTML={{
                       __html: formatInterpretationText(interpretation),
                     }}
