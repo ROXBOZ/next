@@ -77,7 +77,7 @@ function SelectedCardsDisplay({
   const maxCards = readingConfig.length;
 
   return (
-    <div className="w-full max-w-full">
+    <div className="w-full max-w-full pt-4">
       <div
         ref={scrollContainerRef}
         className="scrollbar-thin scrollbar-thumb-orange-200/20 scrollbar-track-transparent flex min-w-0 justify-start gap-4 overflow-x-auto px-12 pb-4 md:justify-center"

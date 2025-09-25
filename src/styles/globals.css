@@ -3,6 +3,7 @@
 @import "./pattern.css";
 @import "./animation.css";
 @import "./button.css";
+@import "./scroll.css";
 
 html,
 body {

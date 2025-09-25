@@ -47,9 +47,15 @@ export function useTarotGame(cards: TarotCard[]) {
 
   const selectCard = useCallback(
     (cardId: number) => {
+      if (!question.trim()) {
+        playDenySound();
+        showWarningToast("Posez votre question");
+        return;
+      }
+
       if (!readingMode) {
         playDenySound();
-        showWarningToast("Posez votre question et choisissez un tirage");
+        showWarningToast("Choisissez votre tirage");
         return;
       }
 
@@ -62,7 +68,7 @@ export function useTarotGame(cards: TarotCard[]) {
         readingMode,
       );
     },
-    [selectedCards, cardOrder, readingMode],
+    [selectedCards, cardOrder, readingMode, question],
   );
 
   const shuffleDeck = useCallback(() => {
