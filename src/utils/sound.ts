@@ -70,3 +70,10 @@ export const playDenySound = (): void => {
 export const playHuhSound = (): void => {
   playSound("/huh-sound.mp3", 0.4);
 };
+
+/**
+ * Play the flip sound (for card modals)
+ */
+export const playFlipSound = (): void => {
+  playSound("/flipcard-sound.mp3", 0.3);
+};

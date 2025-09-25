@@ -249,7 +249,7 @@ function TarotInterpretation({
             <div className="flex items-center justify-center py-12">
               <div className="flex flex-col items-center">
                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600"></div>
-                <p className="mt-4 text-violet-200">
+                <p className="mt-4 text-violet-200 px-4">
                   Génération de l’explication de vos cartes...
                 </p>
               </div>

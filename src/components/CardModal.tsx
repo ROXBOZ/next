@@ -1,5 +1,6 @@
 import { TarotCard } from "@/types/tarot";
 import { useEffect } from "react";
+import { playFlipSound } from "@/utils/sound";
 
 interface CardModalProps {
   isOpen: boolean;
@@ -18,6 +19,9 @@ function CardModal({ isOpen, onClose, card, isReversed }: CardModalProps) {
     };
 
     if (isOpen) {
+      // Play flip sound when modal opens
+      playFlipSound();
+
       document.addEventListener("keydown", handleEscape);
       // Prevent body scroll when modal is open
       document.body.style.overflow = "hidden";
