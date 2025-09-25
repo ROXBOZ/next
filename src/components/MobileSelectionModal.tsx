@@ -33,10 +33,7 @@ function MobileSelectionModal({
   if (!isOpen) return null;
 
   return (
-    <div
-      className="animate-in fade-in fixed inset-0 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm duration-200"
-      style={{ zIndex: 9999 }}
-    >
+    <div className="animate-in fade-in fixed inset-0 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm duration-200">
       <div className="animate-in zoom-in-95 relative mx-4 w-full max-w-sm duration-300">
         <div
           style={{
@@ -48,18 +45,17 @@ function MobileSelectionModal({
               : "shadow-[4px_4px_6px_rgba(0,0,0,0.5)]"
           } shadow-2xl`}
         >
-          <div className="flex w-full flex-col items-center bg-indigo-950 bg-gradient-to-b pt-4 pb-6 text-center text-orange-400">
-            {card.number}
+          <div className="z-50 flex h-full w-full flex-col items-center justify-between bg-gradient-to-b p-4 pt-4 pb-6 text-center text-orange-400 *:rounded-full *:bg-indigo-950">
+            <span className="flex px-4 py-2 text-sm font-semibold">
+              {card.number}
+            </span>
 
-            <div className="w-full px-4 text-center text-lg font-medium uppercase">
+            <div className="w-full px-4 py-2 text-center text-sm font-semibold uppercase">
               {card.name}
             </div>
           </div>
-          {imageError ? (
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-sm text-orange-300/60">
-              <div className="font-mono text-lg">{card.id}.jpg</div>
-            </div>
-          ) : (
+
+          {!imageError && (
             <Image
               src={`/frontIllustration/${card.id}.jpg`}
               alt={card.name}

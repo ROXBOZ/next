@@ -80,7 +80,7 @@ function SelectedCardsDisplay({
     <div className="w-full max-w-full pt-4">
       <div
         ref={scrollContainerRef}
-        className="scrollbar-thin scrollbar-thumb-orange-200/20 scrollbar-track-transparent flex min-w-0 justify-start gap-4 overflow-x-auto px-12 pb-4 md:justify-center"
+        className="flex gap-4 overflow-x-auto px-12 pb-4 md:justify-center"
       >
         {Array.from({ length: maxCards }).map((_, index) => {
           const cardId = selectedCards[index];
@@ -117,21 +117,21 @@ function SelectedCardsDisplay({
             );
           }
 
-          return (
-            <div
-              key={`empty-${index}`}
-              className="flex flex-shrink-0 flex-col items-center gap-2"
-            >
-              <div className="text-sm font-medium text-orange-200/40">
-                {position?.title || `Position ${index + 1}`}
-              </div>
-              <div className="flex h-[285px] w-[190px] items-center justify-center rounded-lg border-2 border-dashed border-orange-200/20">
-                <span className="text-sm text-orange-200/30">
-                  {position?.title || `Position ${index + 1}`}
-                </span>
-              </div>
-            </div>
-          );
+          // return (
+          //   <div
+          //     key={`empty-${index}`}
+          //     className="flex flex-shrink-0 flex-col items-center gap-2"
+          //   >
+          //     <div className="text-sm font-medium text-orange-200/40">
+          //       {position?.title || `Position ${index + 1}`}
+          //     </div>
+          //     <div className="flex h-[285px] w-[190px] items-center justify-center rounded-lg border-2 border-dashed border-orange-200/20">
+          //       <span className="text-sm text-orange-200/30">
+          //         {position?.title || `Position ${index + 1}`}
+          //       </span>
+          //     </div>
+          //   </div>
+          // );
         })}
       </div>
 
