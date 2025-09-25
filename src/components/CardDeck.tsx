@@ -53,8 +53,8 @@ function CardDeck({
     return null;
   }
 
-  const totalWidth =
-    cardOrder.length > 0 ? 190 + (cardOrder.length - 1) * 18 : 190;
+  // const totalWidth =
+  //   cardOrder.length > 0 ? 190 + (cardOrder.length - 1) * 18 : 190;
 
   return (
     <div className="relative w-full -rotate-2">
@@ -74,8 +74,8 @@ function CardDeck({
         }}
       >
         <div
-          className="z-40 mx-auto flex justify-center px-4"
-          // style={{ width: `${totalWidth + 32}px` }}
+          className="z-40 flex justify-start px-8 md:justify-center md:px-12"
+          style={{ minWidth: "fit-content" }}
         >
           {cardOrder.map((cardId, index) => {
             const cardData = findCardById(cards, cardId);

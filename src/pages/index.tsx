@@ -74,7 +74,7 @@ export default function Home() {
   };
 
   return (
-    <div className="pattern mobile-safe-container xl:max-h-screen xl:overflow-hidden">
+    <div className="pattern mobile-safe-container overflow-hidden xl:max-h-screen">
       <div className="pb-4">
         <Header onReset={handleReset} />
         <div className="flex flex-col items-center pb-4">
