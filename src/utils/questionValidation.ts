@@ -5,6 +5,17 @@ import { showWarningToast } from "./toast";
  * Validates if a text looks like a real question or gibberish
  */
 export const validateQuestion = (text: string): boolean => {
+  const result = validateQuestionSilent(text);
+  if (!result) {
+    showGibberishToast();
+  }
+  return result;
+};
+
+/**
+ * Validates if a text looks like a real question or gibberish (without showing toast)
+ */
+export const validateQuestionSilent = (text: string): boolean => {
   const trimmedText = text.trim().toLowerCase();
 
   // Too short to validate meaningfully
@@ -35,7 +46,6 @@ export const validateQuestion = (text: string): boolean => {
   // Check for obvious patterns first
   for (const pattern of obviousGibberishPatterns) {
     if (pattern.test(cleanText)) {
-      showGibberishToast();
       return false;
     }
   }
@@ -47,13 +57,11 @@ export const validateQuestion = (text: string): boolean => {
 
   // If text is long enough and has virtually no vowels, it's likely gibberish
   if (totalLetters > 8 && vowels.length === 0) {
-    showGibberishToast();
     return false;
   }
 
   // If vowel ratio is extremely low (less than 3%), likely gibberish
   if (totalLetters > 10 && vowels.length / totalLetters < 0.03) {
-    showGibberishToast();
     return false;
   }
 

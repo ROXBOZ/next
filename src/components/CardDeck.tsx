@@ -75,7 +75,7 @@ function CardDeck({
       >
         <div
           className="z-40 mx-auto flex justify-center px-4"
-          style={{ width: `${totalWidth + 32}px` }}
+          // style={{ width: `${totalWidth + 32}px` }}
         >
           {cardOrder.map((cardId, index) => {
             const cardData = findCardById(cards, cardId);

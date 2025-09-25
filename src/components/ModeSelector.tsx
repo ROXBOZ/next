@@ -2,7 +2,11 @@ import { ChangeEvent, useEffect, useRef } from "react";
 import { playClickSound, playTypingSound, playDenySound } from "@/utils/sound";
 
 import { ReadingMode } from "@/types/tarot";
-import { validateQuestion } from "@/utils/questionValidation";
+import {
+  validateQuestion,
+  validateQuestionSilent,
+} from "@/utils/questionValidation";
+import { showErrorToast } from "@/utils/toast";
 
 interface ModeSelectorProps {
   readingMode: ReadingMode | null;
@@ -70,6 +74,8 @@ function ModeSelector({
   };
 
   const isQuestionValid = question.trim().length > 0;
+  const isQuestionValidForSubmission =
+    isQuestionValid && validateQuestionSilent(question);
 
   const getCardsText = () => {
     if (readingMode === "3-cards") return "choisissez 3 cartes";
@@ -170,11 +176,19 @@ function ModeSelector({
                 Choisissez entre un tirage
               </span>
               <div className="flex animate-[fadeIn_0.2s_ease-in-out_0.6s_forwards] items-baseline gap-2 opacity-0">
-                <button className="light" onClick={handle3CardsClick}>
+                <button
+                  className={`light ${!isQuestionValidForSubmission ? "cursor-not-allowed opacity-50" : ""}`}
+                  onClick={handle3CardsClick}
+                  disabled={!isQuestionValidForSubmission}
+                >
                   simple
                 </button>
                 <span className="text-violet-200">ou</span>
-                <button className="light" onClick={handle5CardsClick}>
+                <button
+                  className={`light ${!isQuestionValidForSubmission ? "cursor-not-allowed opacity-50" : ""}`}
+                  onClick={handle5CardsClick}
+                  disabled={!isQuestionValidForSubmission}
+                >
                   détaillé
                 </button>
               </div>
