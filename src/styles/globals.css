@@ -21,6 +21,16 @@
   }
 }
 
+@keyframes cardPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(139, 92, 246, 0);
+  }
+}
+
 button {
   @apply whitespace-nowrap cursor-pointer px-4 py-1 flex items-center hover:delay-50 hover:duration-50 hover:ring-2 ring-inset justify-center h-fit transition-colors rounded-full;
 }

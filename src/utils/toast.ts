@@ -39,6 +39,7 @@ export const showToast = (config: ToastConfig | string): void => {
     "top-2",
     "right-2",
     "text-sm",
+    "w-fit",
     "xl:text-base",
     "px-3",
     "py-2",

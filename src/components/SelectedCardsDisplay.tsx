@@ -20,20 +20,15 @@ function SelectedCardsDisplay({
 }: SelectedCardsDisplayProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  if (!readingMode) {
-    return null;
-  }
-
-  const readingConfig = READING_CONFIGS[readingMode];
-  const maxCards = readingConfig.length;
-
-  // Find the next empty position (the active placeholder)
-  // selectedCards is an array of card IDs, so the next position is at selectedCards.length
-  const activeIndex =
-    selectedCards.length < maxCards ? selectedCards.length : -1;
-
   // Center the active placeholder on mobile
   useEffect(() => {
+    if (!readingMode) return;
+
+    const readingConfig = READING_CONFIGS[readingMode];
+    const maxCards = readingConfig.length;
+    const activeIndex =
+      selectedCards.length < maxCards ? selectedCards.length : -1;
+
     if (activeIndex === -1 || !scrollContainerRef.current) return;
 
     const container = scrollContainerRef.current;
@@ -54,7 +49,19 @@ function SelectedCardsDisplay({
         });
       }, 100);
     }
-  }, [activeIndex]);
+  }, [selectedCards, readingMode]);
+
+  if (!readingMode) {
+    return null;
+  }
+
+  const readingConfig = READING_CONFIGS[readingMode];
+  const maxCards = readingConfig.length;
+
+  // Find the next empty position (the active placeholder)
+  // selectedCards is an array of card IDs, so the next position is at selectedCards.length
+  const activeIndex =
+    selectedCards.length < maxCards ? selectedCards.length : -1;
 
   return (
     <div className="w-full max-w-full">

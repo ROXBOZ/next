@@ -22,17 +22,10 @@ function CardDeck({
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
 
-  if (!cardOrder || cardOrder.length === 0) {
-    return null;
-  }
-
-  // Calculate the actual width needed for all cards
-  // First card: 190px, each additional card: 18px (190 - 172 overlap)
-  const totalWidth =
-    cardOrder.length > 0 ? 190 + (cardOrder.length - 1) * 18 : 190;
-
   // Scroll to right side on mobile and check if scroll indicator is needed
   useEffect(() => {
+    if (!cardOrder || cardOrder.length === 0) return;
+
     const container = scrollContainerRef.current;
     if (!container) return;
 
@@ -60,6 +53,15 @@ function CardDeck({
     return () => container.removeEventListener("scroll", handleScroll);
   }, [cardOrder, readingMode]);
 
+  if (!cardOrder || cardOrder.length === 0) {
+    return null;
+  }
+
+  // Calculate the actual width needed for all cards
+  // First card: 190px, each additional card: 18px (190 - 172 overlap)
+  const totalWidth =
+    cardOrder.length > 0 ? 190 + (cardOrder.length - 1) * 18 : 190;
+
   return (
     <div className="w-full relative">
       {/* Mobile scroll indicator */}
@@ -73,6 +75,10 @@ function CardDeck({
       <div
         ref={scrollContainerRef}
         className="w-full overflow-x-auto overflow-y-visible py-10"
+        style={{
+          touchAction: "pan-x",
+          WebkitOverflowScrolling: "touch",
+        }}
       >
         <div
           className="flex z-40 px-4 mx-auto"
