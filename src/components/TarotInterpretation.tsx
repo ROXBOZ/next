@@ -326,21 +326,19 @@ function TarotInterpretation({
         ref={modalScrollRef}
         className="relative max-h-[80vh] w-full overflow-y-scroll rounded-lg bg-orange-950 pb-12 text-violet-50 shadow-2xl xl:w-fit"
       >
+        <div className="px-4 pb-4">
+          <button
+            onClick={handleDeclineInterpretation}
+            className="absolute top-0 right-0 aspect-square text-lg leading-none text-violet-200 transition-colors hover:text-violet-50"
+            aria-label="Fermer"
+          >
+            ×
+          </button>{" "}
+          <h3 className="border-b border-violet-500 pt-8 pb-2 text-center font-semibold">
+            Les cartes ont parlé...
+          </h3>
+        </div>
         <div className="mx-auto max-w-[65ch]">
-          {/* Header */}
-          <div className="relative p-4">
-            <button
-              onClick={handleDeclineInterpretation}
-              className="absolute top-0 right-0 aspect-square text-lg leading-none text-violet-200 transition-colors hover:text-violet-50"
-              aria-label="Fermer"
-            >
-              ×
-            </button>{" "}
-            <h3 className="border-b border-violet-500 pt-8 pb-2 text-center font-semibold">
-              Les cartes ont parlé...
-            </h3>
-          </div>
-
           {showChoice && (
             <div className="px-4 pb-4 text-center">
               <div className="flex flex-col items-center gap-2 xl:flex-row">
@@ -348,7 +346,7 @@ function TarotInterpretation({
                   className="light w-full"
                   onClick={handleGenerateAIInterpretation}
                 >
-                  🤖 Interprétation IA
+                  ☁️ Interprétation célèste
                 </button>
                 <button
                   className="light w-full"
@@ -363,7 +361,7 @@ function TarotInterpretation({
           {loading && (
             <div className="flex items-center justify-center py-12">
               <div className="flex flex-col items-center">
-                <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-amber-600"></div>
+                <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-violet-600"></div>
                 <p className="mt-4 px-4 text-violet-200">
                   Génération de l’explication de vos cartes...
                 </p>
@@ -372,26 +370,22 @@ function TarotInterpretation({
           )}
 
           {error && (
-            <div className="mx-4 mb-4 rounded-lg border border-red-200 bg-red-50 p-4">
-              <p className="mb-2 bg-red-200 font-semibold text-red-700">
-                Une erreur est survenue. Fais un screenshot et envoie moi-ça par
-                Whatsapp merciii!
+            <div className="flex flex-col p-4 text-center">
+              <p className="mb-2 font-semibold text-balance text-violet-300">
+                Et voilà, ça merde.
               </p>
-              <div className="mt-3 flex gap-3">
+              <div className="mt-3 flex justify-center gap-3">
                 <button
+                  className="light"
                   onClick={
                     interpretationType === "ai"
                       ? handleGenerateAIInterpretation
                       : handleGenerateManualInterpretation
                   }
-                  className="rounded bg-red-600 px-4 py-2 text-violet-50 transition-colors hover:bg-red-700"
                 >
                   Réessayer
                 </button>
-                <button
-                  onClick={handleResetChoice}
-                  className="rounded bg-gray-600 px-4 py-2 text-violet-50 transition-colors hover:bg-gray-700"
-                >
+                <button onClick={handleResetChoice} className="light">
                   Retour au choix
                 </button>
               </div>
@@ -407,7 +401,10 @@ function TarotInterpretation({
                       {question}
                     </div>
                     {manualInterpretation.map((interp, idx) => (
-                      <div key={idx} className="rounded bg-violet-950/40 p-4">
+                      <div
+                        key={idx}
+                        className="rounded-xl bg-orange-900 px-4 pt-3 pb-5"
+                      >
                         <div className="mb-2 font-semibold">
                           🔮 {interp.position} -{" "}
                           <span className="font-semibold">
@@ -440,7 +437,7 @@ function TarotInterpretation({
                       onClick={handleGenerateAIInterpretation}
                       className="light"
                     >
-                      🤖 Interprétation IA
+                      ☁️ Interprétation célèste
                     </button>
                   ) : (
                     <button
