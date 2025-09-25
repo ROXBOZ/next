@@ -4,13 +4,7 @@ import {
   TarotCard,
   TarotReading,
 } from "@/types/tarot";
-import {
-  findCardById,
-  getArcanaExplanation,
-  getCardDescription,
-  getPositionExplanation,
-  isMajorArcana,
-} from "@/utils/cardHelpers";
+import { findCardById, getCardDescription } from "@/utils/cardHelpers";
 
 import { READING_CONFIGS } from "@/constants/tarot";
 
@@ -35,7 +29,7 @@ export const generateCardInterpretations = (
   selectedCards: number[],
   cards: TarotCard[],
   cardReversals: Record<number, boolean>,
-  readingMode: ReadingMode
+  readingMode: ReadingMode,
 ): CardInterpretation[] => {
   const positions = getPositionMeanings(readingMode);
 
@@ -61,52 +55,6 @@ export const generateCardInterpretations = (
       },
     };
   });
-};
-
-/**
- * Generate detailed card explanations for manual interpretation
- * @param reading - The tarot reading data
- * @param cards - Array of all tarot cards
- * @returns Formatted explanation string
- */
-export const generateCardExplanations = (
-  reading: TarotReading,
-  cards: TarotCard[]
-): string => {
-  const { question, selectedCards, cardReversals, readingMode } = reading;
-  const positions = getPositionMeanings(readingMode);
-
-  let explanation = `**Question :** "${question}"\n\n`;
-
-  selectedCards.forEach((cardId, index) => {
-    const card = findCardById(cards, cardId);
-    if (!card) return;
-
-    const position = positions[index];
-    const isReversed = cardReversals[cardId] || false;
-    const arcanaType = isMajorArcana(card) ? "Arcane Majeur" : "Arcane Mineur";
-
-    // Add explanations for arcana type and position
-    const arcanaExplanation = getArcanaExplanation(card);
-    const positionExplanation = getPositionExplanation(isReversed);
-
-    explanation += `🔮 **${position.title} - ${card.name}**\n`;
-    explanation += `${getCardDescription(card, isReversed)}\n`;
-    explanation += `**${arcanaType} (${card.number}) :** ${arcanaExplanation}\n`;
-    explanation += `${
-      isReversed
-        ? `**Position inversée :** ${
-            positionExplanation.charAt(0).toLowerCase() +
-            positionExplanation.slice(1)
-          }\n\n`
-        : `**Position droite :** ${
-            positionExplanation.charAt(0).toLowerCase() +
-            positionExplanation.slice(1)
-          }\n\n`
-    }`;
-  });
-
-  return explanation;
 };
 
 /**

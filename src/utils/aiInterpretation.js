@@ -44,7 +44,7 @@ export async function generateTarotInterpretation({
       selectedCards,
       cards,
       cardReversals,
-      readingMode
+      readingMode,
     );
 
     const systemPrompt = `You are an expert tarot reader with deep knowledge of card meanings, symbolism, and interpretation.
@@ -76,7 +76,7 @@ ${cardInterpretations
         interp.card.name
       } ${interp.card.isReversed ? "(inversée)" : "(droite)"}
    Description: ${interp.card.description}
-   Mots-clés: ${interp.card.keywords.join(", ")}`
+  Mots-clés: ${(Array.isArray(interp.card.keywords) ? interp.card.keywords : []).join(", ")}`,
   )
   .join("\n\n")}
 

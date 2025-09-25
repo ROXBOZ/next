@@ -5,287 +5,185 @@
       "name": "Le Mat",
       "arcana": "majeur",
       "number": "0",
-      "description": "Innocence, nouveau départ, spontanéité et libre arbitre.",
-      "keywords": ["innocence", "voyage", "risque", "liberté", "spontanéité"],
-      "reversed": "Imprudence, naïveté, mauvais choix"
+      "description": "C’est l’élan brut, la liberté qui danse pieds nus hors des sentiers battus. Le Mat ose sans demander la permission, transforme l’innocence en force créative et revendique le droit de se perdre pour mieux se trouver. C’est la révolte joyeuse contre les « tu devrais », une marche légère vers l’inconnu.",
+      "reversed": "Quand l’élan devient fuite, l’audace se change en distraction. Le Mat se laisse berner par sa propre naïveté, confond indépendance et déni, et trébuche sur ses idéaux mal chaussés. On avance sans carte, mais aussi sans boussole : attention aux choix impulsifs qui enchaînent plutôt qu’ils ne libèrent."
     },
     {
       "id": 1,
       "name": "Le Bateleur",
       "arcana": "majeur",
       "number": "I",
-      "description": "Volonté, pouvoir de manifestation et création de sa réalité.",
-      "keywords": ["volonté", "création", "habileté", "concentration", "début"],
-      "reversed": "Manipulation, tromperie, manque de volonté"
+      "description": "C’est l’artisane des possibles, la magicienne du quotidien. Avec ses outils, elle prouve qu’on peut créer du neuf même à partir de presque rien. Le Bateleur incarne la volonté qui s’allume, l’adresse qui transforme l’idée en geste, la confiance qui fait basculer le rêve dans la réalité tangible.",
+      "reversed": "La magie s’embrouille : les talents deviennent poudre aux yeux, la volonté s’évapore dans la distraction. Le Bateleur détourne son pouvoir en manipulation, bluffe plutôt que d’agir, et se laisse happer par ses propres illusions. C’est l’avertissement : sans clarté, la création se retourne contre elle-même."
     },
     {
       "id": 2,
       "name": "La Papesse",
       "arcana": "majeur",
       "number": "II",
-      "description": "Intuition, mystères et connaissance intérieure. Gardienne des secrets.",
-      "keywords": [
-        "intuition",
-        "mystère",
-        "sagesse",
-        "subconscient",
-        "patience"
-      ],
-      "reversed": "Secrets cachés, confusion, manque d'intuition"
+      "description": "C’est la gardienne des savoirs cachés, celle qui écoute son intuition avant de parler. La Papesse explore les mystères intérieurs et la connaissance profonde, guidant avec patience et clairvoyance dans l’ombre du quotidien.",
+      "reversed": "Quand la clarté se voile, la Papesse renversée signale secrets mal compris, confusion et intuition brouillée. On se perd dans les apparences et les non-dits, oubliant de se fier à sa propre sagesse intérieure."
     },
     {
       "id": 3,
       "name": "L'Impératrice",
       "arcana": "majeur",
       "number": "III",
-      "description": "Fertilité, abondance, créativité et nature maternelle.",
-      "keywords": [
-        "fertilité",
-        "abondance",
-        "créativité",
-        "nature",
-        "maternité"
-      ],
-      "reversed": "Dépendance, stagnation, blocage créatif"
+      "description": "C’est la créatrice qui fait fleurir la vie autour d’elle, incarnation de l’abondance et de la fertilité. L’Impératrice nourrit, inspire et transforme la créativité en énergie concrète, reliant la nature et la maternité avec grâce.",
+      "reversed": "Quand l’énergie stagne, l’Impératrice renversée révèle dépendance et blocages créatifs. La fertilité se fige, et l’inspiration manque, invitant à reprendre contact avec sa force vitale."
     },
     {
       "id": 4,
       "name": "L'Empereur",
       "arcana": "majeur",
       "number": "IV",
-      "description": "Autorité, structure, pouvoir et stabilité. Père protecteur.",
-      "keywords": ["autorité", "structure", "pouvoir", "stabilité", "ordre"],
-      "reversed": "Tyrannie, rigidité, abus de pouvoir"
+      "description": "C’est l’ancre et la structure, celui qui organise et protège avec autorité et stabilité. L’Empereur incarne le pouvoir sûr et la responsabilité, offrant un cadre solide pour avancer avec confiance.",
+      "reversed": "Quand le contrôle se déforme, l’Empereur renversé pointe rigidité, tyrannie et abus de pouvoir. L’ordre se transforme en oppression, et la sécurité devient contrainte."
     },
     {
       "id": 5,
       "name": "Le Pape",
       "arcana": "majeur",
       "number": "V",
-      "description": "Tradition, spiritualité organisée et recherche de sens.",
-      "keywords": [
-        "tradition",
-        "spiritualité",
-        "croyances",
-        "enseignement",
-        "conformité"
-      ],
-      "reversed": "Dogmatisme, rigidité, rébellion"
+      "description": "C’est le guide des traditions et de la spiritualité, celui qui éclaire la recherche de sens et relie les individus à des enseignements plus grands. Le Pape incarne la foi et la sagesse, mais il sait aussi que la vraie autorité, c’est de questionner les règles et d’oser penser par soi-même.",
+      "reversed": "Quand la structure devient carcan, le Pape renversé révèle dogmatisme, rigidité et rébellion. La spiritualité se fige, la recherche de sens se heurte à des murs, et l’indépendance d’esprit devient une nécessité."
     },
     {
       "id": 6,
-      "name": "L'Amoureux",
+      "name": "L'Amoureuse",
       "arcana": "majeur",
       "number": "VI",
-      "description": "Choix, relations et harmonie entre opposés.",
-      "keywords": ["choix", "amour", "harmonie", "relations", "dualité"],
-      "reversed": "Conflit, mauvais choix, déséquilibre"
+      "description": "C’est le choix assumé, l’harmonie entre opposés, la capacité de tracer sa propre route même quand tout le monde a un avis. L’Amoureux invite à écouter ses valeurs profondes et à décider sans peur du regard des autres.",
+      "reversed": "Quand l’indécision prend le dessus, l’Amoureux renversé révèle conflit, mauvais choix et déséquilibre. Les relations se tendent, les décisions prises sans conviction portent leurs conséquences."
     },
     {
       "id": 7,
       "name": "Le Chariot",
       "arcana": "majeur",
       "number": "VII",
-      "description": "Volonté triomphante, contrôle et direction de sa vie.",
-      "keywords": [
-        "volonté",
-        "contrôle",
-        "victoire",
-        "direction",
-        "détermination"
-      ],
-      "reversed": "Manque de contrôle, opposition, échec"
+      "description": "C’est la force de volonté qui propulse vers l’avant, le contrôle de sa trajectoire, la victoire arrachée à la sueur et à la détermination. Le Chariot, c’est la preuve qu’on peut prendre le volant de sa vie et foncer, même quand la route est cabossée.",
+      "reversed": "Quand la maîtrise flanche, le Chariot renversé signale opposition, perte de contrôle et échec. Les efforts se dispersent, la direction se brouille : il est temps de reprendre les rênes."
     },
     {
       "id": 8,
       "name": "La Justice",
       "arcana": "majeur",
       "number": "VIII",
-      "description": "Équilibre, justice et conséquences des actions.",
-      "keywords": ["justice", "équilibre", "vérité", "conséquences", "karma"],
-      "reversed": "Injustice, déséquilibre, partialité"
+      "description": "C’est l’équilibre entre actes et conséquences, la vérité qui tranche sans trembler, l’intégrité qui ne se négocie pas. La Justice, c’est la responsabilité assumée, la clarté qui ne s’encombre pas de faux-semblants.",
+      "reversed": "Quand l’équilibre se rompt, la Justice renversée révèle injustice, partialité et déséquilibre. Les décisions deviennent biaisées, les conséquences injustes s’accumulent : il est temps de réclamer ce qui est dû."
     },
     {
       "id": 9,
-      "name": "L'Hermite",
+      "name": "L’Hermite",
       "arcana": "majeur",
       "number": "IX",
-      "description": "Sagesse intérieure, introspection et recherche de vérité.",
-      "keywords": [
-        "sagesse",
-        "introspection",
-        "solitude",
-        "guidance",
-        "prudence"
-      ],
-      "reversed": "Solitude excessive, isolement, confusion"
+      "description": "C’est la marcheuse nocturne, lampe à la main, qui choisit la solitude non comme une punition mais comme une puissance. L’Hermite écoute ses voix intérieures, débusque la vérité dans le silence, et avance avec prudence mais sans crainte. Elle montre qu’on peut briller en marge, loin du bruit du monde. C’est la force de tracer sa route, même seule, et de ne jamais s’excuser d’être différente.",
+      "reversed": "La retraite se change en enfermement : on se cache plutôt qu’on ne se cherche. L’Hermite se coupe du monde, s’égare dans ses propres labyrinthes et laisse la peur étouffer la clarté. Sa lampe tremble, vacille : trop d’isolement brouille la route au lieu de l’éclairer. Parfois, il faut oser demander de l’aide pour retrouver la lumière."
     },
     {
       "id": 10,
       "name": "La Roue de Fortune",
       "arcana": "majeur",
       "number": "X",
-      "description": "Cycles de la vie, destin et changements inévitables.",
-      "keywords": ["destin", "cycles", "changement", "opportunité", "chance"],
-      "reversed": "Mauvais sort, résistance au changement, instabilité"
+      "description": "C’est le cycle perpétuel de la vie, le destin en mouvement et les changements inévitables qui nous forgent. La Roue de Fortune rappelle que tout tourne, que rien n’est figé, et que chaque fin ouvre la porte à un nouveau départ. Savoir surfer sur le chaos, c’est déjà gagner.",
+      "reversed": "Quand on résiste aux cycles, la Roue de Fortune renversée révèle instabilité, mauvais sort et résistance au changement. Le mouvement se bloque, les opportunités filent : il est temps de lâcher prise et de reprendre la main sur sa trajectoire."
     },
     {
       "id": 11,
       "name": "La Force",
       "arcana": "majeur",
       "number": "XI",
-      "description": "Courage, force intérieure et maîtrise des instincts.",
-      "keywords": ["courage", "force", "maîtrise", "patience", "compréhension"],
-      "reversed": "Faiblesse, peur, manque de contrôle"
+      "description": "C’est le courage tranquille, la maîtrise intérieure qui ne plie pas. La Force, c’est la puissance qui ne s’impose pas, la patience qui ne cède pas, la capacité de dompter ses instincts sans jamais s’écraser. La vraie force, c’est de rester debout, même quand tout pousse à flancher.",
+      "reversed": "Quand l’assurance flanche, la Force renversée révèle faiblesse, peur et perte de contrôle. L’énergie devient instable, les instincts prennent le dessus. Il est temps de retrouver son centre et de refuser la soumission à la peur."
     },
     {
       "id": 12,
       "name": "Le Pendu",
       "arcana": "majeur",
       "number": "XII",
-      "description": "Lâcher-prise, sacrifice et nouvelle perspective.",
-      "keywords": [
-        "sacrifice",
-        "perspective",
-        "lâcher-prise",
-        "attente",
-        "renaissance"
-      ],
-      "reversed": "Stagnation, résistance, martyre"
+      "description": "C’est le moment de lâcher-prise, de refuser l’immobilisme imposé, et de regarder le monde sous un autre angle. Le Pendu invite au sacrifice volontaire, à la patience, et à la liberté de penser autrement. La vraie libération, c’est d’oser changer de perspective.",
+      "reversed": "Quand l’acceptation manque, le Pendu renversé montre stagnation, résistance et sentiment de martyre. Le lâcher-prise devient difficile, la transformation reste bloquée. Parfois, il faut accepter de perdre pour mieux se retrouver."
     },
     {
       "id": 13,
-      "name": "L'Arcane sans nom",
+      "name": "La mort",
       "arcana": "majeur",
       "number": "XIII",
-      "description": "Transformation, fin d'un cycle et renouveau.",
-      "keywords": [
-        "transformation",
-        "fin",
-        "renouveau",
-        "changement",
-        "transition"
-      ],
-      "reversed": "Résistance au changement, stagnation, peur"
+      "description": "C’est la fin nécessaire d’un cycle, la transformation radicale qui ouvre à un renouveau. L’Arcane sans nom, c’est la mort symbolique qui fait place nette, l’audace de tout laisser derrière soi pour inventer du neuf. Ici, on ne recycle pas l’ancien : on brûle, on reconstruit, on renaît plus fort·e.",
+      "reversed": "Quand on refuse le changement, l’Arcane sans nom renversé révèle stagnation, peur et blocages. La transformation est retardée, le renouveau piétine. Il est temps d’affronter ce qui doit finir pour enfin avancer."
     },
     {
       "id": 14,
       "name": "Tempérance",
       "arcana": "majeur",
       "number": "XIV",
-      "description": "Équilibre, modération et harmonie des opposés.",
-      "keywords": [
-        "équilibre",
-        "modération",
-        "harmonie",
-        "patience",
-        "guérison"
-      ],
-      "reversed": "Excès, déséquilibre, impatience"
+      "description": "C’est l’art de danser sur le fil sans tomber, de mélanger les contraires pour créer un tout cohérent. Tempérance, c’est l’équilibre qui ne cède pas à la pression, la patience qui guérit, la force de refuser l’excès pour mieux avancer. Ici, la sagesse, c’est de savoir doser, pas de s’effacer.",
+      "reversed": "Quand la mesure se perd, l’énergie déborde et tout vacille. Tempérance renversée pointe l’impatience, les excès et les déséquilibres : on fonce sans réfléchir, on mélange tout sans goût, et on découvre que l’harmonie ne s’impose pas par la force, mais par la nuance. Parfois, il faut savoir s’arrêter pour retrouver l’équilibre."
     },
     {
       "id": 15,
       "name": "Le Diable",
       "arcana": "majeur",
       "number": "XV",
-      "description": "Attachements, limitations et ombre intérieure.",
-      "keywords": [
-        "attachement",
-        "limitation",
-        "matérialisme",
-        "obsession",
-        "ombre"
-      ],
-      "reversed": "Libération, prise de conscience, détachement"
+      "description": "C’est l’ombre intérieure, les chaînes invisibles et les attachements qui limitent la liberté. Le Diable révèle obsessions, matérialisme, passions incontrôlées, mais aussi la possibilité de briser ses propres entraves. Ici, la vraie rébellion, c’est de reprendre le contrôle sur ce qui nous possède.",
+      "reversed": "Quand la conscience s’éveille, le Diable renversé montre libération, détachement, prise de recul. Les chaînes tombent, les limitations auto-imposées s’effacent. C’est le moment de s’affranchir de ce qui n’a plus de pouvoir sur soi."
     },
     {
       "id": 16,
       "name": "La Maison Dieu",
       "arcana": "majeur",
       "number": "XVI",
-      "description": "Révélation brutale, destruction nécessaire et éclairs de vérité.",
-      "keywords": [
-        "choc",
-        "révélation",
-        "destruction",
-        "changement brutal",
-        "vérité"
-      ],
-      "reversed": "Éviter le changement, peur, résistance"
+      "description": "C’est la foudre qui renverse les fausses certitudes, la claque qui réveille. La Maison Dieu explose les structures étouffantes, brûle les illusions confortables et libère l’espace pour du vrai, du vivant, du brut. C’est violent, oui, mais nécessaire : l’effondrement est le premier pas de la reconstruction. Ici, on ne reconstruit pas sur du sable, on bâtit sur du vrai.",
+      "reversed": "On s’accroche aux ruines comme si elles allaient tenir debout par magie. La peur du vide fait résister au changement, mais plus on s’entête, plus la chute devient douloureuse. La Maison Dieu renversée, c’est refuser la vérité qui frappe à la porte : on peut éviter l’éclair, mais pas indéfiniment. Parfois, il faut accepter la chute pour pouvoir se relever."
     },
     {
       "id": 17,
       "name": "L'Étoile",
       "arcana": "majeur",
       "number": "XVII",
-      "description": "Espoir, inspiration et connexion avec l'univers.",
-      "keywords": ["espoir", "inspiration", "guérison", "sérénité", "guidance"],
-      "reversed": "Désespoir, manque de foi, pessimisme"
+      "description": "C’est l’espoir qui éclaire même l’obscurité, l’inspiration qui relie à l’univers et la confiance en l’avenir. L’Étoile, c’est la lumière qui ne s’éteint pas, la capacité de rêver grand, de guérir, de se reconnecter à sa force intérieure. Ici, on ne doute pas de sa propre lumière, on l’affirme.",
+      "reversed": "Quand l’optimisme flanche, l’Étoile renversée montre désespoir, perte de foi, pessimisme. L’énergie d’inspiration se perd, la guidance intérieure vacille. Il est temps de rallumer la flamme et de croire à nouveau en sa propre force."
     },
     {
       "id": 18,
       "name": "La Lune",
       "arcana": "majeur",
       "number": "XVIII",
-      "description": "Inconscient, illusions et monde des rêves.",
-      "keywords": [
-        "illusion",
-        "inconscient",
-        "rêves",
-        "confusion",
-        "intuition"
-      ],
-      "reversed": "Confusion, tromperie, peurs irrationnelles"
+      "description": "C’est le royaume des rêves, de l’inconscient et des illusions qui révèlent des vérités cachées. La Lune incite à écouter son intuition, à naviguer entre ombre et lumière, et à ne jamais sous-estimer la puissance de l’imaginaire. Ici, la vulnérabilité devient force, et l’invisible guide le chemin.",
+      "reversed": "Quand la perception se trouble, la Lune renversée signale confusion, tromperie et peurs irrationnelles. Les illusions prennent le dessus, la clarté s’efface. Il est temps de retrouver sa lucidité et de ne pas se laisser manipuler par ses propres peurs."
     },
     {
       "id": 19,
       "name": "Le Soleil",
       "arcana": "majeur",
       "number": "XIX",
-      "description": "Joie, réussite et accomplissement personnel.",
-      "keywords": ["joie", "réussite", "accomplissement", "vérité", "bonheur"],
-      "reversed": "Temporaire succès, arrogance, excès de confiance"
+      "description": "C’est la joie éclatante, le succès et l’accomplissement personnel. Le Soleil illumine le chemin, célèbre la vérité, et invite à profiter de la vie avec optimisme, vitalité et fierté. Ici, on ne s’excuse pas de briller, on rayonne sans complexe.",
+      "reversed": "Quand la lumière vacille, le Soleil renversé montre succès temporaire, arrogance ou excès de confiance. La clarté est partielle, les triomphes nécessitent prudence. Il est temps de retrouver l’humilité et de ne pas confondre lumière et aveuglement."
     },
     {
       "id": 20,
       "name": "Le Jugement",
       "arcana": "majeur",
       "number": "XX",
-      "description": "Renaissance, éveil et appel à une nouvelle vie.",
-      "keywords": [
-        "renaissance",
-        "éveil",
-        "appel",
-        "transformation",
-        "absolution"
-      ],
-      "reversed": "Doute, peur du changement, stagnation"
+      "description": "C’est l’éveil, l’appel à renaître, à se libérer des anciens schémas. Le Jugement, c’est la prise de conscience qui bouscule, le passage vers une nouvelle vie pleine de possibles. Ici, on ne subit pas le destin : on se relève, on choisit, on avance.",
+      "reversed": "Quand la peur domine, le Jugement renversé révèle doute, stagnation et résistance au changement. La renaissance tarde, les transformations restent bloquées. Il est temps de s’autoriser à changer, même si ça fait peur."
     },
     {
       "id": 21,
       "name": "Le Monde",
       "arcana": "majeur",
       "number": "XXI",
-      "description": "Accomplissement, achèvement et unité avec l'univers.",
-      "keywords": [
-        "accomplissement",
-        "achèvement",
-        "unité",
-        "succès",
-        "voyage"
-      ],
-      "reversed": "Inachèvement, stagnation, peur de réussir"
+      "description": "C’est l’accomplissement et l’unité, le cycle achevé, la connexion totale avec l’univers. Le Monde célèbre l’intégration, la réussite, l’harmonie parfaite, et la liberté d’être pleinement soi. Ici, on ne s’excuse pas d’avoir réussi, on célèbre chaque étape du chemin.",
+      "reversed": "Quand l’achèvement est retardé, le Monde renversé montre stagnation, inachèvement, peur de réussir. Le cycle reste incomplet, l’unité difficile à ressentir. Il est temps de clore ce qui doit l’être pour ouvrir la porte à l’harmonie."
     },
-
     {
       "id": 22,
       "name": "As de Coupes",
       "arcana": "mineur",
       "number": "As",
       "suit": "coupes",
-      "description": "Nouvel amour, opportunité émotionnelle, ouverture du cœur.",
-      "keywords": ["amour", "émotions", "nouveau départ", "compassion"],
-      "reversed": "Tristesse, opportunité manquée, fermeture émotionnelle"
+      "description": "C’est le nouvel élan du cœur, l’ouverture à l’amour et aux émotions. L’As de Coupes invite à accueillir la compassion, la tendresse, et à ne pas avoir peur de ressentir fort. Ici, la vulnérabilité est une force, pas une faiblesse.",
+      "reversed": "Quand l’ouverture échoue, l’As de Coupes renversé révèle tristesse, opportunité manquée, fermeture émotionnelle. Le cœur se replie, les émotions stagnent. Il est temps de rouvrir la porte à ce qui fait vibrer."
     },
     {
       "id": 23,
@@ -293,9 +191,8 @@
       "arcana": "mineur",
       "number": "II",
       "suit": "coupes",
-      "description": "Union, partenariat, connexion émotionnelle harmonieuse.",
-      "keywords": ["union", "partenariat", "harmonie", "connexion"],
-      "reversed": "Désunion, conflit, déséquilibre relationnel"
+      "description": "C’est l’union, la connexion harmonieuse, la force de deux volontés qui s’allient sans se dissoudre. Le Deux de Coupes incarne partenariat, réciprocité, équilibre émotionnel, et la capacité de construire ensemble sans perdre son individualité.",
+      "reversed": "Quand l’harmonie se rompt, le Deux de Coupes renversé signale désunion, conflit, déséquilibre relationnel. Les liens se tendent, l’équilibre est perturbé. Il est temps de rétablir le dialogue ou de s’affirmer."
     },
     {
       "id": 24,
@@ -303,9 +200,8 @@
       "arcana": "mineur",
       "number": "III",
       "suit": "coupes",
-      "description": "Célébration, amitié, joie partagée et communauté.",
-      "keywords": ["célébration", "amitié", "joie", "communauté"],
-      "reversed": "Conflit social, solitude, excès"
+      "description": "C’est la célébration, l’amitié, la joie partagée. Le Trois de Coupes invite à profiter de la communauté, à honorer les liens, à fêter les réussites ensemble, et à ne jamais s’excuser d’être entouré·e. Ici, la force, c’est d’oser la solidarité.",
+      "reversed": "Quand l’unité se brise, le Trois de Coupes renversé révèle conflits sociaux, solitude, excès. La fête perd sa lumière, la connexion se fragilise. Il est temps de retrouver l’essentiel et de choisir ses allié·es."
     },
     {
       "id": 25,
@@ -313,9 +209,8 @@
       "arcana": "mineur",
       "number": "IV",
       "suit": "coupes",
-      "description": "Méditation, introspection, évaluation des émotions.",
-      "keywords": ["méditation", "introspection", "apathie", "contemplation"],
-      "reversed": "Nouvelle perspective, acceptation, engagement"
+      "description": "C’est le moment de se retirer, de scruter ses émotions sans se laisser distraire par le tumulte extérieur. Le Quatre de Coupes invite à la méditation, à l’introspection, à écouter ses désirs profonds avant de s’engager. Ici, le luxe, c’est de dire « non » pour mieux dire « oui » à soi-même, sans culpabilité.",
+      "reversed": "L’ouverture arrive enfin : le Quatre de Coupes renversé incite à voir au-delà de la routine et de l’ennui. C’est l’appel à accueillir de nouvelles perspectives, à accepter ce qui se présente, à s’engager pleinement, sans regretter le temps passé à se contempler."
     },
     {
       "id": 26,
@@ -323,9 +218,8 @@
       "arcana": "mineur",
       "number": "V",
       "suit": "coupes",
-      "description": "Perte, regret, deuil mais avec espoir restant.",
-      "keywords": ["perte", "regret", "deuil", "tristesse"],
-      "reversed": "Acceptation, pardon, mouvement vers l'avant"
+      "description": "C’est la douleur de la perte et du regret, mais avec un espoir qui ne meurt pas. Le Cinq de Coupes rappelle que même dans le deuil, il reste des possibilités, des chances de se relever, et la force de transformer la tristesse en apprentissage. Ici, la vulnérabilité devient résilience.",
+      "reversed": "Quand le cœur s’ouvre, le Cinq de Coupes renversé montre acceptation, pardon, mouvement vers l'avant. La tristesse se transforme en apprentissage, les pertes deviennent des leçons. On avance, plus solide."
     },
     {
       "id": 27,
@@ -333,9 +227,8 @@
       "arcana": "mineur",
       "number": "VI",
       "suit": "coupes",
-      "description": "Nostalgie, innocence, souvenirs d'enfance.",
-      "keywords": ["nostalgie", "innocence", "souvenirs", "enfance"],
-      "reversed": "Vivre dans le passé, difficulté à avancer"
+      "description": "C’est la nostalgie douce, les souvenirs d’enfance, la capacité de puiser dans le passé pour se ressourcer. Le Six de Coupes invite à retrouver l’innocence, la simplicité, la joie des moments passés, mais sans jamais s’y enfermer. Ici, la mémoire est un tremplin, pas une prison.",
+      "reversed": "Quand on s’accroche au passé, le Six de Coupes renversé révèle difficulté à avancer, fixation sur ce qui est révolu. Il est temps de revenir au présent, de transformer la nostalgie en élan."
     },
     {
       "id": 28,
@@ -343,9 +236,8 @@
       "arcana": "mineur",
       "number": "VII",
       "suit": "coupes",
-      "description": "Choix, illusions, options multiples et confusion.",
-      "keywords": ["choix", "illusions", "options", "rêves"],
-      "reversed": "Clarté, décision, action concrète"
+      "description": "C’est l’abondance d’options qui fait rêver et hésiter à la fois. Le Sept de Coupes invite à explorer ses désirs, ses fantasmes, mais prévient : toutes les voies ne mènent pas à soi-même. Ici, la lucidité, c’est de choisir sans se perdre dans l’illusion.",
+      "reversed": "La brume se dissipe, les choix se clarifient. Le Sept de Coupes renversé appelle à décider avec lucidité, à poser les pieds sur le sol, à transformer les rêves en actions concrètes et réalistes."
     },
     {
       "id": 29,
@@ -353,9 +245,8 @@
       "arcana": "mineur",
       "number": "VIII",
       "suit": "coupes",
-      "description": "Abandon, recherche de sens plus profond.",
-      "keywords": ["abandon", "recherche", "départ", "évolution"],
-      "reversed": "Peur du changement, stagnation, insatisfaction"
+      "description": "C’est le départ volontaire vers une quête plus profonde. L’Huit de Coupes invite à laisser derrière soi ce qui ne nourrit plus l’âme, à chercher un sens plus élevé, et à ne pas avoir peur de tourner la page. Ici, le courage, c’est de partir pour mieux se retrouver.",
+      "reversed": "Quand la peur retient, l’Huit de Coupes renversé révèle stagnation, insatisfaction, difficulté à changer de voie. Le départ nécessaire se fait attendre. Il est temps d’oser le mouvement."
     },
     {
       "id": 30,
@@ -363,9 +254,8 @@
       "arcana": "mineur",
       "number": "IX",
       "suit": "coupes",
-      "description": "Satisfaction, contentement, vœu exaucé.",
-      "keywords": ["satisfaction", "contentement", "réussite", "abondance"],
-      "reversed": "Complaisance, matérialisme, insatisfaction"
+      "description": "C’est le contentement, la satisfaction, le vœu qui se réalise. Le Neuf de Coupes célèbre l’abondance émotionnelle, la joie d’avoir ce que l’on désire profondément, et la capacité de savourer sans culpabilité. Ici, le bonheur, c’est de s’autoriser à être comblé·e.",
+      "reversed": "Quand l’âme reste insatisfaite, le Neuf de Coupes renversé révèle complaisance, matérialisme, insatisfaction. Les désirs matériels ou superficiels masquent le vrai bonheur. Il est temps de chercher ce qui nourrit vraiment."
     },
     {
       "id": 31,
@@ -373,20 +263,17 @@
       "arcana": "mineur",
       "number": "X",
       "suit": "coupes",
-      "description": "Bonheur familial, harmonie, accomplissement émotionnel.",
-      "keywords": ["bonheur", "famille", "harmonie", "accomplissement"],
-      "reversed": "Conflit familial, désunion, instabilité"
+      "description": "C’est le bonheur familial, l’harmonie, l’accomplissement émotionnel complet. Le Dix de Coupes rayonne de joie partagée, de relations épanouissantes, et de la force de créer un foyer où chacun·e a sa place. Ici, l’unité, c’est la diversité assumée.",
+      "reversed": "Quand l’équilibre se rompt, le Dix de Coupes renversé montre conflit familial, désunion, instabilité. La sérénité attendue est perturbée, l’unité mise à l’épreuve. Il est temps de réparer les liens ou de s’en libérer."
     },
-
     {
       "id": 32,
       "name": "As d'Épées",
       "arcana": "mineur",
       "number": "As",
       "suit": "épées",
-      "description": "Clarté mentale, percée intellectuelle, vérité.",
-      "keywords": ["clarté", "vérité", "percée", "intellect"],
-      "reversed": "Confusion, mauvaise décision, vérité cachée"
+      "description": "C’est la clarté mentale, la percée intellectuelle, la capacité de trancher dans la confusion pour agir avec précision. L’As d’Épées apporte vérité, lucidité, et la force de refuser le brouillard. Ici, la pensée est une arme, pas une excuse.",
+      "reversed": "Quand l’esprit s’emmêle, l’As d’Épées renversé révèle confusion, mauvaise décision, vérité cachée. La clarté se perd, les choix deviennent incertains. Il est temps de retrouver la lucidité et d’oser la vérité."
     },
     {
       "id": 33,
@@ -394,9 +281,8 @@
       "arcana": "mineur",
       "number": "II",
       "suit": "épées",
-      "description": "Impasse, décision difficile, besoin de faire un choix.",
-      "keywords": ["impasse", "décision", "blocage", "équilibre"],
-      "reversed": "Indécision, vérité révélée, mouvement"
+      "description": "C’est l’impasse qui exige un choix difficile. Le Deux d’Épées invite à équilibrer raison et émotion, à décider avec discernement, et à ne pas fuir l’inconfort du choix. Ici, la force, c’est d’oser trancher.",
+      "reversed": "Quand l’hésitation se dissipe, le Deux d’Épées renversé montre indécision, révélation de vérité, mouvement. Les décisions se clarifient, le chemin devient accessible. Il est temps d’agir."
     },
     {
       "id": 34,
@@ -404,9 +290,8 @@
       "arcana": "mineur",
       "number": "III",
       "suit": "épées",
-      "description": "Chagrin, cœur brisé, douleur émotionnelle.",
-      "keywords": ["chagrin", "douleur", "séparation", "tristesse"],
-      "reversed": "Guérison, réconciliation, libération"
+      "description": "C’est le chagrin, la douleur, le cœur brisé, mais aussi la lucidité de regarder la blessure en face. Le Trois d’Épées dévoile la peine nécessaire pour guérir, comprendre, et transformer la souffrance en force. Ici, la vulnérabilité, c’est du courage.",
+      "reversed": "Quand le cœur se reconstruit, le Trois d’Épées renversé révèle guérison, réconciliation, libération. La douleur s’adoucit, l’amour retrouve son chemin. On avance, plus fort·e."
     },
     {
       "id": 35,
@@ -414,9 +299,8 @@
       "arcana": "mineur",
       "number": "IV",
       "suit": "épées",
-      "description": "Repos, retraite, guérison et contemplation.",
-      "keywords": ["repos", "retraite", "guérison", "méditation"],
-      "reversed": "Épuisement, burn-out, reprise d'activité"
+      "description": "C’est le repos, la retraite, la contemplation, mais aussi la force de s’arrêter pour mieux repartir. Le Quatre d’Épées encourage à se ressourcer, méditer, soigner corps et esprit, et à ne pas culpabiliser de prendre du temps pour soi. Ici, la pause, c’est une stratégie, pas une fuite.",
+      "reversed": "Quand le repos est ignoré, le Quatre d’Épées renversé montre épuisement, burn-out, reprise prématurée d’activité. Le corps et l’esprit demandent encore pause et soin. Il est temps d’écouter les signaux."
     },
     {
       "id": 36,
@@ -424,9 +308,8 @@
       "arcana": "mineur",
       "number": "V",
       "suit": "épées",
-      "description": "Conflit, humiliation, victoire à un coût.",
-      "keywords": ["conflit", "victoire", "défaite", "tension"],
-      "reversed": "Réconciliation, pardon, résolution"
+      "description": "C’est le conflit, la victoire à un coût, la lucidité de voir que tout n’est pas bon à prendre. Le Cinq d’Épées révèle tensions, rivalités, le prix parfois amer des succès obtenus, et la nécessité de choisir ses batailles. Ici, la vraie victoire, c’est de rester fidèle à soi-même.",
+      "reversed": "Quand la réconciliation s’impose, le Cinq d’Épées renversé montre pardon, résolution, apaisement. Les conflits se dissipent, l’équilibre est retrouvé. On avance, sans rancune."
     },
     {
       "id": 37,
@@ -434,9 +317,8 @@
       "arcana": "mineur",
       "number": "VI",
       "suit": "épées",
-      "description": "Transition, mouvement vers de meilleures conditions.",
-      "keywords": ["transition", "mouvement", "voyage", "guérison"],
-      "reversed": "Résistance au changement, stagnation"
+      "description": "C’est la transition, le mouvement vers de meilleures conditions, la capacité de laisser le passé derrière soi pour progresser. Le Six d’Épées invite à avancer avec sérénité, à ne pas craindre le changement, et à croire en la traversée. Ici, la fuite, c’est parfois du courage.",
+      "reversed": "Quand le changement se heurte, le Six d’Épées renversé révèle stagnation, résistance. Le passage vers un meilleur avenir est retardé. Il est temps de lâcher ce qui retient."
     },
     {
       "id": 38,
@@ -444,9 +326,8 @@
       "arcana": "mineur",
       "number": "VII",
       "suit": "épées",
-      "description": "Ruse, stratégie, planification secrète.",
-      "keywords": ["ruse", "stratégie", "secret", "évasion"],
-      "reversed": "Découverte, conseil honnête, transparence"
+      "description": "C’est la ruse, la stratégie discrète, la capacité de manœuvrer sans se trahir. Le Sept d’Épées conseille planification, prudence, manœuvres intelligentes pour atteindre ses objectifs, mais rappelle que la vraie victoire, c’est de rester honnête avec soi-même.",
+      "reversed": "Quand le secret se révèle, le Sept d’Épées renversé montre transparence, honnêteté, conseils avisés. Les plans cachés deviennent visibles, la tromperie se dissipe. Ici, la clarté, c’est la meilleure stratégie."
     },
     {
       "id": 39,
@@ -454,9 +335,8 @@
       "arcana": "mineur",
       "number": "VIII",
       "suit": "épées",
-      "description": "Restriction, sentiment d'être piégé, limitations.",
-      "keywords": ["restriction", "piège", "limitations", "victime"],
-      "reversed": "Libération, nouvelle perspective, liberté"
+      "description": "C’est le sentiment d’être piégé, les limitations auto-imposées, la peur qui empêche d’agir. L’Huit d’Épées met en lumière les entraves mentales, invite à trouver des solutions pour se libérer, et rappelle que la cage est souvent ouverte. Ici, la clé, c’est le courage de sortir.",
+      "reversed": "Quand les chaînes tombent, l’Huit d’Épées renversé révèle libération, nouvelles perspectives, liberté. Les obstacles mentaux s’effacent, le chemin se dégage. Il est temps d’oser avancer."
     },
     {
       "id": 40,
@@ -464,9 +344,8 @@
       "arcana": "mineur",
       "number": "IX",
       "suit": "épées",
-      "description": "Anxiété, cauchemar, peurs intérieures.",
-      "keywords": ["anxiété", "peur", "cauchemar", "inquiétude"],
-      "reversed": "Espoir, libération des peurs, soutien"
+      "description": "C’est l’anxiété, les cauchemars, les peurs intérieures, mais aussi la lucidité de regarder l’angoisse en face. Le Neuf d’Épées souligne l’angoisse mentale qui bloque le repos, la clarté d’esprit, et rappelle que la nuit finit toujours par passer. Ici, la force, c’est de ne pas fuir ses ombres.",
+      "reversed": "Quand l’espoir renaît, le Neuf d’Épées renversé montre libération des peurs, soutien, apaisement. Les inquiétudes se dissipent, la nuit devient plus calme. On retrouve la paix."
     },
     {
       "id": 41,
@@ -474,20 +353,17 @@
       "arcana": "mineur",
       "number": "X",
       "suit": "épées",
-      "description": "Fin douloureuse, trahison, conclusion inévitable.",
-      "keywords": ["fin", "trahison", "défaite", "cicatrisation"],
-      "reversed": "Renaissance, nouveau départ, guérison"
+      "description": "C’est la fin douloureuse, la trahison inévitable, la nécessité d’accepter la réalité pour mieux repartir. Le Dix d’Épées marque la conclusion d’un cycle difficile, mais aussi la force de se relever, de transformer la chute en nouveau départ. Ici, la fin, c’est le début d’autre chose.",
+      "reversed": "Quand le renouveau s’annonce, le Dix d’Épées renversé montre renaissance, nouveau départ, guérison. La fin devient un point de départ vers la reconstruction. On renaît, plus lucide."
     },
-
     {
       "id": 42,
       "name": "As de Bâtons",
       "arcana": "mineur",
       "number": "As",
       "suit": "bâtons",
-      "description": "Inspiration, nouvelle entreprise, énergie créative.",
-      "keywords": ["inspiration", "énergie", "nouveau départ", "créativité"],
-      "reversed": "Délais, manque d'énergie, opportunité manquée"
+      "description": "C’est l’inspiration, le début d’une nouvelle entreprise, l’énergie créative qui bouscule l’inertie. L’As de Bâtons apporte enthousiasme, possibilités à explorer avec audace, et la force de lancer ce que personne n’ose commencer. Ici, l’élan, c’est la première victoire.",
+      "reversed": "Quand l’élan se freine, l’As de Bâtons renversé révèle manque d’énergie, retard, opportunité manquée. L’inspiration est temporairement bloquée. Il est temps de rallumer la flamme."
     },
     {
       "id": 43,
@@ -495,9 +371,8 @@
       "arcana": "mineur",
       "number": "II",
       "suit": "bâtons",
-      "description": "Planification, vision future, prise de décision.",
-      "keywords": ["planification", "vision", "décision", "potentiel"],
-      "reversed": "Mauvaise planification, peur du risque, indécision"
+      "description": "C’est la planification, la vision future, la capacité de décider avec courage et d’anticiper les possibles. Le Deux de Bâtons invite à orienter ses projets avec clarté, à ne pas craindre l’inconnu, et à poser les bases d’un avenir choisi. Ici, la vision, c’est le premier pas vers l’action.",
+      "reversed": "Quand la peur domine, le Deux de Bâtons renversé montre mauvaise planification, indécision, peur du risque. La direction reste floue, les choix hésitants. Il est temps de choisir et d’assumer."
     },
     {
       "id": 44,
@@ -505,9 +380,8 @@
       "arcana": "mineur",
       "number": "III",
       "suit": "bâtons",
-      "description": "Expansion, vision à long terme, collaboration.",
-      "keywords": ["expansion", "vision", "collaboration", "progrès"],
-      "reversed": "Retards, frustration, manque de vision"
+      "description": "C’est le moment de voir loin, de projeter ses ambitions, de collaborer avec confiance. Le Trois de Bâtons incarne l’expansion, le progrès, l’anticipation : on plante aujourd’hui pour récolter demain, chaque pas est une victoire partagée, et la réussite se construit à plusieurs. Ici, la coopération, c’est la clé.",
+      "reversed": "Les plans s’enlisent, la vision se brouille. Le Trois de Bâtons renversé signale retards, frustration, manque de direction : l’énergie existe, mais elle se disperse sans stratégie ni coopération claire. Il est temps de rassembler les forces."
     },
     {
       "id": 45,
@@ -515,9 +389,8 @@
       "arcana": "mineur",
       "number": "IV",
       "suit": "bâtons",
-      "description": "Célébration, harmonie, fondations solides.",
-      "keywords": ["célébration", "harmonie", "fondation", "communauté"],
-      "reversed": "Instabilité, manque de soutien, célébration retardée"
+      "description": "Célébration, harmonie, fondations solides. Le Quatre de Bâtons invite à profiter des réussites, à célébrer les liens, à renforcer la stabilité dans la vie quotidienne, et à ne pas avoir peur de savourer le bonheur. Ici, la fête, c’est un acte de résistance.",
+      "reversed": "Quand la stabilité vacille, le Quatre de Bâtons renversé montre instabilité, manque de soutien, célébration retardée. Les bases doivent être renforcées avant la fête. Il est temps de consolider ce qui compte."
     },
     {
       "id": 46,
@@ -525,9 +398,8 @@
       "arcana": "mineur",
       "number": "V",
       "suit": "bâtons",
-      "description": "Conflit, compétition, désaccord.",
-      "keywords": ["conflit", "compétition", "désaccord", "défi"],
-      "reversed": "Résolution, coopération, trêve"
+      "description": "C’est le conflit, la compétition, l’épreuve qui révèle la force et l’ingéniosité. Le Cinq de Bâtons met en lumière les désaccords, les défis qui stimulent la croissance personnelle, et la capacité de transformer la rivalité en moteur. Ici, l’obstacle, c’est l’occasion de se dépasser.",
+      "reversed": "Quand les tensions se dissipent, le Cinq de Bâtons renversé montre résolution, coopération, trêve. Les conflits s’apaisent, les forces se combinent pour progresser. On avance ensemble."
     },
     {
       "id": 47,
@@ -535,9 +407,8 @@
       "arcana": "mineur",
       "number": "VI",
       "suit": "bâtons",
-      "description": "Victoire, reconnaissance, succès public.",
-      "keywords": ["victoire", "reconnaissance", "succès", "leadership"],
-      "reversed": "Échec, manque de reconnaissance, arrogance"
+      "description": "C’est le triomphe célébré, la reconnaissance qui illumine le chemin parcouru, la fierté de voir ses efforts reconnus publiquement. Le Six de Bâtons incarne le succès mérité, le leadership inspirant, et la capacité de briller sans s’excuser. Ici, la victoire, c’est aussi de partager la lumière.",
+      "reversed": "Quand la gloire s’efface, le Six de Bâtons renversé révèle déceptions, manque de reconnaissance, vanité mal placée. Le succès se fait attendre ou se transforme en leçon d’humilité : on apprend à briller sans se perdre dans l’ego."
     },
     {
       "id": 48,
@@ -545,9 +416,8 @@
       "arcana": "mineur",
       "number": "VII",
       "suit": "bâtons",
-      "description": "Défense, persévérance, position défensive.",
-      "keywords": ["défense", "persévérance", "courage", "défi"],
-      "reversed": "Surmenage, abandon, doute"
+      "description": "C’est la défense, la persévérance face aux obstacles, la capacité de tenir sa position sans céder. Le Sept de Bâtons invite à affirmer ses convictions, à se montrer courageux·se malgré les défis, et à ne pas baisser la garde. Ici, la résistance, c’est une victoire.",
+      "reversed": "Quand la force faiblit, le Sept de Bâtons renversé révèle surmenage, abandon, doute. La défense échoue, la confiance vacille. Il est temps de se reposer pour mieux repartir."
     },
     {
       "id": 49,
@@ -555,9 +425,8 @@
       "arcana": "mineur",
       "number": "VIII",
       "suit": "bâtons",
-      "description": "Mouvement rapide, progrès, nouvelles rapides.",
-      "keywords": ["mouvement", "progrès", "rapidité", "communication"],
-      "reversed": "Retards, frustration, mauvaise communication"
+      "description": "C’est le mouvement rapide, la progression soutenue, la capacité de saisir les opportunités sans hésiter. L’Huit de Bâtons invite à accélérer les projets, à communiquer efficacement, et à ne pas craindre la vitesse du changement. Ici, l’élan, c’est la clé du succès.",
+      "reversed": "Quand le rythme se brise, l’Huit de Bâtons renversé révèle retards, frustration, mauvaise communication. Le flux d’action est interrompu. Il est temps de réajuster la trajectoire."
     },
     {
       "id": 50,
@@ -565,9 +434,8 @@
       "arcana": "mineur",
       "number": "IX",
       "suit": "bâtons",
-      "description": "Résilience, persévérance, dernière ligne droite.",
-      "keywords": ["résilience", "persévérance", "défense", "force"],
-      "reversed": "Épuisement, défensive, paranoïa"
+      "description": "C’est la résilience, la persévérance, la vigilance face aux derniers obstacles. Le Neuf de Bâtons incarne la force, la détermination, la capacité à tenir jusqu’au bout, et la fierté de ne pas avoir lâché. Ici, la victoire, c’est d’être encore debout.",
+      "reversed": "Quand la fatigue domine, le Neuf de Bâtons renversé révèle épuisement, attitude défensive, paranoïa. La persévérance s’effrite, la vigilance diminue. Il est temps de se ressourcer."
     },
     {
       "id": 51,
@@ -575,20 +443,17 @@
       "arcana": "mineur",
       "number": "X",
       "suit": "bâtons",
-      "description": "Charge lourde, responsabilités, fardeau.",
-      "keywords": ["charge", "responsabilité", "fardeau", "effort"],
-      "reversed": "Délégation, libération, allègement"
+      "description": "C’est le fardeau, la charge lourde de responsabilités, la nécessité d’évaluer ses engagements. Le Dix de Bâtons invite à apprendre à déléguer, à porter ses efforts avec discernement, et à ne pas s’écraser sous le poids des attentes. Ici, la force, c’est de savoir dire stop.",
+      "reversed": "Quand le poids s’allège, le Dix de Bâtons renversé révèle délégation, libération, allègement. Les responsabilités se partagent, la charge devient plus supportable. On respire enfin."
     },
-
     {
       "id": 52,
       "name": "As de Deniers",
       "arcana": "mineur",
       "number": "As",
       "suit": "deniers",
-      "description": "Nouveau départ matériel, opportunité financière, abondance.",
-      "keywords": ["opportunité", "abondance", "prospérité", "nouveau départ"],
-      "reversed": "Opportunité manquée, instabilité financière"
+      "description": "C’est un nouveau départ matériel, une opportunité financière, la promesse d’abondance et de prospérité. L’As de Deniers symbolise le début d’une phase de sécurité matérielle, la capacité de bâtir sur du solide, et la fierté de récolter le fruit de ses efforts. Ici, la richesse, c’est aussi l’autonomie.",
+      "reversed": "Quand l’opportunité se perd, l’As de Deniers renversé montre instabilité financière, occasions manquées. Les bases matérielles sont fragiles, demandent vigilance. Il est temps de sécuriser l’essentiel."
     },
     {
       "id": 53,
@@ -596,9 +461,8 @@
       "arcana": "mineur",
       "number": "II",
       "suit": "deniers",
-      "description": "Équilibre des finances, adaptation, jonglage avec les ressources.",
-      "keywords": ["équilibre", "adaptation", "flexibilité", "changement"],
-      "reversed": "Déséquilibre, surcharge, mauvaise gestion"
+      "description": "C’est l’équilibre, l’adaptation dans la gestion des ressources, la capacité de jongler avec flexibilité et créativité pour maintenir la stabilité. Le Deux de Deniers invite à ne pas craindre le changement, à s’adapter sans se perdre, et à garder le cap même dans la tempête. Ici, la souplesse, c’est la force.",
+      "reversed": "Quand l’équilibre se rompt, le Deux de Deniers renversé révèle surcharge, déséquilibre, mauvaise gestion. L’attention aux priorités est nécessaire. Il est temps de réajuster."
     },
     {
       "id": 54,
@@ -606,9 +470,8 @@
       "arcana": "mineur",
       "number": "III",
       "suit": "deniers",
-      "description": "Collaboration, travail d'équipe, compétence.",
-      "keywords": ["collaboration", "travail", "compétence", "maîtrise"],
-      "reversed": "Manque de coopération, médiocrité, conflit au travail"
+      "description": "C’est la collaboration, le travail d’équipe qui met en valeur les compétences, la maîtrise, l’apprentissage, la réalisation collective. Le Trois de Deniers rappelle que la réussite se construit à plusieurs, et que la diversité des talents est une richesse. Ici, l’humilité, c’est la clé du progrès.",
+      "reversed": "Quand la coopération échoue, le Trois de Deniers renversé montre médiocrité, conflit au travail, manque d’engagement. L’harmonie et l’efficacité sont compromises. Il est temps de retrouver l’esprit d’équipe."
     },
     {
       "id": 55,
@@ -616,9 +479,8 @@
       "arcana": "mineur",
       "number": "IV",
       "suit": "deniers",
-      "description": "Conservation, sécurité, possessivité.",
-      "keywords": ["conservation", "sécurité", "possessivité", "contrôle"],
-      "reversed": "Générosité, ouverture, insécurité financière"
+      "description": "C’est la conservation, le besoin de sécurité matérielle, la réflexion sur le contrôle et la possessivité vis-à-vis des ressources. Le Quatre de Deniers invite à sécuriser sans s’enfermer, à partager sans se priver, et à comprendre que la vraie richesse, c’est la liberté. Ici, l’attachement, c’est à la vie, pas aux objets.",
+      "reversed": "Quand l’ouverture se manifeste, le Quatre de Deniers renversé révèle générosité, lâcher-prise, mouvement vers plus de fluidité. La sécurité n’implique pas accumulation rigide. Il est temps de laisser circuler."
     },
     {
       "id": 56,
@@ -626,9 +488,8 @@
       "arcana": "mineur",
       "number": "V",
       "suit": "deniers",
-      "description": "Peur de manquer, isolement matériel, difficultés.",
-      "keywords": ["pauvreté", "isolement", "difficultés", "anxiété"],
-      "reversed": "Rétablissement, espoir, nouvelle perspective"
+      "description": "C’est la peur du manque, le sentiment d’exclusion, la précarité matérielle, mais aussi la force de la solidarité et de l’entraide. Le Cinq de Deniers rappelle que la richesse ne se mesure pas qu’en pièces, et que l’appartenance, c’est un choix. Ici, la pauvreté, c’est de rester seul·e.",
+      "reversed": "Quand l’espoir renaît, le Cinq de Deniers renversé annonce reprise, ouverture, réinvention. La richesse se redéfinit au-delà du matériel et des contraintes imposées. On invente d’autres possibles."
     },
     {
       "id": 57,
@@ -636,9 +497,8 @@
       "arcana": "mineur",
       "number": "VI",
       "suit": "deniers",
-      "description": "Générosité, partage, équité.",
-      "keywords": ["générosité", "partage", "équité", "charité"],
-      "reversed": "Dette, cupidité, déséquilibre de pouvoir"
+      "description": "C’est la générosité, l’équité dans le partage, l’équilibre entre donner et recevoir, la justice matérielle. Le Six de Deniers rappelle que la vraie richesse, c’est de savoir circuler l’abondance, et que la solidarité, c’est un acte politique. Ici, donner, c’est aussi recevoir.",
+      "reversed": "Quand l’équilibre est rompu, le Six de Deniers renversé révèle dette, cupidité, déséquilibre de pouvoir. La circulation des ressources est perturbée. Il est temps de rétablir la balance."
     },
     {
       "id": 58,
@@ -646,9 +506,8 @@
       "arcana": "mineur",
       "number": "VII",
       "suit": "deniers",
-      "description": "Patience, investissement à long terme, croissance.",
-      "keywords": ["patience", "investissement", "croissance", "évaluation"],
-      "reversed": "Manque de résultats, impatience, mauvais investissement"
+      "description": "C’est la patience, l’investissement à long terme, la capacité d’évaluer les efforts, d’attendre les résultats, de cultiver la croissance progressive. Le Sept de Deniers rappelle que la persévérance paie, et que la récolte appartient à celles et ceux qui osent attendre. Ici, la lenteur, c’est une stratégie.",
+      "reversed": "Quand la patience s’épuise, le Sept de Deniers renversé montre impatience, manque de résultats, mauvais investissement. La persévérance est mise à l’épreuve. Il est temps de réajuster la stratégie."
     },
     {
       "id": 59,
@@ -656,9 +515,8 @@
       "arcana": "mineur",
       "number": "VIII",
       "suit": "deniers",
-      "description": "Artisanat, dévouement, compétence développée.",
-      "keywords": ["artisanat", "dévouement", "compétence", "maîtrise"],
-      "reversed": "Médiocrité, manque d'ambition, travail sans passion"
+      "description": "C’est l’artisanat, la maîtrise par le travail assidu, le dévouement, la compétence, le perfectionnement continu. L’Huit de Deniers rappelle que la réussite se construit à force de persévérance, et que la passion, c’est le meilleur moteur. Ici, l’effort, c’est une fierté.",
+      "reversed": "Quand l’effort manque, l’Huit de Deniers renversé révèle médiocrité, manque d’ambition, travail sans passion. La progression stagne. Il est temps de retrouver l’envie."
     },
     {
       "id": 60,
@@ -666,9 +524,8 @@
       "arcana": "mineur",
       "number": "IX",
       "suit": "deniers",
-      "description": "Indépendance financière, luxe, autosuffisance.",
-      "keywords": ["indépendance", "luxe", "réussite", "abondance"],
-      "reversed": "Dépendance, superficialité, gaspillage"
+      "description": "C’est l’indépendance financière, la réussite personnelle, l’autosuffisance, le confort acquis par le travail et la sagesse. Le Neuf de Deniers célèbre la liberté de choisir sa vie, la fierté d’avoir bâti son propre royaume, et la capacité de savourer sans culpabilité. Ici, la réussite, c’est l’autonomie.",
+      "reversed": "Quand l’indépendance vacille, le Neuf de Deniers renversé montre dépendance, superficialité, gaspillage. La prospérité est fragile. Il est temps de revenir à l’essentiel."
     },
     {
       "id": 61,
@@ -676,20 +533,17 @@
       "arcana": "mineur",
       "number": "X",
       "suit": "deniers",
-      "description": "Héritage, richesse familiale, sécurité à long terme.",
-      "keywords": ["héritage", "richesse", "famille", "tradition"],
-      "reversed": "Conflit familial, instabilité financière, perte"
+      "description": "C’est l’héritage, la sécurité à long terme, la richesse familiale, la stabilité matérielle, la prospérité durable. Le Dix de Deniers célèbre la transmission, la construction sur plusieurs générations, et la capacité de bâtir du solide pour soi et pour les autres. Ici, la richesse, c’est aussi le partage.",
+      "reversed": "Quand l’équilibre familial est rompu, le Dix de Deniers renversé révèle conflit, instabilité financière, perte. La sécurité doit être réévaluée. Il est temps de repenser les fondations."
     },
-
     {
       "id": 62,
       "name": "Valet de Coupes",
       "arcana": "mineur",
       "number": "Valet",
       "suit": "coupes",
-      "description": "Message émotionnel, créativité, sensibilité.",
-      "keywords": ["sensibilité", "créativité", "message", "rêveur"],
-      "reversed": "Immaturité émotionnelle, déception, fuite de la réalité"
+      "description": "C’est le messager émotionnel, le symbole de créativité, de sensibilité, la capacité d’explorer ses émotions et de communiquer avec authenticité. Le Valet de Coupes invite à ne pas avoir peur de ressentir, à oser la vulnérabilité, et à transformer l’émotion en force. Ici, la sincérité, c’est la vraie magie.",
+      "reversed": "Quand l’émotion vacille, le Valet de Coupes renversé révèle immaturité émotionnelle, déception, fuite de la réalité. Il est temps de revenir à l’authenticité."
     },
     {
       "id": 63,
@@ -697,9 +551,8 @@
       "arcana": "mineur",
       "number": "Cavalier",
       "suit": "coupes",
-      "description": "Romance, charme, invitation amoureuse.",
-      "keywords": ["romance", "charme", "invitation", "idéalisme"],
-      "reversed": "Déception, immaturité, manipulation émotionnelle"
+      "description": "C’est la romance, l’élégance en mouvement, le charme, l’invitation, l’idéalisme dans les relations. Le Cavalier de Coupes incarne la capacité de séduire sans manipuler, d’aimer sans se perdre, et de faire de chaque rencontre une aventure. Ici, l’amour, c’est la liberté.",
+      "reversed": "Quand l’élan se trouble, le Cavalier de Coupes renversé montre déception, immaturité, manipulation émotionnelle. Il est temps de clarifier ses intentions."
     },
     {
       "id": 64,
@@ -707,9 +560,8 @@
       "arcana": "mineur",
       "number": "Reine",
       "suit": "coupes",
-      "description": "Compassion, intuition, sagesse émotionnelle.",
-      "keywords": ["compassion", "intuition", "sagesse", "soin"],
-      "reversed": "Dépendance émotionnelle, instabilité, victimisation"
+      "description": "C’est la compassion, l’intuition, la sagesse émotionnelle, la capacité d’inspirer soin et compréhension profonde des émotions. La Reine de Coupes incarne la force tranquille, la maîtrise de l’empathie, et la puissance de l’écoute. Ici, la douceur, c’est une arme.",
+      "reversed": "Quand la maîtrise se perd, la Reine de Coupes renversée révèle dépendance émotionnelle, instabilité, victimisation. Il est temps de retrouver son centre."
     },
     {
       "id": 65,
@@ -717,20 +569,17 @@
       "arcana": "mineur",
       "number": "Roi",
       "suit": "coupes",
-      "description": "Maîtrise émotionnelle, équilibre, leadership compatissant.",
-      "keywords": ["maîtrise", "équilibre", "leadership", "diplomatie"],
-      "reversed": "Manipulation, contrôle émotionnel, instabilité"
+      "description": "C’est la maîtrise émotionnelle, le leadership compatissant, l’équilibre, la diplomatie, la guidance avec bienveillance. Le Roi de Coupes incarne la capacité de diriger sans dominer, d’écouter sans juger, et de rester solide dans la tempête. Ici, la bienveillance, c’est du pouvoir.",
+      "reversed": "Quand le contrôle se corrompt, le Roi de Coupes renversé montre manipulation, contrôle émotionnel, instabilité. Il est temps de rétablir l’équilibre."
     },
-
     {
       "id": 66,
       "name": "Valet d'Épées",
       "arcana": "mineur",
       "number": "Valet",
       "suit": "épées",
-      "description": "Curiosité intellectuelle, esprit vif, communication.",
-      "keywords": ["curiosité", "communication", "analyse", "vigilance"],
-      "reversed": "Cybernisme, méchanceté, indiscrétion"
+      "description": "Curiosité intellectuelle, esprit vif, communication, capacité d’analyser, d’apprendre, de questionner avec vigilance. Le Valet d’Épées incarne la soif de savoir, la rapidité d’esprit, et la force de ne jamais cesser de douter. Ici, la question, c’est la clé de la liberté.",
+      "reversed": "Quand l’esprit s’égare, le Valet d’Épées renversé révèle cynisme, méchanceté, indiscrétion. Il est temps de revenir à l’intégrité."
     },
     {
       "id": 67,
@@ -738,9 +587,8 @@
       "arcana": "mineur",
       "number": "Cavalier",
       "suit": "épées",
-      "description": "Action rapide, détermination, franchise.",
-      "keywords": ["action", "détermination", "franchise", "ambition"],
-      "reversed": "Impulsivité, agressivité, imprudence"
+      "description": "Action rapide, détermination, franchise, courage, initiative intellectuelle. Le Cavalier d’Épées incarne la capacité de foncer sans peur, de défendre ses idées, et de ne jamais reculer devant le débat. Ici, la parole, c’est une arme.",
+      "reversed": "Quand l’impulsivité domine, le Cavalier d’Épées renversé montre agressivité, précipitation, imprudence. Il est temps de canaliser l’énergie."
     },
     {
       "id": 68,
@@ -748,9 +596,8 @@
       "arcana": "mineur",
       "number": "Reine",
       "suit": "épées",
-      "description": "Clarté mentale, indépendance, vérité.",
-      "keywords": ["clarté", "indépendance", "vérité", "objectivité"],
-      "reversed": "Critique excessive, amertume, isolement"
+      "description": "Clarté mentale, indépendance, vérité, objectivité, discernement. La Reine d’Épées guide avec lucidité, tranche sans trembler, et incarne la force de dire non. Ici, la vérité, c’est la meilleure défense.",
+      "reversed": "Quand l’équilibre se perd, la Reine d’Épées renversée révèle critique excessive, amertume, isolement. Il est temps de retrouver la nuance."
     },
     {
       "id": 69,
@@ -758,20 +605,17 @@
       "arcana": "mineur",
       "number": "Roi",
       "suit": "épées",
-      "description": "Autorité intellectuelle, justice, prise de décision.",
-      "keywords": ["autorité", "justice", "décision", "intellect"],
-      "reversed": "Tyrannie, manipulation, abus de pouvoir"
+      "description": "Autorité intellectuelle, justice, prise de décision, leadership rationnel, discernement. Le Roi d’Épées incarne la capacité de juger sans faillir, de défendre la justice, et de rester droit même sous pression. Ici, la rigueur, c’est la vraie puissance.",
+      "reversed": "Quand le pouvoir se corrompt, le Roi d’Épées renversé montre tyrannie, manipulation, abus de pouvoir. Il est temps de rétablir la justice."
     },
-
     {
       "id": 70,
       "name": "Valet de Bâtons",
       "arcana": "mineur",
       "number": "Valet",
       "suit": "bâtons",
-      "description": "Enthousiasme, aventure, nouvelles excitantes.",
-      "keywords": ["enthousiasme", "aventure", "nouvelles", "énergie"],
-      "reversed": "Impatience, arrogance, mauvaises nouvelles"
+      "description": "Enthousiasme, aventure, nouvelles excitantes, énergie, curiosité, exploration. Le Valet de Bâtons incarne la capacité de foncer sans peur, d’oser l’inconnu, et de transformer chaque défi en opportunité. Ici, l’audace, c’est la jeunesse éternelle.",
+      "reversed": "Quand l’énergie se disperse, le Valet de Bâtons renversé révèle impatience, arrogance, mauvaises nouvelles. Il est temps de canaliser l’élan."
     },
     {
       "id": 71,
@@ -779,9 +623,8 @@
       "arcana": "mineur",
       "number": "Cavalier",
       "suit": "bâtons",
-      "description": "Action, aventure, départ en voyage.",
-      "keywords": ["action", "aventure", "voyage", "passion"],
-      "reversed": "Impulsivité, retard, frustration"
+      "description": "Élan audacieux, passion en mouvement, action courageuse, voyages, détermination. Le Cavalier de Bâtons incarne la capacité de foncer, de prendre des risques, et de ne jamais s’excuser d’être passionné·e. Ici, la passion, c’est la boussole.",
+      "reversed": "Quand l’élan devient précipitation, le Cavalier de Bâtons renversé signale retards, frustrations, actions mal pensées. Il est temps de réfléchir avant d’agir."
     },
     {
       "id": 72,
@@ -789,9 +632,8 @@
       "arcana": "mineur",
       "number": "Reine",
       "suit": "bâtons",
-      "description": "Confiance, passion, leadership inspirant.",
-      "keywords": ["confiance", "passion", "leadership", "courage"],
-      "reversed": "Jalousie, insécurité, manipulation"
+      "description": "Femme de passion, d’ambition, confiance, inspiration, courage, charisme. La Reine de Bâtons guide sans peur, inspire sans dominer, et incarne la force de briller sans s’excuser. Ici, la lumière, c’est contagieux.",
+      "reversed": "Quand la flamme vacille, la Reine de Bâtons renversée montre jalousie, insécurité, manipulation. Il est temps de rallumer la confiance."
     },
     {
       "id": 73,
@@ -799,20 +641,17 @@
       "arcana": "mineur",
       "number": "Roi",
       "suit": "bâtons",
-      "description": "Vision entrepreneuriale, leadership, ambition.",
-      "keywords": ["vision", "leadership", "ambition", "créativité"],
-      "reversed": "Autoritarisme, impatience, mauvaise gestion"
+      "description": "Vision entrepreneuriale, leadership, ambition, créativité, stratégie. Le Roi de Bâtons incarne la capacité de fédérer, d’innover, de mener sans écraser, et de transformer l’idée en action. Ici, la vision, c’est le moteur du collectif.",
+      "reversed": "Quand le leadership échoue, le Roi de Bâtons renversé révèle autoritarisme, impatience, mauvaise gestion. Il est temps de revoir la stratégie."
     },
-
     {
       "id": 74,
       "name": "Valet de Deniers",
       "arcana": "mineur",
       "number": "Valet",
       "suit": "deniers",
-      "description": "Apprentissage, étude, nouvelles opportunités matérielles",
-      "keywords": ["apprentissage", "étude", "opportunité", "prudence"],
-      "reversed": "Paresse, procrastination, opportunité manquée"
+      "description": "Apprentissage, étude, nouvelles opportunités matérielles, prudence, curiosité. Le Valet de Deniers invite à explorer sans peur, à apprendre sans relâche, et à transformer chaque expérience en richesse. Ici, la curiosité, c’est la meilleure des fortunes.",
+      "reversed": "Quand l’initiative faiblit, le Valet de Deniers renversé révèle paresse, procrastination, opportunité manquée. Il est temps de se remettre en mouvement."
     },
     {
       "id": 75,
@@ -820,9 +659,8 @@
       "arcana": "mineur",
       "number": "Cavalier",
       "suit": "deniers",
-      "description": "Méthode, travail acharné, progrès stable",
-      "keywords": ["méthode", "travail", "progrès", "fiabilité"],
-      "reversed": "Stagnation, ennui, routine excessive"
+      "description": "Méthode, travail acharné, progrès stable, fiabilité, persévérance. Le Cavalier de Deniers incarne la capacité de tenir la distance, de bâtir sur du solide, et de ne jamais abandonner en chemin. Ici, la constance, c’est la victoire.",
+      "reversed": "Quand la discipline échoue, le Cavalier de Deniers renversé montre stagnation, ennui, routine excessive. Il est temps de changer de rythme."
     },
     {
       "id": 76,
@@ -830,9 +668,8 @@
       "arcana": "mineur",
       "number": "Reine",
       "suit": "deniers",
-      "description": "Abondance, générosité, connexion à la nature",
-      "keywords": ["abondance", "générosité", "nature", "nurturing"],
-      "reversed": "Matérialisme, possessivité, négligence"
+      "description": "Abondance, générosité, connexion à la nature, richesse matérielle, bienveillance. La Reine de Deniers cultive la prospérité, partage sans compter, et incarne la force tranquille de la terre. Ici, la générosité, c’est la vraie puissance.",
+      "reversed": "Quand l’équilibre se perd, la Reine de Deniers renversée montre matérialisme, possessivité, négligence. Il est temps de revenir à l’essentiel."
     },
     {
       "id": 77,
@@ -840,9 +677,8 @@
       "arcana": "mineur",
       "number": "Roi",
       "suit": "deniers",
-      "description": "Prospérité, réussite matérielle, sécurité",
-      "keywords": ["prospérité", "réussite", "sécurité", "affaires"],
-      "reversed": "Avarice, conservatisme excessif, peur du risque"
+      "description": "Prospérité, réussite matérielle, sécurité, autorité financière, sagesse pratique. Le Roi de Deniers incarne la capacité de gérer, de transmettre, de bâtir un empire sans perdre son âme. Ici, la richesse, c’est la responsabilité.",
+      "reversed": "Quand l’abondance devient obsession, le Roi de Deniers renversé révèle avarice, conservatisme excessif, peur du risque. Il est temps de rééquilibrer le rapport à la matière."
     }
   ]
 }

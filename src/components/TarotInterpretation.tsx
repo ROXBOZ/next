@@ -6,7 +6,7 @@ import {
   TarotReading,
 } from "@/types/tarot";
 import {
-  generateCardExplanations,
+  generateCardInterpretations,
   isValidReading,
 } from "@/utils/readingHelpers";
 import { playClickSound, playMagicSound } from "@/utils/sound";
@@ -38,6 +38,9 @@ function TarotInterpretation({
   onModalClose,
 }: TarotInterpretationProps) {
   const [interpretation, setInterpretation] = useState<string | null>(null);
+  const [manualInterpretation, setManualInterpretation] = useState<
+    any[] | null
+  >(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showChoice, setShowChoice] = useState(true);
@@ -106,13 +109,18 @@ function TarotInterpretation({
 
     try {
       const reading = createReading();
-
       if (!isValidReading(reading)) {
         throw new Error("Données de lecture invalides");
       }
-
-      const explanation = generateCardExplanations(reading, cards);
-      setInterpretation(explanation);
+      // Use structured data for JSX rendering
+      const interpretations = generateCardInterpretations(
+        reading.selectedCards,
+        cards,
+        reading.cardReversals,
+        reading.readingMode,
+      );
+      setManualInterpretation(interpretations);
+      setInterpretation(null);
     } catch (err) {
       setError(
         "Une erreur est survenue lors de la génération des explications.",
@@ -201,7 +209,7 @@ function TarotInterpretation({
       className={`fixed inset-0 flex items-center justify-center bg-black/80 px-4 py-12`}
       style={{ zIndex: Z_INDEX.MODAL }}
     >
-      <div className="relative max-h-[80vh] max-w-4xl overflow-y-auto rounded-lg bg-orange-950 pb-4 text-violet-50 shadow-2xl">
+      <div className="relative max-h-[80ch] max-w-4xl overflow-y-scroll rounded-lg bg-orange-950 pb-12 text-violet-50 shadow-2xl">
         <div className="mx-auto max-w-[65ch]">
           {/* Header */}
           <div className="relative p-4">
@@ -271,17 +279,42 @@ function TarotInterpretation({
             </div>
           )}
 
-          {interpretation && (
+          {(interpretation || manualInterpretation) && (
             <div className="mx-4 mb-4">
               <div className="max-w-none border-0">
-                <div
-                  className="border-0 leading-relaxed whitespace-pre-line text-violet-100"
-                  style={{ border: "none", outline: "none" }}
-                  dangerouslySetInnerHTML={{
-                    __html: formatInterpretationText(interpretation),
-                  }}
-                />
-
+                {manualInterpretation ? (
+                  <div className="flex flex-col gap-1 overflow-y-auto text-violet-100">
+                    <div className="mb-2 text-lg font-semibold text-violet-200 italic">
+                      {question}
+                    </div>
+                    {manualInterpretation.map((interp, idx) => (
+                      <div key={idx} className="rounded bg-violet-950/40 p-4">
+                        <div className="mb-2 font-semibold">
+                          🔮 {interp.position} -{" "}
+                          <span className="font-semibold">
+                            {interp.card.name}
+                          </span>
+                          <span className="ml-2 text-sm font-normal text-violet-300">
+                            {interp.card.arcana === "majeur"
+                              ? "arcane majeure"
+                              : "arcane mineure"}
+                            {interp.card.isReversed ? " (renversée)" : ""}
+                          </span>
+                        </div>
+                        <div className="whitespace-pre-line text-violet-100">
+                          {interp.card.description}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div
+                    className="flex flex-col gap-3 text-violet-100"
+                    dangerouslySetInnerHTML={{
+                      __html: formatInterpretationText(interpretation),
+                    }}
+                  />
+                )}
                 <div className="mt-6 flex justify-center gap-3">
                   {interpretationType === "explanation" ? (
                     <button
