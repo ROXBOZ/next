@@ -17,7 +17,7 @@ export default function Header({ onReset }: HeaderProps) {
         onClick={handleReset}
       >
         <div className="flex items-center gap-1">
-          <span className="rfc-font">o'raclette</span>
+          <span className="rfc-font">o’raclette</span>
         </div>
       </button>
     </header>
