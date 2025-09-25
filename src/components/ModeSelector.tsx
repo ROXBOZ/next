@@ -56,11 +56,13 @@ function ModeSelector({
     setQuestion(newValue);
     playTypingSound();
 
+    // Clear previous validation timeout
     if (validationTimeoutRef.current) {
       clearTimeout(validationTimeoutRef.current);
     }
 
-    if (newValue.trim().length > 5) {
+    // Validate any text that's long enough to potentially be gibberish
+    if (newValue.trim().length > 3) {
       validationTimeoutRef.current = setTimeout(() => {
         validateQuestion(newValue);
       }, 1500); // Wait 1.5 seconds after typing stops
@@ -98,7 +100,7 @@ function ModeSelector({
       <div className="flex h-fit w-full flex-col items-center pt-4 xl:h-[100px]">
         <div className="flex w-1/2 flex-col items-center gap-3 p-2">
           <div className="animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards] text-violet-100 opacity-0">
-            <div className="group relative -mt-4 -rotate-2 rounded-full bg-indigo-950 px-12 py-2 font-semibold whitespace-nowrap">
+            <div className="group relative -mt-4 -rotate-2 rounded-full bg-indigo-950 px-12 py-1 font-semibold whitespace-nowrap">
               <span className="italic">{question}</span>
             </div>
           </div>
@@ -107,7 +109,7 @@ function ModeSelector({
             {canShuffle && (
               <button
                 onClick={handleShuffleClick}
-                className="light relative flex min-w-[85px] items-center justify-center overflow-hidden"
+                className="light relative flex w-[100px] items-center justify-center overflow-hidden"
               >
                 {isShuffling ? (
                   <span className="animate-[flopAnimation_0.6s_ease-in-out_infinite]">
@@ -156,18 +158,12 @@ function ModeSelector({
               <span className="animate-[fadeIn_0.2s_ease-in-out_0.4s_forwards] font-medium whitespace-nowrap text-violet-200 opacity-0">
                 Choisissez entre un tirage
               </span>
-              <div className="flex animate-[fadeIn_0.2s_ease-in-out_0.6s_forwards] gap-2 opacity-0">
-                <button
-                  className="light px-3 py-1 text-sm"
-                  onClick={handle3CardsClick}
-                >
+              <div className="flex animate-[fadeIn_0.2s_ease-in-out_0.6s_forwards] items-baseline gap-2 opacity-0">
+                <button className="light" onClick={handle3CardsClick}>
                   simple
-                </button>{" "}
-                <span className="text-violet-200">ou</span>{" "}
-                <button
-                  className="light px-3 py-1 text-sm"
-                  onClick={handle5CardsClick}
-                >
+                </button>
+                <span className="text-violet-200">ou</span>
+                <button className="light" onClick={handle5CardsClick}>
                   détaillé
                 </button>
               </div>

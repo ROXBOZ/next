@@ -7,261 +7,78 @@ import { showWarningToast } from "./toast";
 export const validateQuestion = (text: string): boolean => {
   const trimmedText = text.trim().toLowerCase();
 
-  // Too short to be meaningful
-  if (trimmedText.length < 3) {
-    return true; // Allow short text to avoid annoying users
+  // Too short to validate meaningfully
+  if (trimmedText.length < 5) {
+    return true;
   }
 
-  // Check for common gibberish patterns
-  const gibberishPatterns = [
-    // Repeating characters (4+ times) - made less strict
+  // Remove spaces and special characters for pattern checking
+  const cleanText = trimmedText.replace(
+    /[^a-zàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ]/g,
+    "",
+  );
+
+  // Very obvious gibberish patterns
+  const obviousGibberishPatterns = [
+    // Same character repeated 4+ times
     /(.)\1{3,}/,
-    // Too many consonants in a row (6+ instead of 5+)
-    /[bcdfghjklmnpqrstvwxyz]{6,}/,
-    // Random keyboard mashing patterns
-    /[qwertyuiop]{5,}|[asdfghjkl]{5,}|[zxcvbnm]{5,}/,
+    // Obvious keyboard mashing (consecutive keys)
+    /qwer|asdf|zxcv|poiu|lkjh|mnb/,
+    /[qwertyuiop]{4,}|[asdfghjkl]{4,}|[zxcvbnm]{4,}/,
   ];
 
-  // Check for gibberish patterns
-  for (const pattern of gibberishPatterns) {
-    if (pattern.test(trimmedText)) {
+  // Check for obvious patterns first
+  for (const pattern of obviousGibberishPatterns) {
+    if (pattern.test(cleanText)) {
       showGibberishToast();
       return false;
     }
   }
 
-  // Check vowel ratio - made less strict
+  // Simple vowel check - real words usually have vowels
   const vowels =
-    trimmedText.match(/[aeiouàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ]/g) || [];
-  const vowelRatio = vowels.length / trimmedText.replace(/\s/g, "").length;
+    cleanText.match(/[aeiouàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ]/g) || [];
+  const totalLetters = cleanText.length;
 
-  // Only flag if vowel ratio is extremely low (less than 10%) and text is long
-  if (vowelRatio < 0.1 && trimmedText.length > 15) {
+  // If text is long enough and has virtually no vowels, it's likely gibberish
+  if (totalLetters > 6 && vowels.length === 0) {
     showGibberishToast();
     return false;
   }
 
-  // Check for meaningful words (basic dictionary check)
-  const commonWords = [
-    // French question words
-    "que",
-    "qui",
-    "quoi",
-    "comment",
-    "pourquoi",
-    "quand",
-    "où",
-    "combien",
-    "quel",
-    "quelle",
-    "quels",
-    "quelles",
-    // French common words
-    "je",
-    "tu",
-    "il",
-    "elle",
-    "nous",
-    "vous",
-    "ils",
-    "elles",
-    "on",
-    "le",
-    "la",
-    "les",
-    "un",
-    "une",
-    "des",
-    "du",
-    "de",
-    "d",
-    "l",
-    "au",
-    "aux",
-    "ce",
-    "cette",
-    "ces",
-    "cet",
-    "mon",
-    "ma",
-    "mes",
-    "ton",
-    "ta",
-    "tes",
-    "son",
-    "sa",
-    "ses",
-    "notre",
-    "nos",
-    "votre",
-    "vos",
-    "leur",
-    "leurs",
-    "est",
-    "être",
-    "avoir",
-    "faire",
-    "aller",
-    "venir",
-    "voir",
-    "savoir",
-    "pouvoir",
-    "vouloir",
-    "devoir",
-    "falloir",
-    "dire",
-    "prendre",
-    "donner",
-    "mettre",
-    "partir",
-    "sortir",
-    "venir",
-    "tenir",
-    "porter",
-    "garder",
-    "amour",
-    "travail",
-    "argent",
-    "santé",
-    "famille",
-    "ami",
-    "amis",
-    "amie",
-    "vie",
-    "avenir",
-    "futur",
-    "passé",
-    "dois",
-    "peux",
-    "vais",
-    "suis",
-    "sera",
-    "serai",
-    "aura",
-    "aurai",
-    "avec",
-    "dans",
-    "pour",
-    "par",
-    "sur",
-    "sous",
-    "mais",
-    "ou",
-    "et",
-    "donc",
-    "or",
-    "ni",
-    "car",
-    "si",
-    "comme",
-    "quand",
-    "lorsque",
-    "alors",
-    "puis",
-    "aussi",
-    "très",
-    "plus",
-    "moins",
-    "beaucoup",
-    "peu",
-    "trop",
-    "assez",
-    "tant",
-    "autant",
-    "si",
-    "aussi",
-    "même",
-    "bien",
-    "mal",
-    "mieux",
-    "pire",
-    "jamais",
-    "toujours",
-    "souvent",
-    "parfois",
-    "peut-être",
-    "oui",
-    "non",
-    // English question words (in case user writes in English)
-    "what",
-    "who",
-    "when",
-    "where",
-    "why",
-    "how",
-    "will",
-    "should",
-    "can",
-    "could",
-    "would",
-    "might",
-    "love",
-    "work",
-    "money",
-    "health",
-    "family",
-    "friend",
-    "life",
-    "future",
-    "past",
-    "time",
-    "day",
-    "year",
-    "am",
-    "is",
-    "are",
-    "was",
-    "were",
-    "have",
-    "has",
-    "had",
-    "do",
-    "does",
-    "did",
-    "will",
-    "would",
-    "could",
-    "should",
-    "the",
-    "a",
-    "an",
-    "and",
-    "or",
-    "but",
-    "if",
-    "then",
-    "when",
-    "where",
-    "how",
-    "why",
-    "what",
-    "who",
-    "which",
-    "my",
-    "your",
-    "his",
-    "her",
-    "our",
-    "their",
-    "me",
-    "you",
-    "him",
-    "her",
-    "us",
-    "them",
-    "this",
-    "that",
-    "these",
-    "those",
-  ];
+  // If vowel ratio is extremely low (less than 5%), likely gibberish
+  if (totalLetters > 8 && vowels.length / totalLetters < 0.05) {
+    showGibberishToast();
+    return false;
+  }
 
+  // Check for at least one recognizable word pattern
   const words = trimmedText.split(/\s+/);
-  const meaningfulWords = words.filter(
-    (word) => commonWords.includes(word) || word.length > 2
-  );
+  let hasRecognizableWord = false;
 
-  // Only flag if less than 15% of words seem meaningful and text is quite long
-  if (meaningfulWords.length / words.length < 0.15 && trimmedText.length > 15) {
+  for (const word of words) {
+    const cleanWord = word.replace(/[^a-zàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ]/g, "");
+
+    // Skip very short words
+    if (cleanWord.length < 2) continue;
+
+    // Check if word has a reasonable vowel pattern
+    const wordVowels =
+      cleanWord.match(/[aeiouàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ]/g) || [];
+
+    // A word with vowels or common French/English patterns is likely real
+    if (
+      wordVowels.length > 0 ||
+      /^(qu|ch|th|sh|ph|gh|ck|ng|tion|sion)/.test(cleanWord) ||
+      /ing|tion|sion|ment|ance|ence$/.test(cleanWord)
+    ) {
+      hasRecognizableWord = true;
+      break;
+    }
+  }
+
+  // If no recognizable words and text is long enough, it's likely gibberish
+  if (!hasRecognizableWord && cleanText.length > 8) {
     showGibberishToast();
     return false;
   }
@@ -279,7 +96,7 @@ const showGibberishToast = () => {
   const funnyMessages = [
     "L’oracle comprend que pouik",
     "L’oracle comprend que dalle",
-    "Tu tapes avec tes pieds ou quoi?",
+    "Tu tapes avec tes pieds?",
     "Les esprits ont quitté le chat. Réessaie.",
   ];
 
