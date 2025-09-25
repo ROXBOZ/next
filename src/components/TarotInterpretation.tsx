@@ -28,7 +28,7 @@ function stopWhisperSound() {
     whisperAudio = null;
   }
 }
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import { generateTarotInterpretation } from "@/utils/aiInterpretation";
 
@@ -59,6 +59,8 @@ function TarotInterpretation({
   const [manualInterpretation, setManualInterpretation] = useState<
     any[] | null
   >(null);
+  // Ref pour le scroll du modal
+  const modalScrollRef = useRef<HTMLDivElement>(null);
   // Store last game state to avoid unnecessary regeneration
   const [lastGameState, setLastGameState] = useState<{
     question: string;
@@ -275,13 +277,21 @@ function TarotInterpretation({
     declineInterpretation();
   };
 
+  const scrollModalToTop = () => {
+    if (modalScrollRef.current) {
+      modalScrollRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   const handleGenerateAIInterpretation = () => {
     playClickSound();
+    scrollModalToTop();
     generateAIInterpretation();
   };
 
   const handleGenerateManualInterpretation = () => {
     playClickSound();
+    scrollModalToTop();
     generateManualInterpretation();
   };
 
@@ -312,7 +322,10 @@ function TarotInterpretation({
       className={`fixed inset-0 flex items-center justify-center bg-black/80 px-4 py-12`}
       style={{ zIndex: Z_INDEX.MODAL }}
     >
-      <div className="relative max-h-[80vh] w-full overflow-y-scroll rounded-lg bg-orange-950 pb-12 text-violet-50 shadow-2xl xl:w-2/4">
+      <div
+        ref={modalScrollRef}
+        className="relative max-h-[80vh] w-full overflow-y-scroll rounded-lg bg-orange-950 pb-12 text-violet-50 shadow-2xl xl:w-2/4"
+      >
         <div className="mx-auto max-w-[65ch]">
           {/* Header */}
           <div className="relative p-4">
@@ -323,14 +336,14 @@ function TarotInterpretation({
             >
               ×
             </button>{" "}
-            <h3 className="border-b border-violet-500 pt-8 pb-2 font-semibold">
-              Votre tirage est complet
+            <h3 className="border-b border-violet-500 pt-8 pb-2 text-center font-semibold">
+              Les cartes ont parlé...
             </h3>
           </div>
 
           {showChoice && (
             <div className="px-4 pb-4 text-center">
-              <div className="flex flex-col items-center gap-2">
+              <div className="flex flex-col items-center gap-2 xl:flex-row">
                 <button
                   className="light w-full"
                   onClick={handleGenerateAIInterpretation}
