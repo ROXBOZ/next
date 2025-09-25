@@ -33,7 +33,7 @@ function MobileSelectionModal({
   if (!isOpen) return null;
 
   return (
-    <div className="animate-in fade-in fixed inset-0 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm duration-200">
+    <div className="animate-in fade-in fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm duration-200">
       <div className="animate-in zoom-in-95 relative mx-4 w-full max-w-sm duration-300">
         <div
           style={{
