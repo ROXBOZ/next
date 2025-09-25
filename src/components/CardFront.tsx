@@ -16,7 +16,7 @@ function CardFront({
 }: CardFrontProps) {
   const finalRotation = calculateCardRotation(data.id, isReversed);
 
-  // Calculate shadow offset that counteracts the card rotation
+  // Calculate Kfsdlmkfsdfshadow offset that counteracts the card rotation
   const shadowAngle = -finalRotation * (Math.PI / 180); // Convert to radians and negate
   const shadowX = Math.sin(shadowAngle) * 4;
   const shadowY = Math.cos(shadowAngle) * 4;

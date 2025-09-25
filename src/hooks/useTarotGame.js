@@ -12,6 +12,7 @@ import { useCallback, useState } from "react";
 
 import { tarot_cards as cards } from "../data.json";
 
+//
 export function useTarotGame() {
   const [cardOrder, setCardOrder] = useState(() => initializeCardOrder(cards));
   const [selectedCards, setSelectedCards] = useState([]);
