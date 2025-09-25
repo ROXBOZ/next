@@ -102,7 +102,7 @@ function ModeSelector({
           <div className="text-violet-100  opacity-0 animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards]">
             <div className=" px-12 py-2  -mt-4 bg-indigo-950 -rotate-2 rounded-full font-semibold relative group">
               <span className="italic">{question}</span>
-              {onReset && (
+              {/* {onReset && (
                 <button
                   onClick={onReset}
                   className="absolute -top-4 -right-4 w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white/70 hover:text-white transition-all"
@@ -110,7 +110,7 @@ function ModeSelector({
                 >
                   <span className="-mt-1"> ×</span>{" "}
                 </button>
-              )}
+              )} */}
             </div>
           </div>
 
