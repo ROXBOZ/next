@@ -80,7 +80,7 @@ const showGibberishToast = () => {
     "Je comprends que dalle",
     "Je comprends walou",
     "T’écris avec tes pieds?",
-    "L'oracle pige sweet fuck all",
+    "Je pige sweet fuck all",
     "Les esprits ont quitté le chat?",
     "Non mais what?",
   ];
