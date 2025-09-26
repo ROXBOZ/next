@@ -1,6 +1,7 @@
 import { TarotCard } from "@/types/tarot";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { playCardSelectionSound } from "@/utils/sound";
 
 interface MobileSelectionModalProps {
   isOpen: boolean;
@@ -23,8 +24,8 @@ function MobileSelectionModal({
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      playCardSelectionSound();
     }
-
     return () => {
       document.body.style.overflow = "unset";
     };
