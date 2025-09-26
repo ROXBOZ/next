@@ -88,7 +88,7 @@ function CardDeck({
       <div
         ref={scrollContainerRef}
         key={readingMode || "no-mode"}
-        className="w-full overflow-x-auto overflow-y-visible py-6"
+        className="w-full overflow-x-auto overflow-y-visible py-10"
         style={{
           touchAction: "pan-x",
           WebkitOverflowScrolling: "touch",
