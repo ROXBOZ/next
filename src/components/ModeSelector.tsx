@@ -116,14 +116,12 @@ function ModeSelector({
   if (readingMode) {
     return (
       <div className="flex h-fit w-full flex-col items-center pt-4 xl:h-[100px]">
-        <div className="flex w-1/2 flex-col items-center gap-3 p-2">
-          <div className="animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards] text-violet-100 opacity-0">
-            <div className="group relative -mt-4 -rotate-2 rounded-full bg-[#0d001a] px-12 py-1 font-semibold whitespace-nowrap">
-              <span className="italic">{question}</span>
-            </div>
+        <div className="flex flex-col items-baseline gap-3 p-2 xl:flex-row">
+          <div className="group relative -mt-4 -rotate-2 animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards] rounded-full bg-[#0d001a] px-12 py-1 font-semibold whitespace-nowrap text-violet-100 italic opacity-0">
+            {question}
           </div>
 
-          <div className="-ml-4! flex w-screen animate-[fadeIn_0.2s_ease-in-out_0.4s_forwards] flex-col items-center justify-center gap-2 opacity-0 xl:flex-row">
+          <div className="-ml-4! flex animate-[fadeIn_0.2s_ease-in-out_0.4s_forwards] flex-col items-center justify-center gap-2 opacity-0 xl:flex-row">
             {canShuffle && (
               <button
                 onClick={handleShuffleClick}
@@ -139,7 +137,9 @@ function ModeSelector({
               </button>
             )}
             {!showInterpretationButton && canShuffle && (
-              <div className="text-violet-50">{getCardsText()}</div>
+              <div className="whitespace-nowrap text-violet-50">
+                {getCardsText()}
+              </div>
             )}
             {showInterpretationButton && onOpenInterpretation && (
               <button onClick={onOpenInterpretation} className="light">

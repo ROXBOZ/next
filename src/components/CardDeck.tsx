@@ -2,6 +2,7 @@ import { CardReversals, ReadingMode, TarotCard } from "@/types/tarot";
 import { useEffect, useRef, useState } from "react";
 
 import CardBack from "./CardBack";
+import { playSpreadSound } from "@/utils/sound";
 import { findCardById } from "@/utils/cardHelpers";
 
 interface CardDeckProps {
@@ -25,6 +26,10 @@ function CardDeck({
   // Track when readingMode changes from null to a value (user enters game)
   const prevReadingModeRef = useRef<ReadingMode | null | undefined>(undefined);
   useEffect(() => {
+    // Play spread sound ONCE when readingMode transitions from null to a value
+    if (prevReadingModeRef.current == null && readingMode != null) {
+      playSpreadSound();
+    }
     prevReadingModeRef.current = readingMode;
   }, [readingMode]);
 
@@ -84,17 +89,13 @@ function CardDeck({
   }
 
   return (
-    <div className="relative w-full -rotate-2">
+    <div className="relative flex w-full -rotate-2 justify-center">
       <div
         ref={scrollContainerRef}
         key={readingMode || "no-mode"}
-        className="w-full overflow-x-auto overflow-y-visible py-10"
-        style={{
-          touchAction: "pan-x",
-          WebkitOverflowScrolling: "touch",
-        }}
+        className="py-10"
       >
-        <div className="z-40 flex min-w-fit justify-center px-8 md:justify-center md:px-12">
+        <div className="z-40 ml-48 flex w-fit justify-center md:justify-center">
           {cardOrder.map((cardId, index) => {
             const cardData = findCardById(cards, cardId);
             if (!cardData) return null;
