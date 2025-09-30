@@ -11,6 +11,7 @@ interface CardDeckProps {
   cardReversals: CardReversals;
   cards: TarotCard[];
   readingMode?: ReadingMode | null;
+  shouldSpread?: boolean;
 }
 
 function CardDeck({
@@ -19,19 +20,17 @@ function CardDeck({
   cardReversals,
   cards,
   readingMode,
+  shouldSpread = false,
 }: CardDeckProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
 
   // Track when readingMode changes from null to a value (user enters game)
-  const prevReadingModeRef = useRef<ReadingMode | null | undefined>(undefined);
   useEffect(() => {
-    // Play spread sound ONCE when readingMode transitions from null to a value
-    if (prevReadingModeRef.current == null && readingMode != null) {
+    if (shouldSpread) {
       playSpreadSound();
     }
-    prevReadingModeRef.current = readingMode;
-  }, [readingMode]);
+  }, [shouldSpread]);
 
   useEffect(() => {
     if (!cardOrder || cardOrder.length === 0) return;
@@ -49,8 +48,7 @@ function CardDeck({
     };
 
     // Fire scroll when readingMode just became set (user entered game)
-    const readingModeJustSet =
-      prevReadingModeRef.current == null && readingMode != null;
+    const readingModeJustSet = false; // No longer needed, always false
 
     if (isMobile && (readingModeJustSet || cardOrder.length > 0)) {
       requestAnimationFrame(() => {
@@ -112,6 +110,7 @@ function CardDeck({
                 isLast={isLastCard}
                 isReversed={isReversed}
                 readingMode={readingMode}
+                shouldSpread={shouldSpread}
               />
             );
           })}

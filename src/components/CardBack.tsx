@@ -12,6 +12,7 @@ interface CardBackProps {
   isLast?: boolean;
   isReversed?: boolean;
   readingMode?: ReadingMode | null;
+  shouldSpread?: boolean;
 }
 
 function CardBack({
@@ -21,27 +22,28 @@ function CardBack({
   isLast = false,
   isReversed = false,
   readingMode = null,
+  shouldSpread = false,
 }: CardBackProps) {
   const finalRotation = calculateCardRotation(data.id, isReversed);
   const [isTouched, setIsTouched] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [marginLeft, setMarginLeft] = useState(-180); // initial -ml-[180px]
   const [hasModeJustBeenSelected, setHasModeJustBeenSelected] = useState(false);
-  const [prevReadingMode, setPrevReadingMode] = useState<ReadingMode | null>(
-    null,
-  );
+  // Remove prevReadingMode logic
 
   useEffect(() => {
     setIsMobile("ontouchstart" in window || navigator.maxTouchPoints > 0);
   }, []);
 
   // Animate marginLeft ONLY when readingMode transitions from null to a value
+  // Animate marginLeft ONLY when shouldSpread is true
   useEffect(() => {
-    if (prevReadingMode === null && readingMode !== null) {
-      setHasModeJustBeenSelected(true);
+    if (shouldSpread) {
+      setTimeout(() => setMarginLeft(-165), 2); // spring animation
+    } else {
+      setMarginLeft(-180); // reset if not spreading
     }
-    setPrevReadingMode(readingMode);
-  }, [readingMode]);
+  }, [shouldSpread, position]);
 
   useEffect(() => {
     if (hasModeJustBeenSelected) {

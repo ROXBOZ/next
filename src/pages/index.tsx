@@ -40,6 +40,8 @@ export default function Home() {
     openInterpretation,
     onModalClose,
     hasHydrated,
+    canPickCards,
+    shouldSpread,
   } = useTarotGame(cards as TarotCard[]);
 
   const handleReset = () => {
@@ -47,14 +49,20 @@ export default function Home() {
     resetGame();
   };
   const handleCardSelection = (cardId: number) => {
+    if (!canPickCards) {
+      // Block picking and show toast
+      import("@/utils/sound").then(({ playDenySound }) => playDenySound());
+      import("@/utils/toast").then(({ showWarningToast }) =>
+        showWarningToast("Vous devez d'abord mélanger le jeu !"),
+      );
+      return;
+    }
     if (!readingMode) {
       originalSelectCard(cardId);
       return;
     }
-
     const isMobile = window.innerWidth < 768;
     const maxCards = readingMode === "3-cards" ? 3 : 5;
-
     if (isMobile && selectedCards.length < maxCards) {
       const cardData = findCardById(cards as TarotCard[], cardId);
       if (cardData) {
@@ -62,7 +70,6 @@ export default function Home() {
           card: cardData,
           isReversed: cardReversals[cardId] || false,
         });
-
         setTimeout(() => {
           setMobileSelectionCard(null);
           originalSelectCard(cardId);
@@ -70,7 +77,6 @@ export default function Home() {
         return;
       }
     }
-
     originalSelectCard(cardId);
   };
 
@@ -104,6 +110,7 @@ export default function Home() {
               cardReversals={cardReversals}
               cards={cards as TarotCard[]}
               readingMode={readingMode}
+              shouldSpread={shouldSpread}
             />
           </div>
 
