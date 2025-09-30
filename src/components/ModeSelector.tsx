@@ -20,6 +20,7 @@ interface ModeSelectorProps {
   onOpenInterpretation?: () => void;
   onReset?: () => void;
   isShuffling?: boolean;
+  shouldSpread?: boolean;
 }
 
 function ModeSelector({
@@ -33,6 +34,8 @@ function ModeSelector({
   onOpenInterpretation,
   onReset,
   isShuffling = false,
+  shouldSpread = false,
+  selectedCards,
 }: ModeSelectorProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const validationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -69,7 +72,7 @@ function ModeSelector({
     if (newValue.trim().length > 3) {
       validationTimeoutRef.current = setTimeout(() => {
         validateQuestion(newValue);
-      }, 1500); // Wait 1.5 seconds after typing stops
+      }, 500); // Wait 1.5 seconds after typing stops
     }
   };
 
@@ -78,9 +81,8 @@ function ModeSelector({
     isQuestionValid && validateQuestionSilent(question);
 
   const getCardsText = () => {
-    if (readingMode === "3-cards") return "choisissez 3 cartes";
-    if (readingMode === "5-cards") return "choisissez 5 cartes";
-    return "et choisissez vos cartes";
+    if (readingMode === "3-cards") return "Choisissez 3 cartes";
+    if (readingMode === "5-cards") return "Choisissez 5 cartes";
   };
 
   const handleShuffleClick = () => {
@@ -115,48 +117,50 @@ function ModeSelector({
 
   if (readingMode) {
     return (
-      <div className="flex h-fit w-full flex-col items-center pt-4 xl:h-[100px]">
-        <div className="flex flex-col items-baseline gap-3 p-2 xl:flex-row">
-          <div className="group relative -mt-4 -rotate-2 animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards] rounded-full bg-[#0d001a] px-12 py-1 font-semibold whitespace-nowrap text-violet-100 italic opacity-0">
+      <div className="flex h-fit w-full flex-col items-center pt-4 lg:h-[100px]">
+        <div className="flex w-[50vw] flex-col items-baseline justify-center gap-2">
+          <div className="w-full animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards] text-center text-lg font-medium text-indigo-50 opacity-0">
             {question}
           </div>
 
-          <div className="-ml-4! flex animate-[fadeIn_0.2s_ease-in-out_0.4s_forwards] flex-col items-center justify-center gap-2 opacity-0 xl:flex-row">
-            {canShuffle && (
-              <button
-                onClick={handleShuffleClick}
-                className="light relative flex w-[100px] items-center justify-center overflow-hidden"
-              >
-                {isShuffling ? (
-                  <span className="animate-[flopAnimation_0.6s_ease-in-out_infinite]">
-                    flop flop
-                  </span>
-                ) : (
-                  "Mélangez"
-                )}
-              </button>
-            )}
-            {!showInterpretationButton && canShuffle && (
-              <div className="whitespace-nowrap text-violet-50">
+          {canShuffle ? (
+            <button
+              onClick={handleShuffleClick}
+              className="dark mx-auto! animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards]"
+            >
+              {isShuffling ? (
+                <span className="animate-[flopAnimation_0.6s_ease-in-out_infinite]">
+                  flop flop
+                </span>
+              ) : (
+                "Mélangez"
+              )}
+            </button>
+          ) : (
+            // Show card instructions when shuffle button is gone and before any card is selected
+            shouldSpread &&
+            selectedCards.length === 0 && (
+              <div className="flex-block w-full text-center whitespace-nowrap text-indigo-400">
                 {getCardsText()}
               </div>
-            )}
-            {showInterpretationButton && onOpenInterpretation && (
-              <button onClick={onOpenInterpretation} className="light">
-                Interprétez
-              </button>
-            )}
-          </div>
+            )
+          )}
+
+          {showInterpretationButton && onOpenInterpretation && (
+            <button onClick={onOpenInterpretation} className="dark mx-auto!">
+              Interprétez
+            </button>
+          )}
         </div>
       </div>
     );
   }
 
   return (
-    <div className="h-[160px] w-full pt-4 xl:h-[100px]">
+    <div className="h-[160px] w-full pt-4">
       <div className="mx-auto flex h-full w-screen flex-col items-center gap-2">
-        <div className="flex w-full animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards] flex-col items-baseline justify-center gap-2 px-4 opacity-0 xl:flex-row">
-          <span className="sr-only font-medium whitespace-nowrap text-violet-200">
+        <div className="flex w-full animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards] flex-col items-baseline justify-center gap-2 px-4 opacity-0 lg:flex-row">
+          <span className="sr-only font-medium whitespace-nowrap text-indigo-200">
             Demandez à l’oracle
           </span>
           <input
@@ -165,27 +169,27 @@ function ModeSelector({
             value={question}
             onChange={handleQuestionChange}
             placeholder="Quelle est votre question ?"
-            className="w-full touch-manipulation rounded-full border border-violet-500/20 bg-[#0d001a] px-3 py-2 text-lg text-violet-100 placeholder-violet-500/40 focus:border-violet-400/50 focus:outline-none xl:w-80"
+            className="mx-auto w-full max-w-[400px] touch-manipulation rounded-full border border-indigo-500/20 bg-[#0d001a] px-3 py-2 text-lg text-indigo-100 placeholder-indigo-500/40 focus:border-indigo-400/50 focus:outline-none"
           />
         </div>
 
-        <div className="flex h-[32px] flex-col items-center gap-2 xl:flex-row">
+        <div className="flex flex-col items-center gap-2 bg-red-500 md:flex-row">
           {isQuestionValid && (
             <>
-              <span className="animate-[fadeIn_0.2s_ease-in-out_0.4s_forwards] font-medium whitespace-nowrap text-violet-200 opacity-0">
+              <span className="animate-[fadeIn_0.2s_ease-in-out_0.4s_forwards] font-medium whitespace-nowrap text-indigo-200 opacity-0">
                 Choisissez entre un tirage
               </span>
               <div className="flex animate-[fadeIn_0.2s_ease-in-out_0.6s_forwards] items-baseline gap-2 opacity-0">
                 <button
-                  className={`light ${!isQuestionValidForSubmission ? "cursor-not-allowed opacity-50" : ""}`}
+                  className={`dark ${!isQuestionValidForSubmission ? "cursor-not-allowed opacity-50" : ""}`}
                   onClick={handle3CardsClick}
                   disabled={!isQuestionValidForSubmission}
                 >
                   simple
                 </button>
-                <span className="text-violet-200">ou</span>
+                <span className="text-indigo-200">ou</span>
                 <button
-                  className={`light ${!isQuestionValidForSubmission ? "cursor-not-allowed opacity-50" : ""}`}
+                  className={`dark ${!isQuestionValidForSubmission ? "cursor-not-allowed opacity-50" : ""}`}
                   onClick={handle5CardsClick}
                   disabled={!isQuestionValidForSubmission}
                 >

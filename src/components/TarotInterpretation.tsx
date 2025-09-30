@@ -303,12 +303,12 @@ function TarotInterpretation({
   const formatInterpretationText = (text: string): string => {
     let formatted = text.replace(
       /^### (.*)$/gm,
-      "<span class='font-semibold text-violet-200 block mt-4 mb-2'>$1</span>",
+      "<span class='font-semibold text-indigo-200 block mt-4 mb-2'>$1</span>",
     );
 
     formatted = formatted.replace(
       /\*\*(.*?)\*\*/g,
-      "<span class='font-semibold text-violet-200'>$1</span>",
+      "<span class='font-semibold text-indigo-200'>$1</span>",
     );
     return formatted;
   };
@@ -324,24 +324,24 @@ function TarotInterpretation({
     >
       <div
         ref={modalScrollRef}
-        className="relative max-h-[80vh] w-full overflow-y-scroll rounded-lg bg-orange-950 pb-12 text-violet-50 shadow-2xl xl:w-fit"
+        className="relative max-h-[80vh] w-full overflow-y-scroll rounded-lg bg-orange-950 pb-12 text-indigo-50 shadow-2xl lg:w-fit"
       >
         <div className="px-4 pb-4">
           <button
             onClick={handleDeclineInterpretation}
-            className="absolute top-0 right-0 aspect-square text-lg leading-none text-violet-200 transition-colors hover:text-violet-50"
+            className="absolute top-0 right-0 aspect-square text-lg leading-none text-indigo-200 transition-colors hover:text-indigo-50"
             aria-label="Fermer"
           >
             ×
           </button>{" "}
-          <h3 className="border-b border-violet-500 pt-8 pb-2 text-center font-semibold">
+          <h3 className="border-b border-indigo-500 pt-8 pb-2 text-center font-semibold">
             Les cartes ont parlé...
           </h3>
         </div>
         <div className="mx-auto max-w-[65ch]">
           {showChoice && (
             <div className="px-4 pb-4 text-center">
-              <div className="flex flex-col items-center gap-2 xl:flex-row">
+              <div className="flex flex-col items-center gap-2 lg:flex-row">
                 <button
                   className="light w-full"
                   onClick={handleGenerateAIInterpretation}
@@ -361,8 +361,8 @@ function TarotInterpretation({
           {loading && (
             <div className="flex items-center justify-center py-12">
               <div className="flex flex-col items-center">
-                <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-violet-600"></div>
-                <p className="mt-4 px-4 text-violet-200">
+                <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-indigo-600"></div>
+                <p className="mt-4 px-4 text-indigo-200">
                   Génération de l’explication de vos cartes...
                 </p>
               </div>
@@ -371,7 +371,7 @@ function TarotInterpretation({
 
           {error && (
             <div className="flex flex-col p-4 text-center">
-              <p className="mb-2 font-semibold text-balance text-violet-300">
+              <p className="mb-2 font-semibold text-balance text-indigo-300">
                 Et voilà, ça merde.
               </p>
               <div className="mt-3 flex justify-center gap-3">
@@ -396,8 +396,8 @@ function TarotInterpretation({
             <div className="mx-4 mb-4">
               <div className="max-w-none border-0">
                 {manualInterpretation ? (
-                  <div className="flex flex-col gap-1 overflow-y-auto text-violet-100">
-                    <div className="mb-2 text-lg font-semibold text-violet-200 italic">
+                  <div className="flex flex-col gap-1 overflow-y-auto text-indigo-100">
+                    <div className="mb-2 text-lg font-semibold text-indigo-200 italic">
                       {question}
                     </div>
                     {manualInterpretation.map((interp, idx) => (
@@ -410,14 +410,14 @@ function TarotInterpretation({
                           <span className="font-semibold">
                             {interp.card.name}
                           </span>
-                          <span className="ml-2 text-sm font-normal text-violet-300">
+                          <span className="ml-2 text-sm font-normal text-indigo-300">
                             {interp.card.arcana === "majeur"
                               ? "arcane majeure"
                               : "arcane mineure"}
                             {interp.card.isReversed ? " (renversée)" : ""}
                           </span>
                         </div>
-                        <div className="whitespace-pre-line text-violet-100">
+                        <div className="whitespace-pre-line text-indigo-100">
                           {interp.card.description}
                         </div>
                       </div>
@@ -425,7 +425,7 @@ function TarotInterpretation({
                   </div>
                 ) : (
                   <div
-                    className="ai-interpretation flex flex-col text-violet-100"
+                    className="ai-interpretation flex flex-col text-indigo-100"
                     dangerouslySetInnerHTML={{
                       __html: formatInterpretationText(interpretation),
                     }}

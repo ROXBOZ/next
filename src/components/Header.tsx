@@ -11,7 +11,7 @@ export default function Header({ onReset }: HeaderProps) {
   };
 
   return (
-    <header className="flex justify-center py-2 xl:p-0">
+    <header className="flex justify-center py-2">
       <button
         className="text-4xl tracking-wider text-white hover:ring-0!"
         onClick={handleReset}

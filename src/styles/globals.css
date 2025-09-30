@@ -5,6 +5,10 @@
 @import "./button.css";
 @import "./scroll.css";
 
+body {
+  @apply border-8 border-yellow-500 sm:border-orange-500 md:border-red-500 lg:border-pink-500 xl:border-purple-500;
+}
+
 html,
 body {
   height: 100%;

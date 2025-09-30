@@ -3,13 +3,13 @@ button {
 }
 
 button.light {
-  @apply bg-violet-300 text-violet-950 hover:ring-violet-400 active:bg-violet-400;
+  @apply bg-indigo-300 text-indigo-950 hover:ring-indigo-400 active:bg-indigo-400;
 }
 
 button.dark {
-  @apply bg-violet-950 text-violet-50 hover:ring-violet-900 active:bg-violet-900;
+  @apply bg-indigo-950 text-indigo-50 hover:ring-indigo-900 active:bg-indigo-900;
 }
 
 button.light.disabled {
-  @apply cursor-not-allowed bg-violet-950/50 text-violet-700/50 ring-0;
+  @apply cursor-not-allowed bg-indigo-950/50 text-indigo-700/50 ring-0;
 }

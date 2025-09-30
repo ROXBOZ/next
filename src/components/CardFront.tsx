@@ -37,7 +37,7 @@ function CardFront({
       } `}
       onClick={onClick}
     >
-      <div className="absolute z-50 flex h-full w-full flex-col items-center justify-between p-2 text-center text-orange-400 *:rounded-full *:bg-indigo-950">
+      <div className="sr-only absolute z-50 flex h-full w-full flex-col items-center justify-between p-2 text-center text-orange-400 *:rounded-full *:bg-indigo-950">
         <span className="flex px-4 text-xs font-semibold">{data.number}</span>
         <div className="w-full px-4 text-center text-xs font-semibold whitespace-nowrap uppercase">
           {data.name}
@@ -50,7 +50,7 @@ function CardFront({
           </div>
         ) : (
           <Image
-            src={`/frontIllustration/${data.id}.jpg`}
+            src={`/cards/${data.id}.jpg`}
             alt={data.name}
             width={300}
             height={500}

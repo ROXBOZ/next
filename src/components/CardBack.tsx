@@ -87,7 +87,7 @@ function CardBack({
       }}
       className={`card-classes flex w-[180px] flex-shrink-0 cursor-pointer items-center overflow-hidden border bg-[#15102d] object-contain ${
         isTouched && isMobile
-          ? "animate-pulse border-violet-400 shadow-lg shadow-violet-400/30"
+          ? "animate-pulse border-indigo-400 shadow-lg shadow-indigo-400/30"
           : "border-orange-950"
       } md:hover:translate-y-[-30px] md:hover:rotate-${isReversed ? "180" : "0"} md:transition-all md:duration-300`}
       onClick={handleClick}

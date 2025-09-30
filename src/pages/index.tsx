@@ -53,7 +53,7 @@ export default function Home() {
       // Block picking and show toast
       import("@/utils/sound").then(({ playDenySound }) => playDenySound());
       import("@/utils/toast").then(({ showWarningToast }) =>
-        showWarningToast("Vous devez d'abord mélanger le jeu !"),
+        showWarningToast("Tssss!! Mais mélangez !!!"),
       );
       return;
     }
@@ -83,7 +83,7 @@ export default function Home() {
   if (!hasHydrated) return null;
 
   return (
-    <div className="pattern mobile-safe-container overflow-hidden xl:max-h-screen">
+    <div className="pattern mobile-safe-container overflow-hidden lg:max-h-screen">
       <div className="pb-4">
         <Header onReset={handleReset} />
         <div className="flex flex-col items-center pb-4">
@@ -100,6 +100,7 @@ export default function Home() {
               onOpenInterpretation={openInterpretation}
               onReset={handleReset}
               isShuffling={isShuffling}
+              shouldSpread={shouldSpread}
             />
           </div>
 

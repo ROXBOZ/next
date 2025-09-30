@@ -40,7 +40,7 @@ function GameControls({
             Mélangez
           </button>
           {!showInterpretationButton && canShuffle && (
-            <div className="text-violet-50">{getCardsText()}</div>
+            <div className="text-indigo-50">{getCardsText()}</div>
           )}
         </>
       )}
