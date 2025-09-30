@@ -88,32 +88,34 @@ function CardDeck({
 
   return (
     <div className="relative flex w-full -rotate-2 justify-center">
-      <div
-        ref={scrollContainerRef}
-        key={readingMode || "no-mode"}
-        className={`flex w-full items-center justify-center overflow-x-scroll bg-red-500 p-10`}
-      >
-        <div className="z-40 ml-48 flex min-w-max justify-center md:justify-center">
-          {cardOrder.map((cardId, index) => {
-            const cardData = findCardById(cards, cardId);
-            if (!cardData) return null;
+      <div className="overflow-x-auto">
+        <div
+          ref={scrollContainerRef}
+          key={readingMode || "no-mode"}
+          className={`flex w-fit items-center justify-center p-10`}
+        >
+          <div className="z-40 ml-48 flex min-w-max justify-center md:justify-center">
+            {cardOrder.map((cardId, index) => {
+              const cardData = findCardById(cards, cardId);
+              if (!cardData) return null;
 
-            const isLastCard = index === cardOrder.length - 1;
-            const isReversed = cardReversals[cardId] || false;
+              const isLastCard = index === cardOrder.length - 1;
+              const isReversed = cardReversals[cardId] || false;
 
-            return (
-              <CardBack
-                key={cardId}
-                data={cardData}
-                position={index + 1}
-                onClick={() => onCardClick(cardId)}
-                isLast={isLastCard}
-                isReversed={isReversed}
-                readingMode={readingMode}
-                shouldSpread={shouldSpread}
-              />
-            );
-          })}
+              return (
+                <CardBack
+                  key={cardId}
+                  data={cardData}
+                  position={index + 1}
+                  onClick={() => onCardClick(cardId)}
+                  isLast={isLastCard}
+                  isReversed={isReversed}
+                  readingMode={readingMode}
+                  shouldSpread={shouldSpread}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
