@@ -117,7 +117,7 @@ function ModeSelector({
 
   if (readingMode) {
     return (
-      <div className="flex h-fit w-full flex-col items-center pt-4 lg:h-[100px]">
+      <div className="flex h-[150px] w-full flex-col items-center pt-4 lg:h-[100px]">
         <div className="flex w-[50vw] flex-col items-baseline justify-center gap-2">
           <div className="w-full animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards] text-center text-lg font-medium text-indigo-50 opacity-0">
             {question}
@@ -157,7 +157,7 @@ function ModeSelector({
   }
 
   return (
-    <div className="h-[160px] w-full pt-4">
+    <div className="h-[150px] w-full pt-4">
       <div className="mx-auto flex h-full w-screen flex-col items-center gap-2">
         <div className="flex w-full animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards] flex-col items-baseline justify-center gap-2 px-4 opacity-0 lg:flex-row">
           <span className="sr-only font-medium whitespace-nowrap text-indigo-200">

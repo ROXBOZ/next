@@ -91,7 +91,7 @@ function CardDeck({
       <div
         ref={scrollContainerRef}
         key={readingMode || "no-mode"}
-        className={`flex items-center overflow-x-auto bg-red-500 p-10`}
+        className={`flex w-full items-center justify-center overflow-x-scroll bg-red-500 p-10`}
       >
         <div className="z-40 ml-48 flex min-w-max justify-center md:justify-center">
           {cardOrder.map((cardId, index) => {
