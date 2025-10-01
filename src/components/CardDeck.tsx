@@ -62,16 +62,16 @@ function CardDeck({
   if (!cardOrder || cardOrder.length === 0) {
     return null;
   }
-
+  //
   return (
-    <div className="relative flex w-full bg-green-500">
+    <div className="relative flex w-screen bg-green-500">
       <div
         ref={scrollContainerRef}
         className="scrollbar-none flex overflow-x-auto bg-yellow-500"
       >
         <div
           key={readingMode || ""}
-          className="flex w-full items-center justify-center bg-violet-500 px-10"
+          className="flex w-screen items-center justify-center bg-violet-500 px-10"
         >
           <div className="z-40 ml-48 flex min-w-max -rotate-2 py-10">
             {cardOrder.map((cardId, index) => {
