@@ -9,12 +9,14 @@ Ce projet a commencé comme une blague et s'est transformé en une expérience l
 ## ✨ Fonctionnalités Magiques
 
 ### 🃏 Mécanique de Jeu
+
 - **Tirage & Mélange Aléatoire:** Les cartes sont brassées complètement au hasard, imitant l'imprévisibilité d'un vrai tarot.
 - **Cartes Renversées:** Comme dans un vrai tarot, les cartes peuvent apparaître à l'endroit ou renversées, ajoutant une couche d'interprétation.
 - **Modes de Lecture Multiples:** Choisissez entre différents types de tirages (passé-présent-futur, problème-cause-solution, etc.).
 - **Système de Question:** Posez votre question pour contextualiser la lecture — avec détecteur de charabia qui vous répond avec humour!
 
 ### 🎨 UI/UX Réfléchie
+
 - **Interface Responsive:** S'adapte parfaitement aux écrans de toutes tailles, du mobile au grand écran.
 - **Design Inspiré de l'Esthétique Tarot:** Une fusion entre le mystique traditionnel et le web moderne.
 - **Feedback Sonore Immersif:**
@@ -25,6 +27,7 @@ Ce projet a commencé comme une blague et s'est transformé en une expérience l
 - **Micro-interactions:** Des petites surprises interactives parsemées dans l'interface.
 
 ### 🤖 Intelligence Artificielle
+
 - **Interprétations IA (via OpenAI):** Recevez une lecture personnalisée générée par l'IA pour votre tirage spécifique.
 - **Prompts Personnalisés:** L'IA est configurée avec un prompt sophistiqué qui garantit des interprétations:
   - Modernes et inclusives (écriture inclusive avec points médians)
@@ -34,6 +37,7 @@ Ce projet a commencé comme une blague et s'est transformé en une expérience l
 - **Détection de Non-Sens:** Un algorithme examine votre question pour détecter si c'est du charabia et vous répond avec une touche d'humour.
 
 ### 📚 Contenu Riche
+
 - **Guide de Tarot Intégré:** Plus besoin du petit livret classique! Consultez les significations directement dans l'app.
 - **Significations Contextuelles:** Les interprétations changent selon la position (passé/présent/futur) et l'orientation (à l'endroit/renversée).
 - **Réponses Créatives aux Erreurs:** Messages d'erreur humoristiques comme "Les esprits ont quitté le chat?" ou "T'écris avec tes pieds?"
@@ -45,7 +49,7 @@ Ce projet a commencé comme une blague et s'est transformé en une expérience l
 - **Framework:** [Next.js 15.5](https://nextjs.org/) avec Turbopack pour des performances optimisées
 - **Frontend:** [React 19.1](https://react.dev/) pour une interface utilisateur réactive
 - **Styling:** [Tailwind CSS 4](https://tailwindcss.com/) pour un design rapide et flexible
-- **IA:** 
+- **IA:**
   - [OpenAI API](https://platform.openai.com/) pour les interprétations de tarot
   - [Groq SDK](https://groq.com/) comme alternative rapide à OpenAI
 - **Audio:** API Web Audio pour une expérience sonore immersive
@@ -57,8 +61,9 @@ Ce projet a commencé comme une blague et s'est transformé en une expérience l
 ## 🧙‍♀️ Caractéristiques Techniques
 
 ### Architecture
+
 - **Hooks Personnalisés:** `useTarotGame` pour isoler la logique de jeu
-- **Utilitaires Modulaires:** 
+- **Utilitaires Modulaires:**
   - `shuffle.ts` pour la mécanique de mélange
   - `sound.ts` pour la gestion audio
   - `questionValidation.ts` pour la détection de charabia
@@ -66,6 +71,7 @@ Ce projet a commencé comme une blague et s'est transformé en une expérience l
 - **Composants React:** Séparation claire entre présentation et logique
 
 ### Spécificités Code
+
 - **Sons Préchargés:** Bibliothèque d'effets sonores pour une réactivité instantanée
 - **Algorithme de Validation:** Détecte le charabia à partir de patterns typiques (répétition de caractères, absence de voyelles...)
 - **Prompt Engineering:** Design sophistiqué des prompts OpenAI pour garantir des interprétations de qualité
@@ -92,6 +98,7 @@ Ce projet ne prend pas le tarot trop au sérieux — il s'agit **d'avoir du fun,
 C'est à la fois un terrain de jeu technologique (IA, UI/UX, design sonore) et une expérience artistique avec une touche féministe et inclusive.
 
 Le tarot est utilisé ici comme prétexte pour créer une expérience numérique qui soit à la fois:
+
 - Accessible et inclusive
 - Techniquement innovante
 - Visuellement captivante
