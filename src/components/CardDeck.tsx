@@ -84,7 +84,7 @@ function CardDeck({
 
   // Simple, reliable approach that should work consistently on mobile
   return (
-    <div className="relative flex w-full -rotate-2">
+    <div className="relative flex w-full -rotate-2 bg-red-500">
       <div
         ref={scrollContainerRef}
         className="scrollbar-none mx-auto flex overflow-x-auto px-[10px]"
