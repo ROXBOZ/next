@@ -5,12 +5,12 @@ import {
   TarotCard,
   TarotReading,
 } from "@/types/tarot";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import {
   generateCardInterpretations,
   isValidReading,
 } from "@/utils/readingHelpers";
 import { playClickSound, playMagicSound, playSound } from "@/utils/sound";
-import { useEffect, useRef, useState } from "react";
 
 import { generateTarotInterpretation } from "@/utils/aiInterpretation";
 
@@ -317,6 +317,19 @@ function TarotInterpretation({
     return null;
   }
 
+  const ChoiceContainer = ({ children }: { children: ReactNode }) => {
+    return (
+      <div
+        style={{
+          height: "-webkit-fill-available",
+        }}
+        className="flex w-full flex-col justify-between gap-4 p-2 text-start text-balance"
+      >
+        {children}
+      </div>
+    );
+  };
+
   return (
     <div
       className={`fixed inset-0 flex items-center justify-center bg-black/80 px-4 py-12`}
@@ -341,19 +354,35 @@ function TarotInterpretation({
         <div className="mx-auto max-w-[65ch]">
           {showChoice && (
             <div className="px-4 pb-4 text-center">
-              <div className="flex flex-col items-center gap-2 lg:flex-row">
-                <button
-                  className="light w-full"
-                  onClick={handleGenerateAIInterpretation}
-                >
-                  ☁️ Interprétation célèste
-                </button>
-                <button
-                  className="light w-full"
-                  onClick={handleGenerateManualInterpretation}
-                >
-                  ✨ Guide pratique
-                </button>
+              <div className="flex flex-col items-baseline gap-6 lg:flex-row">
+                <ChoiceContainer>
+                  <div>
+                    Un algorithme nourri aux herbes hallucinogènes et aux cartes
+                    postales d’Aleister Crowley. Peut générer des prédictions
+                    absurdes et des vérités troublantes. On décline toute
+                    responsabilité si vous changez de vie après.
+                  </div>
+                  <button
+                    className="light"
+                    onClick={handleGenerateAIInterpretation}
+                  >
+                    Interprétation IA
+                  </button>
+                </ChoiceContainer>
+                <ChoiceContainer>
+                  <div>
+                    Ici, rien de généré par une machine qui hallucine, juste les
+                    descriptions brutes des cartes - aussi cryptiques
+                    soient-elles. Comme avant, quand on lisait les cartes avec
+                    un mode d’emploi tout pourri et un verre de rouge.
+                  </div>
+                  <button
+                    className="light"
+                    onClick={handleGenerateManualInterpretation}
+                  >
+                    Guide pratique
+                  </button>
+                </ChoiceContainer>
               </div>
             </div>
           )}
@@ -437,14 +466,14 @@ function TarotInterpretation({
                       onClick={handleGenerateAIInterpretation}
                       className="light"
                     >
-                      ☁️ Interprétation célèste
+                      Interprétation IA
                     </button>
                   ) : (
                     <button
                       onClick={handleGenerateManualInterpretation}
                       className="light"
                     >
-                      ✨ Guide pratique
+                      Guide pratique
                     </button>
                   )}
                   <button onClick={handleResetChoice} className="dark">
