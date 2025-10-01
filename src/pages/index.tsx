@@ -21,33 +21,36 @@ export default function Home() {
     isReversed: boolean;
   } | null>(null);
 
-    // Effect to fix mobile scroll padding issue at startup
+  // Effect to fix mobile scroll padding issue at startup
   useEffect(() => {
     // Only apply the fix on mobile devices with touch support
-    if (typeof window !== 'undefined' && ('ontouchstart' in window || window.innerWidth < 768)) {
+    if (
+      typeof window !== "undefined" &&
+      ("ontouchstart" in window || window.innerWidth < 768)
+    ) {
       // Create a fake card to use in the modal (just needs a minimal structure)
       const dummyCard = cards[0] || {
         id: 0,
         name: "Dummy Card",
-        number: 0
+        number: 0,
       };
-      
+
       // Set a dummy modal card to trigger the modal opening
       setMobileSelectionCard({
         card: dummyCard as TarotCard,
-        isReversed: false
+        isReversed: false,
       });
-      
+
       // Close the modal after a short delay
       setTimeout(() => {
         setMobileSelectionCard(null);
-        
-        // Additional fix for scroll containers 
-        const scrollContainers = document.querySelectorAll('.overflow-x-auto');
-        scrollContainers.forEach(container => {
+
+        // Additional fix for scroll containers
+        const scrollContainers = document.querySelectorAll(".overflow-x-auto");
+        scrollContainers.forEach((container) => {
           // Force browser to recalculate scrolling layout
-          (container as HTMLElement).style.paddingLeft = '40px';
-          (container as HTMLElement).style.paddingRight = '40px';
+          (container as HTMLElement).style.paddingLeft = "40px";
+          (container as HTMLElement).style.paddingRight = "40px";
         });
       }, 50);
     }

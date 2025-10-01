@@ -103,7 +103,7 @@ function CardBack({
         />
       )}
       <Image
-        src="/backIllustration.png"
+        src="/back-illustration.png"
         alt="Card Back"
         width={200}
         height={300}

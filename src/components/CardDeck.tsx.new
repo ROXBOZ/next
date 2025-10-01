@@ -74,7 +74,7 @@ function CardDeck({
         style={{
           padding: "0 10px", // Fixed padding on all devices
           WebkitOverflowScrolling: "touch", // Better iOS scrolling
-          maxWidth: "100%", // Ensure container doesn't exceed viewport
+          maxWidth: "100%" // Ensure container doesn't exceed viewport
         }}
       >
         <div
