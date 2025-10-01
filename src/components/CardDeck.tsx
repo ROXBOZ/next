@@ -61,6 +61,23 @@ function CardDeck({
     }
   }, [lastCardRef.current, shouldSpread]);
 
+  // Force layout recalculation on mobile devices (similar to what happens in MobileSelectionModal)
+  useEffect(() => {
+    // Only run on mobile devices
+    if ("ontouchstart" in window && scrollContainerRef.current) {
+      // Force browser reflow by accessing offsetWidth
+      const forceReflow = () => {
+        const _ = scrollContainerRef.current?.offsetWidth;
+      };
+      
+      // Run immediately
+      forceReflow();
+      
+      // Also run after a short delay to handle any async layout changes
+      setTimeout(forceReflow, 300);
+    }
+  }, []);
+
   if (!cardOrder || cardOrder.length === 0) {
     return null;
   }
@@ -70,9 +87,8 @@ function CardDeck({
     <div className="relative flex w-full -rotate-2">
       <div
         ref={scrollContainerRef}
-        className="scrollbar-none mx-auto flex overflow-x-auto"
+        className="scrollbar-none mx-auto flex overflow-x-auto px-[10px]"
         style={{
-          padding: "0 10px", // Fixed padding on all devices
           WebkitOverflowScrolling: "touch", // Better iOS scrolling
           maxWidth: "100%", // Ensure container doesn't exceed viewport
         }}
