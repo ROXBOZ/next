@@ -23,12 +23,29 @@ function MobileSelectionModal({
   }, [card.id]);
 
   useEffect(() => {
+    // Store original overflow value to restore it properly
+    const originalOverflow = document.body.style.overflow;
+
     if (isOpen) {
+      // Apply hidden overflow when modal opens
       document.body.style.overflow = "hidden";
       playCardSelectionSound();
     }
+
     return () => {
-      document.body.style.overflow = "unset";
+      // When modal closes, properly restore original state
+      document.body.style.overflow = originalOverflow;
+
+      // For mobile browsers: Force layout update on horizontal scrollable containers
+      if ("ontouchstart" in window) {
+        // Find all overflow-x-auto elements (the card deck container)
+        const scrollContainers = document.querySelectorAll(".overflow-x-auto");
+        scrollContainers.forEach((container) => {
+          // Trigger browser reflow by accessing offsetWidth
+          // Cast to HTMLElement to access offsetWidth
+          const _ = (container as HTMLElement).offsetWidth;
+        });
+      }
     };
   }, [isOpen]);
 
