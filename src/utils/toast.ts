@@ -5,10 +5,10 @@ import { ToastConfig, ToastType } from "@/types/tarot";
  * Toast notification styles for different types
  */
 const TOAST_STYLES: Record<ToastType, string[]> = {
-  success: ["bg-green-800", "text-white"],
-  error: ["bg-red-800", "text-white"],
-  warning: ["", "text-white"],
-  info: ["bg-blue-800", "text-white"],
+  success: ["bg-green-800", "text-green-50"],
+  error: ["bg-red-800", "text-red-50"],
+  warning: ["bg-orange-800", "text-orange-50"],
+  info: ["bg-blue-800", "text-blue-50"],
 };
 
 /**

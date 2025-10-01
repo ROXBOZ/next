@@ -13,7 +13,7 @@ export default function Header({ onReset }: HeaderProps) {
   return (
     <header className="flex justify-center py-2">
       <button
-        className="text-4xl tracking-wider text-white hover:ring-0!"
+        className="text-4xl tracking-wider text-indigo-50 hover:ring-0!"
         onClick={handleReset}
       >
         <div className="flex items-center gap-1">

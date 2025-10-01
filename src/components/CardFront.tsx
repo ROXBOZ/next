@@ -1,7 +1,8 @@
+import { useEffect, useState } from "react";
+
+import Image from "next/image";
 import { TarotCard } from "@/types/tarot";
 import { calculateCardRotation } from "@/utils/cardHelpers";
-import Image from "next/image";
-import { useState, useEffect } from "react";
 
 interface CardFrontProps {
   data: TarotCard;
@@ -38,8 +39,8 @@ function CardFront({
       onClick={onClick}
     >
       <div className="sr-only absolute z-50 flex h-full w-full flex-col items-center justify-between p-2 text-center text-orange-400 *:rounded-full *:bg-indigo-950">
-        <span className="flex px-4 text-xs font-semibold">{data.number}</span>
-        <div className="w-full px-4 text-center text-xs font-semibold whitespace-nowrap uppercase">
+        <span className="flex px-4 text-xs font-medium">{data.number}</span>
+        <div className="w-full px-4 text-center text-xs font-medium whitespace-nowrap uppercase">
           {data.name}
         </div>
       </div>

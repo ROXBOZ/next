@@ -10,7 +10,10 @@ import {
   isValidReading,
 } from "@/utils/readingHelpers";
 import { playClickSound, playMagicSound, playSound } from "@/utils/sound";
-// Gestion du son whisper
+import { useEffect, useRef, useState } from "react";
+
+import { generateTarotInterpretation } from "@/utils/aiInterpretation";
+
 let whisperAudio: HTMLAudioElement | null = null;
 
 function startWhisperSound() {
@@ -28,9 +31,6 @@ function stopWhisperSound() {
     whisperAudio = null;
   }
 }
-import { useEffect, useState, useRef } from "react";
-
-import { generateTarotInterpretation } from "@/utils/aiInterpretation";
 
 interface TarotInterpretationProps {
   question: string;
@@ -303,12 +303,12 @@ function TarotInterpretation({
   const formatInterpretationText = (text: string): string => {
     let formatted = text.replace(
       /^### (.*)$/gm,
-      "<span class='font-semibold text-indigo-200 block mt-4 mb-2'>$1</span>",
+      "<span class='font-medium text-indigo-200 block mt-4 mb-2'>$1</span>",
     );
 
     formatted = formatted.replace(
       /\*\*(.*?)\*\*/g,
-      "<span class='font-semibold text-indigo-200'>$1</span>",
+      "<span class='font-medium text-indigo-200'>$1</span>",
     );
     return formatted;
   };
@@ -334,7 +334,7 @@ function TarotInterpretation({
           >
             ×
           </button>{" "}
-          <h3 className="border-b border-indigo-500 pt-8 pb-2 text-center font-semibold">
+          <h3 className="border-b border-indigo-500 pt-8 pb-2 text-center font-medium">
             Les cartes ont parlé...
           </h3>
         </div>
@@ -371,7 +371,7 @@ function TarotInterpretation({
 
           {error && (
             <div className="flex flex-col p-4 text-center">
-              <p className="mb-2 font-semibold text-balance text-indigo-300">
+              <p className="mb-2 font-medium text-balance text-indigo-300">
                 Et voilà, ça merde.
               </p>
               <div className="mt-3 flex justify-center gap-3">
@@ -397,7 +397,7 @@ function TarotInterpretation({
               <div className="max-w-none border-0">
                 {manualInterpretation ? (
                   <div className="flex flex-col gap-1 overflow-y-auto text-indigo-100">
-                    <div className="mb-2 text-lg font-semibold text-indigo-200 italic">
+                    <div className="mb-2 text-lg font-medium text-indigo-200 italic">
                       {question}
                     </div>
                     {manualInterpretation.map((interp, idx) => (
@@ -405,12 +405,12 @@ function TarotInterpretation({
                         key={idx}
                         className="rounded-xl bg-orange-900 px-4 pt-3 pb-5"
                       >
-                        <div className="mb-2 font-semibold">
-                          🔮 {interp.position} -{" "}
-                          <span className="font-semibold">
+                        <div className="mb-2 font-medium">
+                          {interp.position} -{" "}
+                          <span className="font-medium">
                             {interp.card.name}
                           </span>
-                          <span className="ml-2 text-sm font-normal text-indigo-300">
+                          <span className="ml-2 text-sm font-medium text-indigo-200">
                             {interp.card.arcana === "majeur"
                               ? "arcane majeure"
                               : "arcane mineure"}

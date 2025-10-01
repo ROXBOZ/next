@@ -48,11 +48,11 @@ function MobileSelectionModal({
           } shadow-2xl`}
         >
           <div className="sr-only z-50 flex h-full w-full flex-col items-center justify-between bg-gradient-to-b p-4 pt-4 pb-6 text-center text-orange-400 *:rounded-full *:bg-indigo-950">
-            <span className="flex px-4 py-2 text-sm font-semibold">
+            <span className="flex px-4 py-2 text-sm font-medium">
               {card.number}
             </span>
 
-            <div className="w-full px-4 py-2 text-center text-sm font-semibold uppercase">
+            <div className="w-full px-4 py-2 text-center text-sm font-medium uppercase">
               {card.name}
             </div>
           </div>

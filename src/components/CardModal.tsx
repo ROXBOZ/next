@@ -1,6 +1,7 @@
-import { TarotCard } from "@/types/tarot";
-import Image from "next/image";
 import { useEffect, useState } from "react";
+
+import Image from "next/image";
+import { TarotCard } from "@/types/tarot";
 
 interface CardModalProps {
   isOpen: boolean;
@@ -9,7 +10,7 @@ interface CardModalProps {
   isReversed: boolean;
 }
 
-function CardModal({ isOpen, onClose, card, isReversed }: CardModalProps) {
+function CardModal({ isOpen, onClose, card }: CardModalProps) {
   const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
@@ -57,9 +58,9 @@ function CardModal({ isOpen, onClose, card, isReversed }: CardModalProps) {
           className={`card-classes relative flex w-full transform flex-col justify-between gap-4 overflow-hidden bg-orange-900 shadow-2xl transition-transform duration-300`}
         >
           <div className="sr-only z-40 flex h-full w-full flex-col items-center justify-between bg-gradient-to-b p-4 text-center text-orange-400 *:rounded-full *:bg-indigo-950">
-            <span className="flex px-4 py-2 font-semibold">{card.number}</span>
+            <span className="flex px-4 py-2 font-medium">{card.number}</span>
 
-            <div className="w-full px-4 py-2 text-center font-semibold uppercase">
+            <div className="w-full px-4 py-2 text-center font-medium uppercase">
               {card.name}
             </div>
           </div>
