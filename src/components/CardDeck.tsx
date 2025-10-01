@@ -71,9 +71,9 @@ function CardDeck({
       >
         <div
           key={readingMode || ""}
-          className="flex items-center justify-center bg-violet-500 px-10"
+          className="flex w-full items-center justify-center bg-violet-500 px-10"
         >
-          <div className="z-40 ml-48 flex min-w-max -rotate-2 justify-center py-10 md:justify-center">
+          <div className="z-40 ml-48 flex min-w-max -rotate-2 py-10">
             {cardOrder.map((cardId, index) => {
               const cardData = findCardById(cards, cardId);
               if (!cardData) return null;
