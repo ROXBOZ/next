@@ -67,11 +67,11 @@ function CardDeck({
     <div className="relative flex w-full -rotate-2 bg-green-500">
       <div
         ref={scrollContainerRef}
-        className="scrollbar-none flex overflow-x-auto bg-yellow-500"
+        className="scrollbar-none flex w-screen overflow-x-auto bg-yellow-500"
       >
         <div
           key={readingMode || ""}
-          className="flex w-full items-center justify-center bg-red-500 px-10"
+          className="flex w-full items-center justify-center bg-violet-500 px-10"
         >
           <div className="z-40 ml-48 flex min-w-max justify-center py-10 md:justify-center">
             {cardOrder.map((cardId, index) => {
