@@ -22,7 +22,6 @@ function CardDeck({
   readingMode,
   shouldSpread = false,
 }: CardDeckProps) {
-  // Function to scroll to the last card
   const scrollToLastCard = () => {
     if (lastCardRef.current && scrollContainerRef.current) {
       const cardRect = lastCardRef.current.getBoundingClientRect();
@@ -38,7 +37,6 @@ function CardDeck({
         left: scrollLeft,
         behavior: "smooth",
       });
-    } else {
     }
   };
 
@@ -61,36 +59,20 @@ function CardDeck({
     }
   }, [lastCardRef.current, shouldSpread]);
 
-  // Force layout recalculation on mobile devices (similar to what happens in MobileSelectionModal)
-  useEffect(() => {
-    // Only run on mobile devices
-    if ("ontouchstart" in window && scrollContainerRef.current) {
-      // Force browser reflow by accessing offsetWidth
-      const forceReflow = () => {
-        const _ = scrollContainerRef.current?.offsetWidth;
-      };
-
-      // Run immediately
-      forceReflow();
-
-      // Also run after a short delay to handle any async layout changes
-      setTimeout(forceReflow, 300);
-    }
-  }, []);
-
   if (!cardOrder || cardOrder.length === 0) {
     return null;
   }
 
-  // Simple, reliable approach that should work consistently on mobile
   return (
-    <div className="relative flex w-full -rotate-2 bg-red-500">
+    <div className="relative flex w-full -rotate-2">
       <div
         ref={scrollContainerRef}
-        className="scrollbar-none mx-auto flex overflow-x-auto px-[10px]"
+        className="scrollbar-none mx-auto flex overflow-x-auto"
         style={{
-          WebkitOverflowScrolling: "touch", // Better iOS scrolling
-          maxWidth: "100%", // Ensure container doesn't exceed viewport
+          paddingLeft: "40px",
+          paddingRight: "40px",
+          WebkitOverflowScrolling: "touch",
+          maxWidth: "100%"
         }}
       >
         <div
