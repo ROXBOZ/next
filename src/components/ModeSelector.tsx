@@ -198,26 +198,16 @@ function ModeSelector({
   if (readingMode) {
     return (
       <div className="flex h-[110px] w-full flex-col items-center pt-4">
-        <div className="flex w-[50vw] flex-col items-baseline justify-center gap-2">
-          <div className="w-full animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards] text-center text-lg font-medium text-indigo-50 opacity-0">
+        <div className="flex w-[50vw] flex-col items-baseline justify-center gap-6 bg-red-500">
+          <div className="z-50 w-full text-center text-lg font-medium text-indigo-50">
             {question}
           </div>
 
           {canShuffle ? (
-            <button
-              onClick={handleShuffleClick}
-              className="dark mx-auto! animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards]"
-            >
-              {isShuffling ? (
-                <span className="animate-[flopAnimation_0.6s_ease-in-out_infinite]">
-                  flop flop
-                </span>
-              ) : (
-                "Mélangez"
-              )}
+            <button onClick={handleShuffleClick} className="dark mx-auto!">
+              {isShuffling ? <span>flop flop</span> : <span>Mélangez</span>}
             </button>
           ) : (
-            // Show card instructions when shuffle button is gone and before any card is selected
             shouldSpread &&
             selectedCards.length === 0 && (
               <div className="flex-block w-full text-center whitespace-nowrap text-indigo-400">
