@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
+import { playCardSelectionSound, playDenySound } from "@/utils/sound";
 
 import { MAX_CARDS } from "@/constants/tarot";
 import { ReadingMode } from "@/types/tarot";
-import { playCardSelectionSound, playDenySound } from "@/utils/sound";
 import { showToast } from "@/utils/toast";
 
 /**
@@ -20,60 +20,22 @@ export const handleCardSelect = (
   setSelectedCards: Dispatch<SetStateAction<number[]>>,
   cardOrder: number[],
   setCardOrder: Dispatch<SetStateAction<number[]>>,
-  readingMode: ReadingMode
+  readingMode: ReadingMode,
 ): void => {
   const maxCards = MAX_CARDS[readingMode];
 
-  console.log("🎯 CARD SELECTION ATTEMPT:", {
-    cardId,
-    currentSelectedLength: selectedCards.length,
-    selectedCards: [...selectedCards],
-    maxCards,
-    readingMode,
-    timestamp: new Date().toISOString(),
-  });
-
   setSelectedCards((currentSelected) => {
-    console.log("🔄 INSIDE setSelectedCards:", {
-      cardId,
-      currentSelectedLength: currentSelected.length,
-      currentSelected: [...currentSelected],
-      maxCards,
-      canSelect: currentSelected.length < maxCards,
-    });
-
     if (currentSelected.length < maxCards) {
-      // Remove card from deck
       setCardOrder((currentOrder) => {
-        console.log("🗂️ REMOVING from deck:", {
-          cardId,
-          deckSizeBefore: currentOrder.length,
-          deckSizeAfter: currentOrder.filter((id) => id !== cardId).length,
-        });
         return currentOrder.filter((id) => id !== cardId);
       });
 
       const newSelected = [...currentSelected, cardId];
-      console.log("✅ CARD SELECTED:", {
-        cardId,
-        newSelectedLength: newSelected.length,
-        newSelected: [...newSelected],
-        positionIndex: newSelected.length - 1,
-      });
 
-      // Play card selection sound
       playCardSelectionSound();
 
       return newSelected;
     } else {
-      console.log("❌ SELECTION BLOCKED:", {
-        cardId,
-        currentSelectedLength: currentSelected.length,
-        maxCards,
-        reason: "Max cards reached",
-      });
-
-      // Play deny sound and show warning
       playDenySound();
       showToast({
         message: `Maximum ${maxCards} cartes!`,
@@ -99,8 +61,8 @@ export const resetSelection = (
   setCardOrder: Dispatch<SetStateAction<number[]>>,
   shuffleCallback?: (
     newOrder: number[],
-    setOrder: Dispatch<SetStateAction<number[]>>
-  ) => void
+    setOrder: Dispatch<SetStateAction<number[]>>,
+  ) => void,
 ): void => {
   const newCardOrder = [...cardOrder, ...selectedCards];
   setSelectedCards([]);
@@ -120,7 +82,7 @@ export const resetSelection = (
  */
 export const isSelectionValid = (
   selectedCards: number[],
-  readingMode: ReadingMode
+  readingMode: ReadingMode,
 ): boolean => {
   const maxCards = MAX_CARDS[readingMode];
   return selectedCards.length <= maxCards;
@@ -134,7 +96,7 @@ export const isSelectionValid = (
  */
 export const isReadingComplete = (
   selectedCards: number[],
-  readingMode: ReadingMode
+  readingMode: ReadingMode,
 ): boolean => {
   const maxCards = MAX_CARDS[readingMode];
   return selectedCards.length === maxCards;

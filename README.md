@@ -5,17 +5,13 @@ tarot card game that blends tradition, humor, and technology. The goal
 is simple---draw tarot cards, interpret them, and let the experience be
 poetic, surreal, and fun.
 
-It is **not** a faithful reproduction of traditional tarot, nor does it
-pretend to teach the "true essence" of the practice. Instead, it's a
-whimsical mix of AI, kitsch aesthetics, and game-like
-interactions---something between an oracle, a toy, and a digital art
-experiment.
-
 ---
 
 ## ✨ Features
 
-- **Card Drawing & Shuffle:** Cards are drawn and shuffled completely
+- **Card Drawing & Shuffle:** Cards are shuffled completely
+  at random, mimicking the unpredictability of real tarot.\
+- **Card Drawing & Shuffle:** Cards are shuffled completely
   at random, mimicking the unpredictability of real tarot.\
 - **Guidebook Replacement:** Instead of the classic little booklet
   included in tarot decks, the app provides a built-in guide with

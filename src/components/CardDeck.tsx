@@ -22,53 +22,44 @@ function CardDeck({
   readingMode,
   shouldSpread = false,
 }: CardDeckProps) {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  // Function to scroll to the last card
+  const scrollToLastCard = () => {
+    if (lastCardRef.current && scrollContainerRef.current) {
+      const cardRect = lastCardRef.current.getBoundingClientRect();
+      const containerRect = scrollContainerRef.current.getBoundingClientRect();
+
+      const scrollLeft =
+        cardRect.left +
+        cardRect.width / 2 -
+        (containerRect.left + containerRect.width / 2) +
+        scrollContainerRef.current.scrollLeft;
+
+      scrollContainerRef.current.scrollTo({
+        left: scrollLeft,
+        behavior: "smooth",
+      });
+    } else {
+    }
+  };
 
   useEffect(() => {
     if (shouldSpread) {
       playSpreadSound();
+
+      setTimeout(() => {
+        scrollToLastCard();
+      }, 650);
     }
   }, [shouldSpread]);
 
+  const lastCardRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    if (!cardOrder || cardOrder.length === 0) return;
-
-    const container = scrollContainerRef.current;
-    if (!container) return;
-
-    const isMobile = window.innerWidth < 768;
-
-    const scrollToRight = () => {
-      if (!container) return;
-      const maxScrollLeft = container.scrollWidth - container.clientWidth;
-      container.scrollLeft = maxScrollLeft;
-      // Removed showScrollIndicator logic
-    };
-
-    const readingModeJustSet = false;
-
-    if (isMobile && (readingModeJustSet || cardOrder.length > 0)) {
-      requestAnimationFrame(() => {
-        requestAnimationFrame(scrollToRight);
-      });
-
-      window.addEventListener("resize", scrollToRight);
-
-      let resizeObserver;
-      if (window.ResizeObserver) {
-        resizeObserver = new ResizeObserver(() => {
-          scrollToRight();
-        });
-        resizeObserver.observe(container);
-      }
-
-      return () => {
-        window.removeEventListener("resize", scrollToRight);
-        if (resizeObserver) resizeObserver.disconnect();
-      };
-    } else {
+    if (shouldSpread && lastCardRef.current) {
+      setTimeout(scrollToLastCard, 100);
     }
-  }, [cardOrder, readingMode]);
+  }, [lastCardRef.current, shouldSpread]);
 
   if (!cardOrder || cardOrder.length === 0) {
     return null;
@@ -76,9 +67,11 @@ function CardDeck({
 
   return (
     <div className="relative flex w-full -rotate-2">
-      <div className="mx-auto flex overflow-x-auto px-10">
+      <div
+        ref={scrollContainerRef}
+        className="mx-auto flex overflow-x-auto px-10"
+      >
         <div
-          ref={scrollContainerRef}
           key={readingMode || "no-mode"}
           className="flex w-fit items-center justify-center"
         >
@@ -92,6 +85,7 @@ function CardDeck({
 
               return (
                 <CardBack
+                  lastCardRef={isLastCard ? lastCardRef : null}
                   key={cardId}
                   data={cardData}
                   position={index + 1}

@@ -1,12 +1,12 @@
-import { ChangeEvent, useEffect, useRef } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { playClickSound, playDenySound, playTypingSound } from "@/utils/sound";
+import { showErrorToast, showToast } from "@/utils/toast";
 import {
   validateQuestion,
   validateQuestionSilent,
 } from "@/utils/questionValidation";
 
 import { ReadingMode } from "@/types/tarot";
-import { showErrorToast } from "@/utils/toast";
 
 interface ModeSelectorProps {
   readingMode: ReadingMode | null;
@@ -39,6 +39,8 @@ function ModeSelector({
 }: ModeSelectorProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const validationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const shuffleReminderTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [hasShownShuffleReminder, setHasShownShuffleReminder] = useState(false);
 
   useEffect(() => {
     if (!readingMode && inputRef.current) {
@@ -55,8 +57,45 @@ function ModeSelector({
       if (validationTimeoutRef.current) {
         clearTimeout(validationTimeoutRef.current);
       }
+      if (shuffleReminderTimeoutRef.current) {
+        clearTimeout(shuffleReminderTimeoutRef.current);
+      }
     };
   }, []);
+
+  // Effect to show toast when shuffle button is visible for 3 seconds
+  useEffect(() => {
+    // If the shuffle button is visible and we haven't shown the reminder yet
+    if (readingMode && canShuffle && !isShuffling && !hasShownShuffleReminder) {
+      // Clear any existing timeout
+      if (shuffleReminderTimeoutRef.current) {
+        clearTimeout(shuffleReminderTimeoutRef.current);
+      }
+
+      // Set timeout to show the toast after 3 seconds
+      shuffleReminderTimeoutRef.current = setTimeout(() => {
+        // Check again if shuffle button is still visible before showing toast
+        if (readingMode && canShuffle && !isShuffling) {
+          const funnyMessages = ["C'est pour aujourd'hui ?"];
+
+          const randomIndex = Math.floor(Math.random() * funnyMessages.length);
+          showToast({ message: funnyMessages[randomIndex], type: "warning" });
+          setHasShownShuffleReminder(true);
+        }
+      }, 3000);
+
+      return () => {
+        if (shuffleReminderTimeoutRef.current) {
+          clearTimeout(shuffleReminderTimeoutRef.current);
+        }
+      };
+    }
+
+    // Reset the flag when conditions change
+    if (!readingMode || !canShuffle || isShuffling) {
+      setHasShownShuffleReminder(false);
+    }
+  }, [readingMode, canShuffle, isShuffling, hasShownShuffleReminder]);
 
   const handleQuestionChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
@@ -86,11 +125,21 @@ function ModeSelector({
   };
 
   const handleShuffleClick = () => {
+    // Clear any pending shuffle reminder
+    if (shuffleReminderTimeoutRef.current) {
+      clearTimeout(shuffleReminderTimeoutRef.current);
+      shuffleReminderTimeoutRef.current = null;
+    }
+
     if (onShuffle) {
       const success = onShuffle();
       if (!success) {
+        // Handle shuffle failure if needed
       }
     }
+
+    // Reset the flag so we don't show the toast again
+    setHasShownShuffleReminder(true);
   };
 
   const handle3CardsClick = () => {

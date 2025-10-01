@@ -324,7 +324,7 @@ function TarotInterpretation({
     >
       <div
         ref={modalScrollRef}
-        className="relative max-h-[80vh] w-full overflow-y-scroll rounded-lg bg-orange-950 pb-12 text-indigo-50 shadow-2xl lg:w-fit"
+        className="relative max-h-[80vh] w-fit overflow-y-scroll rounded-lg bg-orange-950 pb-12 text-indigo-50 shadow-2xl"
       >
         <div className="px-4 pb-4">
           <button

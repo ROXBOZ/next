@@ -42,6 +42,7 @@ export function useTarotGame() {
     if (selectedCards.length > 0) {
       return false;
     }
+
     shuffleCards(cardOrder, setCardOrder, setCardReversals);
     return true;
   }, [cardOrder, selectedCards]);

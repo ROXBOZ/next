@@ -61,7 +61,7 @@ export default function Home() {
       originalSelectCard(cardId);
       return;
     }
-    const isMobile = window.innerWidth < 768;
+    const isMobile = window.innerWidth < 1024;
     const maxCards = readingMode === "3-cards" ? 3 : 5;
     if (isMobile && selectedCards.length < maxCards) {
       const cardData = findCardById(cards as TarotCard[], cardId);

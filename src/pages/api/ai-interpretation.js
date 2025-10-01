@@ -5,8 +5,6 @@ const openai = new OpenAI({
 });
 
 export default async function handler(req, res) {
-  console.log("🔥 API route called:", req.method);
-
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
@@ -17,8 +15,6 @@ export default async function handler(req, res) {
     if (!systemPrompt || !userPrompt) {
       return res.status(400).json({ error: "Missing prompts" });
     }
-
-    console.log("🔑 API Key present:", !!process.env.OPENAI_API_KEY);
 
     if (!process.env.OPENAI_API_KEY) {
       throw new Error("OpenAI API key not found");
@@ -41,7 +37,6 @@ export default async function handler(req, res) {
     });
 
     const interpretation = completion.choices[0].message.content;
-    console.log("✅ OpenAI response received, length:", interpretation?.length);
 
     return res.status(200).json({
       success: true,

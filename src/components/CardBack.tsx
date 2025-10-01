@@ -10,6 +10,7 @@ interface CardBackProps {
   onClick?: () => void;
   isLast?: boolean;
   isReversed?: boolean;
+  lastCardRef?: React.RefObject<HTMLDivElement> | null;
   readingMode?: ReadingMode | null;
   shouldSpread?: boolean;
 }
@@ -21,6 +22,7 @@ function CardBack({
   isLast = false,
   isReversed = false,
   shouldSpread = false,
+  lastCardRef = null,
 }: CardBackProps) {
   const finalRotation = calculateCardRotation(data.id, isReversed);
   const [isTouched, setIsTouched] = useState(false);
@@ -72,6 +74,7 @@ function CardBack({
 
   return (
     <div
+      ref={isLast && lastCardRef ? lastCardRef : undefined}
       style={{
         zIndex: position || data.id,
         marginLeft: `${marginLeft}px`,
@@ -104,6 +107,7 @@ function CardBack({
         alt="Card Back"
         width={200}
         height={300}
+        priority
       />
     </div>
   );
