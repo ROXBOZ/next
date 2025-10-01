@@ -69,8 +69,10 @@ function CardDeck({
     <div className="relative flex w-full -rotate-2">
       <div
         ref={scrollContainerRef}
-        className="mx-auto flex overflow-x-auto px-10"
+        className="scrollbar-none mx-auto flex overflow-x-auto"
       >
+        {/* Added padding containers instead of direct padding */}
+        <div className="w-10 flex-shrink-0"></div>
         <div
           key={readingMode || "no-mode"}
           className="flex w-fit items-center justify-center"
@@ -99,6 +101,8 @@ function CardDeck({
             })}
           </div>
         </div>
+        {/* Added matching end padding container */}
+        <div className="w-10 flex-shrink-0"></div>
       </div>
     </div>
   );
