@@ -1,40 +1,33 @@
-# 🎴 Poetic Tarot - Le Tarot Réinventé avec IA
+# Tarot Application
 
-**Un jeu de tarot qui passe du délirant au poétique, du kitsch à l'IA**
+**Interactive Tarot Card Reading Web Application**
 
-Ce projet a commencé comme une blague et s'est transformé en une expérience ludique : un jeu de cartes de tarot qui mélange tradition, humour, féminisme radical, et technologie moderne. Le but est simple — tirez des cartes de tarot, interprétez-les, et laissez l'expérience être à la fois poétique, surréaliste, et franchement amusante.
+This project is a modern web application that implements an interactive tarot card reading experience, showcasing advanced front-end development techniques and AI integration. It demonstrates implementation of complex state management, audio integration, and custom algorithms for card manipulation.
 
 ---
 
-## ✨ Fonctionnalités Magiques
+## Technical Overview
 
-### 🃏 Mécanique de Jeu
+### Core Functionality
 
-- **Tirage & Mélange Aléatoire:** Les cartes sont brassées complètement au hasard, imitant l'imprévisibilité d'un vrai tarot.
-- **Cartes Renversées:** Comme dans un vrai tarot, les cartes peuvent apparaître à l'endroit ou renversées, ajoutant une couche d'interprétation.
-- **Modes de Lecture Multiples:** Choisissez entre différents types de tirages (passé-présent-futur, problème-cause-solution, etc.).
-- **Système de Question:** Posez votre question pour contextualiser la lecture — avec détecteur de charabia qui vous répond avec humour!
+- **Card Randomization Algorithm:** Implementation of Fisher-Yates shuffle algorithm to generate truly random card sequences.
+- **State Management:** Complex state handling for card orientation (upright/reversed) and positional context.
+- **Multiple Reading Patterns:** Modular architecture supporting various card layouts (past-present-future, problem-cause-solution).
+- **Input Validation System:** Natural language processing techniques to validate user input with feedback mechanisms.
 
-### 🎨 UI/UX Réfléchie
+### Front-End Implementation
 
-- **Interface Responsive:** S'adapte parfaitement aux écrans de toutes tailles, du mobile au grand écran.
-- **Design Inspiré de l'Esthétique Tarot:** Une fusion entre le mystique traditionnel et le web moderne.
-- **Feedback Sonore Immersif:**
-  - Sons de mélange, sélection et placement de cartes
-  - Petits effets sonores cachés (comme un rire lorsqu'on clique sur le logo!)
-  - Sons adaptés à chaque interaction pour une expérience sensorielle complète
-- **Animations Fluides:** Transitions douces pour le retournement des cartes et affichage des interprétations.
-- **Micro-interactions:** Des petites surprises interactives parsemées dans l'interface.
+- **Responsive Design:** CSS Grid and Flexbox implementation ensuring full responsiveness across device sizes.
+- **Web Audio Integration:** Implementation of the Web Audio API for interactive audio feedback.
+- **CSS Animations:** Usage of CSS transitions and keyframe animations for card interactions.
+- **Custom Event System:** Event delegation pattern for handling complex user interactions.
 
-### 🤖 Intelligence Artificielle
+### AI Integration
 
-- **Interprétations IA (via OpenAI):** Recevez une lecture personnalisée générée par l'IA pour votre tirage spécifique.
-- **Prompts Personnalisés:** L'IA est configurée avec un prompt sophistiqué qui garantit des interprétations:
-  - Modernes et inclusives (écriture inclusive avec points médians)
-  - Féministes et empowering (adieu les conseils paternalistes!)
-  - Avec une pointe d'humour et de second degré
-  - Structurées avec soin pour une lecture agréable
-- **Détection de Non-Sens:** Un algorithme examine votre question pour détecter si c'est du charabia et vous répond avec une touche d'humour.
+- **OpenAI API Integration:** Implementation of streaming responses from GPT models for dynamic content generation.
+- **Prompt Engineering:** Structured prompt design techniques to generate consistent, formatted interpretations.
+- **Content Filtering:** Input sanitization and output processing to ensure appropriate content.
+- **Fallback Systems:** Offline functionality when AI services are unavailable.
 
 ### 📚 Contenu Riche
 
@@ -44,84 +37,95 @@ Ce projet a commencé comme une blague et s'est transformé en une expérience l
 
 ---
 
-## 🛠️ Stack Technologique
+## Technical Stack
 
-- **Framework:** [Next.js 15.5](https://nextjs.org/) avec Turbopack pour des performances optimisées
-- **Frontend:** [React 19.1](https://react.dev/) pour une interface utilisateur réactive
-- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/) pour un design rapide et flexible
-- **IA:**
-  - [OpenAI API](https://platform.openai.com/) pour les interprétations de tarot
-  - [Groq SDK](https://groq.com/) comme alternative rapide à OpenAI
-- **Audio:** API Web Audio pour une expérience sonore immersive
-- **TypeScript:** Pour un développement robuste et typé
-- **Testing:** Tests unitaires pour les fonctions utilitaires critiques
-
----
-
-## 🧙‍♀️ Caractéristiques Techniques
-
-### Architecture
-
-- **Hooks Personnalisés:** `useTarotGame` pour isoler la logique de jeu
-- **Utilitaires Modulaires:**
-  - `shuffle.ts` pour la mécanique de mélange
-  - `sound.ts` pour la gestion audio
-  - `questionValidation.ts` pour la détection de charabia
-  - `readingHelpers.ts` pour la préparation des interprétations
-- **Composants React:** Séparation claire entre présentation et logique
-
-### Spécificités Code
-
-- **Sons Préchargés:** Bibliothèque d'effets sonores pour une réactivité instantanée
-- **Algorithme de Validation:** Détecte le charabia à partir de patterns typiques (répétition de caractères, absence de voyelles...)
-- **Prompt Engineering:** Design sophistiqué des prompts OpenAI pour garantir des interprétations de qualité
-- **Optimisations de Performance:** Utilisation de useCallback et useMemo pour minimiser les rendus inutiles
+- **Framework:** [Next.js 15.5](https://nextjs.org/) with Turbopack for optimized performance
+- **Frontend:** [React 19.1](https://react.dev/) for reactive UI components
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/) for utility-first styling approach
+- **AI Integration:**
+  - [OpenAI API](https://platform.openai.com/) for generative content
+  - [Groq SDK](https://groq.com/) as an alternative LLM provider
+- **Audio:** Web Audio API implementation for interactive sound effects
+- **TypeScript:** Static typing for enhanced code reliability
+- **Testing:** Jest for unit testing of core utility functions
 
 ---
 
-## 🚧 Roadmap
+## Architecture & Implementation
 
-- Réécriture et expansion des interprétations de cartes avec une touche poétique
-- Création d'illustrations originales pour toutes les cartes de tarot
-- Amélioration des prompts IA pour des lectures plus évocatrices et narratives
-- Expérimentation avec [React Native](https://reactnative.dev/) pour une expérience plus app-native
-- Ajout continu de petites surprises et easter eggs
-- Ajout de nouveaux types de tirages et de nouvelles cartes
-- Intégration d'un mode sombre/clair pour la lecture nocturne ou diurne
-- Fonctionnalité de sauvegarde des tirages préférés
+### Component Architecture
 
----
+- **Custom React Hooks:** `useTarotGame` hook encapsulating core game state logic
+- **Modular Utility Pattern:**
+  - `shuffle.ts`: Implementation of card randomization algorithm
+  - `sound.ts`: Audio buffer management and playback system
+  - `questionValidation.ts`: Text analysis for input validation
+  - `readingHelpers.ts`: Card interpretation data transformation
+- **React Component Structure:** Presentation components separated from state management
 
-## � Philosophie & Esprit
+### Technical Implementations
 
-Ce projet ne prend pas le tarot trop au sérieux — il s'agit **d'avoir du fun, d'expérimenter et d'explorer des questions de design et d'UX de manière créative**.\
-C'est à la fois un terrain de jeu technologique (IA, UI/UX, design sonore) et une expérience artistique avec une touche féministe et inclusive.
-
-Le tarot est utilisé ici comme prétexte pour créer une expérience numérique qui soit à la fois:
-
-- Accessible et inclusive
-- Techniquement innovante
-- Visuellement captivante
-- Auditivement immersive
-- Et fondamentalement joyeuse!
+- **Audio Preloading System:** Audio buffer caching for immediate playback response
+- **Text Analysis Algorithm:** Pattern recognition for identifying invalid input based on character distribution
+- **Prompt Engineering Patterns:** Structured request formatting for consistent AI responses
+- **Performance Optimizations:** Strategic implementation of useCallback and useMemo to prevent unnecessary re-renders
 
 ---
 
-## 🚀 Démarrer le Projet
+## Future Development
 
-Clonez le repo, installez les dépendances et lancez le serveur de développement:
+- Card illustrations
+- Advanced prompt optimization for more structured AI responses
+- Exploration of React Native implementation for cross-platform deployment
+
+---
+
+## Project Structure
+
+The application demonstrates modern React architectural patterns:
+
+```
+src/
+├── components/       # UI components with atomic design approach
+├── constants/        # Static application data
+├── hooks/            # Custom React hooks for state management
+├── pages/            # Next.js page components and API routes
+│   └── api/          # Backend API implementations
+├── styles/           # CSS modules and global styles
+├── types/            # TypeScript type definitions
+└── utils/            # Pure utility functions for data manipulation
+```
+
+---
+
+## Setup and Development
 
 ```bash
 git clone <repo-url>
-cd poetic-tarot
+cd next
 npm install
-npm run dev --turbopack
+npm run dev
 ```
 
-Puis ouvrez <http://localhost:3000> dans votre navigateur et laissez la magie opérer! ✨
+Access the application at http://localhost:3000
+
+### Environment Variables
+
+Create a `.env.local` file with the following variables:
+
+```
+OPENAI_API_KEY=your_openai_key
+GROQ_API_KEY=your_groq_key  # Optional alternative
+```
 
 ---
 
-## 🔮 Et Si Vous Ne Croyez Pas au Tarot?
+## Testing
 
-Aucun problème! Ce projet est avant tout une exploration créative de l'interface entre tradition et technologie. Que vous soyez sceptique ou convaincu.e, l'important est de s'amuser et peut-être de découvrir quelque chose sur vous-même en cours de route... ou au moins de rire un bon coup quand l'appli vous dira "Les esprits ont quitté le chat?" après un charabia tapé au clavier!
+Unit tests are implemented for core utility functions to ensure algorithm reliability:
+
+```bash
+npm test
+```
+
+The test suite focuses on validating the card randomization algorithms and input validation logic.

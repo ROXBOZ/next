@@ -69,7 +69,7 @@ function CardDeck({
     <div className="relative flex w-full -rotate-2">
       <div
         ref={scrollContainerRef}
-        className="real-mobile-deck-container mx-auto flex overflow-x-auto px-10"
+        className="mx-auto flex overflow-x-auto px-10"
       >
         <div
           key={readingMode || "no-mode"}

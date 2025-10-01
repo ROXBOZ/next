@@ -93,19 +93,19 @@ export function useTarotGame(cards: TarotCard[]) {
 
   const selectCard = useCallback(
     (cardId: number) => {
-      if (!canPickCards) {
-        playDenySound();
-        showWarningToast("Vous devez d'abord mélanger le jeu !");
-        return;
-      }
       if (!question.trim()) {
         playDenySound();
-        showWarningToast("Posez votre question");
+        showWarningToast("Mais décidez déjà de ce que vous voulez savoir!");
         return;
       }
       if (!readingMode) {
         playDenySound();
-        showWarningToast("Choisissez votre tirage");
+        showWarningToast("Ahhhh! Choisissez le tirage");
+        return;
+      }
+      if (!canPickCards) {
+        playDenySound();
+        showWarningToast("Tssss!! Mais mélangez !!!");
         return;
       }
       handleCardSelect(

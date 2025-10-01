@@ -131,6 +131,23 @@ function ModeSelector({
       shuffleReminderTimeoutRef.current = null;
     }
 
+    // Vérifions que la question est toujours valide avant de mélanger
+    if (!question.trim()) {
+      playDenySound();
+      showToast({
+        message: "Mais décidez déjà de ce que vous voulez savoir!",
+        type: "warning",
+      });
+      return;
+    }
+
+    if (!validateQuestionSilent(question)) {
+      playDenySound();
+      // Appel direct de validateQuestion qui gérera l'affichage du toast de charabia
+      validateQuestion(question);
+      return;
+    }
+
     if (onShuffle) {
       const success = onShuffle();
       if (!success) {
@@ -143,10 +160,17 @@ function ModeSelector({
   };
 
   const handle3CardsClick = () => {
+    if (!question.trim()) {
+      playDenySound();
+      showToast({
+        message: "Mais décidez déjà de ce que vous voulez savoir!",
+        type: "warning",
+      });
+      return;
+    }
     if (!validateQuestion(question)) {
       playDenySound();
-      // Show the same funny toast (it will be random/alternating)
-      validateQuestion(question);
+      // La fonction validateQuestion va déjà afficher le toast de charabia
       return;
     }
     playClickSound();
@@ -154,10 +178,17 @@ function ModeSelector({
   };
 
   const handle5CardsClick = () => {
+    if (!question.trim()) {
+      playDenySound();
+      showToast({
+        message: "Mais décidez déjà de ce que vous voulez savoir!",
+        type: "warning",
+      });
+      return;
+    }
     if (!validateQuestion(question)) {
       playDenySound();
-      // Show the same funny toast (it will be random/alternating)
-      validateQuestion(question);
+      // La fonction validateQuestion va déjà afficher le toast de charabia
       return;
     }
     playClickSound();
