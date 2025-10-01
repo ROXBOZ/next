@@ -319,12 +319,7 @@ function TarotInterpretation({
 
   const ChoiceContainer = ({ children }: { children: ReactNode }) => {
     return (
-      <div
-        style={{
-          height: "-webkit-fill-available",
-        }}
-        className="flex h-fit w-full flex-col justify-between gap-4 p-2 text-start text-balance"
-      >
+      <div className="flex h-fit w-full flex-col justify-between gap-4 p-2 text-start text-balance">
         {children}
       </div>
     );
@@ -360,7 +355,7 @@ function TarotInterpretation({
                     Un algorithme nourri aux herbes hallucinogènes et aux cartes
                     postales d’Aleister Crowley. Peut générer des prédictions
                     absurdes et des vérités troublantes. On décline toute
-                    responsabilité si vous changez de vie après.
+                    responsabilité si vous changez de vie.
                   </div>
                   <button
                     className="light"
