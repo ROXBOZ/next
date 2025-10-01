@@ -68,16 +68,10 @@ function CardDeck({
       <div
         ref={scrollContainerRef}
         className="scrollbar-none mx-auto flex overflow-x-auto"
-        style={{
-          paddingLeft: "40px",
-          paddingRight: "40px",
-          WebkitOverflowScrolling: "touch",
-          maxWidth: "100%"
-        }}
       >
         <div
-          key={readingMode || "no-mode"}
-          className="mx-auto flex w-fit items-center justify-center"
+          key={readingMode || ""}
+          className="mx-auto flex w-full items-center justify-center bg-red-500 px-10"
         >
           <div className="z-40 ml-48 flex min-w-max justify-center py-10 md:justify-center">
             {cardOrder.map((cardId, index) => {
