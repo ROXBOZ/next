@@ -69,10 +69,10 @@ function CardDeck({
       const forceReflow = () => {
         const _ = scrollContainerRef.current?.offsetWidth;
       };
-      
+
       // Run immediately
       forceReflow();
-      
+
       // Also run after a short delay to handle any async layout changes
       setTimeout(forceReflow, 300);
     }
