@@ -64,16 +64,16 @@ function CardDeck({
   }
   //
   return (
-    <div className="z-40 ml-48 flex min-w-max -rotate-2">
-      <div className="relative flex w-screen bg-green-500">
+    <div className="relative flex w-screen bg-green-500">
+      <div
+        ref={scrollContainerRef}
+        className="scrollbar-none flex overflow-x-auto bg-yellow-500"
+      >
         <div
-          ref={scrollContainerRef}
-          className="scrollbar-none flex overflow-x-auto bg-yellow-500"
+          key={readingMode || ""}
+          className="flex w-screen items-center justify-center bg-violet-500 px-10"
         >
-          <div
-            key={readingMode || ""}
-            className="flex w-screen items-center justify-center bg-violet-500"
-          >
+          <div className="z-40 ml-48 flex min-w-max -rotate-2 py-10">
             {cardOrder.map((cardId, index) => {
               const cardData = findCardById(cards, cardId);
               if (!cardData) return null;
