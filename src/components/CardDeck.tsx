@@ -64,7 +64,7 @@ function CardDeck({
   }
 
   return (
-    <div className="relative flex w-full justify-center bg-green-500">
+    <div className="relative flex w-full bg-green-500">
       <div
         ref={scrollContainerRef}
         className="scrollbar-none flex overflow-x-auto bg-yellow-500"
