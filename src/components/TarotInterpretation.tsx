@@ -323,7 +323,7 @@ function TarotInterpretation({
         style={{
           height: "-webkit-fill-available",
         }}
-        className="flex w-full flex-col justify-between gap-4 p-2 text-start text-balance"
+        className="flex h-fit w-full flex-col justify-between gap-4 p-2 text-start text-balance"
       >
         {children}
       </div>
