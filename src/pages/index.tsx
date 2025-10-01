@@ -49,16 +49,28 @@ export default function Home() {
     resetGame();
   };
   const handleCardSelection = (cardId: number) => {
+    if (!readingMode) {
+      // Block picking if no reading mode selected
+      import("@/utils/sound").then(({ playDenySound }) => playDenySound());
+      import("@/utils/toast").then(({ showWarningToast }) =>
+        showWarningToast("Ahhhh! Choisissez le tirage"),
+      );
+      return;
+    }
+    if (!question.trim()) {
+      // Block picking if no question and show toast
+      import("@/utils/sound").then(({ playDenySound }) => playDenySound());
+      import("@/utils/toast").then(({ showWarningToast }) =>
+        showWarningToast("Mais décidez déjà de ce que vous voulez savoir!"),
+      );
+      return;
+    }
     if (!canPickCards) {
       // Block picking and show toast
       import("@/utils/sound").then(({ playDenySound }) => playDenySound());
       import("@/utils/toast").then(({ showWarningToast }) =>
         showWarningToast("Tssss!! Mais mélangez !!!"),
       );
-      return;
-    }
-    if (!readingMode) {
-      originalSelectCard(cardId);
       return;
     }
     const isMobile = window.innerWidth < 1024;

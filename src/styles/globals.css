@@ -45,3 +45,15 @@ body {
 .ai-interpretation span {
   @apply pt-4 pb-1;
 }
+
+/* Solution pour les mobiles réels vs simulation mobile */
+@media (max-width: 640px) and (pointer: coarse) {
+  .real-mobile-deck-container {
+    width: 100vw !important;
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+    overflow-x: auto !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
