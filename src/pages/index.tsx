@@ -6,7 +6,7 @@ import {
   SelectedCardsDisplay,
   TarotInterpretation,
 } from "@/components";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { TarotCard } from "@/types/tarot";
 import { tarot_cards as cards } from "@/data.json";
@@ -20,6 +20,29 @@ export default function Home() {
     card: TarotCard;
     isReversed: boolean;
   } | null>(null);
+
+  // Effect to fix mobile scroll padding issue at startup
+  useEffect(() => {
+    // Only apply the fix on mobile devices with touch support
+    if (typeof window !== "undefined" && "ontouchstart" in window) {
+      // Set body overflow to hidden (what modal does when opening)
+      document.body.style.overflow = "hidden";
+
+      // After a short delay, reset it to normal (what modal does when closing)
+      setTimeout(() => {
+        document.body.style.overflow = "unset";
+
+        // Force layout recalculation on scroll containers
+        const scrollContainers = document.querySelectorAll(".overflow-x-auto");
+        scrollContainers.forEach((container) => {
+          (container as HTMLElement).style.display = "none";
+          // Force reflow
+          const _ = (container as HTMLElement).offsetHeight;
+          (container as HTMLElement).style.display = "";
+        });
+      }, 100);
+    }
+  }, []);
 
   const {
     cardOrder,
