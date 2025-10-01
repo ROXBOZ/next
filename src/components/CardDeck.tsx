@@ -61,21 +61,57 @@ function CardDeck({
     }
   }, [lastCardRef.current, shouldSpread]);
 
+  // Effect to initialize proper mobile scrolling
+  useEffect(() => {
+    // Only run on mobile
+    if (
+      typeof window !== "undefined" &&
+      window.innerWidth < 768 &&
+      scrollContainerRef.current
+    ) {
+      // Force browser to recognize container as scrollable by setting/resetting scroll position
+      const container = scrollContainerRef.current;
+      // Store current scroll position
+      const currentScroll = container.scrollLeft;
+      // Force a scroll value change to trigger layout recalculation
+      container.scrollLeft = 1;
+      // Return to original position
+      setTimeout(() => {
+        container.scrollLeft = currentScroll;
+      }, 10);
+    }
+  }, []);
+
   if (!cardOrder || cardOrder.length === 0) {
     return null;
   }
+
+  // Mobile-specific inline styles to ensure consistent scrolling behavior
+  const mobileScrollStyles =
+    typeof window !== "undefined" && window.innerWidth < 768
+      ? {
+          WebkitOverflowScrolling: "touch" as "touch",
+          overflowX: "auto" as "auto",
+          paddingLeft: "40px",
+          paddingRight: "40px",
+          width: "100%",
+          display: "flex",
+          margin: "0 auto",
+        }
+      : {};
 
   return (
     <div className="relative flex w-full -rotate-2">
       <div
         ref={scrollContainerRef}
+        style={mobileScrollStyles}
         className="scrollbar-none mx-auto flex overflow-x-auto"
       >
-        {/* Added padding containers instead of direct padding */}
-        <div className="w-10 flex-shrink-0"></div>
+        {/* Removed padding containers for mobile - using inline style instead */}
+        <div className="hidden w-10 flex-shrink-0 md:block"></div>
         <div
           key={readingMode || "no-mode"}
-          className="flex w-fit items-center justify-center"
+          className="mx-auto flex w-fit items-center justify-center"
         >
           <div className="z-40 ml-48 flex min-w-max justify-center py-10 md:justify-center">
             {cardOrder.map((cardId, index) => {
@@ -101,8 +137,8 @@ function CardDeck({
             })}
           </div>
         </div>
-        {/* Added matching end padding container */}
-        <div className="w-10 flex-shrink-0"></div>
+        {/* Only show end padding on desktop */}
+        <div className="hidden w-10 flex-shrink-0 md:block"></div>
       </div>
     </div>
   );

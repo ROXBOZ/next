@@ -21,26 +21,35 @@ export default function Home() {
     isReversed: boolean;
   } | null>(null);
 
-  // Effect to fix mobile scroll padding issue at startup
+    // Effect to fix mobile scroll padding issue at startup
   useEffect(() => {
     // Only apply the fix on mobile devices with touch support
-    if (typeof window !== "undefined" && "ontouchstart" in window) {
-      // Set body overflow to hidden (what modal does when opening)
-      document.body.style.overflow = "hidden";
-
-      // After a short delay, reset it to normal (what modal does when closing)
+    if (typeof window !== 'undefined' && ('ontouchstart' in window || window.innerWidth < 768)) {
+      // Create a fake card to use in the modal (just needs a minimal structure)
+      const dummyCard = cards[0] || {
+        id: 0,
+        name: "Dummy Card",
+        number: 0
+      };
+      
+      // Set a dummy modal card to trigger the modal opening
+      setMobileSelectionCard({
+        card: dummyCard as TarotCard,
+        isReversed: false
+      });
+      
+      // Close the modal after a short delay
       setTimeout(() => {
-        document.body.style.overflow = "unset";
-
-        // Force layout recalculation on scroll containers
-        const scrollContainers = document.querySelectorAll(".overflow-x-auto");
-        scrollContainers.forEach((container) => {
-          (container as HTMLElement).style.display = "none";
-          // Force reflow
-          const _ = (container as HTMLElement).offsetHeight;
-          (container as HTMLElement).style.display = "";
+        setMobileSelectionCard(null);
+        
+        // Additional fix for scroll containers 
+        const scrollContainers = document.querySelectorAll('.overflow-x-auto');
+        scrollContainers.forEach(container => {
+          // Force browser to recalculate scrolling layout
+          (container as HTMLElement).style.paddingLeft = '40px';
+          (container as HTMLElement).style.paddingRight = '40px';
         });
-      }, 100);
+      }, 50);
     }
   }, []);
 
