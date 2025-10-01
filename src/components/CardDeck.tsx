@@ -75,8 +75,8 @@ function CardDeck({
   }
 
   return (
-    <div className="relative flex w-full -rotate-2 justify-center">
-      <div className="flex w-full justify-center overflow-x-auto px-10">
+    <div className="relative flex w-full -rotate-2">
+      <div className="mx-auto flex overflow-x-auto px-10">
         <div
           ref={scrollContainerRef}
           key={readingMode || "no-mode"}
