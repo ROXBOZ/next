@@ -1,9 +1,9 @@
 import { CardReversals, ReadingMode, TarotCard } from "@/types/tarot";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 import CardBack from "./CardBack";
-import { playSpreadSound } from "@/utils/sound";
 import { findCardById } from "@/utils/cardHelpers";
+import { playSpreadSound } from "@/utils/sound";
 
 interface CardDeckProps {
   cardOrder: number[];
@@ -23,9 +23,7 @@ function CardDeck({
   shouldSpread = false,
 }: CardDeckProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [showScrollIndicator, setShowScrollIndicator] = useState(false);
 
-  // Track when readingMode changes from null to a value (user enters game)
   useEffect(() => {
     if (shouldSpread) {
       playSpreadSound();
@@ -44,11 +42,10 @@ function CardDeck({
       if (!container) return;
       const maxScrollLeft = container.scrollWidth - container.clientWidth;
       container.scrollLeft = maxScrollLeft;
-      setShowScrollIndicator(maxScrollLeft > 0 && readingMode !== null);
+      // Removed showScrollIndicator logic
     };
 
-    // Fire scroll when readingMode just became set (user entered game)
-    const readingModeJustSet = false; // No longer needed, always false
+    const readingModeJustSet = false;
 
     if (isMobile && (readingModeJustSet || cardOrder.length > 0)) {
       requestAnimationFrame(() => {
@@ -65,20 +62,11 @@ function CardDeck({
         resizeObserver.observe(container);
       }
 
-      const handleScroll = () => {
-        if (container.scrollLeft === 0) {
-          setShowScrollIndicator(false);
-        }
-      };
-      container.addEventListener("scroll", handleScroll);
-
       return () => {
         window.removeEventListener("resize", scrollToRight);
         if (resizeObserver) resizeObserver.disconnect();
-        container.removeEventListener("scroll", handleScroll);
       };
     } else {
-      setShowScrollIndicator(false);
     }
   }, [cardOrder, readingMode]);
 
@@ -88,13 +76,13 @@ function CardDeck({
 
   return (
     <div className="relative flex w-full -rotate-2 justify-center">
-      <div className="overflow-x-auto">
+      <div className="flex w-full justify-center overflow-x-auto px-10">
         <div
           ref={scrollContainerRef}
           key={readingMode || "no-mode"}
-          className={`flex w-fit items-center justify-center p-10`}
+          className="flex w-fit items-center justify-center"
         >
-          <div className="z-40 ml-48 flex min-w-max justify-center md:justify-center">
+          <div className="z-40 ml-48 flex min-w-max justify-center py-10 md:justify-center">
             {cardOrder.map((cardId, index) => {
               const cardData = findCardById(cards, cardId);
               if (!cardData) return null;

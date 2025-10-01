@@ -7,7 +7,7 @@ import { ToastConfig, ToastType } from "@/types/tarot";
 const TOAST_STYLES: Record<ToastType, string[]> = {
   success: ["bg-green-800", "text-white"],
   error: ["bg-red-800", "text-white"],
-  warning: ["bg-yellow-800", "text-white"],
+  warning: ["", "text-white"],
   info: ["bg-blue-800", "text-white"],
 };
 

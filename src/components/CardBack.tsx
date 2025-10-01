@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 
 import Image from "next/image";
 import { calculateCardRotation } from "@/utils/cardHelpers";
-import { playSpreadSound } from "@/utils/sound";
 
 interface CardBackProps {
   data: TarotCard;
@@ -21,40 +20,38 @@ function CardBack({
   onClick,
   isLast = false,
   isReversed = false,
-  readingMode = null,
   shouldSpread = false,
 }: CardBackProps) {
   const finalRotation = calculateCardRotation(data.id, isReversed);
   const [isTouched, setIsTouched] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [marginLeft, setMarginLeft] = useState(-180); // initial -ml-[180px]
+  const [marginLeft, setMarginLeft] = useState(-180);
   const [hasModeJustBeenSelected, setHasModeJustBeenSelected] = useState(false);
-  // Remove prevReadingMode logic
 
   useEffect(() => {
     setIsMobile("ontouchstart" in window || navigator.maxTouchPoints > 0);
   }, []);
 
-  // Animate marginLeft ONLY when readingMode transitions from null to a value
-  // Animate marginLeft ONLY when shouldSpread is true
   useEffect(() => {
     if (shouldSpread) {
-      setTimeout(() => setMarginLeft(-165), 2); // spring animation
+      setTimeout(() => {
+        setMarginLeft(-165);
+      }, 2);
     } else {
-      setMarginLeft(-180); // reset if not spreading
+      setMarginLeft(-180);
     }
   }, [shouldSpread, position]);
 
   useEffect(() => {
     if (hasModeJustBeenSelected) {
       if (position && position > 1) {
-        const timeout = setTimeout(() => setMarginLeft(-165), 2); // spring animation, adjust spread here
+        const timeout = setTimeout(() => setMarginLeft(-165), 2);
         return () => clearTimeout(timeout);
       } else {
-        setMarginLeft(-180); // reset if not spreading
+        setMarginLeft(-180);
       }
     } else {
-      setMarginLeft(-180); // always default before mode selection
+      setMarginLeft(-180);
     }
   }, [hasModeJustBeenSelected, position]);
 

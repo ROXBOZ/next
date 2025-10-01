@@ -77,10 +77,10 @@ function SelectedCardsDisplay({
   const maxCards = readingConfig.length;
 
   return (
-    <div className="w-full max-w-full pt-4">
+    <div className="w-full max-w-full overflow-x-auto px-10 pt-4 lg:pt-0">
       <div
         ref={scrollContainerRef}
-        className="flex gap-4 overflow-x-auto px-12 pb-4 md:justify-center"
+        className="flex min-w-max gap-4 pb-4 md:justify-center"
       >
         {Array.from({ length: maxCards }).map((_, index) => {
           const cardId = selectedCards[index];

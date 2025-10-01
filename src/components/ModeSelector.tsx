@@ -1,11 +1,11 @@
 import { ChangeEvent, useEffect, useRef } from "react";
-import { playClickSound, playTypingSound, playDenySound } from "@/utils/sound";
-
-import { ReadingMode } from "@/types/tarot";
+import { playClickSound, playDenySound, playTypingSound } from "@/utils/sound";
 import {
   validateQuestion,
   validateQuestionSilent,
 } from "@/utils/questionValidation";
+
+import { ReadingMode } from "@/types/tarot";
 import { showErrorToast } from "@/utils/toast";
 
 interface ModeSelectorProps {
@@ -117,7 +117,7 @@ function ModeSelector({
 
   if (readingMode) {
     return (
-      <div className="flex h-[150px] w-full flex-col items-center pt-4 lg:h-[100px]">
+      <div className="flex h-[110px] w-full flex-col items-center pt-4">
         <div className="flex w-[50vw] flex-col items-baseline justify-center gap-2">
           <div className="w-full animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards] text-center text-lg font-medium text-indigo-50 opacity-0">
             {question}
@@ -157,7 +157,7 @@ function ModeSelector({
   }
 
   return (
-    <div className="h-[150px] w-full pt-4">
+    <div className="h-[110px] w-full pt-4">
       <div className="mx-auto flex h-full w-screen flex-col items-center gap-2">
         <div className="flex w-full animate-[fadeIn_0.2s_ease-in-out_0.2s_forwards] flex-col items-baseline justify-center gap-2 px-4 opacity-0 lg:flex-row">
           <span className="sr-only font-medium whitespace-nowrap text-indigo-200">
@@ -173,11 +173,11 @@ function ModeSelector({
           />
         </div>
 
-        <div className="flex flex-col items-center gap-2 bg-red-500 md:flex-row">
+        <div className="flex items-center gap-2">
           {isQuestionValid && (
             <>
               <span className="animate-[fadeIn_0.2s_ease-in-out_0.4s_forwards] font-medium whitespace-nowrap text-indigo-200 opacity-0">
-                Choisissez entre un tirage
+                Choisissez un tirage
               </span>
               <div className="flex animate-[fadeIn_0.2s_ease-in-out_0.6s_forwards] items-baseline gap-2 opacity-0">
                 <button
