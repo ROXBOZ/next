@@ -23,7 +23,10 @@ async function callOpenAI(systemPrompt, userPrompt) {
 
     if (!response.ok) {
       console.error("OpenAI API error:", data.error);
-      return { success: false, error: data.error || "Failed to get AI interpretation" };
+      return {
+        success: false,
+        error: data.error || "Failed to get AI interpretation",
+      };
     }
 
     return { success: true, interpretation: data.interpretation };
@@ -116,7 +119,9 @@ Merci de bien prendre en compte toutes ces cartes et d'en faire une interprétat
     if (!result.success) {
       return {
         success: false,
-        error: result.error || "Impossible de générer l'interprétation pour le moment.",
+        error:
+          result.error ||
+          "Impossible de générer l'interprétation pour le moment.",
       };
     }
 
