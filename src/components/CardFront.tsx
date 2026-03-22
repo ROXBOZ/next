@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-import Image from "next/image";
 import { TarotCard } from "@/types/tarot";
 import { calculateCardRotation } from "@/utils/cardHelpers";
+import { createKaleidoscope } from "@/utils/kaleidoscope";
 
 interface CardFrontProps {
   data: TarotCard;
@@ -18,12 +18,49 @@ function CardFront({
   isReversed = false,
 }: CardFrontProps) {
   const [imageError, setImageError] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
   const finalRotation = calculateCardRotation(data.id, isReversed);
 
   useEffect(() => {
-    // Reset image error state when data changes
     setImageError(false);
   }, [data.id]);
+
+  useEffect(() => {
+    if (imageError || !containerRef.current) return;
+
+    let destroyed = false;
+    let instance: { destroy: () => void } | null = null;
+
+    // Check if image exists before initializing
+    const img = new Image();
+    img.onload = () => {
+      if (destroyed || !containerRef.current) return;
+      createKaleidoscope({
+        container: containerRef.current,
+        imageSrc: `/cards/${data.id}.jpg`,
+        mode: "loop",
+        segments: 6,
+        scale: 1,
+        motion: 0.5,
+        imageAspect: 9 / 14,
+      }).then((k) => {
+        if (destroyed) {
+          k.destroy();
+        } else {
+          instance = k;
+        }
+      });
+    };
+    img.onerror = () => {
+      if (!destroyed) setImageError(true);
+    };
+    img.src = `/cards/${data.id}.jpg`;
+
+    return () => {
+      destroyed = true;
+      instance?.destroy();
+    };
+  }, [data.id, imageError]);
 
   return (
     <div
@@ -38,7 +75,7 @@ function CardFront({
       } `}
       onClick={onClick}
     >
-      <div className="sr-only absolute z-50 flex h-full w-full flex-col items-center justify-between p-2 text-center text-orange-400 *:rounded-full *:bg-indigo-950">
+      <div className="pointer-events-none absolute z-10 flex h-full w-full flex-col items-center justify-between p-2 text-center text-orange-400 *:rounded-full *:bg-indigo-950/80">
         <span className="flex px-4 text-xs font-medium">{data.number}</span>
         <div className="w-full px-4 text-center text-xs font-medium whitespace-nowrap uppercase">
           {data.name}
@@ -50,14 +87,7 @@ function CardFront({
             <div className="font-mono">{data.id}.jpg</div>
           </div>
         ) : (
-          <Image
-            src={`/cards/${data.id}.jpg`}
-            alt={data.name}
-            width={300}
-            height={500}
-            className="absolute inset-0 -z-30 h-full w-full"
-            onError={() => setImageError(true)}
-          />
+          <div ref={containerRef} className="absolute inset-0 h-full w-full" />
         )}
       </div>
     </div>
