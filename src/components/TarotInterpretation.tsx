@@ -172,7 +172,7 @@ function TarotInterpretation({
       setInterpretationType("explanation");
       showToast({
         message:
-          "L'IA n'est pas disponible pour le moment. Voici le guide pratique à la place.",
+          "Bon voilà, sorry, mais ça merde. Fais ton interprétation seul·e, l'IA ne marche pas.",
         type: "warning",
       });
     } catch {

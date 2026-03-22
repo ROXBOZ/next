@@ -22,13 +22,14 @@ async function callOpenAI(systemPrompt, userPrompt) {
     const data = await response.json();
 
     if (!response.ok) {
-      throw new Error(data.error || "Failed to get AI interpretation");
+      console.error("OpenAI API error:", data.error);
+      return { success: false, error: data.error || "Failed to get AI interpretation" };
     }
 
-    return data.interpretation;
+    return { success: true, interpretation: data.interpretation };
   } catch (error) {
     console.error("Error calling OpenAI:", error);
-    throw error;
+    return { success: false, error: error.message };
   }
 }
 
@@ -110,11 +111,18 @@ ${formattedCards}
 
 Merci de bien prendre en compte toutes ces cartes et d'en faire une interprétation complète et personnalisée qui relie ces cartes entre elles pour répondre à la question posée.`;
 
-    const interpretation = await callOpenAI(systemPrompt, userPrompt);
+    const result = await callOpenAI(systemPrompt, userPrompt);
+
+    if (!result.success) {
+      return {
+        success: false,
+        error: result.error || "Impossible de générer l'interprétation pour le moment.",
+      };
+    }
 
     return {
       success: true,
-      interpretation,
+      interpretation: result.interpretation,
     };
   } catch (error) {
     console.error("Error generating tarot interpretation:", error);

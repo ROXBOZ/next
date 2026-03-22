@@ -45,7 +45,6 @@ export const showToast = (config: ToastConfig | string): void => {
     "py-2",
     "rounded-md",
     "font-medium",
-    `z-[${Z_INDEX.TOAST}]`,
     "shadow-lg",
     "transform",
     "translate-x-full",
@@ -59,6 +58,7 @@ export const showToast = (config: ToastConfig | string): void => {
   const allClasses = [...baseClasses, ...typeClasses];
 
   toast.classList.add(...allClasses);
+  toast.style.zIndex = String(Z_INDEX.TOAST + 1);
   document.body.appendChild(toast);
 
   // Show animation
