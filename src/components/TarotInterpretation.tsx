@@ -13,6 +13,7 @@ import {
 import { playClickSound, playMagicSound, playSound } from "@/utils/sound";
 
 import { generateTarotInterpretation } from "@/utils/aiInterpretation";
+import { showToast } from "@/utils/toast";
 
 let whisperAudio: HTMLAudioElement | null = null;
 
@@ -158,6 +159,29 @@ function TarotInterpretation({
     readingMode,
   });
 
+  const fallbackToManual = (reading: TarotReading) => {
+    try {
+      const interpretations = generateCardInterpretations(
+        reading.selectedCards,
+        cards,
+        reading.cardReversals,
+        reading.readingMode,
+      );
+      setManualInterpretation(interpretations);
+      setInterpretation(null);
+      setInterpretationType("explanation");
+      showToast({
+        message:
+          "L'IA n'est pas disponible pour le moment. Voici le guide pratique à la place.",
+        type: "warning",
+      });
+    } catch {
+      setError("Impossible de générer une interprétation.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const generateManualInterpretation = async () => {
     setLoading(true);
     setError(null);
@@ -246,13 +270,12 @@ function TarotInterpretation({
           cardReversals: { ...reading.cardReversals },
           readingMode: reading.readingMode,
         });
+        setLoading(false);
       } else {
-        setError(result.error || "Erreur inconnue");
+        fallbackToManual(reading);
       }
     } catch (err) {
-      setError("Une erreur est survenue lors de l'interprétation AI.");
-    } finally {
-      setLoading(false);
+      fallbackToManual(reading);
     }
   };
 

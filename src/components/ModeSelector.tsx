@@ -198,7 +198,7 @@ function ModeSelector({
   if (readingMode) {
     return (
       <div className="flex h-[110px] w-full flex-col items-center pt-4">
-        <div className="flex w-[50vw] flex-col items-baseline justify-center gap-6 bg-red-500">
+        <div className="flex w-[50vw] flex-col items-baseline justify-center gap-6">
           <div className="z-50 w-full text-center text-lg font-medium text-indigo-50">
             {question}
           </div>

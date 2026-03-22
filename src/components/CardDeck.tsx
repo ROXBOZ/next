@@ -64,14 +64,14 @@ function CardDeck({
   }
   //
   return (
-    <div className="relative flex w-screen bg-green-500">
+    <div className="relative flex w-screen">
       <div
         ref={scrollContainerRef}
-        className="scrollbar-none flex overflow-x-auto bg-yellow-500"
+        className="scrollbar-none flex overflow-x-auto"
       >
         <div
           key={readingMode || ""}
-          className="flex w-screen items-center justify-center bg-violet-500 px-10"
+          className="flex w-screen items-center justify-center px-10"
         >
           <div className="z-40 ml-48 flex min-w-max -rotate-2 py-10">
             {cardOrder.map((cardId, index) => {
